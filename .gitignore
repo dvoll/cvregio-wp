@@ -1,6 +1,7 @@
 node_modules
 .DS_Store
 dist/
+placeholder/
 
 *.log
 advanced-cache.php
@@ -19,6 +20,7 @@ plugins/atomic-blocks
 themes/twentynineteen
 themes/twentyseventeen
 themes/twentysixteen
+themes/atomic-blocks-theme
 
 /.htaccess
 /license.txt

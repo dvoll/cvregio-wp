@@ -1,8 +1,12 @@
 import Vue from 'vue';
 import App from './App.vue';
+import vueCustomElement from 'vue-custom-element';
+
+import CvStage from './components/CvStage.element';
+
+console.log('Frontend loaded.');
 
 Vue.config.productionTip = false;
+Vue.use(vueCustomElement);
 
-new Vue({
-  render: h => h(App),
-}).$mount('#app');
+Vue.customElement('cv-stage', CvStage);
