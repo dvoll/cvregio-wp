@@ -1,25 +1,28 @@
 <template>
     <section class="cv-stage">
         <div class="cv-stage__layer-wrapper">
-            <div v-for="item in stageItems" :key="'cv-stage-bg-' + item.id" class="cv-stage__layer" :style="{ backgroundImage: 'url(' + item.url + ')'}" :class="{active: item.id === active}" >
+            <div v-for="(item, index) in activeItems" :key="'cv-stage-bg-' + item.id" class="cv-stage__layer" :style="{ backgroundImage: 'url(' + item.url + ')'}" :class="{active: item.id === active, 'on-top': isOnTop(item.id) }" >
                 <div class="cv-stage__overlay" slot="overlay"></div>
-            </div>
-            <div v-for="item in stageItems" :key="'cv-stage-content-' + item.id" class="cv-stage-content" :class="{'cv-stage-content--active': item.id === active}" >
-                <div class="cv-stage-content__title-wrapper">
-                    <p class="cv-stage-content__title">{{ item.text }}</p>
+                <div class="cv-stage-content" :class="{'cv-stage-content--active': item.id === active}" >
+                    <div class="cv-stage-content__title-wrapper">
+                        <p class="cv-stage-content__title">{{ item.text }}</p>
+                    </div>
+                    <p>{{ item.url }}</p>
                 </div>
-                <p>{{ item.url }}</p>
             </div>
+            <!-- <div v-for="item in stageItems" :key="'cv-stage-content-' + item.id" class="cv-stage-content" :class="{'cv-stage-content--active': item.id === active}" -->
         </div>
         <div class="cv-stage__controls">
             <slot name="overlay">
-                <button v-for="item in stageItems" @click="active = item.id">{{item.id}}</button>
+                <button @click="slide(true)">{{"<"}}</button>
+                <button @click="slide()">{{">"}}</button>
             </slot>
         </div>
     </section>
 </template>
 
 <script>
+// , 'underlying-visible': item.id === active-1
 export default {
     props: {
         items: {
@@ -31,6 +34,31 @@ export default {
             stageItems: [],
             active: 0,
         };
+    },
+    methods: {
+        slide(prev = false) {
+            if (prev) {
+                if (this.active > 0) {
+                    this.active--;
+                }
+                return;
+            } 
+            
+            if(this.active + 1 < this.stageItems.length) {
+                this.active = this.active + 1;
+            }
+        },
+        isOnTop(index) {
+            console.log('isTop');
+            return index > this.active;
+        }
+    },
+    computed: {
+       activeItems() {
+           return this.stageItems.filter((item) => {
+               return item.id <= this.active + 1; // || item.id === this.active + 1 || item.id === this.active - 1;
+           })
+       }
     },
     mounted: function() {
         console.log('item string', this.items);
@@ -60,6 +88,8 @@ export default {
     width: 100%;
     background: #d2182e;
     position: relative;
+    overflow: hidden;
+    
     --opacity-transiiton: opacity 0.3s ease-in;
 }
 
@@ -106,13 +136,44 @@ export default {
     background-position: center center;
     background-size: cover;
     filter: saturate(85%) contrast(90%);
-    opacity: 0;
-    transition: var(--opacity-transiiton);
+    opacity: 1;
+    // transition: var(--opacity-transiiton);
+    transition: transform .3s ease-out, opacity .3s ease-out;
+    transform: scale(1) translateX(0);
+    will-change: transform, opacity;
+    // animation-direction: reverse;
+    // animation-duration: 0.5s;
+}
+
+.cv-stage__layer.underlying-visible {
+    opacity: 1;
 }
 
 .cv-stage__layer.active {
-    z-index: 5;
+    // z-index: 5;
     opacity: 1;
+    transform: scale(1) translateX(0);
+    // animation-name: slideFromTop;
+}
+
+.cv-stage__layer.on-top {
+    // z-index: 5;
+    transform: translateX(100px); //scale(1.05) 
+    opacity: 0;
+    // visibility: hidden;
+}
+
+@keyframes slideFromTop {
+    0% {
+        opacity: 0;
+        transform: scale(1.1) translateX(150px);
+    }
+    40% {
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1) translateX(0);
+    }
 }
 
 .cv-stage-content {
@@ -121,9 +182,14 @@ export default {
     top: 70px;
     z-index: 50;
     color: #fff;
-    font-family: 'Open Sans', 'sans-serif';
-    transition: var(--opacity-transiiton);
+    font-family: 'Open Sans', sans-serif;
+    transition: opacity .2s ease-out, transform .3s ease-out;
+    transform: translateX(150px);
     opacity: 0;
+}
+
+.cv-stage__layer.on-top .cv-stage-content {
+    transform: translateX(-150px);
 }
 
 .cv-stage-content__title-wrapper {
@@ -156,6 +222,7 @@ export default {
 
 .cv-stage-content--active {
     opacity: 1;
+    transform: translateX(0);
 }
 
 .cv-stage__controls {

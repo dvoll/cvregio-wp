@@ -24,7 +24,7 @@ function cv_blocks_loader() {
 	/**
 	 * Load the blocks functionality
 	 */
-	require_once plugin_dir_path( __FILE__ ) . 'wordpress/src/init.php';
+	require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
 
 	/**
 	 * Load Getting Started page
@@ -39,7 +39,7 @@ function cv_blocks_loader() {
 	/**
 	 * Load Post Grid PHP
 	 */
-	require_once plugin_dir_path( __FILE__ ) . 'wordpress/src/blocks/block-stage/index.php';
+	require_once plugin_dir_path( __FILE__ ) . 'src/blocks/block-stage/index.php';
 }
 add_action( 'plugins_loaded', 'cv_blocks_loader' );
 
@@ -57,7 +57,7 @@ function cv_blocks_frontend_loader() { // phpcs:ignore
 
 	// wp_register_script('cv-frontend-components', plugins_url( 'frontend/dist/js', dirname( __FILE__ )), array(), '1.0', true );  
 	// wp_enqueue_script('cv-frontend-components');  
-	require_once plugin_dir_path( __FILE__ ) . 'frontend/frontend.php';
+	require_once plugin_dir_path( __FILE__ ) . 'frontend-include.php';
 }
 
 // Hook: Frontend assets.

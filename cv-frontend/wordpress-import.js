@@ -1,7 +1,9 @@
 // @ts-check
-// const fs = require("fs");
 
 const fsp = require("fs").promises;
+
+const pluginDir = "cv-blocks/libs/";
+const themeDir = "cv-regio-theme";
 
 const fileStart = `<?php
 /* generated */
@@ -23,25 +25,29 @@ async function wpImport() {
     const cssFiles = await fsp.readdir("./dist/css");
 
     const jsFileListString = jsFiles.reduce((prev, curr, index) => {
+      fsp.copyFile('./dist/js/' + curr, './../plugins/cv-blocks/libs/' + curr)
+        .then(() => console.log('copied ' + curr));
       const enqueueString = `
-wp_register_script('cv-blocks-frontend-js-${index}', plugins_url( 'frontend/dist/js/${curr}', dirname( __FILE__ )), array(), '1.0', true );
+wp_register_script('cv-blocks-frontend-js-${index}', plugins_url( 'cv-blocks/libs/${curr}', dirname( __FILE__ )), array(), '1.0', true );
 wp_enqueue_script('cv-blocks-frontend-js-${index}');  
       `;
       return (prev += enqueueString);
     }, "");
 
     const cssFileListString = cssFiles.reduce((prev, curr, index) => {
+      fsp.copyFile('./dist/css/' + curr, './../plugins/cv-blocks/libs/' + curr)
+        .then(() => console.log('copied ' + curr));
       const enqueueString = `
 wp_enqueue_style(
   'cv-blocks-frontend-css-${index}',
-  plugins_url( 'frontend/dist/css/${curr}', dirname( __FILE__ ) ),
+  plugins_url( 'cv-blocks/libs/${curr}', dirname( __FILE__ ) ),
   array( 'wp-editor' )
 );
       `;
       return (prev += enqueueString);
     }, "");
 
-    await fsp.writeFile("./frontend.php", fileStart + jsFileListString + cssFileListString);
+    await fsp.writeFile("./../plugins/cv-blocks/frontend-include.php", fileStart + jsFileListString + cssFileListString);
 
     console.log("Wordpress import successfull.");
   } catch (error) {
