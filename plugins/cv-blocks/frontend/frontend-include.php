@@ -19,7 +19,7 @@ wp_enqueue_style(
   array( 'wp-editor' )
 );
   
-wp_enqueue_script('cv-frontend-app-js', plugins_url( 'frontend/app.15319bcf.js', dirname( __FILE__ )), array(), '1.0', true );
+wp_enqueue_script('cv-frontend-app-js', plugins_url( 'frontend/app.2747fcf8.js', dirname( __FILE__ )), array(), '1.0', true );
   
 wp_register_script('cv-frontend-vendor-js', plugins_url( 'frontend/chunk-vendors.393dc42f.js', dirname( __FILE__ )), array(), '1.0', true );
 wp_enqueue_script('cv-frontend-vendor-js');

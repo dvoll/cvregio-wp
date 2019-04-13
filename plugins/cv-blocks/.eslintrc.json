@@ -45,7 +45,7 @@
 		"eol-last": "error",
 		"eqeqeq": "error",
 		"func-call-spacing": "error",
-		"indent": ["error", "tab", { "SwitchCase": 1 }],
+		"indent": ["error", 4, { "SwitchCase": 1 }],
 		"jsx-a11y/label-has-for": [
 			"error",
 			{
@@ -86,8 +86,7 @@
 		"no-restricted-syntax": [
 			"error",
 			{
-				"selector":
-					"ImportDeclaration[source.value=/^@wordpress\\u002F.+\\u002F/]",
+				"selector": "ImportDeclaration[source.value=/^@wordpress\\u002F.+\\u002F/]",
 				"message": "Path access on WordPress dependencies is not allowed."
 			},
 			{
@@ -123,18 +122,15 @@
 				"message": "Use @wordpress/utils as import path instead."
 			},
 			{
-				"selector":
-					"CallExpression[callee.name=/^__|_n|_x$/]:not([arguments.0.type=/^Literal|BinaryExpression$/])",
+				"selector": "CallExpression[callee.name=/^__|_n|_x$/]:not([arguments.0.type=/^Literal|BinaryExpression$/])",
 				"message": "Translate function arguments must be string literals."
 			},
 			{
-				"selector":
-					"CallExpression[callee.name=/^_n|_x$/]:not([arguments.1.type=/^Literal|BinaryExpression$/])",
+				"selector": "CallExpression[callee.name=/^_n|_x$/]:not([arguments.1.type=/^Literal|BinaryExpression$/])",
 				"message": "Translate function arguments must be string literals."
 			},
 			{
-				"selector":
-					"CallExpression[callee.name=_nx]:not([arguments.2.type=/^Literal|BinaryExpression$/])",
+				"selector": "CallExpression[callee.name=_nx]:not([arguments.2.type=/^Literal|BinaryExpression$/])",
 				"message": "Translate function arguments must be string literals."
 			}
 		],
@@ -163,8 +159,8 @@
 			}
 		],
 		"react/jsx-equals-spacing": "error",
-		"react/jsx-indent": ["error", "tab"],
-		"react/jsx-indent-props": ["error", "tab"],
+		"react/jsx-indent": ["error", 4],
+		"react/jsx-indent-props": ["error", 4],
 		"react/jsx-key": "error",
 		"react/jsx-tag-spacing": "error",
 		"react/no-children-prop": "off",

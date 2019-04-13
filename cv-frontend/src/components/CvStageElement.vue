@@ -1,5 +1,5 @@
 <template>
-    <section class="cv-stage">
+    <div class="cv-stage">
         <swiper :options="swiperOptions">
             <swiper-slide
                 class="cv-stage__layer"
@@ -24,7 +24,7 @@
             <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
             <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
         </swiper>
-    </section>
+    </div>
 </template>
 
 <script>

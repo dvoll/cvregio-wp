@@ -10,4 +10,5 @@
  */
 
 // import "./blocks/block-cgb/block.js";
-import "./blocks/block-stage";
+import './blocks/block-stage-item';
+import './blocks/block-stage';
