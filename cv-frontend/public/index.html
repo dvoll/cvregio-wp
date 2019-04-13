@@ -1,65 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>frontend</title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but frontend doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <cv-stage>
-      <div class="cv-stage-item">
-        <p class="cv-stage-item__text">Rauchfang</p>
-        <p class="cv-stage-item__url">./placeholder/01.jpg</p>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <title>frontend</title>
+  <link rel="stylesheet" id="atomic-blocks-style-css" href="./wp-styles/atomic-blocks.style.css" type="text/css"
+    media="all">
+</head>
+
+<body>
+  <noscript>
+    <strong>We're sorry but frontend doesn't work properly without JavaScript enabled. Please enable it to
+      continue.</strong>
+  </noscript>
+  <div id="app"></div>
+  <div id="cv-frontend-raw">
+    <cv-stage class="cv-stage">
+      <div class="cv-stage__layer cv-stage-item">
+        <div class="cv-stage-item__bg"></div>
+        <div class="cv-stage__overlay"></div>
+        <div class="cv-stage-content">
+          <p class="cv-stage-content__title cv-stage-item__title">Willkommen in Rauchfang</p>
+          <p class="cv-stage-content__text cv-stage-item__text">{item.text}</p>
+          <p class="cv-stage-content__url cv-stage-item__url">./placeholder/01.jpg</p>
+        </div>
       </div>
-      <div class="cv-stage-item">
-        <p class="cv-stage-item__text">Zeltlager&#13;2019</p>
-        <p class="cv-stage-item__url">./placeholder/02.jpg</p>
-      </div>
-      </div>
-      <div class="cv-stage-item">
-        <p class="cv-stage-item__text">Martinssinger&#13;Spenden an &#13;Lichtblicke</p>
-        <p class="cv-stage-item__url">./placeholder/03.jpg</p>
-      </div>
-      <div class="cv-stage-item">
-        <p class="cv-stage-item__text">Tannenbaum-&#13;Aktion</p>
-        <p class="cv-stage-item__url">./placeholder/04.jpg</p>
-      </div>
-      <div class="cv-stage-item">
-        <p class="cv-stage-item__text">Rauchfang</p>
-        <p class="cv-stage-item__url">./placeholder/05.jpg</p>
-      </div>
-      <div class="cv-stage-item">
-        <p class="cv-stage-item__text">Zeltlager&#13;2019</p>
-        <p class="cv-stage-item__url">./placeholder/06.jpeg</p>
-      </div>
-      </div>
-      <div class="cv-stage-item">
-        <p class="cv-stage-item__text">Martinssinger&#13;Spenden an &#13;Lichtblicke</p>
-        <p class="cv-stage-item__url">./placeholder/07.jpeg</p>
-      </div>
-      <div class="cv-stage-item">
-        <p class="cv-stage-item__text">Tannenbaum-&#13;Aktion</p>
-        <p class="cv-stage-item__url">./placeholder/08.jpg</p>
-      </div>
-      <div class="cv-stage-item">
-        <p class="cv-stage-item__text">Zeltlager&#13;2019</p>
-        <p class="cv-stage-item__url">./placeholder/09.jpg</p>
-      </div>
-      </div>
-      <div class="cv-stage-item">
-        <p class="cv-stage-item__text">Martinssinger&#13;Spenden an &#13;Lichtblicke</p>
-        <p class="cv-stage-item__url">./placeholder/10.jpg</p>
-      </div>
-      <div class="cv-stage-item">
-        <p class="cv-stage-item__text">Tannenbaum-&#13;Aktion</p>
-        <p class="cv-stage-item__url">./placeholder/11.jpg</p>
-      </div>
+      <!-- <div class="cv-stage-item">
+          <p class="cv-stage-item__title">Zeltlager&#13;2019</p>
+          <p class="cv-stage-item__text">Zeltlager&#13;2019</p>
+          <p class="cv-stage-item__url">./placeholder/02.jpg</p>
+        </div>
+        <div class="cv-stage-item">
+          <p class="cv-stage-item__title">Martinssinger&#13;Spenden an &#13;Lichtblicke</p>
+          <p class="cv-stage-item__text">Martinssinger&#13;Spenden an &#13;Lichtblicke</p>
+          <p class="cv-stage-item__url">./placeholder/03.jpg</p>
+        </div>
+        <div class="cv-stage-item">
+          <p class="cv-stage-item__title">Tannenbaum-&#13;Aktion</p>
+          <p class="cv-stage-item__text">Tannenbaum-&#13;Aktion</p>
+          <p class="cv-stage-item__url">./placeholder/04.jpg</p>
+        </div>
+        <div class="cv-stage-item">
+          <p class="cv-stage-item__title">Rauchfang</p>
+          <p class="cv-stage-item__text">Rauchfang</p>
+          <p class="cv-stage-item__url">./placeholder/05.jpg</p>
+        </div>
+        <div class="cv-stage-item">
+          <p class="cv-stage-item__title">Zeltlager&#13;2019</p>
+          <p class="cv-stage-item__text">Zeltlager&#13;2019</p>
+          <p class="cv-stage-item__url">./placeholder/06.jpeg</p>
+        </div>
+        <div class="cv-stage-item">
+          <p class="cv-stage-item__title">Martinssinger&#13;Spenden an &#13;Lichtblicke</p>
+          <p class="cv-stage-item__text">Martinssinger&#13;Spenden an &#13;Lichtblicke</p>
+          <p class="cv-stage-item__url">./placeholder/07.jpeg</p>
+        </div>
+        <div class="cv-stage-item">
+          <p class="cv-stage-item__title">Tannenbaum-&#13;Aktion</p>
+          <p class="cv-stage-item__text">Tannenbaum-&#13;Aktion</p>
+          <p class="cv-stage-item__url">./placeholder/08.jpg</p>
+        </div>
+        <div class="cv-stage-item">
+          <p class="cv-stage-item__title">Zeltlager&#13;2019</p>
+          <p class="cv-stage-item__text">Zeltlager&#13;2019</p>
+          <p class="cv-stage-item__url">./placeholder/09.jpg</p>
+        </div>
+        <div class="cv-stage-item">
+          <p class="cv-stage-item__title">Martinssinger&#13;Spenden an &#13;Lichtblicke</p>
+          <p class="cv-stage-item__text">Martinssinger&#13;Spenden an &#13;Lichtblicke</p>
+          <p class="cv-stage-item__url">./placeholder/10.jpg</p>
+        </div>
+        <div class="cv-stage-item">
+          <p class="cv-stage-item__title">Tannenbaum-&#13;Aktion</p>
+          <p class="cv-stage-item__text">Tannenbaum-&#13;Aktion</p>
+          <p class="cv-stage-item__url">./placeholder/11.jpg</p>
+        </div> -->
     </cv-stage>
-    <!-- built files will be auto injected -->
-  </body>
+  </div>
+  <!-- built files will be auto injected -->
+</body>
+
 </html>

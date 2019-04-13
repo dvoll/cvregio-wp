@@ -57,7 +57,7 @@ function cv_blocks_frontend_loader() { // phpcs:ignore
 
 	// wp_register_script('cv-frontend-components', plugins_url( 'frontend/dist/js', dirname( __FILE__ )), array(), '1.0', true );  
 	// wp_enqueue_script('cv-frontend-components');  
-	require_once plugin_dir_path( __FILE__ ) . 'frontend-include.php';
+	require_once plugin_dir_path( __FILE__ ) . '/frontend/frontend-include.php';
 }
 
 // Hook: Frontend assets.

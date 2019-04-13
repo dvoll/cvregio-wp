@@ -9,10 +9,10 @@
       "request": "launch",
       "name": "Frontend: Launch Chrome against localhost",
       "url": "http://localhost:8080",
-      "webRoot": "${workspaceFolder}/frontend/src",
+      "webRoot": "${workspaceFolder}/cv-frontend/src",
       "breakOnLoad": true,
       "sourceMapPathOverrides": {
-        "webpack:///./src/*": "${webRoot}/*"
+        "webpack:///src/*": "${webRoot}/*"
       }
     }
   ]

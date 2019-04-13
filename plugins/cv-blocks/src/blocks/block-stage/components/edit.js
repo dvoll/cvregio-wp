@@ -53,22 +53,38 @@ export default class StageEditBlock extends Component {
         const stageItemList = items.map(item => {
             return (
                 <div>
-                    <p>{item.text}</p>
+                    <div className="cv-stage__layer cv-stage-item">
+                        <div className="cv-stage-item__bg" style={{backgroundImage: 'url(' + item.url + ')'}}></div>
+                        <div className="cv-stage__overlay"></div>
+                        <div className="cv-stage-content">
+                            <p className="cv-stage-content__title cv-stage-item__title">{item.title}</p>
+                            <p className="cv-stage-content__text cv-stage-item__text">{item.text}</p>
+                            <p className="cv-stage-content__url cv-stage-item__url">{item.text + "123"}</p>
+                        </div>
+                    </div>
                     <MediaUpload
                         buttonProps={ {
                             className: 'change-image'
                         } }
-                        onSelect={ ( img ) => setAttributes(
+                        onSelect={ ( img ) => {
+                            console.log('img', img);
+                            const newItems = items.map((filterItem) => {
+                                if (item.title === filterItem.title) {
+                                    item.url = img.url;
+                                }
+                                return filterItem;
+                            })
+                            setAttributes(
                             {
-                                items: [...items, {...item, url: 'neu'}]
-                            }
-                        ) }
+                                items: newItems
+                            })
+                        }}
                         allowed={ [ 'image' ] }
                         type="image"
                         value={ item.url }
                         render={ ( { open } ) => (
                             <Button onClick={ open }>
-                                { ! item.url ? 'icons.upload' : null}
+                                { ! item.url ? 'Bild auswählen' : null}
                             </Button>
                         ) }
                     >
@@ -96,12 +112,15 @@ export default class StageEditBlock extends Component {
                             items: [
                                 ...items,
                                 {
+                                    title: "Zeltlager 2019",
                                     text: "Das ist ein ELement."
                                 },
                                 {
+                                    title: "Zeltlager 2018",
                                     text: "Das ist ein ELement2."
                                 },
                                 {
+                                    title: "Zeltlager 2017",
                                     text: "Das ist ein ELement3."
                                 }
                             ]
@@ -110,8 +129,8 @@ export default class StageEditBlock extends Component {
                 >
                     Element hinzufügen
                 </Button>
-                <section className={this.props.className + " cv-stage alignfull"}>
-                    <p>{stageItemList}</p>
+                <section className={this.props.className + " cv-stage-edit alignfull"}>
+                    {stageItemList}
                     {/* <MyModal></MyModal> */}
                 </section>
             </Fragment>

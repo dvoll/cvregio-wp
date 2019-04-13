@@ -1,55 +1,64 @@
-.cv-stage {
-    height: 500px;
-    width: 100%;
-    background: #D2182E;
-    position: relative;
+
+.cv-stage-item {
+    background: #d2182e;
 }
 
-.cv-stage__overlay {
-    position: absolute;
-    left: 0;
-    top: 0;
-    z-index: 10;
-    height: 100%;
-    width: 100%;
-    background: 
-        linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%),
-        radial-gradient(
-            circle at bottom left,
-            rgba(0,0,0,0.2),
-            rgba(0,0,0,0) 80%
-        );
-}
 
-// .cv-stage__overlay::before {
+
+
+
+// .cv-stage {
+//     height: 500px;
+//     width: 100%;
+//     background: #D2182E;
+//     position: relative;
+// }
+
+// .cv-stage__overlay {
 //     position: absolute;
 //     left: 0;
 //     top: 0;
-//     z-index: 20;
-//     // background: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
-//     background-image:
+//     z-index: 10;
+//     height: 100%;
+//     width: 100%;
+//     background: 
+//         linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%),
 //         radial-gradient(
 //             circle at bottom left,
-//             rgba(0,0,0,0.4),
-//             rgba(0,0,0,0) 50%
+//             rgba(0,0,0,0.2),
+//             rgba(0,0,0,0) 80%
 //         );
 // }
 
-.cv-stage__layer {
-    width: 100%;
-    height: 100%;
-    background-image: url('./cc02.jpg');
-    background-position: center center;
-    background-size: cover;
-    filter: saturate(85%) contrast(90%);
-}
+// // .cv-stage__overlay::before {
+// //     position: absolute;
+// //     left: 0;
+// //     top: 0;
+// //     z-index: 20;
+// //     // background: linear-gradient(90deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0) 100%);
+// //     background-image:
+// //         radial-gradient(
+// //             circle at bottom left,
+// //             rgba(0,0,0,0.4),
+// //             rgba(0,0,0,0) 50%
+// //         );
+// // }
 
-.cv-stage__text {
-    position: absolute;
-    left: 20px;
-    top: 60px;
-    z-index: 50;
-    font-weight: bold bolder;
-    font-size: 6rem;
-    color: #fff;
-}
+// .cv-stage__layer {
+//     width: 100%;
+//     height: 100%;
+//     background-image: url('./cc02.jpg');
+//     background-position: center center;
+//     background-size: cover;
+//     filter: saturate(85%) contrast(90%);
+// }
+
+// .cv-stage__text {
+//     position: absolute;
+//     left: 20px;
+//     top: 60px;
+//     z-index: 50;
+//     font-weight: bold bolder;
+//     font-size: 6rem;
+//     color: #fff;
+// }

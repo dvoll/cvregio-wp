@@ -36,6 +36,16 @@ registerBlockType("cv-blocks/cv-stage", {
 					type: "string",
 					source: "text",
 					selector: ".cv-stage-item__text"
+				},
+				title: {
+					type: "string",
+					source: "text",
+					selector: ".cv-stage-item__title"
+				},
+				url: {
+					type: "string",
+					source: "text",
+					selector: ".cv-stage-item__url"
 				}
 			}
 		}
@@ -54,11 +64,14 @@ registerBlockType("cv-blocks/cv-stage", {
 		const { items } = props.attributes;
 		const itemList = items.map(item => {
 			return (
-				<div className="cv-stage-item">
-					<p className="cv-stage-item__text">{item.text}</p>
-					<p className="cv-stage-item__url">{item.text + "123"}</p>
-					<p className="cv-stage-item__url2">{item.text + "123"}</p>
-					<p className="cv-stage-item__url3">{item.text + "123"}</p>
+				<div className="cv-stage__layer cv-stage-item" >
+					<div className="cv-stage-item__bg"></div>
+					<div className="cv-stage__overlay"></div>
+					<div className="cv-stage-content">
+						<p className="cv-stage-content__title cv-stage-item__title">{item.title}</p>
+						<p className="cv-stage-content__text cv-stage-item__text">{item.text}</p>
+						<p className="cv-stage-content__url cv-stage-item__url">{item.url}</p>
+					</div>
 				</div>
 			);
 		});

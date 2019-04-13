@@ -5,7 +5,7 @@ const fsp = require("fs").promises;
 const pluginDir = "cv-blocks/libs/";
 const themeDir = "cv-regio-theme";
 
-const fileStart = `<?php
+let fileContent = `<?php
 /* generated */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,62 +13,95 @@ if ( ! defined( 'ABSPATH' ) ) {
 } \n
 `;
 
-async function wpImport() {
-  console.log("Start Wordpress import.");
+/**
+ * @param {string} name
+ * @param {string} type TOOD: add source map option sourceMap = false
+ * @param {string} dist
+ */
+async function getFileAndCopy(name, type, dist) {
+  const fileExp = new RegExp(name + '\\.\\w*\\.'+ type + '$');
+  const dir = './dist/' + type;
+  try {
+    let files = await fsp.readdir(dir);
+    const file = files.filter(file => {
+      return file.match(fileExp);
+    })[0];
+    await fsp.copyFile('./dist/' + type + '/' + file, dist + file);
+    return file;
+  } catch(err) {
+    console.error('Error on file read and copy: ', err);
+    return;
+  }
+  return;
+}
+
+/**
+ * @param {string} content
+ */
+async function writeFile(content) {
+  const appDist = 'frontend/';
+  const pluginDir = './../plugins/cv-blocks/';
 
   try {
-    let jsFiles = await fsp.readdir("./dist/js");
-    jsFiles = jsFiles.filter(file => {
-      return file.match(/\.js$/);
+    await fsp.mkdir(pluginDir + appDist);
+    console.log('Direction cleaned');
+  } catch {
+    console.log('Direction frontend already exsits');
+  }
+  try {
+    let files = await fsp.readdir(pluginDir + appDist);
+    files.forEach(async file => {
+      try {
+        await fsp.unlink(pluginDir + appDist + file);
+      } catch(err) {
+        console.error('Error on deleting file ' + file + ': ', err);
+      }
     });
-
-    const cssFiles = await fsp.readdir("./dist/css");
-
-    const jsFileListString = jsFiles.reduce((prev, curr, index) => {
-      fsp.copyFile('./dist/js/' + curr, './../plugins/cv-blocks/libs/' + curr)
-        .then(() => console.log('copied ' + curr));
-      const enqueueString = `
-wp_register_script('cv-blocks-frontend-js-${index}', plugins_url( 'cv-blocks/libs/${curr}', dirname( __FILE__ )), array(), '1.0', true );
-wp_enqueue_script('cv-blocks-frontend-js-${index}');  
-      `;
-      return (prev += enqueueString);
-    }, "");
-
-    const cssFileListString = cssFiles.reduce((prev, curr, index) => {
-      fsp.copyFile('./dist/css/' + curr, './../plugins/cv-blocks/libs/' + curr)
-        .then(() => console.log('copied ' + curr));
-      const enqueueString = `
-wp_enqueue_style(
-  'cv-blocks-frontend-css-${index}',
-  plugins_url( 'cv-blocks/libs/${curr}', dirname( __FILE__ ) ),
+    console.log('Direction cleaned');
+    
+  } catch(err) {
+    console.error('Error clearing dir: ', err);
+  }
+  
+  const vendorCss = await getFileAndCopy('chunk-vendors', 'css', pluginDir + appDist);
+  content +=`
+wp_register_style(
+  'cv-frontend-vendor-css',
+  plugins_url( '${appDist + vendorCss}', dirname( __FILE__ ) ),
   array( 'wp-editor' )
 );
-      `;
-      return (prev += enqueueString);
-    }, "");
+wp_enqueue_style('cv-frontend-vendor-css');
+  `;
+  
+  const appCss = await getFileAndCopy('app', 'css', pluginDir + appDist);
+  content +=`
+wp_enqueue_style(
+  'cv-frontend-app-css',
+  plugins_url( '${appDist + appCss}', dirname( __FILE__ ) ),
+  array( 'wp-editor' )
+);
+  `;
+      
+  const appJs = await getFileAndCopy('app', 'js', pluginDir + appDist);
+  content +=`
+wp_enqueue_script('cv-frontend-app-js', plugins_url( '${appDist + appJs}', dirname( __FILE__ )), array(), '1.0', true );
+  `;
+  
+  const vendorJs = await getFileAndCopy('chunk-vendors', 'js', pluginDir + appDist);
+  content += `
+wp_register_script('cv-frontend-vendor-js', plugins_url( '${appDist + vendorJs}', dirname( __FILE__ )), array(), '1.0', true );
+wp_enqueue_script('cv-frontend-vendor-js');
+  `;
 
-    await fsp.writeFile("./../plugins/cv-blocks/frontend-include.php", fileStart + jsFileListString + cssFileListString);
-
-    console.log("Wordpress import successfull.");
-  } catch (error) {
-    console.error("Wordpress import error", error);
+  try {
+    await fsp.writeFile( pluginDir + appDist + "frontend-include.php", content);
+    console.log("Write app file successfull.");
+  } catch(err) {
+    console.error('Error on writing file: ', err);
   }
 }
 
-wpImport();
+writeFile(fileContent);
+//#region app
 
-// fs.readdirSync("./dist/js").forEach(file => {
-//   console.log(file);
-//   files.push(file);
-// });
-
-// const fileEnd = '';
-
-// fs.writeFile("./frontend.php", fileStart + fileSlistString, err => {
-//   if (err) {
-//     console.error("Wordpress import error", err);
-//     return;
-//   }
-
-//   console.log("Wordpress import sucessfull.");
-// });
+//#endregion app
