@@ -35,6 +35,13 @@ registerBlockType( 'cv-blocks/cv-stage', {
     // 	}
     // },
 
+    getEditWrapperProps() {
+        // if ( 'left' === containerWidth || 'right' === containerWidth || 'full' === containerWidth ) {
+        // 	return { 'data-align': containerWidth };
+        // }
+        return { 'data-align': 'full' };
+    },
+
     edit,
 
     save: function( props ) {

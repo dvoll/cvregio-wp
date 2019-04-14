@@ -1,6 +1,12 @@
 
 .cv-stage {
-    
+}
+
+.editor-styles-wrapper .wp-block[data-type="cv-blocks/cv-stage-item"]  {
+    max-width: unset;
+    // min-width: 90%;
+    // margin: 0 auto;
+    // transform: scale(0.8);
 }
 
 .cv-stage-edit__modal {
@@ -9,9 +15,8 @@
 
 .cv-stage-item.cv-stage-edit-item {
     width: 100%;
-    height: 350px; 
+    height: 500px; 
     min-height: 50px;
-    border: 1px solid red;
 }
 
 .cv-stage-edit {

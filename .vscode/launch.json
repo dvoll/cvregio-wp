@@ -8,7 +8,7 @@
       "type": "chrome",
       "request": "launch",
       "name": "Frontend: Launch Chrome against localhost",
-      "url": "http://localhost:8080",
+      "url": "http://localhost:8080/dev",
       "webRoot": "${workspaceFolder}/cv-frontend/src",
       "breakOnLoad": true,
       "sourceMapPathOverrides": {

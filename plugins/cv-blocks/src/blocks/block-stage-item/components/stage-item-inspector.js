@@ -100,15 +100,15 @@ export default class StageItemInspector extends Component {
                             }
                         />
                     ) }
-                    { attributes.text && (
+                    { attributes.description && (
                         <TextareaControl
                             label="Beschreibungs-/Infotext"
                             rows="8"
                             // help="Enter some text"
-                            value={ attributes.text }
+                            value={ attributes.description }
                             onChange={ value =>
                                 this.props.setAttributes( {
-                                    text: value,
+                                    description: value,
                                 } )
                             }
                         />
@@ -124,7 +124,7 @@ export default class StageItemInspector extends Component {
                     />
                     <MediaUpload
                         buttonProps={ {
-                            className: 'change-image',
+                            className: 'change-image button-default',
                         } }
                         onSelect={ img => {
                             setAttributes( {
@@ -135,12 +135,23 @@ export default class StageItemInspector extends Component {
                         type="image"
                         value={ attributes.url }
                         render={ ( { open } ) => (
-                            <Button onClick={ open }>
+                            <Button isDefault onClick={ open }>
                                 { ! attributes.url ?
                                     'Bild auswählen' :
                                     'Bild ändern' }
                             </Button>
                         ) }
+                    />
+                    <RangeControl
+                        label={ 'Helligkeit des Hintergrundes' }
+                        value={ attributes.brightness }
+                        onChange={ value => {
+                            console.log( 'brightness', value );
+
+                            setAttributes( { brightness: value } );
+                        } }
+                        min={ 50 }
+                        max={ 100 }
                     />
 
                     { /* <SelectControl

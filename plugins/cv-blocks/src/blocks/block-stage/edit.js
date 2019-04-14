@@ -42,6 +42,7 @@ export default class StageEditBlock extends Component {
             <Fragment>
                 <section
                     className={ props.className + ' alignfull dvll-special' }
+                    data-align="full"
                 >
                     <InnerBlocks
                         allowedBlocks={ [ 'cv-blocks/cv-stage-item' ] }
