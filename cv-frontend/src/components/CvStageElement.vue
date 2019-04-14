@@ -6,8 +6,8 @@
                 v-for="item in stageItems"
                 :key="'swiper-item-' + item.id"
             >
+                <!-- data-swiper-parallax="-100" -->
                 <div
-                    data-swiper-parallax="-100"
                     class="cv-stage-item__bg"
                     :style="{ backgroundImage: 'url(' + item.url + ')' }"
                 ></div>
@@ -16,7 +16,7 @@
                     <div class="cv-stage-content__title-wrapper">
                         <p class="cv-stage-content__title">{{ item.title }}</p>
                     </div>
-                    <p>{{ item.text }}</p>
+                    <p class="cv-stage-content__description">{{ item.text }}</p>
                     <p>{{ item.url }}</p>
                 </div>
             </swiper-slide>
@@ -95,6 +95,8 @@ export default {
     overflow: hidden;
 
     --opacity-transiiton: opacity 0.3s ease-in;
+    --headline-font: 'Open Sans', sans-serif;
+    --font: 'Open Sans', sans-serif;
 }
 
 .swiper-container {
@@ -160,9 +162,10 @@ export default {
     position: absolute;
     left: 80px;
     top: 70px;
+    bottom: 20px;
     // z-index: 50;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--headline-font);
     // transition: opacity 0.2s ease-out, transform 0.3s ease-out;
     // transform: translateX(150px);
     // opacity: 0;
@@ -173,21 +176,23 @@ export default {
 }
 
 .cv-stage-content__title-wrapper {
-    height: 140px;
+    min-height: 140px;
     // border: 0.5px solid grey;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 20px;
 }
 
 .cv-stage-content__title {
     position: relative;
     white-space: pre;
     font-weight: bold;
-    font-size: 2.6rem;
-    line-height: 2.6rem;
+    font-size: 4rem;
+    line-height: 4rem;
     text-transform: uppercase;
     margin: 20px 0;
+    max-width: 300px;
 
     &::before {
         content: '';
@@ -200,10 +205,18 @@ export default {
     }
 }
 
+.cv-stage-content__description {
+    font-family: var(--font);
+    max-width: 300px;
+    margin-right: 20px;
+    width: 100%;
+}
+
 .cv-stage-content--active {
     opacity: 1;
     transform: translateX(0);
 }
+
 .cv-stage__controls {
     position: absolute;
     z-index: 55;
