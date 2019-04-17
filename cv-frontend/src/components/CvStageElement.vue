@@ -1,5 +1,4 @@
 <template>
-    <!-- <div class="cv-stage"> -->
     <swiper :options="swiperOptions">
         <swiper-slide
             class="cv-stage__item cv-stage-card"
@@ -8,11 +7,17 @@
             v-html="item.innerHTML"
         >
         </swiper-slide>
-        <div class="swiper-pagination" slot="pagination"></div>
-        <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
-        <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+        <div slot="pagination" class="cv-stage__controls">
+            <div class="swiper-button-prev--custom">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next--custom">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+        </div>
+        <!-- <div class="swiper-button-next swiper-button-white"></div> -->
     </swiper>
-    <!-- </div> -->
 </template>
 
 <script>
@@ -40,8 +45,8 @@ export default {
                     clickable: true,
                 },
                 navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: '.swiper-button-next--custom',
+                    prevEl: '.swiper-button-prev--custom',
                 },
                 parallax: true,
                 effect: 'fade',
@@ -102,9 +107,25 @@ cv-stage {
 
 .cv-stage__controls {
     position: absolute;
-    z-index: 55;
-    bottom: 0;
-    left: 0;
+    z-index: 10;
+    bottom: 10px;
+    left: calc(30px + 5%);
+    color: #fff;
+    display: flex;
+    align-items: center;
+
+    .swiper-pagination {
+        position: relative;
+        padding: 0 10px 6px 10px;
+
+        > * {
+            margin: 0 2px;
+        }
+    }
+
+    .swiper-button-disabled {
+        opacity: 0.2;
+    }
 }
 
 .swiper-pagination-bullet {

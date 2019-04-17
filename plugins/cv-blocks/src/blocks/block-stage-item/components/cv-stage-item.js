@@ -1,11 +1,10 @@
 export default ( { attributes, isEdit = false } ) => {
     const { brightness, title, description, url } = attributes;
-    const classNames =
-		'cv-stage__layer cv-stage-item' + ( isEdit ? ' cv-stage-edit-item' : '' );
+    const classNames = 'cv-stage-card' + ( isEdit ? ' cv-stage-edit-item' : '' );
     return (
         <div className={ classNames } key={ title }>
             <div
-                className="cv-stage-item__bg"
+                className="cv-stage-card__bg"
                 data-background-url={ url }
                 data-brightness={ brightness }
                 style={ {
@@ -13,16 +12,17 @@ export default ( { attributes, isEdit = false } ) => {
                     '--brightness': brightness + '%',
                 } }
             />
-            <div className="cv-stage__overlay" />
-            <div className="cv-stage-content">
-                <div className="cv-stage-content__title-wrapper">
-                    <p className="cv-stage-content__title cv-stage-item__title">
-                        { title }
-                    </p>
+            <div className="cv-stage-card__overlay" />
+            <div className="cv-stage-card__body">
+                <div className="cv-stage-card__title-wrapper">
+                    <p className=" cv-stage-card__title">{ title }</p>
                 </div>
-                <p className="cv-stage-content__description cv-stage-item__description">
-                    { description }
-                </p>
+                <div className="cv-stage-card__description">{ description }</div>
+                <div className="cv-stage-card__link">
+                    <a v-if="item.link" href="/">
+                        { /* { link } */ }
+                    </a>
+                </div>
             </div>
         </div>
     );

@@ -8,19 +8,19 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 wp_register_style(
   'cv-frontend-vendor-css',
-  plugins_url( 'frontend/chunk-vendors.23d90689.css', dirname( __FILE__ ) ),
+  plugins_url( 'frontend/chunk-vendors.3395bf3c.css', dirname( __FILE__ ) ),
   array( 'wp-editor' )
 );
 wp_enqueue_style('cv-frontend-vendor-css');
   
 wp_enqueue_style(
   'cv-frontend-app-css',
-  plugins_url( 'frontend/app.a692fb20.css', dirname( __FILE__ ) ),
+  plugins_url( 'frontend/app.6d470b05.css', dirname( __FILE__ ) ),
   array( 'wp-editor' )
 );
   
-wp_enqueue_script('cv-frontend-app-js', plugins_url( 'frontend/app.1035e7a8.js', dirname( __FILE__ )), array(), '1.0', true );
+wp_enqueue_script('cv-frontend-app-js', plugins_url( 'frontend/app.9a78b37a.js', dirname( __FILE__ )), array(), '1.0', true );
   
-wp_register_script('cv-frontend-vendor-js', plugins_url( 'frontend/chunk-vendors.393dc42f.js', dirname( __FILE__ )), array(), '1.0', true );
+wp_register_script('cv-frontend-vendor-js', plugins_url( 'frontend/chunk-vendors.fc1edfe9.js', dirname( __FILE__ )), array(), '1.0', true );
 wp_enqueue_script('cv-frontend-vendor-js');
   
