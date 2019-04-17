@@ -8,7 +8,7 @@ Vue.use(vueCustomElement);
 
 Vue.customElement('cv-stage', CvStageElement);
 
-if (window.location.toString().match(/test$/)) {
+if (window.location.toString().match(/dev$/)) {
     console.log('match');
     // document.getElementById('cv-frontend-raw').remove();
     new Vue({

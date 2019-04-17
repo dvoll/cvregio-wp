@@ -45,7 +45,7 @@ export default class StageEditBlock extends Component {
                     data-align="full"
                 >
                     <InnerBlocks
-                        allowedBlocks={ [ 'cv-blocks/cv-stage-item' ] }
+                        allowedBlocks={ [] }
                         template={ BLOCKS_TEMPLATE }
                     />
                 </section>

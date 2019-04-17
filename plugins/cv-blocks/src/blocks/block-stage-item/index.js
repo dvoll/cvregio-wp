@@ -52,6 +52,7 @@ registerBlockType( 'cv-blocks/cv-stage-item', {
             source: 'attribute',
             attribute: 'data-brightness',
             selector: '.cv-stage-item__bg',
+            default: '95',
         },
     },
 

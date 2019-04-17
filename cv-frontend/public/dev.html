@@ -11,107 +11,71 @@
     <link rel="stylesheet" href="./dev-initial-styles.css" type="text/css" media="all">
 </head>
 
-<body>
-    <cv-stage>
-        <div class="cv-stage__layer cv-stage-item">
-            <div class="cv-stage-item__bg" data-background-url="./placeholder/04.jpg"></div>
-            <div class="cv-stage__overlay"></div>
-            <div class="cv-stage-content">
-                <p class="cv-stage-content__title cv-stage-item__title">Willkommen beim CVJM Kirchlengern</p>
-                <p class="cv-stage-content__text cv-stage-item__description">Dies ist ein Typoblindtext. An ihm kann man
-                    sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt </p>
+<body style="font-size: 20px">
+    <div id="app"></div>
+    <!-- <cv-stage>
+        <div class="cv-stage__item cv-stage-card">
+            <div class="cv-stage-card__bg" data-background-url="./placeholder/04.jpg"
+                style="background-image: url(./placeholder/04.jpg)"></div>
+            <div class="cv-stage-card__overlay"></div>
+            <div class="cv-stage-card__body">
+                <div class="cv-stage-card__title-wrapper">
+                    <p class=" cv-stage-card__title">Willkommen beim CVJM Kirchlengern</p>
+                </div>
+                <p class="cv-stage-card__description">Dies ist ein Typoblindtext. An ihm
+                    kann man
+                    sehen, ob alle Buchstaben da sind und wie sie aussehen. Manchmal benutzt
+                    <div class="cv-stage-card__link-wrapper">
+                        <a href="/">Link</a>
+                    </div>
+                </p>
             </div>
         </div>
-        <!-- <div class="cv-stage__layer cv-stage-item">
-            <div class="cv-stage-item__bg"></div>
-            <div class="cv-stage__overlay"></div>
-            <div class="cv-stage-content">
-                <p class="cv-stage-content__title cv-stage-item__title">Tannenbaumaktion 2019</p>
-                <p class="cv-stage-content__text cv-stage-item__text">Es gibt im Moment in diese Mannschaft, oh, einige
-                    Spieler vergessen ihnen Profi was sie sind. Ich lese nicht sehr </p>
-                <p class="cv-stage-content__url cv-stage-item__url">./placeholder/03.jpg</p>
+        <div class="cv-stage__item cv-stage-card">
+            <div class="cv-stage-card__bg" data-background-url="./placeholder/02.jpg"
+                style="background-image: url(./placeholder/02.jpg)"></div>
+            <div class="cv-stage-card__overlay"></div>
+            <div class="cv-stage-card__body">
+                <div class="cv-stage-card__title-wrapper">
+                    <p class=" cv-stage-card__title">Martinssinger Spenden an Lichtblicke</p>
+                </div>
+                <p class="cv-stage-card__description">
+                    Es gibt im Moment in diese Mannschaft
+                    <div class="cv-stage-card__link-wrapper">
+                    </div>
+                </p>
             </div>
         </div>
-        <div class="cv-stage__layer cv-stage-item" data-brightness="50">
-            <div class="cv-stage-item__bg"></div>
-            <div class="cv-stage__overlay"></div>
-            <div class="cv-stage-content">
-                <p class="cv-stage-content__title cv-stage-item__title">Martinssinger Spenden an Lichtblicke</p>
-                <p class="cv-stage-content__text cv-stage-item__text">Er hörte leise Schritte hinter sich. Das bedeutete
-                    nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht.</p>
-                <p class="cv-stage-content__url cv-stage-item__url">./placeholder/01.jpg</p>
+        <div class="cv-stage__item cv-stage-card">
+            <div class="cv-stage-card__bg" data-background-url="./placeholder/05.jpg"
+                style="background-image: url(./placeholder/05.jpg)"></div>
+            <div class="cv-stage-card__overlay"></div>
+            <div class="cv-stage-card__body">
+                <div class="cv-stage-card__title-wrapper">
+                    <p class=" cv-stage-card__title">Willkommen beim CVJM Kirchlengern</p>
+                </div>
+                <div class="cv-stage-card__description">Dies ist ein Typoblindtext.
+                    <div class="cv-stage-card__link-wrapper">
+                        <a href="/">Link</a>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="cv-stage-item">
-            <p class="cv-stage-item__title">Rauchfang</p>
-            <p class="cv-stage-item__text">Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind
-                und wie sie aussehen. Manchmal benutzt </p>
-            <p class="cv-stage-item__url">./placeholder/05.jpg</p>
+        <div class="cv-stage__item cv-stage-card">
+            <div class="cv-stage-card__bg" data-background-url="./placeholder/01.jpg"
+                style="background-image: url(./placeholder/01.jpg)"></div>
+            <div class="cv-stage-card__overlay"></div>
+            <div class="cv-stage-card__body">
+                <div class="cv-stage-card__title-wrapper">
+                    <p class=" cv-stage-card__title">Willkommen beim CVJM Kirchlengern</p>
+                </div>
+                <p class="cv-stage-card__description">Dies ist ein Typoblindtext.
+                    <div class="cv-stage-card__link-wrapper">
+                    </div>
+                </p>
+            </div>
         </div>
-        <div class="cv-stage-item">
-            <p class="cv-stage-item__title">Zeltlager&#13;2019</p>
-            <p class="cv-stage-item__text">Dies ist ein Typoblindtext. An ihm kann man sehen, ob alle Buchstaben da sind
-                und wie sie aussehen. Manchmal benutzt </p>
-            <p class="cv-stage-item__url">./placeholder/02.jpg</p>
-        </div>
-        <div class="cv-stage-item">
-            <p class="cv-stage-item__title">
-                Martinssinger&#13;Spenden an &#13;Lichtblicke
-            </p>
-            <p class="cv-stage-item__text">
-                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.
-            </p>
-            <p class="cv-stage-item__url">./placeholder/03.jpg</p>
-        </div>
-        <div class="cv-stage-item">
-            <p class="cv-stage-item__title">Tannenbaum-&#13;Aktion</p>
-            <p class="cv-stage-item__text">Tannenbaum-&#13;Aktion</p>
-            <p class="cv-stage-item__url">./placeholder/04.jpg</p>
-        </div>
-        <div class="cv-stage-item">
-            <p class="cv-stage-item__title">Rauchfang</p>
-            <p class="cv-stage-item__text">Rauchfang</p>
-            <p class="cv-stage-item__url">./placeholder/05.jpg</p>
-        </div>
-        <div class="cv-stage-item">
-            <p class="cv-stage-item__title">Zeltlager&#13;2019</p>
-            <p class="cv-stage-item__text">Zeltlager&#13;2019</p>
-            <p class="cv-stage-item__url">./placeholder/06.jpeg</p>
-        </div>
-        <div class="cv-stage-item">
-            <p class="cv-stage-item__title">
-                Martinssinger&#13;Spenden an &#13;Lichtblicke
-            </p>
-            <p class="cv-stage-item__text">
-                Martinssinger&#13;Spenden an &#13;Lichtblicke
-            </p>
-            <p class="cv-stage-item__url">./placeholder/07.jpeg</p>
-        </div>
-        <div class="cv-stage-item">
-            <p class="cv-stage-item__title">Tannenbaum-&#13;Aktion</p>
-            <p class="cv-stage-item__text">Tannenbaum-&#13;Aktion</p>
-            <p class="cv-stage-item__url">./placeholder/08.jpg</p>
-        </div>
-        <div class="cv-stage-item">
-            <p class="cv-stage-item__title">Zeltlager&#13;2019</p>
-            <p class="cv-stage-item__text">Zeltlager&#13;2019</p>
-            <p class="cv-stage-item__url">./placeholder/09.jpg</p>
-        </div>
-        <div class="cv-stage-item">
-            <p class="cv-stage-item__title">
-                Martinssinger&#13;Spenden an &#13;Lichtblicke
-            </p>
-            <p class="cv-stage-item__text">
-                Martinssinger&#13;Spenden an &#13;Lichtblicke
-            </p>
-            <p class="cv-stage-item__url">./placeholder/10.jpg</p>
-        </div>
-        <div class="cv-stage-item">
-            <p class="cv-stage-item__title">Tannenbaum-&#13;Aktion</p>
-            <p class="cv-stage-item__text">Tannenbaum-&#13;Aktion</p>
-            <p class="cv-stage-item__url">./placeholder/11.jpg</p>
-        </div> -->
-    </cv-stage>
+    </cv-stage> -->
 </body>
 
 </html>
