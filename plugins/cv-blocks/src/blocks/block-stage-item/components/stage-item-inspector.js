@@ -122,29 +122,37 @@ export default class StageItemInspector extends Component {
                             console.log( 'changed', value )
                         }
                     />
-                    <MediaUpload
-                        buttonProps={ {
-                            className: 'change-image button-default',
-                        } }
-                        onSelect={ img => {
-                            setAttributes( {
-                                url: img.url,
-                            } );
-                        } }
-                        allowed={ [ 'image' ] }
-                        type="image"
-                        value={ attributes.url }
-                        render={ ( { open } ) => (
-                            <Button isDefault onClick={ open }>
-                                { ! attributes.url ?
-                                    'Bild auswählen' :
-                                    'Bild ändern' }
-                            </Button>
-                        ) }
-                    />
+                    <p>
+                        <MediaUpload
+                            buttonProps={ {
+                                className: 'change-image button-default',
+                            } }
+                            onSelect={ img => {
+                                setAttributes( {
+                                    url: img.url,
+                                    imgSize: img.filesizeInBytes,
+                                } );
+                            } }
+                            allowed={ [ 'image' ] }
+                            type="image"
+                            value={ attributes.url }
+                            render={ ( { open } ) => (
+                                <Button isDefault onClick={ open }>
+                                    { ! attributes.url ?
+                                        'Bild auswählen' :
+                                        'Bild ändern' }
+                                </Button>
+                            ) }
+                        />
+                        { attributes.imgSize > 400000 ? (
+                            <p style={ { color: '#c21d1d' } }>
+								Das ausgewählte Bild ist sehr groß.
+                            </p>
+                        ) : null }
+                    </p>
                     <RangeControl
                         label={ 'Helligkeit des Hintergrundes' }
-                        value={ attributes.brightness }
+                        value={ +attributes.brightness }
                         onChange={ value => {
                             console.log( 'brightness', value );
 

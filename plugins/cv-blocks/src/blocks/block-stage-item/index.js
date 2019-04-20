@@ -47,6 +47,9 @@ registerBlockType( 'cv-blocks/cv-stage-item', {
             attribute: 'data-background-url',
             selector: '.cv-stage-card__bg',
         },
+        imgSize: {
+            type: 'number',
+        },
         brightness: {
             type: 'string',
             source: 'attribute',
