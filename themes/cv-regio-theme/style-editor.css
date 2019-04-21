@@ -915,6 +915,7 @@ figcaption,
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-size: 0.88889em;
   font-weight: bold;
+  padding: 0.38rem 0.5rem;
 }
 
 .wp-block-button:not(.is-style-outline) .wp-block-button__link {

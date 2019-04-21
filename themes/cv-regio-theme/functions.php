@@ -17,7 +17,7 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7', '<' ) ) {
 	return;
 }
 
-if ( ! function_exists( 'twentynineteen_setup' ) ) :
+if ( ! function_exists( 'cvregiotheme_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -25,7 +25,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function twentynineteen_setup() {
+	function cvregiotheme_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
@@ -174,7 +174,7 @@ if ( ! function_exists( 'twentynineteen_setup' ) ) :
 		add_theme_support( 'responsive-embeds' );
 	}
 endif;
-add_action( 'after_setup_theme', 'twentynineteen_setup' );
+add_action( 'after_setup_theme', 'cvregiotheme_setup' );
 
 /**
  * Register widget area.
