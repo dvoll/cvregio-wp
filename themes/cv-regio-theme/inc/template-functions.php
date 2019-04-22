@@ -225,7 +225,7 @@ function twentynineteen_add_ellipses_to_nav( $nav_menu, $args ) {
 
 	return $nav_menu;
 }
-add_filter( 'wp_nav_menu', 'twentynineteen_add_ellipses_to_nav', 10, 2 );
+// add_filter( 'wp_nav_menu', 'twentynineteen_add_ellipses_to_nav', 10, 2 );
 
 /**
  * WCAG 2.0 Attributes for Dropdown Menus
@@ -337,7 +337,7 @@ function twentynineteen_add_mobile_parent_nav_menu_items( $sorted_menu_items, $a
 
 	return $amended_menu_items;
 }
-add_filter( 'wp_nav_menu_objects', 'twentynineteen_add_mobile_parent_nav_menu_items', 10, 2 );
+// add_filter( 'wp_nav_menu_objects', 'twentynineteen_add_mobile_parent_nav_menu_items', 10, 2 );
 
 /**
  * Convert HSL to HEX colors

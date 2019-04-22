@@ -1,14 +1,23 @@
 <template>
-    <stage></stage>
+    <div>
+        <dev-header></dev-header>
+        <stage></stage>
+        <cv-nav></cv-nav>
+        <br v-for="i in [, , , , , , , , , , , , , , , , , , , , , , , , , , , ,]" />
+    </div>
 </template>
 
 <script>
 import stage from './dev/components/stage.vue';
+import DevHeader from './dev/components/dev-header.vue';
+import CvNav from './components/CvNav.vue';
 
 export default {
     name: 'app',
     components: {
         stage,
+        DevHeader,
+        CvNav,
     },
 };
 </script>
