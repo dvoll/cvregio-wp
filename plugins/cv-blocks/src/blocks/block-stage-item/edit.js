@@ -45,7 +45,11 @@ export default class StageEditBlock extends Component {
                     attributes={ attributes }
                     setAttributes={ setAttributes }
                 />
-                <CvStageItem attributes={ attributes } isEdit={ true } />
+                <CvStageItem
+                    attributes={ attributes }
+                    isEdit={ true }
+                    setAttributes={ setAttributes }
+                />
             </Fragment>
         );
     }

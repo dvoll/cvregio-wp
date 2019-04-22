@@ -82,10 +82,10 @@ export default class StageItemInspector extends Component {
         return (
             <InspectorControls>
                 <PanelBody
-                    title={ 'Homepage Stage Einstellungen' }
+                    title={ 'Hintergrund-Einstellungen' }
                     // className={ isPost ? null : 'atomic-blocks-hide-query' }
                 >
-                    { attributes.title && (
+                    { /* { attributes.title && (
                         <TextControl
                             label={ __(
                                 'Customize Continue Reading Text',
@@ -112,8 +112,8 @@ export default class StageItemInspector extends Component {
                                 } )
                             }
                         />
-                    ) }
-                    <SelectControl
+                    ) } */ }
+                    { /* <SelectControl
                         label={ 'Hintergrundbild' }
                         options={ imageCropOptions }
                         value={ 'full' }
@@ -121,7 +121,7 @@ export default class StageItemInspector extends Component {
                         // this.props.setAttributes( { imageCrop: value } )
                             console.log( 'changed', value )
                         }
-                    />
+                    /> */ }
                     <p>
                         <MediaUpload
                             buttonProps={ {
@@ -154,8 +154,6 @@ export default class StageItemInspector extends Component {
                         label={ 'Helligkeit des Hintergrundes' }
                         value={ +attributes.brightness }
                         onChange={ value => {
-                            console.log( 'brightness', value );
-
                             setAttributes( { brightness: value } );
                         } }
                         min={ 50 }

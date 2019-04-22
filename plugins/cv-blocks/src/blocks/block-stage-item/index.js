@@ -30,15 +30,13 @@ registerBlockType( 'cv-blocks/cv-stage-item', {
 
     attributes: {
         title: {
-            type: 'string',
-            source: 'text',
-            default: 'Headline',
+            type: 'array',
+            source: 'children',
             selector: '.cv-stage-card__title',
         },
         description: {
-            type: 'string',
-            source: 'text',
-            default: 'Beschreibung',
+            type: 'array',
+            source: 'children',
             selector: '.cv-stage-card__description',
         },
         url: {

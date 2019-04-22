@@ -15,7 +15,7 @@ wp_enqueue_style('cv-frontend-vendor-css');
   
 wp_enqueue_style(
   'cv-frontend-app-css',
-  plugins_url( 'frontend/app.6d470b05.css', dirname( __FILE__ ) ),
+  plugins_url( 'frontend/app.2959330d.css', dirname( __FILE__ ) ),
   array( 'wp-editor' )
 );
   

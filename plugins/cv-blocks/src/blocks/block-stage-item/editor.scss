@@ -15,14 +15,15 @@
 
 .cv-stage-item.cv-stage-edit-item {
     width: 100%;
-    height: 500px; 
-    min-height: 50px;
+    // height: 500px; 
+    // min-height: 400px;
 }
 
-.cv-stage-edit {
-    height: auto;
-
-    .cv-stage-item {
-       
-    }
+.cv-stage-card__description {
+    // font-size: 1em !important;
+    display: block;
+}
+.cv-stage-card__title {
+    // font-size: 1em !important;
+    display: block;
 }

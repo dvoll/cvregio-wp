@@ -258,6 +258,7 @@ add_action( 'wp_print_footer_scripts', 'twentynineteen_skip_link_focus_fix' );
 function twentynineteen_editor_customizer_styles() {
 
 	wp_enqueue_style( 'twentynineteen-editor-customizer-styles', get_theme_file_uri( '/style-editor-customizer.css' ), false, '1.1', 'all' );
+	wp_enqueue_style( 'cvregiotheme-block-editor-styles', get_theme_file_uri( '/style-block-editor.css' ), false, '1.1', 'all' );
 
 	if ( 'custom' === get_theme_mod( 'primary_color' ) ) {
 		// Include color patterns.

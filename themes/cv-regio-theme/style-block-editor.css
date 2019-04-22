@@ -1,0 +1,36 @@
+/*!
+Twenty Nineteen Editor Styles
+*/
+/** === Includes === */
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
+/** === Editor Frame === */
+.editor-styles-wrapper h1:before {
+  background: #767676;
+  content: "\020";
+  display: block;
+  height: 2px;
+  margin: 0.5rem 0;
+  width: 1em;
+}
+
+.editor-styles-wrapper h2:before {
+  background: #767676;
+  content: "\020";
+  display: block;
+  height: 2px;
+  margin: 0.5rem 0;
+  width: 1em;
+}

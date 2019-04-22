@@ -1,8 +1,16 @@
-export default ( { attributes, isEdit = false } ) => {
+const {
+    URLInput,
+    BlockControls,
+    BlockAlignmentToolbar,
+    MediaUpload,
+    RichText,
+} = wp.editor;
+
+export default ( { attributes, isEdit = false, setAttributes = null } ) => {
     const { brightness, title, description, url } = attributes;
     const classNames = 'cv-stage-card' + ( isEdit ? ' cv-stage-edit-item' : '' );
     return (
-        <div className={ classNames } key={ title }>
+        <div className={ classNames }>
             <div
                 className="cv-stage-card__bg"
                 data-background-url={ url }
@@ -15,9 +23,57 @@ export default ( { attributes, isEdit = false } ) => {
             <div className="cv-stage-card__overlay" />
             <div className="cv-stage-card__body">
                 <div className="cv-stage-card__title-wrapper">
-                    <p className=" cv-stage-card__title">{ title }</p>
+                    { ! isEdit && (
+                        <RichText.Content
+                            tagName="h2"
+                            className={ 'cv-stage-card__title' }
+                            style={ {
+                                '--title-font-size-factor': '1',
+                            } }
+                            value={ title }
+                        />
+                    ) }
+                    { isEdit && (
+                    // if edit use a span to overcome styling issues
+                        <RichText
+                            tagName="span"
+                            placeholder={ 'Stage Überschrift' }
+                            keepPlaceholderOnFocus
+                            formattingControls={ [] }
+                            value={ title }
+                            className={ 'cv-stage-card__title' }
+                            style={ {
+                                '--title-font-size-factor': '1',
+                            } }
+                            onChange={ value =>
+                                setAttributes( {
+                                    title: value === '<br>' ? '' : value,
+                                } )
+                            }
+                        />
+                    ) }
                 </div>
-                <div className="cv-stage-card__description">{ description }</div>
+                { ! isEdit && (
+                    <RichText.Content
+                        tagName="p"
+                        className={ 'cv-stage-card__description' }
+                        value={ description }
+                    />
+                ) }
+                { isEdit && (
+                // if edit use a span to overcome styling issues
+                    <RichText
+                        tagName="span"
+                        placeholder={ 'Stage Inhalt (optional)' }
+                        keepPlaceholderOnFocus
+                        formattingControls={ [ 'bold' ] }
+                        value={ description }
+                        className={ 'cv-stage-card__description' }
+                        onChange={ value =>
+                            setAttributes( { description: value } )
+                        }
+                    />
+                ) }
                 <div className="cv-stage-card__link">
                     <a v-if="item.link" href="/">
                         { /* { link } */ }
