@@ -1,7 +1,7 @@
 <template>
     <div class="cv-header" :class="{ 'cv-header--small': smallHeader }">
         <div class="cv-header__body">
-            <div class="cv-header__logo"></div>
+            <img class="cv-header__logo" src="../assets/logo-sq.png" />
             <div class="cv-header__title-wrapper">
                 <span class="cv-header__title">{{ title }}</span>
                 <span class="cv-header__subtitle">{{ subtitle }}</span>
@@ -22,7 +22,7 @@
 // @ts-check
 import CvNav from './CvNav.vue';
 
-const initialHeaderHeight = 95;
+// const initialHeaderHeight = 95;
 const smallHeaderHeight = 50;
 const CvHeaderElement = {
     components: {
@@ -92,9 +92,14 @@ export default CvHeaderElement;
 </script>
 
 <style lang="scss">
+$initialHeaderHeight: 95;
+$smallHeaderHeight: 50;
+$transitionSpeedGrow: 0.3s;
+$transitionSpeedShrink: 0.4s ease-out;
+
 cv-header {
     display: block;
-    height: 95px;
+    height: #{$initialHeaderHeight} + 'px';
 }
 
 .cv-header {
@@ -104,15 +109,18 @@ cv-header {
     left: 0;
     width: 100%;
     padding: 0 50px;
-    height: 95px;
-    transition: height 0.3s;
+    height: #{$initialHeaderHeight} + 'px';
+    transition: transform 0.3s;
     border-bottom: 1px solid #fff;
     width: 100%;
     background: #fff;
+    overflow: hidden;
 
     &--small {
-        height: 50px;
+        // height: 50px;
         border-color: #ccc;
+        transform: translateY(#{$smallHeaderHeight - $initialHeaderHeight} + 'px');
+        transition: transform #{$transitionSpeedShrink};
     }
 
     &__body {
@@ -123,21 +131,39 @@ cv-header {
         flex-direction: row;
         justify-content: flex-start;
         align-items: center;
+        transition: transform 0.3s;
+
+        .cv-header--small & {
+            // transform: translate(-30px, #{($initialHeaderHeight - $smallHeaderHeight) / 2} + 'px');
+            transform: translateY(#{($initialHeaderHeight - $smallHeaderHeight) / 2} + 'px');
+            transition: transform #{$transitionSpeedShrink};
+        }
     }
     // padding: 12.5px 0;
 
     &__logo {
         // height: calc(100% - 25px);
+        // position: absolute;
+        height: #{$initialHeaderHeight - 25} + 'px';
         // height: 100%;
-        width: 70px;
-        align-self: stretch;
+        // width: 80px;
+        width: auto;
+        // align-self: stretch;
         margin: 12.5px 5px;
         // margin: 0 5px;
         // background: rgb(192, 25, 25);
-        background-image: url('../../public/placeholder/logo-sq.png');
+        // background-image: url('../../public/placeholder/logo-sq.png');
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center center;
+        // transition: height 0.5s;
+        transition: transform 0.3s;
+
+        .cv-header--small & {
+            // height: #{$smallHeaderHeight - 25} + 'px';
+            transform: scale(0.5);
+            transition: transform #{$transitionSpeedShrink};
+        }
     }
 
     &__title-wrapper {
@@ -151,11 +177,11 @@ cv-header {
     &__title {
         font-family: 'Lato', sans-serif;
         font-size: 20px;
-        transition: transform 0.15s cubic-bezier(0.47, 0, 0.74, 0.71), scale 0.3s;
+        transition: transform 0.15s; // cubic-bezier(0.47, 0, 0.74, 0.71);
 
         .cv-header--small & {
-            transform: translate(-10px, 9px) scale(0.9);
-            transition: transform 0.3s;
+            transform: translate(-40px, 9px) scale(0.9);
+            transition: transform 0.4s;
         }
     }
 
@@ -174,7 +200,7 @@ cv-header {
     }
 
     &__nav {
-        margin-left: 70px;
+        margin-left: 40px;
     }
 }
 </style>

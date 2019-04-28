@@ -14,7 +14,7 @@
                             id="menu-item-325"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-325"
                         >
-                            <a href="http://0.0.0.0:8000/?page_id=225">Block Test</a>
+                            <a href="http://0.0.0.0:8000/?page_id=225">Angebote</a>
                         </li>
                         <li
                             id="menu-item-328"
@@ -134,7 +134,7 @@
                             id="menu-item-326"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-326"
                         >
-                            <a href="http://0.0.0.0:8000/?page_id=78">Landingpage</a>
+                            <a href="http://0.0.0.0:8000/?page_id=78">Über uns</a>
                         </li>
                     </ul>
                 </div>

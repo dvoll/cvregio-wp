@@ -59,7 +59,7 @@
         // font-size: calc(4rem * var(--title-font-size-factor));
         font-size: calc(40px * var(--title-font-size-factor)) !important;
         font-family: var(--headline-font);
-        line-height: 1em !important; // calc(4rem * var(--title-font-size-factor));
+        line-height: 1 !important; // calc(4rem * var(--title-font-size-factor));
         text-transform: uppercase;
         margin: 0;
         white-space: pre-line;

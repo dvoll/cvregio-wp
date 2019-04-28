@@ -13,7 +13,7 @@
                         id="menu-item-325"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-325"
                     >
-                        <a href="http://0.0.0.0:8000/?page_id=225">Block Test</a>
+                        <a href="http://0.0.0.0:8000/?page_id=225">Angebote</a>
                     </li>
                     <li
                         id="menu-item-328"
@@ -23,7 +23,7 @@
                             href="http://0.0.0.0:8000/?page_id=5"
                             aria-haspopup="true"
                             aria-expanded="false"
-                            >Angebote</a
+                            >Über uns</a
                         ><button class="submenu-expand" tabindex="-1">
                             <svg
                                 class="svg-icon"
@@ -83,7 +83,7 @@
                         id="menu-item-326"
                         class="menu-item menu-item-type-post_type menu-item-object-page menu-item-326"
                     >
-                        <a href="http://0.0.0.0:8000/?page_id=78">Landingpage</a>
+                        <a href="http://0.0.0.0:8000/?page_id=78">Kontakt</a>
                     </li>
                 </ul>
             </div>
@@ -96,14 +96,12 @@ export default {};
 </script>
 
 <style lang="scss">
-.cv-nav {
-    color: #000;
-}
-
 .main-menu {
     list-style: none;
     display: flex;
     flex-direction: row;
+    margin: 0;
+    padding: 0;
 
     .menu-item {
         padding: 5px 10px;

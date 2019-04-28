@@ -71,7 +71,8 @@ export default {
 
             this.stageItems.push({
                 id: index,
-                innerHTML: htmlDoc.activeElement.innerHTML,
+                // @ts-ignore
+                innerHTML: htmlDoc.firstChild.children[1].innerHTML,
             });
         });
         console.log('items', this.stageItems);
