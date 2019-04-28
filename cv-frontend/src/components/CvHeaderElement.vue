@@ -114,7 +114,7 @@ cv-header {
     border-bottom: 1px solid #fff;
     width: 100%;
     background: #fff;
-    overflow: hidden;
+    // overflow: hidden;
 
     &--small {
         // height: 50px;

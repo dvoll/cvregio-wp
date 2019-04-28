@@ -24,7 +24,7 @@
                                 href="http://0.0.0.0:8000/?page_id=5"
                                 aria-haspopup="true"
                                 aria-expanded="false"
-                                >Angebote</a
+                                >Über uns</a
                             ><button class="submenu-expand" tabindex="-1">
                                 <svg
                                     class="svg-icon"
@@ -134,7 +134,7 @@
                             id="menu-item-326"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-326"
                         >
-                            <a href="http://0.0.0.0:8000/?page_id=78">Über uns</a>
+                            <a href="http://0.0.0.0:8000/?page_id=78">Kontakt</a>
                         </li>
                     </ul>
                 </div>

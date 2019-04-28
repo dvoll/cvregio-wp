@@ -1,98 +1,68 @@
 <template>
-    <div>
-        <nav id="site-navigation" class="main-navigation" aria-label="Oberes Menü">
-            <div class="menu-primary-container">
-                <ul id="menu-primary" class="main-menu">
-                    <li
-                        id="menu-item-324"
-                        class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-324"
-                    >
-                        <a href="http://0.0.0.0:8000" aria-current="page">Startseite</a>
-                    </li>
-                    <li
-                        id="menu-item-325"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-325"
-                    >
-                        <a href="http://0.0.0.0:8000/?page_id=225">Angebote</a>
-                    </li>
-                    <li
-                        id="menu-item-328"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-328"
-                    >
-                        <a
-                            href="http://0.0.0.0:8000/?page_id=5"
-                            aria-haspopup="true"
-                            aria-expanded="false"
-                            >Über uns</a
-                        ><button class="submenu-expand" tabindex="-1">
-                            <svg
-                                class="svg-icon"
-                                width="24"
-                                height="24"
-                                aria-hidden="true"
-                                role="img"
-                                focusable="false"
-                                xmlns="http://www.w3.org/2000/svg"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
-                                ></path>
-                                <path fill="none" d="M0 0h24v24H0V0z"></path>
-                            </svg>
-                        </button>
-                        <ul class="sub-menu">
-                            <li
-                                id="menu-item-327"
-                                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-327"
-                            >
-                                <a
-                                    href="http://0.0.0.0:8000/?page_id=7"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                    >Mädchenjungschar</a
-                                ><button class="submenu-expand" tabindex="-1">
-                                    <svg
-                                        class="svg-icon"
-                                        width="24"
-                                        height="24"
-                                        aria-hidden="true"
-                                        role="img"
-                                        focusable="false"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                    >
-                                        <path
-                                            d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"
-                                        ></path>
-                                        <path fill="none" d="M0 0h24v24H0V0z"></path>
-                                    </svg>
-                                </button>
-                                <ul class="sub-menu">
-                                    <li
-                                        id="menu-item-329"
-                                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-329"
-                                    >
-                                        <a href="http://0.0.0.0:8000/?page_id=2">Beispiel-Seite</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </li>
-                    <li
-                        id="menu-item-326"
-                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-326"
-                    >
-                        <a href="http://0.0.0.0:8000/?page_id=78">Kontakt</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+    <div></div>
 </template>
 
 <script>
-export default {};
+import Vue from 'vue';
+// @ts-check
+const CvNav = Vue.extend({
+    data() {
+        return {
+            menuItems: [{ title: '1' }, { title: '2', childItems: [{ title: '2a' }] }],
+        };
+    },
+    methods: {
+        getMenuItems(items, menuItemsArray) {
+            for (let item in items) {
+                if (!isNaN(item)) {
+                    item = items[item];
+                    const menuItem = {
+                        title: item.children[0].innerHTML,
+                        children: [],
+                    };
+                    if (item.children[2]) {
+                        menuItem.children = this.getMenuItems(item.children[2].children, []);
+                    }
+                    menuItemsArray.push(menuItem);
+                }
+            }
+            return menuItemsArray;
+        },
+    },
+    mounted() {
+        if (this.$slots.default) {
+            const elm = this.$slots.default[0];
+            const htmlDoc = new DOMParser().parseFromString(
+                elm.data.domProps.innerHTML,
+                'text/html'
+            );
+            const mainMenu = htmlDoc.querySelector('.main-menu');
+            console.log('main menu', mainMenu);
+
+            this.menuItems = this.getMenuItems(mainMenu.children, []);
+
+            // for (let item in mainMenu.children) {
+            //     if (!isNaN(item)) {
+            //         item = mainMenu.children[item];
+            //         const menuItem = {
+            //             title: item.children[0].innerHTML,
+            //             children: [],
+            //         };
+            //         if (item.children[2]) {
+            //             for (const subitem in item.children[2]) {
+            //                 menuItem.children.push({
+            //                     title: subitem.children[0].innerHTML,
+            //                 });
+            //             }
+            //         }
+            //         this.menuItems.push({ menuItem });
+            //     }
+            // }
+            console.log();
+        }
+    },
+});
+export default CvNav;
 </script>
 
 <style lang="scss">
@@ -102,6 +72,44 @@ export default {};
     flex-direction: row;
     margin: 0;
     padding: 0;
+
+    > .menu-item-has-children {
+        position: relative;
+        &::after {
+            content: '';
+            position: absolute;
+            display: block;
+            height: 0;
+            width: 0;
+            margin: 0 calc(50% - 30px);
+            bottom: -6px;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 20px solid #ccc;
+        }
+
+        > .sub-menu {
+            display: block;
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 300px;
+            margin: 0 auto;
+            background: #ccc;
+            margin-top: 20px;
+
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: 100vw;
+                margin-left: -50vw;
+                height: 300px;
+                background: green;
+            }
+        }
+    }
 
     .menu-item {
         padding: 5px 10px;

@@ -67,7 +67,7 @@ export default {
             htmlDoc
                 .querySelector('.cv-stage-card__body')
                 .setAttribute('data-swiper-parallax', '200');
-            console.log('add attribute', htmlDoc);
+            // console.log('add attribute', htmlDoc);
 
             this.stageItems.push({
                 id: index,
