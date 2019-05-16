@@ -1,7 +1,7 @@
 <template>
     <div class="page-header" :class="{ 'page-header--small': small }">
         <div class="page-header__body">
-            <img class="page-header__logo" src="../assets/logo-sq.png" />
+            <img class="page-header__logo" :src="logoUrl" />
             <div class="page-header__title-wrapper">
                 <span class="page-header__title">{{ title }}</span>
                 <span class="page-header__subtitle">{{ subtitle }}</span>
@@ -39,6 +39,10 @@ const CvHeaderElement = {
         },
         small: {
             type: Boolean,
+        },
+        logoUrl: {
+            type: String,
+            default: '../assets/logo-sq.png',
         },
     },
     methods: {
@@ -176,6 +180,7 @@ $transitionSpeedShrink: 0.4s ease-out;
         font-family: 'Lato', sans-serif;
         font-size: 20px;
         transition: transform 0.15s; // cubic-bezier(0.47, 0, 0.74, 0.71);
+        line-height: 1.4rem;
 
         .page-header--small & {
             transform: translate(-40px, 9px) scale(0.9);
@@ -199,6 +204,12 @@ $transitionSpeedShrink: 0.4s ease-out;
 
     &__nav {
         margin-left: 40px;
+    }
+}
+
+.main-menu {
+    li {
+        line-height: 1rem;
     }
 }
 </style>

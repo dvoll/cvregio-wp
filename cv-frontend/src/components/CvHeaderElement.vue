@@ -1,5 +1,5 @@
 <template>
-    <cv-header :menuItems="menuItems" :title="title" :subtitle="subtitle" logUrl="url" />
+    <cv-header :menuItems="menuItems" :title="title" :subtitle="subtitle" :logoUrl="logourl" />
 </template>
 
 <script>
@@ -16,6 +16,9 @@ const CvHeaderElement = {
             default: '',
         },
         subtitle: {
+            type: String,
+        },
+        logourl: {
             type: String,
         },
         // menuItems: {
@@ -63,6 +66,7 @@ const CvHeaderElement = {
             console.log('main menu', mainMenu);
 
             this.menuItems = this.getMenuItems(mainMenu.children, []);
+            console.log('menu items', this.menuItems);
         }
     },
 };

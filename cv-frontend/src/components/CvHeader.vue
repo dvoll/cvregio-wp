@@ -7,7 +7,12 @@
             @click="closeSubmenu()"
         />
         <div class="cv-header" :class="{ 'cv-header--small': smallHeader }">
-            <page-header :title="title" :subtitle="subtitle" :small="smallHeader">
+            <page-header
+                :title="title"
+                :subtitle="subtitle"
+                :small="smallHeader"
+                :logoUrl="logoUrl"
+            >
                 <cv-nav :menuItems="menuItems" @toggleMenu="toggleMenu" />
             </page-header>
             <page-submenu
@@ -15,6 +20,7 @@
                 class="submenu"
                 :title="activeItem.title"
                 :items="activeItem.children"
+                :href="activeItem.href"
             ></page-submenu>
         </div>
     </div>

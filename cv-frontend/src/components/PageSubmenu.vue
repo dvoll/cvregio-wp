@@ -4,7 +4,7 @@
             <h2 class="description-block__header">{{ title }}</h2>
             <p class="description-block__text"></p>
             <!-- <Button>MyButton</Button> -->
-            <a href="" class="description-block__link">Übersicht</a>
+            <a :href="href" class="description-block__link">Übersicht</a>
         </div>
         <ul class="menu-list">
             <li v-for="item in items" :key="item.title" class="menu-list__item">
@@ -37,6 +37,10 @@ export default Vue.extend({
             type: Array,
             default: () => [],
         },
+        href: {
+            type: String,
+            default: '',
+        },
     },
 });
 </script>
@@ -59,6 +63,7 @@ export default Vue.extend({
     &__header {
         font-weight: normal;
         font-style: italic;
+        font-size: 1.2rem;
     }
 }
 
