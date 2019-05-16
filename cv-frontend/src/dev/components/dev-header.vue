@@ -75,8 +75,9 @@
                                         href="http://0.0.0.0:8000/?page_id=7"
                                         aria-haspopup="true"
                                         aria-expanded="false"
-                                        >Mädchenjungschar</a
-                                    ><button class="submenu-expand" tabindex="-1">
+                                        >Aveeerrylongtextlink</a
+                                    >
+                                    <button class="submenu-expand" tabindex="-1">
                                         <svg
                                             class="svg-icon"
                                             width="24"
@@ -115,7 +116,7 @@
                                                         d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
                                                     ></path>
                                                     <path d="M0 0h24v24H0z" fill="none"></path></svg
-                                                >Mädchenjungschar
+                                                >Aveeerrylongtextlink
                                             </button>
                                         </li>
                                         <li
