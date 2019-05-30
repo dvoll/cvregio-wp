@@ -1,9 +1,15 @@
 <template>
     <div class="menu-page">
-        <button v-if="!!backButtonTitle" @click="handleBackClick" class="menu-page__close-button">
-            {{ '<-' + backButtonTitle }}
-        </button>
-        <div v-else class="menu-page__close-button-placeholder"></div>
+        <a
+            role="button"
+            @click="handleBackClick"
+            class="menu-page__back-link"
+            :class="{ 'menu-page__back-link--visible': !!backButtonTitle }"
+        >
+            <base-icon icon="arrow-left" />
+            {{ backButtonTitle }}
+        </a>
+        <!-- <div v-else class="menu-page__close-button-placeholder"></div> -->
         <h2 class="menu-page__header">{{ title }}</h2>
         <div class="menu-page__info">
             <slot name="info" />
@@ -83,6 +89,19 @@ export default Vue.extend({
         font-weight: normal;
         font-style: italic;
         font-size: 1.2rem;
+    }
+
+    &__back-link {
+        font-size: $font__size-xs;
+        visibility: hidden;
+
+        .base-icon {
+            height: 12px;
+        }
+
+        &--visible {
+            visibility: visible;
+        }
     }
 
     &__close-button {

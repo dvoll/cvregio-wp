@@ -1,7 +1,7 @@
 <template>
     <svg
         class="base-icon"
-        :class="{ 'base-icon--primary': primary }"
+        :class="{ 'base-icon--has-fill': fillRgb }"
         :viewBox="viewBox"
         :style="{ '--fill-rgb': fillRgb }"
     >
@@ -25,21 +25,16 @@ export default Vue.extend({
         fillRgb: {
             type: String,
         },
-        primary: {
-            type: Boolean,
-            default: false,
-        },
     },
 });
 </script>
 
 <style lang="scss">
 .base-icon {
-    --fill-rgb: #{$color-primary};
-    fill: rgb(var(--fill-rgb));
+    fill: currentColor;
 
-    &--primary {
-        fill: $color-accent-foreground;
+    &--has-fill {
+        fill: rgb(var(--fill-rgb));
     }
 }
 </style>

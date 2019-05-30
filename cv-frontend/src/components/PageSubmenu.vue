@@ -7,7 +7,9 @@
             <h2 class="description-block__header">{{ title }}</h2>
             <p class="description-block__text"></p>
             <!-- <Button>MyButton</Button> -->
-            <a :href="href" class="description-block__link">Übersicht</a>
+            <a :href="href" class="button description-block__link">
+                <base-icon icon="arrow-right" primary />Übersicht
+            </a>
         </div>
         <ul class="menu-list" :class="{ 'menu-list--grid': !isList }">
             <li v-for="item in items" :key="item.title" class="menu-list__item">

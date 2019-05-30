@@ -17,6 +17,14 @@ input[type='submit'] {
     text-decoration: none;
     vertical-align: bottom;
 
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    margin-bottom: 2px;
+    margin-right: 2px;
+
     &:hover {
         background: $color__background-button-hover;
         cursor: pointer;
@@ -31,5 +39,17 @@ input[type='submit'] {
         background: $color__background-button-hover;
         outline: thin dotted;
         outline-offset: -4px;
+        text-decoration: none;
+    }
+
+    &:active {
+        transition: transform 0.2;
+        transform: scale(0.98);
+    }
+
+    .base-icon {
+        width: 13.5px;
+        height: 13.5px;
+        margin-right: 2px;
     }
 }

@@ -63,6 +63,7 @@
                 @toggleMobileMenu="toggleMobileMenu()"
             >
                 <cv-nav :menuItems="menuItems" @toggleMenu="toggleMenu" />
+                <hamburger slot="menu-button" :open="mobileOpen" @click="toggleMobileMenu()" />
             </page-header>
         </div>
     </div>
@@ -74,6 +75,7 @@ import CvNav from './CvNav.vue';
 import PageHeader from './PageHeader.vue';
 import PageSubmenu from './PageSubmenu.vue';
 import MenuPage from './MenuPage.vue';
+import Hamburger from './Hamburger.vue';
 // import PageHeader from './PageHeader.vue';
 
 // const initialHeaderHeight = 95;
@@ -84,6 +86,7 @@ const CvHeader = Vue.extend({
         PageHeader,
         PageSubmenu,
         MenuPage,
+        Hamburger,
     },
     props: {
         title: {

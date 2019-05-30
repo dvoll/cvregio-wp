@@ -14,9 +14,9 @@
                 </div>
             </a>
             <slot v-if="!mobile" name="default" class="page-header__nav" />
-            <button v-else class="page-header__menu-button" @click="onMobileToggle()">
-                M
-            </button>
+            <div v-else class="page-header__menu-button">
+                <slot name="menu-button" class="page-header__menu-button"></slot>
+            </div>
         </div>
     </div>
 </template>

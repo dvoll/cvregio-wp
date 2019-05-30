@@ -7,6 +7,7 @@ import Default from './pages/Default.vue';
 import Post from './pages/Post.vue';
 import CvStageElement from '../components/CvStageElement.vue';
 import CvHeaderElement from '../components/CvHeaderElement.vue';
+import '../base-components';
 
 import '../styles/main.scss';
 

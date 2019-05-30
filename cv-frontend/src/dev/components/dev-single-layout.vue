@@ -1,27 +1,32 @@
-
 <template>
     <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#content">Zum Inhalt springen</a>
 
-        <header id="masthead" class="site-header">
+        <header id="masthead" class="site-header featured-image">
             <div class="site-branding-container">
                 <div>
-                    <dev-header></dev-header>
+                    <slot name="header" />
                 </div>
                 <!-- .site-branding -->
             </div>
             <!-- .layout-wrap -->
+
+            <slot name="featured-image" />
         </header>
         <!-- #masthead -->
 
         <div id="content" class="site-content">
             <section id="primary" class="content-area">
                 <main id="main" class="site-main">
+                    <slot name="default" />
                     <!-- #post-${ID} -->
+
+                    <slot name="comments" />
+                    <!-- #comments -->
                 </main>
-                <!-- .site-main -->
+                <!-- #main -->
             </section>
-            <!-- .content-area -->
+            <!-- #primary -->
         </div>
         <!-- #content -->
 
