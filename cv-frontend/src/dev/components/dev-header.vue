@@ -1,5 +1,9 @@
 <template>
-    <cv-header title="CVJM Stift Quernheim e.V." subtitle="Christlicher Verein junger Menschen">
+    <cv-header
+        title="CVJM Stift Quernheim e.V."
+        subtitle="Christlicher Verein junger Menschen"
+        logoUrl="/assets/logo-sq.png"
+    >
         <template>
             <nav id="site-navigation" class="main-navigation" aria-label="Oberes Menü">
                 <div class="menu-primary-container">

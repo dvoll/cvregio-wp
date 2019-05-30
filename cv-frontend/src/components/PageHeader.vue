@@ -1,14 +1,22 @@
 <template>
-    <div class="page-header" :class="{ 'page-header--small': small }">
+    <div
+        class="page-header"
+        :class="{ 'page-header--small': small, 'page-header--mobile': mobile }"
+    >
         <div class="page-header__body">
             <a href="/" class="page-header__link">
-                <img class="page-header__logo" :src="logoUrl" />
+                <div class="page-header__logo-container">
+                    <img class="page-header__logo" :src="logoUrl" />
+                </div>
                 <div class="page-header__title-wrapper">
                     <span class="page-header__title">{{ title }}</span>
                     <span class="page-header__subtitle">{{ subtitle }}</span>
                 </div>
             </a>
-            <slot name="default" class="page-header__nav" />
+            <slot v-if="!mobile" name="default" class="page-header__nav" />
+            <button v-else class="page-header__menu-button" @click="onMobileToggle()">
+                M
+            </button>
         </div>
     </div>
 </template>
@@ -26,9 +34,17 @@ const CvHeaderElement = {
         small: {
             type: Boolean,
         },
+        mobile: {
+            type: Boolean,
+            default: false,
+        },
         logoUrl: {
             type: String,
-            default: '../assets/logo-sq.png',
+        },
+    },
+    methods: {
+        onMobileToggle() {
+            this.$emit('toggleMobileMenu');
         },
     },
 };
@@ -42,6 +58,11 @@ $transitionSpeedGrow: 0.3s;
 $transitionSpeedShrink: 0.4s ease-out;
 
 .page-header {
+    position: fixed;
+    width: 100%;
+    background-color: #fff;
+    overflow: hidden;
+
     &__link {
         text-decoration: none;
         display: flex;
@@ -64,11 +85,18 @@ $transitionSpeedShrink: 0.4s ease-out;
             transform: translateY(#{($initialHeaderHeight - $smallHeaderHeight) / 2} + 'px');
             transition: transform #{$transitionSpeedShrink};
         }
+
+        .page-header--mobile & {
+            transition: none;
+            transform: translateY(#{($initialHeaderHeight - $smallHeaderHeight) / 2 - 10} + 'px');
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
 
-    &__logo {
+    &__logo-container {
         height: #{$initialHeaderHeight - 25} + 'px';
-        width: auto;
+        width: 70px;
         margin: 12.5px 5px;
         background-size: contain;
         background-repeat: no-repeat;
@@ -88,6 +116,12 @@ $transitionSpeedShrink: 0.4s ease-out;
         align-items: center;
         margin-left: 20px;
         margin-right: 20px;
+
+        .page-header--mobile & {
+            // position: absolute;
+            // left: 70px;
+            margin-right: 0px;
+        }
     }
 
     &__title {
@@ -115,16 +149,24 @@ $transitionSpeedShrink: 0.4s ease-out;
         .page-header--small & {
             opacity: 0;
         }
+
+        .page-header--mobile & {
+            white-space: nowrap;
+            overflow: hidden;
+            width: 1px;
+        }
     }
 
     &__nav {
         margin-left: 40px;
     }
-}
 
-.main-menu {
-    li {
-        line-height: 1rem;
+    &__menu-button {
+        padding: 5px;
+        justify-self: end;
+        position: absolute;
+        right: 10px;
+        z-index: 10;
     }
 }
 </style>

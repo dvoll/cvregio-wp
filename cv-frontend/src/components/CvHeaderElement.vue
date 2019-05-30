@@ -76,6 +76,6 @@ export default CvHeaderElement;
 <style lang="scss">
 cv-header {
     display: block;
-    height: 95px;
+    // height: 95px;
 }
 </style>

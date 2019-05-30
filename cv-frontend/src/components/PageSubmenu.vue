@@ -1,28 +1,28 @@
 <template>
-    <div class="page-submenu">
+    <div
+        class="page-submenu"
+        :class="{ 'page-submenu--grid': !isList, 'page-submenu--list': isList }"
+    >
         <div class="page-submenu__info description-block">
             <h2 class="description-block__header">{{ title }}</h2>
             <p class="description-block__text"></p>
             <!-- <Button>MyButton</Button> -->
             <a :href="href" class="description-block__link">Übersicht</a>
         </div>
-        <ul class="menu-list">
+        <ul class="menu-list" :class="{ 'menu-list--grid': !isList }">
             <li v-for="item in items" :key="item.title" class="menu-list__item">
-                <submenu-link :href="item.href">{{ item.title }}</submenu-link>
+                <submenu-link :href="item.href" :type="'inline'">{{ item.title }}</submenu-link>
             </li>
         </ul>
     </div>
 </template>
 
 <script>
-// @ts-check
 import Vue from 'vue';
 import SubmenuLink from './SubmenuLink.vue';
-import Button from './base/Button';
 
 export default Vue.extend({
     components: {
-        Button,
         SubmenuLink,
     },
     props: {
@@ -41,6 +41,10 @@ export default Vue.extend({
             type: String,
             default: '',
         },
+        isList: {
+            type: Boolean,
+            default: false,
+        },
     },
 });
 </script>
@@ -55,8 +59,17 @@ export default Vue.extend({
     justify-content: center;
     align-items: center;
     font-family: 'Open Sans';
+    position: absolute;
+    padding-top: 100px;
+    width: 100%;
 
-    // min-height: 400px;
+    &--list {
+        // height: calc(100vh - 75px);
+        padding: 100px 20px 0 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
 }
 
 .description-block {
@@ -70,13 +83,15 @@ export default Vue.extend({
 .menu-list {
     list-style: none;
     max-height: 200px;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    // justify-content: stretch;
     padding: 0;
     width: 400px;
-    margin-left: 40px;
+    display: flex;
+    flex-direction: column;
+
+    &--grid {
+        margin-left: 40px;
+        flex-wrap: wrap;
+    }
 
     &__item {
         // width: 50%;

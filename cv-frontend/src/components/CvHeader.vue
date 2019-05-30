@@ -1,45 +1,89 @@
 <template>
     <div>
+        <div class="header-placeholder" :class="{ 'header-placeholder--mobile': isMobile }" />
         <div
-            v-if="activeItem"
+            v-if="activeItem && !isMobile"
             class="overlay"
             style="position: fixed; z-index: 95; width: 100vw; height: 100vh; background: rgba(0,0,0,0.2);"
             @click="closeSubmenu()"
         />
-        <div class="cv-header" :class="{ 'cv-header--small': smallHeader }">
-            <page-header
-                :title="title"
-                :subtitle="subtitle"
-                :small="smallHeader"
-                :logoUrl="logoUrl"
+        <div
+            class="cv-header"
+            :class="{
+                'cv-header--small': shouldShowSmallHeader,
+                'cv-header--submenu-open': activeItem && (!isMobile || mobileOpen),
+                'cv-header--mobile': isMobile,
+                'cv-header--mobile-open': mobileOpen,
+            }"
+        >
+            <!-- <cv-nav
+                v-if="isMobile && mobileOpen"
+                :isList="isMobile"
+                :menuItems="menuItems"
+                @toggleMenu="toggleMenu"
+            /> -->
+            <MenuPage
+                class="cv-header__mobile-menu"
+                v-if="isMobile && mobileOpen"
+                :items="menuItems"
+                @onItemSelect="toggleMenu"
+                title="Menü"
+            ></MenuPage>
+            <MenuPage
+                class="cv-header__mobile-submenu"
+                v-if="
+                    isMobile && mobileOpen && activeItem !== null && activeItem.children.length > 0
+                "
+                :items="activeItem.children"
+                :allowChildren="false"
+                :title="activeItem.title"
+                backButtonTitle="Zurück"
+                @close="activeItem = null"
             >
-                <cv-nav :menuItems="menuItems" @toggleMenu="toggleMenu" />
-            </page-header>
+                <template slot="info">
+                    <p class="description-block__text"></p>
+                    <a :href="activeItem.href" class="description-block__link">Übersicht</a>
+                </template>
+            </MenuPage>
             <page-submenu
-                v-if="activeItem !== null && activeItem.children.length > 0"
-                class="submenu"
+                v-if="activeItem !== null && activeItem.children.length > 0 && !isMobile"
+                class="cv-header__submenu"
                 :title="activeItem.title"
                 :items="activeItem.children"
                 :href="activeItem.href"
+                :isList="isMobile"
             ></page-submenu>
+            <page-header
+                class="cv-header__page-header"
+                :title="title"
+                :subtitle="subtitle"
+                :small="shouldShowSmallHeader"
+                :logoUrl="logoUrl"
+                :mobile="isMobile"
+                @toggleMobileMenu="toggleMobileMenu()"
+            >
+                <cv-nav :menuItems="menuItems" @toggleMenu="toggleMenu" />
+            </page-header>
         </div>
     </div>
 </template>
 
 <script>
-// @ts-check
+import Vue from 'vue';
 import CvNav from './CvNav.vue';
 import PageHeader from './PageHeader.vue';
 import PageSubmenu from './PageSubmenu.vue';
+import MenuPage from './MenuPage.vue';
 // import PageHeader from './PageHeader.vue';
 
 // const initialHeaderHeight = 95;
 const smallHeaderHeight = 50;
-const CvHeader = {
+const CvHeader = Vue.extend({
     components: {
         CvNav,
         PageHeader,
         PageSubmenu,
+        MenuPage,
     },
     props: {
         title: {
@@ -61,7 +105,14 @@ const CvHeader = {
         return {
             smallHeader: false,
             activeItem: null,
+            mobileOpen: false,
+            isMobile: false,
         };
+    },
+    computed: {
+        shouldShowSmallHeader() {
+            return this.smallHeader || this.isMobile;
+        },
     },
     methods: {
         addScrollEventListener() {
@@ -83,6 +134,39 @@ const CvHeader = {
                 }
             });
         },
+        addResizeEventListener() {
+            let lastKnownResizeWidth = 0;
+            let ticking = false;
+            window.addEventListener('resize', () => {
+                lastKnownResizeWidth = window.innerWidth;
+
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        this.handleResize(lastKnownResizeWidth);
+                        ticking = false;
+                    });
+
+                    ticking = true;
+                }
+            });
+        },
+        handleResize(width) {
+            this.isMobile = width < 1200;
+            if (width < 1200) {
+                this.isMobile = true;
+                this.setBodyNoScroll(this.mobileOpen);
+            } else {
+                this.isMobile = false;
+                this.setBodyNoScroll(false);
+            }
+        },
+        setBodyNoScroll(noscroll) {
+            if (noscroll) {
+                document.getElementsByTagName('body')[0].classList.add('no-scroll');
+            } else {
+                document.getElementsByTagName('body')[0].classList.remove('no-scroll');
+            }
+        },
         changeHeader(position) {
             if (!this.smallHeader && position > smallHeaderHeight) {
                 this.smallHeader = true;
@@ -100,6 +184,10 @@ const CvHeader = {
             }
             this.activeItem = menuItem;
         },
+        toggleMobileMenu() {
+            this.mobileOpen = !this.mobileOpen;
+            this.setBodyNoScroll(this.mobileOpen);
+        },
         closeSubmenu() {
             console.log('close submenu');
 
@@ -108,21 +196,32 @@ const CvHeader = {
     },
     mounted() {
         this.addScrollEventListener();
+        this.addResizeEventListener();
+        this.handleResize(window.innerWidth);
     },
-};
+});
 export default CvHeader;
 </script>
 
 <style lang="scss">
 $initialHeaderHeight: 95;
 $smallHeaderHeight: 50;
+$mobileHeaderHeight: 70;
 $transitionSpeedGrow: 0.3s;
 $transitionSpeedShrink: 0.4s ease-out;
 
-// cv-header {
-//     display: block;
-//     height: #{$initialHeaderHeight} + 'px';
-// }
+body.no-scroll {
+    overflow: hidden;
+}
+
+.header-placeholder {
+    width: 100%;
+    height: #{$initialHeaderHeight}px;
+
+    &--mobile {
+        height: #{$mobileHeaderHeight}px;
+    }
+}
 
 .cv-header {
     position: fixed;
@@ -130,97 +229,42 @@ $transitionSpeedShrink: 0.4s ease-out;
     top: 0;
     left: 0;
     width: 100%;
-    // padding: 0 50px;
-    // height: #{$initialHeaderHeight} + 'px';
     transition: transform 0.3s;
-    border-bottom: 1px solid #fff;
     width: 100%;
     background: #fff;
-    // overflow: hidden;
 
     &--small {
-        // height: 50px;
-        border-color: #ccc;
         transform: translateY(#{$smallHeaderHeight - $initialHeaderHeight} + 'px');
         transition: transform #{$transitionSpeedShrink};
     }
 
-    // &__body {
-    //     height: 100%;
-    //     max-width: 1200px;
-    //     margin: 0 auto;
-    //     display: flex;
-    //     flex-direction: row;
-    //     justify-content: flex-start;
-    //     align-items: center;
-    //     transition: transform 0.3s;
-    //     padding: 0 50px;
+    &--mobile {
+        transition: none;
+        transform: translateY(#{$smallHeaderHeight - $mobileHeaderHeight} + 'px');
+    }
 
-    //     .cv-header--small & {
-    //         // transform: translate(-30px, #{($initialHeaderHeight - $smallHeaderHeight) / 2} + 'px');
-    //         transform: translateY(#{($initialHeaderHeight - $smallHeaderHeight) / 2} + 'px');
-    //         transition: transform #{$transitionSpeedShrink};
-    //     }
-    // }
-    // // padding: 12.5px 0;
+    &__page-header {
+        border-bottom: 1px solid #ccc;
 
-    // &__logo {
-    //     // height: calc(100% - 25px);
-    //     // position: absolute;
-    //     height: #{$initialHeaderHeight - 25} + 'px';
-    //     // height: 100%;
-    //     // width: 80px;
-    //     width: auto;
-    //     // align-self: stretch;
-    //     margin: 12.5px 5px;
-    //     // margin: 0 5px;
-    //     // background: rgb(192, 25, 25);
-    //     // background-image: url('../../public/placeholder/logo-sq.png');
-    //     background-size: contain;
-    //     background-repeat: no-repeat;
-    //     background-position: center center;
-    //     // transition: height 0.5s;
-    //     transition: transform 0.3s;
+        .cv-header--mobile-open &,
+        .cv-header--submenu-open & {
+            border-bottom: none;
+        }
+    }
 
-    //     .cv-header--small & {
-    //         // height: #{$smallHeaderHeight - 25} + 'px';
-    //         transform: scale(0.5);
-    //         transition: transform #{$transitionSpeedShrink};
-    //     }
-    // }
+    &__mobile-menu,
+    &__mobile-submenu {
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        padding-bottom: 100px;
+    }
 
-    // &__title-wrapper {
-    //     display: flex;
-    //     flex-direction: column;
-    //     justify-items: center;
-    //     align-items: center;
-    //     margin-left: 20px;
-    // }
-
-    // &__title {
-    //     font-family: 'Lato', sans-serif;
-    //     font-size: 20px;
-    //     transition: transform 0.15s; // cubic-bezier(0.47, 0, 0.74, 0.71);
-
-    //     .cv-header--small & {
-    //         transform: translate(-40px, 9px) scale(0.9);
-    //         transition: transform 0.4s;
-    //     }
-    // }
-
-    // &__subtitle {
-    //     font-family: 'Open Sans', sans-serif;
-    //     font-size: 11px;
-    //     text-transform: uppercase;
-    //     font-weight: 600;
-    //     font-style: italic;
-    //     color: #999;
-    //     transition: opacity 0.5s;
-
-    //     .cv-header--small & {
-    //         opacity: 0;
-    //     }
-    // }
+    &__submenu {
+        .cv-header--mobile & {
+            height: calc(100vh - 75px);
+        }
+    }
 
     &__nav {
         margin-left: 40px;
