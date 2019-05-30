@@ -6,6 +6,7 @@ import CvHeaderElement from '../components/CvHeaderElement.vue';
 
 // import '/css/all.css';
 import '@fortawesome/fontawesome-free/css/all.css';
+import '../styles/main.scss';
 // /Users/dvoll/private/wp-dev/wp-content/cv-frontend/node_modules/@fortawesome/fontawesome-free/css/all.css
 
 Vue.config.productionTip = false;

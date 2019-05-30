@@ -24,7 +24,6 @@
 // @ts-check
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
-import './styles/_cv-stage-item.scss';
 
 export default {
     components: {
