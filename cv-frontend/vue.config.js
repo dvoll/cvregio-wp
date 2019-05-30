@@ -11,12 +11,27 @@ module.exports = {
         app: {
             entry: 'src/main.js', //entry for the public page
             template: 'public/index.html', // source template
-            filename: 'index.html', // output as dist/*
+            filename: 'index-app.html', // output as dist/*
         },
         dev: {
             entry: 'src/dev/main.js',
             template: 'public/dev.html',
             filename: 'dev.html',
+        },
+        devHomepage: {
+            entry: 'src/dev/main.js',
+            template: 'public/dev-homepage.html',
+            filename: 'index.html',
+        },
+        devDefaultPage: {
+            entry: 'src/dev/main.js',
+            template: 'public/dev-page.html',
+            filename: 'default.html',
+        },
+        devPostPage: {
+            entry: 'src/dev/main.js',
+            template: 'public/dev-post.html',
+            filename: 'post.html',
         },
         // theme: {
         //   // entry: 'src/dev/main-theme.js',

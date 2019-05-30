@@ -2,7 +2,7 @@
     <cv-header
         title="CVJM Stift Quernheim e.V."
         subtitle="Christlicher Verein junger Menschen"
-        logoUrl="/assets/logo-sq.png"
+        logoUrl="/logo-sq-wp.png"
     >
         <template>
             <nav id="site-navigation" class="main-navigation" aria-label="Oberes Menü">
@@ -12,13 +12,13 @@
                             id="menu-item-324"
                             class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-324"
                         >
-                            <a href="http://localhost:8080/dev" aria-current="page">Startseite</a>
+                            <a href="/" aria-current="page">Startseite</a>
                         </li>
                         <li
                             id="menu-item-325"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-325"
                         >
-                            <a href="http://0.0.0.0:8000/?page_id=225">Angebote</a>
+                            <a href="/default.html">Default</a>
                         </li>
                         <li
                             id="menu-item-328"

@@ -1,6 +1,6 @@
 <template>
     <cv-stage>
-        <div v-for="(item, index) in items" class="cv-stage__item cv-stage-card">
+        <div v-for="(item, index) in items" :key="item.title" class="cv-stage__item cv-stage-card">
             <div
                 class="cv-stage-card__bg"
                 data-background-url="./placeholder/05.jpg"
