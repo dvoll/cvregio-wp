@@ -2,6 +2,8 @@ node_modules
 .DS_Store
 dist/
 placeholder/
+*/cv-regio-theme/cv-frontend/
+*/cv-blocks/cv-frontend/
 
 *.log
 advanced-cache.php
