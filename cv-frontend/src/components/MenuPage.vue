@@ -20,8 +20,14 @@
                     :href="getHrefForItem(item)"
                     type="inline"
                     @click="handleItemClick(item)"
-                    >{{ item.title }}</submenu-link
+                    :iconEnd="
+                        allowChildren && item.children && item.children.length > 0
+                            ? 'arrow-right'
+                            : null
+                    "
                 >
+                    {{ item.title }}
+                </submenu-link>
             </li>
         </ul>
     </div>
@@ -84,6 +90,7 @@ export default Vue.extend({
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
+    overflow-y: auto;
 
     &__header {
         font-weight: normal;
@@ -117,7 +124,7 @@ export default Vue.extend({
     list-style: none;
     max-height: 200px;
     padding: 0;
-    width: 400px;
+    width: 100%;
     display: flex;
     flex-direction: column;
 

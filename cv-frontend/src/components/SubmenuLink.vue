@@ -9,6 +9,7 @@
         }"
     >
         <slot />
+        <base-icon v-if="iconEnd" :icon="iconEnd" class="submenu-item__icon" />
     </a>
 </template>
 
@@ -21,6 +22,9 @@ export default {
         type: {
             type: String, // block || inline
             default: 'block',
+        },
+        iconEnd: {
+            type: String,
         },
     },
     methods: {
@@ -36,24 +40,39 @@ export default {
 
 <style lang="scss">
 .submenu-item {
-    color: #333;
+    color: $color-accent;
     text-decoration: none;
     font-size: 0.9rem;
-    padding: 10px 0;
+    padding: 15px 4px;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
 
     &--block {
+        color: $color-primary;
         background-color: #fff;
         padding: 4px 10px;
         margin: 2px;
         justify-content: center;
+
+        &:hover {
+            color: $color-primary;
+        }
+
+        &:visited {
+            color: $color-primary;
+        }
     }
 
     &:hover {
         background-color: hsl(0, 0%, 97%);
+    }
+
+    &__icon {
+        width: 13.5px;
+        height: 13.5px;
+        margin-left: 8px;
     }
 }
 </style>

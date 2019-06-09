@@ -16,37 +16,36 @@
                 'cv-header--mobile-open': mobileOpen,
             }"
         >
-            <!-- <cv-nav
-                v-if="isMobile && mobileOpen"
-                :isList="isMobile"
-                :menuItems="menuItems"
-                @toggleMenu="toggleMenu"
-            /> -->
-            <MenuPage
-                class="cv-header__mobile-menu"
-                v-if="isMobile && mobileOpen"
-                :items="menuItems"
-                @onItemSelect="toggleMenu"
-                title="Menü"
-            ></MenuPage>
-            <MenuPage
-                class="cv-header__mobile-submenu"
-                v-if="
-                    isMobile && mobileOpen && activeItem !== null && activeItem.children.length > 0
-                "
-                :items="activeItem.children"
-                :allowChildren="false"
-                :title="activeItem.title"
-                backButtonTitle="Zurück"
-                @close="activeItem = null"
-            >
-                <template slot="info">
-                    <p class="description-block__text"></p>
-                    <a :href="activeItem.href" class="description-block__link">Übersicht</a>
-                </template>
-            </MenuPage>
+            <transition name="fade-from-top">
+                <MenuPage
+                    class="cv-header__mobile-menu"
+                    v-if="isMobile && mobileOpen"
+                    :items="menuItems"
+                    @onItemSelect="toggleMenu"
+                    title="Menü"
+                ></MenuPage>
+            </transition>
+            <transition name="fade-from-left">
+                <MenuPage
+                    class="cv-header__mobile-submenu"
+                    v-if="isMobile && mobileOpen && submenuOpen"
+                    :items="activeItem.children"
+                    :allowChildren="false"
+                    :title="activeItem.title"
+                    backButtonTitle="Zurück"
+                    @close="activeItem = null"
+                >
+                    <template slot="info">
+                        <p class="description-block__text"></p>
+                        <a :href="activeItem.href" class="button description-block__link">
+                            <base-icon icon="arrow-right" />
+                            Übersicht
+                        </a>
+                    </template>
+                </MenuPage>
+            </transition>
             <page-submenu
-                v-if="activeItem !== null && activeItem.children.length > 0 && !isMobile"
+                v-if="submenuOpen && !isMobile"
                 class="cv-header__submenu"
                 :title="activeItem.title"
                 :items="activeItem.children"
@@ -115,6 +114,9 @@ const CvHeader = Vue.extend({
     computed: {
         shouldShowSmallHeader() {
             return this.smallHeader || this.isMobile;
+        },
+        submenuOpen() {
+            return this.activeItem !== null && this.activeItem.children.length > 0;
         },
     },
     methods: {
@@ -188,6 +190,9 @@ const CvHeader = Vue.extend({
             this.activeItem = menuItem;
         },
         toggleMobileMenu() {
+            if (this.mobileOpen && this.submenuOpen) {
+                this.activeItem = null;
+            }
             this.mobileOpen = !this.mobileOpen;
             this.setBodyNoScroll(this.mobileOpen);
         },
@@ -259,8 +264,8 @@ body.no-scroll {
     &__mobile-submenu {
         position: absolute;
         width: 100%;
-        height: 100vh;
-        padding-bottom: 100px;
+        height: calc(100vh + 20px);
+        // padding-bottom: 100px;
     }
 
     &__submenu {
@@ -272,5 +277,25 @@ body.no-scroll {
     &__nav {
         margin-left: 40px;
     }
+}
+
+.fade-from-top-enter-active,
+.fade-from-top-leave-active {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease;
+}
+
+.fade-from-top-enter, .fade-from-top-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.fade-from-left-enter-active,
+.fade-from-left-leave-active {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.fade-from-left-enter, .fade-from-left-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+    transform: translateX(100px);
 }
 </style>

@@ -11,9 +11,9 @@
                 <base-icon icon="arrow-right" primary />Übersicht
             </a>
         </div>
-        <ul class="menu-list" :class="{ 'menu-list--grid': !isList }">
+        <ul class="page-submenu__menu-list" :class="{ 'page-submenu__menu-list--grid': !isList }">
             <li v-for="item in items" :key="item.title" class="menu-list__item">
-                <submenu-link :href="item.href" :type="'inline'">{{ item.title }}</submenu-link>
+                <submenu-link :href="item.href" type="block">{{ item.title }}</submenu-link>
             </li>
         </ul>
     </div>
@@ -82,7 +82,7 @@ export default Vue.extend({
     }
 }
 
-.menu-list {
+.page-submenu__menu-list {
     list-style: none;
     max-height: 200px;
     padding: 0;
