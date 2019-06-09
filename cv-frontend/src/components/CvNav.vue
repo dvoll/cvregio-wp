@@ -1,12 +1,12 @@
 <template>
     <!-- <div> -->
-    <ul class="main-menu" :class="{ 'main-menu--list': isList }">
+    <ul class="main-menu" :class="{ 'main-menu--list': isList, 'main-menu--small': small }">
         <li
             class="menu-item"
             v-for="menuItem in menuItems"
             :key="menuItem.title"
             :class="{
-                current: menuItem.current,
+                current: menuItem.current || hasCurrentAsChild(menuItem),
                 'menu-item-has-children': menuItem.children && menuItem.children.length > 0,
             }"
         >
@@ -15,8 +15,15 @@
                 href=""
                 class="menu-item__toggle"
                 @click.prevent="toggleMenu(menuItem)"
-                >{{ menuItem.title }}</a
-            >
+                >{{ menuItem.title }}
+                <transition name="fade-submenu-icon">
+                    <base-icon
+                        v-show="activeItem && activeItem.title === menuItem.title"
+                        icon="arrow-right"
+                        class="menu-item__toggle-icon"
+                    />
+                </transition>
+            </a>
             <a v-else :href="menuItem.href">{{ menuItem.title }}</a>
         </li>
     </ul>
@@ -40,6 +47,10 @@ const cvNav = Vue.extend({
             type: Boolean,
             default: false,
         },
+        small: {
+            type: Boolean,
+            default: false,
+        },
     },
     computed: {
         menuItemsWithChildren() {
@@ -49,6 +60,17 @@ const cvNav = Vue.extend({
     methods: {
         toggleMenu(item) {
             this.$emit('toggleMenu', { menuItem: item });
+        },
+        hasCurrentAsChild(item) {
+            if (item.children === null || item.children.length === 0) {
+                return false;
+            }
+            for (const childItem of item.children) {
+                if (childItem.current) {
+                    return true;
+                }
+            }
+            return false;
         },
     },
 });
@@ -80,42 +102,43 @@ export default cvNav;
 
     .menu-item {
         padding: 5px 10px;
+
+        &__toggle-icon {
+            position: absolute;
+            left: calc(50% - 6px);
+            transform: translatey(0) rotateZ(90deg);
+            bottom: -20px;
+            width: 12px;
+            height: 12px;
+            transition: opacity 0.2s ease-in-out, transform 0.2s ease;
+        }
     }
 
     .menu-item a {
         text-decoration: none;
-        color: rgb(50, 50, 50);
+        // color: rgb(50, 50, 50);
+        color: $color-primary;
+        opacity: 0.8;
         font-family: 'Open Sans';
         font-size: 14px;
         text-transform: uppercase;
         position: relative;
-
-        // &:before {
-        //     content: '';
-        //     position: absolute;
-        //     bottom: -2px;
-        //     left: 0;
-        //     width: 100%;
-        //     height: 2px;
-        //     background: rgba(0, 0, 0, 0);
-        //     // border-bottom: 1px solid rgba(0, 0, 0, 0);
-        // }
-    }
-
-    .menu-item a:hover:before {
-        background: rgb(50, 50, 50);
-        height: 1px;
     }
 
     .menu-item.current-menu-item a,
     .menu-item.current a {
         font-weight: 600;
-        color: rgb(192, 32, 32);
-
-        &:before {
-            background: rgb(192, 32, 32);
-        }
+        color: $color-accent;
+        opacity: 1;
     }
+}
+
+.main-menu--small .menu-item__toggle-icon {
+    transform: translateY(-8px) rotateZ(90deg);
+}
+
+.fade-submenu-icon-enter, .fade-submenu-icon-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
 }
 
 .main-menu__submenu {

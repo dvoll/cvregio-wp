@@ -44,14 +44,16 @@
                     </template>
                 </MenuPage>
             </transition>
-            <page-submenu
-                v-if="submenuOpen && !isMobile"
-                class="cv-header__submenu"
-                :title="activeItem.title"
-                :items="activeItem.children"
-                :href="activeItem.href"
-                :isList="isMobile"
-            ></page-submenu>
+            <transition name="fade-from-top">
+                <page-submenu
+                    v-if="submenuOpen && !isMobile"
+                    class="cv-header__submenu"
+                    :title="activeItem.title"
+                    :items="activeItem.children"
+                    :href="activeItem.href"
+                    :isList="isMobile"
+                ></page-submenu>
+            </transition>
             <page-header
                 class="cv-header__page-header"
                 :title="title"
@@ -61,7 +63,12 @@
                 :mobile="isMobile"
                 @toggleMobileMenu="toggleMobileMenu()"
             >
-                <cv-nav :menuItems="menuItems" @toggleMenu="toggleMenu" />
+                <cv-nav
+                    :menuItems="menuItems"
+                    @toggleMenu="toggleMenu"
+                    :activeItem="activeItem"
+                    :small="smallHeader"
+                />
                 <hamburger slot="menu-button" :open="mobileOpen" @click="toggleMobileMenu()" />
             </page-header>
         </div>
@@ -162,6 +169,7 @@ const CvHeader = Vue.extend({
                 this.setBodyNoScroll(this.mobileOpen);
             } else {
                 this.isMobile = false;
+                this.mobileOpen = false;
                 this.setBodyNoScroll(false);
             }
         },
@@ -252,11 +260,15 @@ body.no-scroll {
     }
 
     &__page-header {
-        border-bottom: 1px solid #ccc;
+        border-bottom: 1px solid #fff;
+
+        .cv-header--small & {
+            border-color: #dadada;
+        }
 
         .cv-header--mobile-open &,
         .cv-header--submenu-open & {
-            border-bottom: none;
+            border-color: #fff;
         }
     }
 
