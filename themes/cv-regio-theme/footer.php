@@ -53,5 +53,6 @@
 
 <?php wp_footer(); ?>
 
+<?php include get_template_directory() . '/svg-sprite.html'; ?>
 </body>
 </html>
