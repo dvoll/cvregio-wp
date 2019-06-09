@@ -219,7 +219,7 @@ add_action( 'after_setup_theme', 'twentynineteen_content_width', 0 );
 function twentynineteen_scripts() {
 	// wp_enqueue_style( 'twentynineteen-style', get_template_directory_uri() . '/', array(), wp_get_theme()->get( 'Version' ) );
 
-	require_once get_template_directory_uri() . '/cv-frontend/frontend-include.php';
+	require_once get_template_directory() . '/cv-frontend/frontend-include.php';
 
 	wp_style_add_data( 'twentynineteen-style', 'rtl', 'replace' );
 
