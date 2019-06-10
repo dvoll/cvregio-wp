@@ -14,25 +14,25 @@
 		$custom_logo_url =  $image[0];
 	?>
 
-	<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 		<cv-header 
 			title="<?php bloginfo( 'name' ); ?>" 
 			subtitle="<?php bloginfo( 'description'); ?>" 
 			logourl="<?php echo $custom_logo_url; ?>"
 		>
-			<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentynineteen' ); ?>">
-				<?php
-				wp_nav_menu(
-					array(
-						'theme_location' => 'menu-1',
-						'menu_class'     => 'main-menu',
-						'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-					)
-				);
-				?>
-			</nav><!-- #site-navigation -->
+			<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
+				<nav id="site-navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentynineteen' ); ?>">
+					<?php
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-1',
+							'menu_class'     => 'main-menu',
+							'items_wrap'     => '<ul id="%1$s" class="%2$s">%3$s</ul>',
+						)
+					);
+					?>
+				</nav><!-- #site-navigation -->
+			<?php endif; ?>
 		</cv-header>
-	<?php endif; ?>
 	<?php if ( has_nav_menu( 'social' ) ) : ?>
 		<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentynineteen' ); ?>">
 			<?php
