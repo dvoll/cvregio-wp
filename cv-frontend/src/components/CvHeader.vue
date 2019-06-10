@@ -1,12 +1,14 @@
 <template>
     <div>
         <div class="header-placeholder" :class="{ 'header-placeholder--mobile': isMobile }" />
-        <div
-            v-if="activeItem && !isMobile"
-            class="overlay"
-            style="position: fixed; z-index: 95; width: 100vw; height: 100vh; background: rgba(0,0,0,0.2);"
-            @click="closeSubmenu()"
-        />
+        <transition name="fade">
+            <div
+                v-if="activeItem && !isMobile"
+                class="overlay"
+                style="position: fixed; z-index: 95; width: 100vw; height: 100vh; background: rgba(0,0,0,0.2);"
+                @click="closeSubmenu()"
+            />
+        </transition>
         <div
             class="cv-header"
             :class="{
@@ -289,6 +291,15 @@ body.no-scroll {
     &__nav {
         margin-left: 40px;
     }
+}
+
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 0.2s ease;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
 }
 
 .fade-from-top-enter-active,
