@@ -9,11 +9,11 @@
         </swiper-slide>
         <div slot="pagination" class="cv-stage__controls">
             <div class="swiper-button-prev--custom">
-                <i class="fas fa-arrow-left"></i>
+                <base-icon size="16" icon="arrow-left" />
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-next--custom">
-                <i class="fas fa-arrow-right"></i>
+                <base-icon size="16" icon="arrow-right" />
             </div>
         </div>
         <!-- <div class="swiper-button-next swiper-button-white"></div> -->
@@ -116,11 +116,16 @@ cv-stage {
 
     .swiper-pagination {
         position: relative;
-        padding: 0 10px 6px 10px;
+        padding: 0 4px 8px 4px;
 
         > * {
             margin: 0 2px;
         }
+    }
+
+    .swiper-button-prev--custom,
+    .swiper-button-next--custom {
+        padding: 0 4px;
     }
 
     .swiper-button-disabled {

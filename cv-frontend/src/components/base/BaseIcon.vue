@@ -3,7 +3,11 @@
         class="base-icon"
         :class="{ 'base-icon--has-fill': fillRgb }"
         :viewBox="viewBox"
-        :style="{ '--fill-rgb': fillRgb }"
+        :style="{
+            '--fill-rgb': fillRgb,
+            width: size ? size + 'px' : null,
+            height: size ? size + 'px' : null,
+        }"
     >
         <use :href="'#' + icon" />
     </svg>
@@ -24,6 +28,9 @@ export default Vue.extend({
         },
         fillRgb: {
             type: String,
+        },
+        size: {
+            type: Number,
         },
     },
 });
