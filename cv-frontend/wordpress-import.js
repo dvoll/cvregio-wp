@@ -15,20 +15,20 @@ const srcDir = './dist/';
 const mapping = [
     {
         name: 'plugin',
-        targetPath: './../plugins/cv-blocks/',
+        targetPath: '/plugins/cv-blocks/',
         distFolder: 'cv-frontend',
         files: [
             { type: 'js', name: 'chunk-vendors' },
             { type: 'js', name: 'chunk-common' },
-            { type: 'js', name: 'app' },
-            { type: 'css', name: 'chunk-vendors' },
-            { type: 'css', name: 'chunk-common' },
-            { type: 'css', name: 'app' },
+            { type: 'js', name: 'plugin' },
+            // { type: 'css', name: 'chunk-vendors' },
+            // { type: 'css', name: 'chunk-common' },
+            { type: 'css', name: 'plugin' },
         ],
     },
     {
         name: 'theme',
-        targetPath: './../themes/cv-regio-theme/',
+        targetPath: '/themes/cv-regio-theme/',
         distFolder: 'cv-frontend',
         files: [
             { type: 'js', name: 'chunk-vendors' },
@@ -46,14 +46,14 @@ main(srcDir);
 function getWpDeclaration(file, dist) {
     if (file.type === 'js') {
         return `
-wp_enqueue_script('cv-frontend-${file.chunkName}', plugins_url( '${dist +
-            file.fileName}', dirname( __FILE__ )), array(), '1.0', true );
+wp_enqueue_script('cv-frontend-${file.chunkName}', content_url() . '${dist +
+            file.fileName}', array(), '1.0', true );
 `;
     }
     return `
 wp_register_style(
     'cv-frontend-${file.chunkName}',
-    plugins_url( '${dist + file.fileName}', dirname( __FILE__ ) ),
+    content_url() . '${dist + file.fileName}',
     array( 'wp-editor' )
 );
 wp_enqueue_style('cv-frontend-${file.chunkName}');
@@ -97,26 +97,24 @@ async function main(srcDirection) {
     for (const mapItem of mapping) {
         console.log();
         console.log(`Start processing for ${mapItem.name}`);
-        await clearFolder(mapItem.targetPath + mapItem.distFolder + '/');
+        const path = './..' + mapItem.targetPath + mapItem.distFolder + '/';
+        await clearFolder(path);
         let wpdeclaration = '';
         for (const mapFile of mapItem.files) {
             const file = files.find(
                 file => file.chunkName === mapFile.name && file.type === mapFile.type
             );
             if (file) {
-                copyFile(
-                    srcDir + file.type + '/' + file.fileName,
-                    mapItem.targetPath + mapItem.distFolder + '/' + file.fileName
+                copyFile(srcDir + file.type + '/' + file.fileName, path + file.fileName);
+                wpdeclaration += getWpDeclaration(
+                    file,
+                    mapItem.targetPath + mapItem.distFolder + '/'
                 );
-                wpdeclaration += getWpDeclaration(file, mapItem.distFolder + '/');
             }
         }
         const wpFileContent = fileContent + wpdeclaration;
         try {
-            await fsp.writeFile(
-                mapItem.targetPath + mapItem.distFolder + '/' + 'frontend-include.php',
-                wpFileContent
-            );
+            await fsp.writeFile(path + 'frontend-include.php', wpFileContent);
             console.log(`Written succesfully to ${mapItem.name}.`);
         } catch (err) {
             console.error(`Error on writing file to : ${mapItem.name}`, err);

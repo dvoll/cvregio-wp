@@ -13,6 +13,11 @@ module.exports = {
             template: 'public/index.html', // source template
             filename: 'index-app.html', // output as dist/*
         },
+        plugin: {
+            entry: 'src/main-plugin.js', //entry for the public page
+            template: 'public/index.html', // source template
+            filename: 'index-plugin.html', // output as dist/*
+        },
         dev: {
             entry: 'src/dev/main.js',
             template: 'public/dev.html',
