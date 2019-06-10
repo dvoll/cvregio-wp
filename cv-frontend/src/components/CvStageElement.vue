@@ -80,6 +80,10 @@ export default {
 </script>
 
 <style lang="scss">
+.wp-block-cv-blocks-cv-stage {
+    margin-top: 0 !important;
+}
+
 cv-stage {
     position: relative;
     display: block;
