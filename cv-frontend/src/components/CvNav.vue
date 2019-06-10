@@ -110,6 +110,7 @@ export default cvNav;
             bottom: -20px;
             width: 12px;
             height: 12px;
+            color: $color__text-light;
             transition: opacity 0.2s ease-in-out, transform 0.2s ease;
         }
     }
@@ -117,18 +118,19 @@ export default cvNav;
     .menu-item a {
         text-decoration: none;
         // color: rgb(50, 50, 50);
-        color: $color-primary;
+        color: $color__primary;
         opacity: 0.8;
         font-family: 'Open Sans';
         font-size: 14px;
         text-transform: uppercase;
         position: relative;
+        outline: none;
     }
 
     .menu-item.current-menu-item a,
     .menu-item.current a {
         font-weight: 600;
-        color: $color-accent;
+        color: $color__accent;
         opacity: 1;
     }
 }

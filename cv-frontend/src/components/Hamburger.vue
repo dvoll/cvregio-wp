@@ -25,24 +25,12 @@ export default {
     transition: 0.2s all;
     -webkit-tap-highlight-color: transparent;
 
-    // .burger-lines:after {
-    //     left: 0;
-    //     top: -1em;
-    // }
-
-    // .burger-lines:before {
-    //     left: 1em;
-    //     top: 1em;
-    // }
-
     &:after {
         content: '';
         display: block;
         position: absolute;
         height: 150%;
         width: 150%;
-        // top: -25%;
-        // left: -25%;
     }
 
     .burger-lines {
@@ -57,7 +45,7 @@ export default {
             content: '';
             width: 100%;
             border-radius: 0.25em;
-            background-color: $color-primary;
+            background-color: $color__primary;
             height: 0.25em;
             position: absolute;
             transform: rotate(0);
@@ -77,11 +65,6 @@ export default {
 
 .burger.burger-slip {
     .burger-lines {
-        &:after,
-        &:before {
-            // width: 2em;
-        }
-
         &,
         &:after,
         &:before {

@@ -40,7 +40,7 @@ export default {
 
 <style lang="scss">
 .submenu-item {
-    color: $color-accent;
+    color: $color__accent;
     text-decoration: none;
     font-size: 0.9rem;
     padding: 15px 4px;
@@ -50,18 +50,18 @@ export default {
     justify-content: flex-start;
 
     &--block {
-        color: $color-primary;
+        color: $color__primary;
         background-color: #fff;
         padding: 4px 10px;
         margin: 2px;
         justify-content: center;
 
         &:hover {
-            color: $color-primary;
+            color: $color__primary;
         }
 
         &:visited {
-            color: $color-primary;
+            color: $color__primary;
         }
     }
 
