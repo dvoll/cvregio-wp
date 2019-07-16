@@ -196,7 +196,6 @@ figcaption,
 /** === Post Title === */
 
 .editor-post-title__block {
-	@include post-section-dash;
 
 	&:before {
 		width: $font__size-xxl;
