@@ -36,9 +36,19 @@ function cv_blocks_loader() {
 	// require_once plugin_dir_path( __FILE__ ) . 'src/blocks/block-sharing/index.php';
 
 	/**
-	 * Load Post Grid PHP
+	 * Load Groups Block PHP
+	 */
+	// require_once plugin_dir_path( __FILE__ ) . 'src/blocks/block-groups/index.php';
+
+	/**
+	 * Load 
 	 */
 	require_once plugin_dir_path( __FILE__ ) . 'src/blocks/block-stage/index.php';
+
+	/**
+	 * Load Post Grid PHP
+	 */
+	require_once plugin_dir_path( __FILE__ ) . 'src/blocks/block-group-detail/index.php';
 }
 add_action( 'plugins_loaded', 'cv_blocks_loader' );
 
@@ -62,3 +72,55 @@ function cv_blocks_frontend_loader() { // phpcs:ignore
 // Hook: Frontend assets.
 add_action( 'enqueue_block_assets', 'cv_blocks_frontend_loader' );
 
+function cv_blocks_groups_custom_post_type()
+{
+    register_post_type('cvgroups',
+		array(
+			'labels'      => array(
+				'name'          => __('Angebote'),
+				'singular_name' => __('Angebot'),
+			),
+			'public'      => true,
+			'has_archive' => true,
+			'hierarchical' => true,
+			'rewrite'     => array( 'slug' => 'gruppen' ), 
+			'show_in_rest' => true,
+			'supports' => array('title', 'editor', 'excerpt', 'page-attributes', 'author', 'custom-fields' ),
+			'template' => array(
+				array('cv-blocks/cv-group-detail')
+				// array( 'core/image', array(
+				// 	'align' => 'left',
+				// ) ),
+				// array( 'core/heading', array(
+				// 	'placeholder' => 'Add Author...',
+				// ) ),
+				// array( 'core/columns', array(), array(
+				// 	array( 'core/column', array(), array() ),
+				// 	array( 'core/column', array(), array(
+				// 		array( 'core/paragraph', array(
+				// 			'placeholder' => 'Add a inner paragraph'
+				// 		) ),
+				// 	) ),
+				// ) )
+			),
+			// 'template_lock' => 'all',
+		//    'supports' => array(
+		// 	   'title',
+		// 	   'excerpt',
+		// 	   'editor',
+		// 	   'page-attributes',
+		// 	   'author',
+		//    )
+		)
+    );
+}
+add_action('init', 'cv_blocks_groups_custom_post_type');
+
+function cv_group_block_init() {
+    register_post_meta( 'cvgroups', 'cv_blocks_meta_group_location', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+    ) );
+}
+add_action( 'init', 'cv_group_block_init' );

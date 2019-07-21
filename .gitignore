@@ -19,6 +19,7 @@ plugins/hello.php
 plugins/akismet
 plugins/atomic-blocks
 plugins/coblocks
+plugins/cv-regio-extention
 
 themes/twentynineteen
 themes/twentyseventeen

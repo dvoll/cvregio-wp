@@ -1,7 +1,14 @@
 <template>
     <div>
+        <div class="design-grid">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <dev-header></dev-header>
-        <stage></stage>
         <div id="content" class="site-content">
             <section id="primary" class="content-area">
                 <main id="main" class="site-main">
@@ -11,14 +18,14 @@
                     >
                         <div class="entry-content entry-content--starting-top">
                             <!-- <section class="wp-block-cv-blocks-cv-stage undefined alignfull"> -->
-                            <h1>Willkommen beim <br />CVJM Stift Quernheim e.V.</h1>
+                            <h1>Unsere Angebote</h1>
                             <p>
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
                                 erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
                                 et ea rebum.
                             </p>
-                            <dev-news></dev-news>
+                            <dev-groups></dev-groups>
                         </div>
                     </article>
                 </main>
@@ -30,26 +37,37 @@
 </template>
 
 <script>
-import stage from '../components/stage.vue';
 import DevHeader from '../components/dev-header.vue';
-import DevNews from '../components/dev-news.vue';
+import DevGroups from '../components/dev-groups.vue';
 
 export default {
     components: {
-        stage,
         DevHeader,
-        DevNews,
+        DevGroups,
     },
 };
 </script>
 
 <style lang="scss">
-#app {
-    // font-family: 'Avenir', Helvetica, Arial, sans-serif;
-    // -webkit-font-smoothing: antialiased;
-    // -moz-osx-font-smoothing: grayscale;
-    // text-align: center;
-    // color: #2c3e50;
-    // margin-top: 60px;
+.design-grid {
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    opacity: 0.5;
+
+    display: grid;
+    grid-template-columns: 1fr minmax(800px, 4fr) 1fr 2fr;
+    grid-gap: 10px;
+
+    > * {
+        width: 100%;
+        height: 300px;
+        border: 1px solid green;
+    }
 }
 </style>
+

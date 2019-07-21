@@ -5,6 +5,7 @@ import Dev from './pages/Dev.vue';
 import Homepage from './pages/Home.vue';
 import Default from './pages/Default.vue';
 import Post from './pages/Post.vue';
+import Groups from './pages/Groups.vue';
 import CvStageElement from '../components/CvStageElement.vue';
 import CvHeaderElement from '../components/CvHeaderElement.vue';
 import '../base-components';
@@ -14,6 +15,7 @@ import '../styles/main.scss';
 Vue.config.productionTip = false;
 Vue.use(vueCustomElement);
 Vue.customElement('cv-stage', CvStageElement);
+// Vue.customElement('cv-news', CvStageElement);
 Vue.customElement('cv-header', CvHeaderElement);
 
 const locationString = window.location.toString();
@@ -28,6 +30,11 @@ if (locationString.match(/index-dev.html$/)) {
     console.log('Location: post');
     new Vue({
         render: h => h(Post),
+    }).$mount('#app');
+} else if (locationString.match(/groups.html$/)) {
+    console.log('Location: groups');
+    new Vue({
+        render: h => h(Groups),
     }).$mount('#app');
 } else if (locationString.match(/default.html$/)) {
     console.log('Location: default');
