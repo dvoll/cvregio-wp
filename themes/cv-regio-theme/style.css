@@ -60,7 +60,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  * a custom font that includes just a Hoefler Text space replacement for that
  * character instead.
  */
-@import url("https://fonts.googleapis.com/css?family=Lato:400,700|Open+Sans:400,600i,700");
+/* @import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:400,600i,700"); */
 /* If we add the border using a regular CSS border, it won't look good on non-retina devices,
  * since its edges can look jagged due to lack of antialiasing. In this case, we are several
  * layers of box-shadow to add the border visually, which will render the border smoother. */
