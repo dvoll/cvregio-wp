@@ -31,17 +31,41 @@
         margin-top: 0;
     }
 
-    .entry-header {
-        margin: calc(3 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
-        position: relative;
+    .entry-header,
+    .entry-content,
+    .entry-summary {
+        display: grid;
+        grid-template-columns: 1fr [main-start content-start] 90% [content-end main-end] 1fr;
 
-        @include media(tablet) {
-            margin: calc(3 * #{$size__spacing-unit}) $size__site-margins $size__spacing-unit;
+        grid-gap: 0 10px;
+        margin-bottom: #{2 * $size__spacing-unit};
+
+        @include media(mobile) {
+            grid-template-columns: [main-start] 1fr [content-start] minmax(80%, 400px) [content-end] 1fr [main-end];
         }
+        @include media(tablet) {
+            grid-template-columns: 1fr [main-start] minmax(0, 180px) [content-start] 600px [content-end]
+                minmax(0, 180px) [main-end] 2fr;
+        }
+        @include media(desktop) {
+            grid-template-columns: 1fr 600px 1fr 1fr;
+            grid-template-columns: 2fr [main-start] minmax(0, 180px) [content-start] 600px [content-end]
+                minmax(0, 180px) [main-end] minmax(0, 350px) 3fr;
+        }
+
+        > * {
+            grid-column: content-start / content-end;
+        }
+    }
+
+    .entry-header {
+        margin-top: 3 * $size__spacing-unit;
+        margin-bottom: 4 * $size__spacing-unit;
     }
 
     .entry-title {
         margin: 0;
+        margin-top: $size__spacing-unit;
 
         a {
             color: inherit;
@@ -167,17 +191,29 @@
 
     .entry-content,
     .entry-summary {
-        max-width: calc(100% - (2 * #{$size__spacing-unit}));
-        margin: 0 $size__spacing-unit;
+        display: grid;
+        grid-template-columns: 1fr [main-start content-start] 90% [content-end main-end] 1fr;
 
+        grid-gap: 0 10px;
+        margin-bottom: #{2 * $size__spacing-unit};
+
+        @include media(mobile) {
+            grid-template-columns: [main-start] 1fr [content-start] minmax(80%, 400px) [content-end] 1fr [main-end];
+        }
         @include media(tablet) {
-            max-width: 80%;
-            margin: 0 10%;
-            padding: 0 60px;
+            grid-template-columns: 1fr [main-start] minmax(0, 180px) [content-start] 600px [content-end]
+                minmax(0, 180px) [main-end] 2fr;
+        }
+        @include media(desktop) {
+            grid-template-columns: 1fr 600px 1fr 1fr;
+            grid-template-columns: 2fr [main-start] minmax(0, 180px) [content-start] 600px [content-end]
+                minmax(0, 180px) [main-end] minmax(0, 350px) 3fr;
         }
     }
 
     .entry-content {
+        grid-column-start: 2;
+
         p {
             word-wrap: break-word;
         }
