@@ -1,7 +1,6 @@
 <template>
     <div>
         <dev-header></dev-header>
-        <stage></stage>
         <div id="content" class="site-content">
             <section id="primary" class="content-area">
                 <main id="main" class="site-main">
@@ -10,6 +9,7 @@
                         class="post-78 page type-page status-publish hentry entry"
                     >
                         <div class="entry-content entry-content--starting-top">
+                            <stage></stage>
                             <!-- <section class="wp-block-cv-blocks-cv-stage undefined alignfull"> -->
                             <h1>Willkommen beim <br />CVJM Stift Quernheim e.V.</h1>
                             <p>
@@ -18,6 +18,7 @@
                                 erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
                                 et ea rebum.
                             </p>
+                            <h2>Neuigkeiten</h2>
                             <dev-news></dev-news>
                         </div>
                     </article>
