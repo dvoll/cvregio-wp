@@ -25,6 +25,7 @@ function cv_blocks_loader() {
 	 */
 	require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
 
+	require_once plugin_dir_path( __FILE__ ) . 'src/partials/index.php';
 	/**
 	 * Load Getting Started page
 	 */
@@ -38,7 +39,7 @@ function cv_blocks_loader() {
 	/**
 	 * Load Groups Block PHP
 	 */
-	// require_once plugin_dir_path( __FILE__ ) . 'src/blocks/block-groups/index.php';
+	require_once plugin_dir_path( __FILE__ ) . 'src/blocks/block-groups/index.php';
 
 	/**
 	 * Load 

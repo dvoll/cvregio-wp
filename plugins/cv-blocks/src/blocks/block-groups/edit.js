@@ -19,7 +19,7 @@ const { Component, Fragment } = wp.element;
 // const { Placeholder, Spinner, Toolbar, Button, Modal } = wp.components;
 // const { withState } = wp.compose;
 
-const { InspectorControls, InnerBlocks } = wp.editor;
+// const { InspectorControls, InnerBlocks } = wp.editor;
 
 const {
     // RichText,
@@ -30,11 +30,11 @@ const {
 } = wp.editor;
 
 // const BLOCKS_TEMPLATE = [ [ 'cv-blocks/cv-stage-item', {} ] ];
-const BLOCKS_TEMPLATE = [
-    // [ 'cv-blocks/cv-groups', {} ],
-    [ 'core/paragraph', { placeholder: 'Image Details' } ],
-    // [],
-];
+// const BLOCKS_TEMPLATE = [
+//     // [ 'cv-blocks/cv-groups', {} ],
+//     ['core/paragraph', { placeholder: 'Image Details' }],
+//     // [],
+// ];
 
 export default class GroupsEditBlock extends Component {
     render() {
@@ -42,10 +42,11 @@ export default class GroupsEditBlock extends Component {
         return (
             <Fragment>
                 <section
-                    className={ props.className + ' alignfull cv-stage-edit' }
+                    className={props.className + ' alignfull cv-stage-edit'}
                     data-align="full"
                 >
-                    <InnerBlocks />
+                    { /* <InnerBlocks /> */}
+                    Gruppenübersicht
                 </section>
             </Fragment>
         );
