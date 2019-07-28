@@ -1,5 +1,5 @@
 <?php
-function cvCard($parameter = array(), $print = true)
+function cv_card($parameter = array(), $print = true)
 {
     $output = NULL;
     // Start output buffering

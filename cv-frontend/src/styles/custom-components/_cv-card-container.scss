@@ -1,0 +1,28 @@
+.cv-card-container {
+    margin-left: $size__spacing-unit;
+    margin-right: $size__spacing-unit;
+}
+
+.cv-card-container__grid {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(auto-fit, 290px);
+    grid-gap: 20px;
+
+    .cv-card-container--row & {
+        $card-height: 420px;
+        $card-margin: 10px;
+
+        grid-gap: 0;
+        display: flex;
+        flex-wrap: wrap;
+        height: $card-height + 3 * $card-margin;
+        overflow: hidden;
+
+        > * {
+            height: $card-height;
+            flex: 0 0 1;
+            margin: $card-margin;
+        }
+    }
+}

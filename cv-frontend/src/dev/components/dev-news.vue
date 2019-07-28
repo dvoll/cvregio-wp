@@ -1,7 +1,6 @@
 <template>
-    <section class="cv-section">
-        <h2>Neuigkeiten</h2>
-        <div class="cv-news">
+    <section class="cv-section alignfull">
+        <cv-card-container :singleRow="true">
             <cv-card
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
@@ -26,31 +25,25 @@
             >
                 <div></div>
             </cv-card>
-        </div>
+            <cv-card
+                title="Unsere neue Website"
+                subtitle="Allgemein - 22. Juli 2019"
+                imgSrc="/placeholder/05.jpg"
+            >
+                <div></div>
+            </cv-card>
+        </cv-card-container>
     </section>
 </template>
 <script>
 import CvCard from '../static-components/cv-card.vue';
+import CvCardContainer from '../static-components/cv-card-container.vue';
 
 export default {
-    components: { CvCard },
+    components: {
+        CvCard,
+        CvCardContainer,
+    },
 };
 </script>
-<style lang="scss">
-.cv-news {
-    display: grid;
-    margin-left: 0;
-    margin-right: 0;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 310px));
-
-    @media screen and (min-width: 768px) {
-        margin-left: -100px;
-        margin-right: -100px;
-    }
-
-    > * {
-        justify-self: center;
-    }
-}
-</style>
+<style lang="scss"></style>

@@ -1,13 +1,5 @@
 <template>
     <div>
-        <div class="design-grid">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
         <dev-header></dev-header>
         <div id="content" class="site-content">
             <section id="primary" class="content-area">
@@ -48,26 +40,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-.design-grid {
-    position: absolute;
-    z-index: 10;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: #fff;
-    opacity: 0.5;
-
-    display: grid;
-    grid-template-columns: 1fr minmax(800px, 4fr) 1fr 2fr;
-    grid-gap: 10px;
-
-    > * {
-        width: 100%;
-        height: 300px;
-        border: 1px solid green;
-    }
-}
-</style>
-
+<style lang="scss"></style>
