@@ -1,6 +1,7 @@
 p {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    margin-top: 0;
 }
 
 dfn,
@@ -11,6 +12,8 @@ i {
 }
 
 blockquote {
+    margin-top: 0;
+
     cite {
         font-size: $font__size-xs;
         font-style: normal;
@@ -50,7 +53,7 @@ big {
 }
 
 // a {
-    // text-decoration: none;
+// text-decoration: none;
 // }
 
 //     &:hover {
