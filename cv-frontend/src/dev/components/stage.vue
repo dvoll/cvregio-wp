@@ -1,25 +1,31 @@
 <template>
-    <cv-stage>
-        <div v-for="(item, index) in items" :key="item.title" class="cv-stage__item cv-stage-card">
+    <section class="wp-block-cv-blocks-cv-stage alignfull">
+        <cv-stage>
             <div
-                class="cv-stage-card__bg"
-                data-background-url="./placeholder/05.jpg"
-                :style="'background-image: url(./placeholder/0' + (index + 1) + '.jpg)'"
-            ></div>
-            <div class="cv-stage-card__overlay"></div>
-            <div class="cv-stage-card__body">
-                <div class="cv-stage-card__title-wrapper">
-                    <p class=" cv-stage-card__title">{{ item.title }}</p>
-                </div>
-                <div class="cv-stage-card__description">
-                    {{ item.description }}
-                </div>
-                <div class="cv-stage-card__link">
-                    <a v-if="item.link" href="/">{{ item.link }}</a>
+                v-for="(item, index) in items"
+                :key="item.title"
+                class="cv-stage__item cv-stage-card"
+            >
+                <div
+                    class="cv-stage-card__bg"
+                    data-background-url="./placeholder/05.jpg"
+                    :style="'background-image: url(./placeholder/0' + (index + 1) + '.jpg)'"
+                ></div>
+                <div class="cv-stage-card__overlay"></div>
+                <div class="cv-stage-card__body">
+                    <div class="cv-stage-card__title-wrapper">
+                        <p class=" cv-stage-card__title">{{ item.title }}</p>
+                    </div>
+                    <div class="cv-stage-card__description">
+                        {{ item.description }}
+                    </div>
+                    <div class="cv-stage-card__link">
+                        <a v-if="item.link" href="/">{{ item.link }}</a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </cv-stage>
+        </cv-stage>
+    </section>
 </template>
 
 <script>
@@ -39,12 +45,12 @@ const stage = {
                     description: 'Es gibt im Moment in diese Mannschaft',
                 },
                 {
-                    title: 'Willkommen im CVJM Kirchlengern',
+                    title: 'Willkommen im CVJM Kirchlengern2',
                     description: 'Dies ist ein Typoblindtext.',
                     link: 'Zur Seite',
                 },
                 {
-                    title: 'Martinssinger spenden an Lichtblicke',
+                    title: 'Martinssinger spenden an Lichtblicke2',
                     description: 'Es gibt im Moment in diese Mannschaft',
                 },
                 {
@@ -54,7 +60,7 @@ const stage = {
                     link: 'Zum Artikel',
                 },
                 {
-                    title: 'Martinssinger spenden an Lichtblicke',
+                    title: 'Martinssinger spenden an Lichtblicke3',
                     description: 'Es gibt im Moment in diese Mannschaft',
                 },
             ],
@@ -64,5 +70,4 @@ const stage = {
 export default stage;
 </script>
 
-<style lang="scss" >
-</style>
+<style lang="scss"></style>

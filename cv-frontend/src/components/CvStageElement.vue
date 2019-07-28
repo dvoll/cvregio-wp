@@ -87,9 +87,8 @@ export default {
 cv-stage {
     position: relative;
     display: block;
-    // min-height: 500px;
     width: 100%;
-    // background: #d2182e;
+    // max-width: 100vw;
     background: #000;
     overflow: hidden;
     display: flex;
