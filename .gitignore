@@ -2,6 +2,7 @@ node_modules
 .DS_Store
 dist/
 placeholder/
+uploads/
 */cv-regio-theme/cv-frontend/
 */cv-blocks/cv-frontend/
 
