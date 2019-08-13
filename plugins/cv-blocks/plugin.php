@@ -86,7 +86,7 @@ function cv_blocks_groups_custom_post_type()
 			'hierarchical' => true,
 			'rewrite'     => array( 'slug' => 'gruppen' ), 
 			'show_in_rest' => true,
-			'supports' => array('title', 'editor', 'excerpt', 'page-attributes', 'author', 'custom-fields' ),
+			'supports' => array('title', 'editor', 'excerpt', 'page-attributes', 'author', 'custom-fields', 'thumbnail' ),
 			'template' => array(
 				array('cv-blocks/cv-group-detail')
 				// array( 'core/image', array(
@@ -119,6 +119,11 @@ add_action('init', 'cv_blocks_groups_custom_post_type');
 
 function cv_group_block_init() {
     register_post_meta( 'cvgroups', 'cv_blocks_meta_group_location', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'string',
+    ) );
+    register_post_meta( 'cvgroups', 'cv_blocks_meta_group_target', array(
         'show_in_rest' => true,
         'single' => true,
         'type' => 'string',

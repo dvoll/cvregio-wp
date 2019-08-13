@@ -23,7 +23,8 @@ function cv_card($parameter = array(), $print = true)
                 class="cv-card__image"
                 style="background-image: url(' tbd ')"
             ></div>
-            <?php sprintf($content) ?>
+            <?php // sprintf($content) ?>
+            <?php echo $content ?>
         </article>
     </a>
 

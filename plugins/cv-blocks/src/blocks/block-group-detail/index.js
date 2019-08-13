@@ -28,9 +28,14 @@ registerBlockType( 'cv-blocks/cv-group-detail', {
     description: 'Eigenschaften einer Gruppe/eines Angebotes.',
     icon: 'format-image',
     category: 'common',
-    keywords: [ 'Anegbot', 'Gruppe', 'Detail' ],
+    keywords: [ 'Angebot', 'Gruppe', 'Detail' ],
 
     attributes: {
+        target: {
+            type: 'string',
+            source: 'meta',
+            meta: 'cv_blocks_meta_group_target',
+        },
         location: {
             type: 'string',
             source: 'meta',

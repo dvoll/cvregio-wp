@@ -29,16 +29,25 @@ function cvblocks_render_block_group_overview($attributes) {
 			/* Setup the post ID */
 			$post_id = get_the_ID();
 
+			$post_thumb_id = get_post_thumbnail_id( $post_id );
+			$post_thumb_size = 'thumbnail';
+			$card_content = sprintf(
+				'<img class="" src="">%1$s',
+				wp_get_attachment_image( $post_thumb_id, $post_thumb_size )
+			);
+
+			get_post_meta( get_the_ID(), 'cv_blocks_meta_group_target', true );
+
 			$card = cv_card(array(
-				'subtitle' => 'Subtitle',
+				'subtitle' => get_post_meta( get_the_ID(), 'cv_blocks_meta_group_location', true ), // TODO: Check meaning auf true in get_post_meta()
 				'title' =>  get_the_title( $post_id ),
+				'content' => $card_content
 			));
 
 			$post_grid_markup .= $card;
 
 
 			/* Setup the featured image ID */
-			$post_thumb_id = get_post_thumbnail_id( $post_id );
 
 			/* Setup the post classes */
 			$post_classes = 'ab-post-grid-item';

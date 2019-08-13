@@ -40,6 +40,10 @@ export default class StageEditBlock extends Component {
         // Check the post type
         // const isPost = attributes.postType === 'post';
 
+        // setTimeout( () => {
+        //     setAttributes( { target: 'mylocationTarget' } );
+        // }, 1000 );
+
         // if ( ! hasPosts ) {
         return (
             <Fragment>
@@ -49,13 +53,27 @@ export default class StageEditBlock extends Component {
                 /> */ }
                 <div>
                     <TextControl
-                        label="Meta Block Field"
-                        value={ attributes.location }
-                        onChange={ value =>
-                            setAttributes( {
+                        label="Ort"
+                        value={attributes.location}
+                        onChange={value =>
+                            setAttributes({
                                 location: value,
-                                locationPreview: value,
-                            } )
+                                // locationPreview: value,
+                            })
+                        }
+                    />
+                    <TextControl
+                        label="Zielgruppe"
+                        type="text"
+                        help="The message shown when people successfully subscribe."
+                        value={attributes.target}
+                        onChange={value => {
+                            console.log('value', value);
+                            setAttributes({
+                                target: value,
+                                // locationPreview: value,
+                            })
+                        }
                         }
                     />
                 </div>
