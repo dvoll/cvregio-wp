@@ -23,12 +23,12 @@ const { InnerBlocks } = wp.editor;
 // const validAlignments = [ 'center', 'wide' ];
 
 // Register the block
-registerBlockType( 'cv-blocks/cv-group-detail', {
+registerBlockType('cv-blocks/cv-group-detail', {
     title: 'CV Gruppen Eigenschaften',
     description: 'Eigenschaften einer Gruppe/eines Angebotes.',
     icon: 'format-image',
     category: 'common',
-    keywords: [ 'Angebot', 'Gruppe', 'Detail' ],
+    keywords: ['Angebot', 'Gruppe', 'Detail'],
 
     attributes: {
         target: {
@@ -40,6 +40,11 @@ registerBlockType( 'cv-blocks/cv-group-detail', {
             type: 'string',
             source: 'meta',
             meta: 'cv_blocks_meta_group_location',
+        },
+        time: {
+            type: 'string',
+            source: 'meta',
+            meta: 'cv_blocks_meta_group_time',
         },
         locationPreview: {
             type: 'string',
@@ -65,4 +70,4 @@ registerBlockType( 'cv-blocks/cv-group-detail', {
     save: () => {
         return null;
     },
-} );
+});

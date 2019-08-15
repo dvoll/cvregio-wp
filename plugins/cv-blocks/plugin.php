@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Plugin Name: CV Regio Blocks
  * Plugin URI: http://cvjm-stift-quernheim.de/
@@ -12,20 +13,21 @@
  */
 
 // Exit if accessed directly.
-if ( ! defined( 'ABSPATH' ) ) {
+if (!defined('ABSPATH')) {
 	exit;
 }
 
 /**
  * Initialize the blocks
  */
-function cv_blocks_loader() {
+function cv_blocks_loader()
+{
 	/**
 	 * Load the blocks functionality
 	 */
-	require_once plugin_dir_path( __FILE__ ) . 'src/init.php';
+	require_once plugin_dir_path(__FILE__) . 'src/init.php';
 
-	require_once plugin_dir_path( __FILE__ ) . 'src/partials/index.php';
+	require_once plugin_dir_path(__FILE__) . 'src/partials/index.php';
 	/**
 	 * Load Getting Started page
 	 */
@@ -39,19 +41,19 @@ function cv_blocks_loader() {
 	/**
 	 * Load Groups Block PHP
 	 */
-	require_once plugin_dir_path( __FILE__ ) . 'src/blocks/block-groups/index.php';
+	require_once plugin_dir_path(__FILE__) . 'src/blocks/block-groups/index.php';
 
 	/**
 	 * Load 
 	 */
-	require_once plugin_dir_path( __FILE__ ) . 'src/blocks/block-stage/index.php';
+	require_once plugin_dir_path(__FILE__) . 'src/blocks/block-stage/index.php';
 
 	/**
 	 * Load Post Grid PHP
 	 */
-	require_once plugin_dir_path( __FILE__ ) . 'src/blocks/block-group-detail/index.php';
+	require_once plugin_dir_path(__FILE__) . 'src/blocks/block-group-detail/index.php';
 }
-add_action( 'plugins_loaded', 'cv_blocks_loader' );
+add_action('plugins_loaded', 'cv_blocks_loader');
 
 
 /**
@@ -62,20 +64,22 @@ add_action( 'plugins_loaded', 'cv_blocks_loader' );
 // }
 // add_action( 'init', 'cv_blocks_init' );
 
-function cv_blocks_frontend_loader() { // phpcs:ignore
+function cv_blocks_frontend_loader()
+{ // phpcs:ignore
 	// Dependency to include the CSS after it. TODO: check if should be added.
 
 	// wp_register_script('cv-frontend-components', plugins_url( 'frontend/dist/js', dirname( __FILE__ )), array(), '1.0', true );  
 	// wp_enqueue_script('cv-frontend-components');  
-	require_once plugin_dir_path( __FILE__ ) . './cv-frontend/frontend-include.php';
+	require_once plugin_dir_path(__FILE__) . './cv-frontend/frontend-include.php';
 }
 
 // Hook: Frontend assets.
-add_action( 'enqueue_block_assets', 'cv_blocks_frontend_loader' );
+add_action('enqueue_block_assets', 'cv_blocks_frontend_loader');
 
 function cv_blocks_groups_custom_post_type()
 {
-    register_post_type('cvgroups',
+	register_post_type(
+		'cvgroups',
 		array(
 			'labels'      => array(
 				'name'          => __('Angebote'),
@@ -84,9 +88,9 @@ function cv_blocks_groups_custom_post_type()
 			'public'      => true,
 			'has_archive' => true,
 			'hierarchical' => true,
-			'rewrite'     => array( 'slug' => 'gruppen' ), 
+			'rewrite'     => array('slug' => 'gruppen'),
 			'show_in_rest' => true,
-			'supports' => array('title', 'editor', 'excerpt', 'page-attributes', 'author', 'custom-fields', 'thumbnail' ),
+			'supports' => array('title', 'editor', 'excerpt', 'page-attributes', 'author', 'custom-fields', 'thumbnail'),
 			'template' => array(
 				array('cv-blocks/cv-group-detail')
 				// array( 'core/image', array(
@@ -105,28 +109,61 @@ function cv_blocks_groups_custom_post_type()
 				// ) )
 			),
 			// 'template_lock' => 'all',
-		//    'supports' => array(
-		// 	   'title',
-		// 	   'excerpt',
-		// 	   'editor',
-		// 	   'page-attributes',
-		// 	   'author',
-		//    )
+			//    'supports' => array(
+			// 	   'title',
+			// 	   'excerpt',
+			// 	   'editor',
+			// 	   'page-attributes',
+			// 	   'author',
+			//    )
 		)
-    );
+	);
 }
 add_action('init', 'cv_blocks_groups_custom_post_type');
 
-function cv_group_block_init() {
-    register_post_meta( 'cvgroups', 'cv_blocks_meta_group_location', array(
-        'show_in_rest' => true,
-        'single' => true,
-        'type' => 'string',
-    ) );
-    register_post_meta( 'cvgroups', 'cv_blocks_meta_group_target', array(
-        'show_in_rest' => true,
-        'single' => true,
-        'type' => 'string',
-    ) );
+// Add the custom columns to the book post type:
+function set_custom_edit_cvgroup__columns($columns)
+{
+	// unset( $columns['author'] );
+	$columns['location'] = 'Ort';
+	$columns['target'] = 'Zielgruppe';
+
+	return $columns;
 }
-add_action( 'init', 'cv_group_block_init' );
+add_filter('manage_cvgroups_posts_columns', 'set_custom_edit_cvgroup__columns');
+
+function custom_cvgroup_column($column, $post_id)
+{
+	switch ($column) {
+
+		case 'location':
+			echo get_post_meta($post_id, 'cv_blocks_meta_group_location', true);
+			break;
+		case 'target':
+			echo get_post_meta($post_id, 'cv_blocks_meta_group_target', true);
+			break;
+	}
+}
+// Add the data to the custom columns for the book post type:
+add_action('manage_cvgroups_posts_custom_column', 'custom_cvgroup_column', 10, 2);
+
+
+function cv_group_block_init()
+{
+	register_post_meta('cvgroups', 'cv_blocks_meta_group_location', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+	register_post_meta('cvgroups', 'cv_blocks_meta_group_target', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+	register_post_meta('cvgroups', 'cv_blocks_meta_group_time', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+}
+add_action('init', 'cv_group_block_init');
