@@ -15,20 +15,11 @@
                             <a href="/" aria-current="page">Startseite</a>
                         </li>
                         <li
-                            id="menu-item-325"
-                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-325"
-                        >
-                            <a href="/default.html">Default</a>
-                        </li>
-                        <li
                             id="menu-item-328"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-328"
                         >
-                            <a
-                                href="http://0.0.0.0:8000/?page_id=5"
-                                aria-haspopup="true"
-                                aria-expanded="false"
-                                >Über uns</a
+                            <a href="/groups.html" aria-haspopup="true" aria-expanded="false"
+                                >Angebote</a
                             ><button class="submenu-expand" tabindex="-1">
                                 <svg
                                     class="svg-icon"
@@ -134,6 +125,12 @@
                                     </ul>
                                 </li>
                             </ul>
+                        </li>
+                        <li
+                            id="menu-item-325"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-325"
+                        >
+                            <a href="/default.html">Default</a>
                         </li>
                         <li
                             id="menu-item-326"
