@@ -6,7 +6,7 @@ import CvStageElement from './custom-elements/CvStageElement.vue';
 
 import './base-components';
 
-import './styles/custom-components/_cv-stage-item.scss';
+import './static-components/styles/_cv-stage-item.scss';
 
 console.log('Frontend loaded.');
 

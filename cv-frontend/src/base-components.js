@@ -3,7 +3,7 @@ import Vue from 'vue';
 // @ts-ignore
 const requireComponent = require.context(
     // The relative path of the components folder
-    './components-static/base',
+    './static-components/base',
     // Whether or not to look in subfolders
     false,
     // The regular expression used to match base component filenames

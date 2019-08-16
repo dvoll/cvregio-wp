@@ -2,7 +2,6 @@
 import Vue from 'vue';
 import vueCustomElement from 'vue-custom-element';
 
-// import CvStageElement from './components/CvStageElement.vue';
 import CvHeaderElement from './custom-elements/CvHeaderElement.vue';
 
 import './base-components';

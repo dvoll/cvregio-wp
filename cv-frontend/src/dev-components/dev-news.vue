@@ -36,8 +36,8 @@
     </section>
 </template>
 <script>
-import CvCard from '../components-static/cv-card.vue';
-import CvCardContainer from '../components-static/cv-card-container.vue';
+import CvCard from '../static-components/cv-card.vue';
+import CvCardContainer from '../static-components/cv-card-container.vue';
 
 export default {
     components: {
