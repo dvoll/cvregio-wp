@@ -41,7 +41,8 @@ function cvblocks_render_block_group_overview($attributes) {
 			$card = cv_card(array(
 				'subtitle' => get_post_meta( get_the_ID(), 'cv_blocks_meta_group_location', true ), // TODO: Check meaning auf true in get_post_meta()
 				'title' =>  get_the_title( $post_id ),
-				'content' => $card_content
+				'content' => $card_content,
+				'link' => esc_url( get_permalink( $post_id ) ),
 			));
 
 			$post_grid_markup .= $card;

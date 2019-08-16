@@ -25,6 +25,10 @@
     }
 }
 
+a.cv-card {
+    color: inherit;
+}
+
 .cv-card__inner {
     width: 100%;
     overflow: hidden;
@@ -35,11 +39,11 @@
     > * {
         margin: 0 23px 20px 23px;
 
-        :first-child {
+        &:first-child {
             margin-top: 28px;
         }
 
-        :last-child {
+        &:last-child {
             margin-bottom: 28px;
         }
     }

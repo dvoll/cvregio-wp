@@ -1,2 +1,29 @@
 .info-row {
 }
+
+.info-row__header {
+    display: flex;
+    align-items: center;
+}
+
+.info-row__label {
+    font-family: $font__heading;
+    font-size: 12px;
+    font-style: italic;
+    color: $color__text-light;
+    text-transform: uppercase;
+}
+
+.info-row__icon {
+    color: $color__text-light;
+    margin-right: 5px;
+}
+
+.info-row__title {
+    font-family: $font__heading;
+    font-size: 18px;
+    font-style: italic;
+    line-height: 1;
+    // color: $color__text-light;
+    // text-transform: uppercase;
+}

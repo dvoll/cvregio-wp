@@ -1,5 +1,5 @@
 <template>
-    <a :href="link" class="cv-card">
+    <a :href="link" class="cv-card no-link-style">
         <article class="cv-card__inner">
             <span
                 class="cv-card__subtitle"
