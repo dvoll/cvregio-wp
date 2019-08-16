@@ -9,15 +9,17 @@
                         class="post-78 page type-page status-publish hentry entry"
                     >
                         <div class="entry-content entry-content--starting-top">
+                            <stage></stage>
                             <!-- <section class="wp-block-cv-blocks-cv-stage undefined alignfull"> -->
-                            <h1>Unsere Angebote</h1>
+                            <h1>Willkommen beim <br />CVJM Stift Quernheim e.V.</h1>
                             <p>
                                 Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
                                 nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
                                 erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
                                 et ea rebum.
                             </p>
-                            <dev-groups></dev-groups>
+                            <h2>Neuigkeiten</h2>
+                            <dev-news></dev-news>
                         </div>
                     </article>
                 </main>
@@ -29,15 +31,26 @@
 </template>
 
 <script>
-import DevHeader from '../components/dev-header.vue';
-import DevGroups from '../components/dev-groups.vue';
+import stage from '../dev-components/stage.vue';
+import DevHeader from '../dev-components/dev-header.vue';
+import DevNews from '../dev-components/dev-news.vue';
 
 export default {
     components: {
+        stage,
         DevHeader,
-        DevGroups,
+        DevNews,
     },
 };
 </script>
 
-<style lang="scss"></style>
+<style lang="scss">
+#app {
+    // font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    // -webkit-font-smoothing: antialiased;
+    // -moz-osx-font-smoothing: grayscale;
+    // text-align: center;
+    // color: #2c3e50;
+    // margin-top: 60px;
+}
+</style>

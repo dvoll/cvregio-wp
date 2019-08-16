@@ -4,14 +4,17 @@
         <stage></stage>
         <dev-buttons></dev-buttons>
         <!-- eslint-disable-next-line vue/require-v-for-key vue/no-unused-vars -->
-        <br v-for="i in [, , , , , , , , , , , , , , , , , , , , , , , , , , , ,]" />
+        <br
+            v-for="(i, index) in [, , , , , , , , , , , , , , , , , , , , , , , , , , , ,]"
+            :key="index"
+        />
     </div>
 </template>
 
 <script>
-import stage from '../components/stage.vue';
-import DevHeader from '../components/dev-header.vue';
-import DevButtons from '../components/dev-buttons.vue';
+import stage from '../dev-components/stage.vue';
+import DevHeader from '../dev-components/dev-header.vue';
+import DevButtons from '../dev-components/dev-buttons.vue';
 
 export default {
     name: 'dev',

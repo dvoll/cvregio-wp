@@ -8,16 +8,14 @@
 </template>
 
 <script>
-import DevHeader from '../components/dev-header.vue';
-import DevButtons from '../components/dev-buttons.vue';
-import DevPageLayout from '../components/dev-page-layout.vue';
-import DevDefaultContent from '../components/dev-default-content.vue';
-import DevPageContent from '../components/dev-page-content.vue';
+import DevHeader from '../dev-components/dev-header.vue';
+import DevPageLayout from '../dev-components/dev-page-layout.vue';
+import DevDefaultContent from '../dev-components/dev-default-content.vue';
+import DevPageContent from '../dev-components/dev-page-content.vue';
 
 export default {
     components: {
         DevHeader,
-        DevButtons,
         DevPageContent,
         DevDefaultContent,
         DevPageLayout,

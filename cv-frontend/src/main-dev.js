@@ -1,16 +1,16 @@
 // @ts-nocheck
 import Vue from 'vue';
 import vueCustomElement from 'vue-custom-element';
-import Dev from './pages/Dev.vue';
-import Homepage from './pages/Home.vue';
-import Default from './pages/Default.vue';
-import Post from './pages/Post.vue';
-import Groups from './pages/Groups.vue';
-import CvStageElement from '../components/CvStageElement.vue';
-import CvHeaderElement from '../components/CvHeaderElement.vue';
-import '../base-components';
+import Dev from './dev-pages/Dev.vue';
+import Homepage from './dev-pages/Home.vue';
+import Default from './dev-pages/Default.vue';
+import Post from './dev-pages/Post.vue';
+import Groups from './dev-pages/Groups.vue';
+import CvStageElement from './custom-elements/CvStageElement.vue';
+import CvHeaderElement from './custom-elements/CvHeaderElement.vue';
+import './base-components';
 
-import '../styles/main.scss';
+import './styles/main.scss';
 
 Vue.config.productionTip = false;
 Vue.use(vueCustomElement);

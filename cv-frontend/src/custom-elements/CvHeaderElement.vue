@@ -4,7 +4,7 @@
 
 <script>
 // @ts-check
-import CvHeader from './CvHeader.vue';
+import CvHeader from '../components/CvHeader.vue';
 
 const CvHeaderElement = {
     components: {
