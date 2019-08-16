@@ -12,15 +12,13 @@
 </template>
 
 <script>
-import stage from '../components/stage.vue';
-import DevHeader from '../components/dev-header.vue';
-import DevSingleLayout from '../components/dev-single-layout.vue';
-import DevArticle from '../components/dev-article.vue';
-import DevArticleComments from '../components/dev-article-comments.vue';
+import DevHeader from '../dev-components/dev-header.vue';
+import DevSingleLayout from '../dev-components/dev-single-layout.vue';
+import DevArticle from '../dev-components/dev-article.vue';
+import DevArticleComments from '../dev-components/dev-article-comments.vue';
 
 export default {
     components: {
-        stage,
         DevHeader,
         DevArticleComments,
         DevArticle,

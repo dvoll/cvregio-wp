@@ -153,7 +153,7 @@
                             rel="nofollow"
                             id="cancel-comment-reply-link"
                             href="/?p=1#respond"
-                            style="display:none;"
+                            style="display: none;"
                             >Antworten abbrechen</a
                         ></small
                     >

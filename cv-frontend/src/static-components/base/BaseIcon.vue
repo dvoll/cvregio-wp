@@ -35,13 +35,3 @@ export default Vue.extend({
     },
 });
 </script>
-
-<style lang="scss">
-.base-icon {
-    fill: currentColor;
-
-    &--has-fill {
-        fill: rgb(var(--fill-rgb));
-    }
-}
-</style>

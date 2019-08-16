@@ -19,22 +19,22 @@ module.exports = {
             filename: 'index-plugin.html', // output as dist/*
         },
         dev: {
-            entry: 'src/dev/main.js',
+            entry: 'src/main-dev.js',
             template: 'public/dev.html',
             filename: 'dev.html',
         },
         devHomepage: {
-            entry: 'src/dev/main.js',
+            entry: 'src/main-dev.js',
             template: 'public/dev-homepage.html',
             filename: 'index.html',
         },
         devDefaultPage: {
-            entry: 'src/dev/main.js',
+            entry: 'src/main-dev.js',
             template: 'public/dev-page.html',
             filename: 'default.html',
         },
         devPostPage: {
-            entry: 'src/dev/main.js',
+            entry: 'src/main-dev.js',
             template: 'public/dev-post.html',
             filename: 'post.html',
         },
@@ -54,7 +54,7 @@ module.exports = {
         loaderOptions: {
             sass: {
                 data: `
-                    @import "@/scss-variables/main.scss";
+                    @import "@/styles-global/main.scss";
                 `,
             },
         },

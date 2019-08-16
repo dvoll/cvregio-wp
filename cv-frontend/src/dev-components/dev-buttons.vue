@@ -15,11 +15,8 @@
 
 <script>
 import Vue from 'vue';
-import BaseIcon from '../../components/base/BaseIcon.vue';
 
 export default Vue.extend({
-    components: {
-        BaseIcon,
-    },
+    components: {},
 });
 </script>

@@ -2,11 +2,11 @@
 import Vue from 'vue';
 import vueCustomElement from 'vue-custom-element';
 
-import CvStageElement from './components/CvStageElement.vue';
+import CvStageElement from './custom-elements/CvStageElement.vue';
 
 import './base-components';
 
-import './styles/custom-components/_cv-stage-item.scss';
+import './static-components/styles/_cv-stage-item.scss';
 
 console.log('Frontend loaded.');
 
