@@ -1,7 +1,8 @@
 <?php
 
-function cvblocks_render_block_group_overview($attributes) {
-	$categories = isset( $attributes['categories'] ) ? $attributes['categories'] : '';
+function cvblocks_render_block_group_overview($attributes)
+{
+	$categories = isset($attributes['categories']) ? $attributes['categories'] : '';
 
 	/* Setup the query */
 	$grid_query = new WP_Query(
@@ -21,26 +22,26 @@ function cvblocks_render_block_group_overview($attributes) {
 
 
 	/* Start the loop */
-	if ( $grid_query->have_posts() ) {
+	if ($grid_query->have_posts()) {
 
-		while ( $grid_query->have_posts() ) {
+		while ($grid_query->have_posts()) {
 			$grid_query->the_post();
 
 			/* Setup the post ID */
 			$post_id = get_the_ID();
 
-			$post_thumb_id = get_post_thumbnail_id( $post_id );
+			$post_thumb_id = get_post_thumbnail_id($post_id);
 			// $post_thumb_size = 'cv-blocks-card';
 			// $card_content = wp_get_attachment_image( $post_thumb_id, $post_thumb_size, false, array( "class" => "cv-card" ) );
 			$card_content = '';
-			$target = get_post_meta( get_the_ID(), 'cv_blocks_meta_group_target', true);
-			$time = get_post_meta( get_the_ID(), 'cv_blocks_meta_group_time', true);
-			$location = get_post_meta( get_the_ID(), 'cv_blocks_meta_group_location', true);
+			$target = get_post_meta(get_the_ID(), 'cv_blocks_meta_group_target', true);
+			$time = get_post_meta(get_the_ID(), 'cv_blocks_meta_group_time', true);
+			$location = get_post_meta(get_the_ID(), 'cv_blocks_meta_group_location', true);
 
 			if ($target) {
 				$card_content .= cv_info_row(array(
 					'title' => $target,
-					'label' => 'Zielgruppe',
+					'label' => 'Teilnehmer',
 				));
 			}
 
@@ -56,13 +57,13 @@ function cvblocks_render_block_group_overview($attributes) {
 			// 	'label' => 'Zeit'
 			// ));
 
-			get_post_meta( get_the_ID(), 'cv_blocks_meta_group_target', true );
+			get_post_meta(get_the_ID(), 'cv_blocks_meta_group_target', true);
 
 			$card = cv_card(array(
 				'subtitle' => $location ? $location : '&nbsp;', // TODO: Check meaning auf true in get_post_meta()
-				'title' =>  get_the_title( $post_id ),
+				'title' =>  get_the_title($post_id),
 				'content' => $card_content,
-				'link' => esc_url( get_permalink( $post_id ) ),
+				'link' => esc_url(get_permalink($post_id)),
 				'imageId' => $post_thumb_id
 			));
 
@@ -82,7 +83,7 @@ function cvblocks_render_block_group_overview($attributes) {
 			// }
 
 			/* Join classes together */
-			$post_classes = join( ' ', get_post_class( $post_classes, $post_id ) );
+			$post_classes = join(' ', get_post_class($post_classes, $post_id));
 
 			/* Start the markup for the post */
 			// $post_grid_markup .= sprintf(
@@ -122,9 +123,9 @@ function cvblocks_render_block_group_overview($attributes) {
 			// );
 
 			/* Get the post title */
-			$title = get_the_title( $post_id );
+			$title = get_the_title($post_id);
 
-			if ( ! $title ) {
+			if (!$title) {
 				// $title = __( 'Untitled', 'atomic-blocks' );
 			}
 
@@ -136,36 +137,36 @@ function cvblocks_render_block_group_overview($attributes) {
 			// 		$post_title_tag = 'h2';
 			// 	}
 
-				// $post_grid_markup .= sprintf(
-				// 	'<%3$s class="ab-block-post-grid-title"><a href="%1$s" rel="bookmark">%2$s</a></%3$s>',
-				// 	esc_url( get_permalink( $post_id ) ),
-				// 	esc_html( $title ),
-				// 	esc_attr( 'h3' )
-				// );
+			// $post_grid_markup .= sprintf(
+			// 	'<%3$s class="ab-block-post-grid-title"><a href="%1$s" rel="bookmark">%2$s</a></%3$s>',
+			// 	esc_url( get_permalink( $post_id ) ),
+			// 	esc_html( $title ),
+			// 	esc_attr( 'h3' )
+			// );
 			// }
 
-			if ( isset( $attributes['postType'] ) && $attributes['postType'] === 'post' ) {
+			if (isset($attributes['postType']) && $attributes['postType'] === 'post') {
 				/* Wrap the byline content */
 				$post_grid_markup .= sprintf(
 					'<div class="ab-block-post-grid-byline">'
 				);
 
 				/* Get the post author */
-				if ( isset( $attributes['displayPostAuthor'] ) && $attributes['displayPostAuthor'] ) {
+				if (isset($attributes['displayPostAuthor']) && $attributes['displayPostAuthor']) {
 					$post_grid_markup .= sprintf(
 						'<div class="ab-block-post-grid-author" itemprop="author" itemtype="https://schema.org/Person"><a class="ab-text-link" href="%2$s" itemprop="url" rel="author"><span itemprop="name">%1$s</span></a></div>',
-						esc_html( get_the_author_meta( 'display_name', get_the_author_meta( 'ID' ) ) ),
-						esc_html( get_author_posts_url( get_the_author_meta( 'ID' ) ) )
+						esc_html(get_the_author_meta('display_name', get_the_author_meta('ID'))),
+						esc_html(get_author_posts_url(get_the_author_meta('ID')))
 					);
 				}
 
 				/* Get the post date */
-				if ( isset( $attributes['displayPostDate'] ) && $attributes['displayPostDate'] ) {
-						$post_grid_markup .= sprintf(
-							'<time datetime="%1$s" class="ab-block-post-grid-date" itemprop="datePublished">%2$s</time>',
-							esc_attr( get_the_date( 'c', $post_id ) ),
-							esc_html( get_the_date( '', $post_id ) )
-						);
+				if (isset($attributes['displayPostDate']) && $attributes['displayPostDate']) {
+					$post_grid_markup .= sprintf(
+						'<time datetime="%1$s" class="ab-block-post-grid-date" itemprop="datePublished">%2$s</time>',
+						esc_attr(get_the_date('c', $post_id)),
+						esc_html(get_the_date('', $post_id))
+					);
 				}
 
 				/* Close the byline content */
@@ -187,7 +188,8 @@ function cvblocks_render_block_group_overview($attributes) {
 			/* Get the excerpt */
 
 			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound, PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket
-			$excerpt = apply_filters( 'the_excerpt',
+			$excerpt = apply_filters(
+				'the_excerpt',
 				get_post_field(
 					'post_excerpt',
 					$post_id,
@@ -195,9 +197,10 @@ function cvblocks_render_block_group_overview($attributes) {
 				)
 			);
 
-			if ( empty( $excerpt ) && isset( $attributes['excerptLength'] ) ) {
+			if (empty($excerpt) && isset($attributes['excerptLength'])) {
 				// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound, PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket  -- Running the_excerpt directly, Previous rule doesn't take without the_excerpt being moved up a line
-				$excerpt = apply_filters( 'the_excerpt',
+				$excerpt = apply_filters(
+					'the_excerpt',
 					wp_trim_words(
 						preg_replace(
 							array(
@@ -212,21 +215,21 @@ function cvblocks_render_block_group_overview($attributes) {
 				);
 			}
 
-			if ( ! $excerpt ) {
+			if (!$excerpt) {
 				$excerpt = null;
 			}
 
 			// if ( isset( $attributes['displayPostExcerpt'] ) && $attributes['displayPostExcerpt'] ) {
-				// $post_grid_markup .= wp_kses_post( $excerpt );
+			// $post_grid_markup .= wp_kses_post( $excerpt );
 			// }
 
 			/* Get the read more link */
-			if ( isset( $attributes['displayPostLink'] ) && $attributes['displayPostLink'] ) {
+			if (isset($attributes['displayPostLink']) && $attributes['displayPostLink']) {
 				$post_grid_markup .= sprintf(
 					'<p><a class="ab-block-post-grid-more-link ab-text-link" href="%1$s" rel="bookmark">%2$s <span class="screen-reader-text">%3$s</span></a></p>',
-					esc_url( get_permalink( $post_id ) ),
-					esc_html( $attributes['readMoreText'] ),
-					esc_html( $title )
+					esc_url(get_permalink($post_id)),
+					esc_html($attributes['readMoreText']),
+					esc_html($title)
 				);
 			}
 
@@ -250,39 +253,39 @@ function cvblocks_render_block_group_overview($attributes) {
 		/* Build the block classes */
 		// $class = "ab-block-post-grid featured{$attributes['postType']} align{$attributes['align']}";
 
-		if ( isset( $attributes['className'] ) ) {
+		if (isset($attributes['className'])) {
 			$class .= ' ' . $attributes['className'];
 		}
 
 		/* Layout orientation class */
 		$grid_class = 'ab-post-grid-items';
 
-		if ( isset( $attributes['postLayout'] ) && 'list' === $attributes['postLayout'] ) {
+		if (isset($attributes['postLayout']) && 'list' === $attributes['postLayout']) {
 			$grid_class .= ' is-list';
 		} else {
 			$grid_class .= ' is-grid';
 		}
 
 		/* Grid columns class */
-		if ( isset( $attributes['columns'] ) && 'grid' === $attributes['postLayout'] ) {
+		if (isset($attributes['columns']) && 'grid' === $attributes['postLayout']) {
 			$grid_class .= ' columns-' . $attributes['columns'];
 		}
 
 		/* Post grid section title */
-		if ( isset( $attributes['displaySectionTitle'] ) && $attributes['displaySectionTitle'] && ! empty( $attributes['sectionTitle'] ) ) {
-			if ( isset( $attributes['sectionTitleTag'] ) ) {
+		if (isset($attributes['displaySectionTitle']) && $attributes['displaySectionTitle'] && !empty($attributes['sectionTitle'])) {
+			if (isset($attributes['sectionTitleTag'])) {
 				$section_title_tag = $attributes['sectionTitleTag'];
 			} else {
 				$section_title_tag = 'h2';
 			}
 
-			$section_title = '<' . esc_attr( $section_title_tag ) . '>' . esc_html( $attributes['sectionTitle'] ) . '</' . esc_attr( $section_title_tag ) . '>';
+			$section_title = '<' . esc_attr($section_title_tag) . '>' . esc_html($attributes['sectionTitle']) . '</' . esc_attr($section_title_tag) . '>';
 		} else {
 			$section_title = null;
 		}
 
 		/* Post grid section tag */
-		if ( isset( $attributes['sectionTag'] ) ) {
+		if (isset($attributes['sectionTag'])) {
 			$section_tag = $attributes['sectionTag'];
 		} else {
 			$section_tag = 'section';
@@ -299,7 +302,7 @@ function cvblocks_render_block_group_overview($attributes) {
 			// esc_attr( $class ),
 			'testclass alignfull',
 			$section_title,
-			esc_attr( $grid_class ),
+			esc_attr($grid_class),
 			$post_grid_markup
 		);
 		return $block_content;
@@ -309,10 +312,11 @@ function cvblocks_render_block_group_overview($attributes) {
 /**
  * Registers the post grid block on server
  */
-function cv_blocks_register_block_core_group_overview() {
+function cv_blocks_register_block_core_group_overview()
+{
 
 	/* Check if the register function exists */
-	if ( ! function_exists( 'register_block_type' ) ) {
+	if (!function_exists('register_block_type')) {
 		return;
 	}
 
@@ -329,7 +333,7 @@ function cv_blocks_register_block_core_group_overview() {
 		)
 	);
 }
-add_action( 'init', 'cv_blocks_register_block_core_group_overview' );
+add_action('init', 'cv_blocks_register_block_core_group_overview');
 
 // /**
 //  * Create API fields for additional info
@@ -410,9 +414,10 @@ add_action( 'init', 'cv_blocks_register_block_core_group_overview' );
  * @param String $field_name  Name of the field to retrieve.
  * @param String $request  The current request object.
  */
-function cv_blocks_get_location_info( $object, $field_name, $request ) {
+function cv_blocks_get_location_info($object, $field_name, $request)
+{
 	/* Get the author name */
-	$location_data['display_name'] = get_the_author_meta( 'display_name', $object['location'] );
+	$location_data['display_name'] = get_the_author_meta('display_name', $object['location']);
 
 	/* Get the author link */
 	// $location_data['location_link'] = get_author_posts_url( $object['author'] );
