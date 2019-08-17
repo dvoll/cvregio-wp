@@ -167,3 +167,13 @@ function cv_group_block_init()
 	));
 }
 add_action('init', 'cv_group_block_init');
+
+/**
+ * Add image sizes
+ */
+function cv_blocks_image_sizes() {
+	// Post Grid Block.
+	add_image_size( 'cv-blocks-card', 290, 170, true );
+	// add_image_size( 'cv-blocks-groups-square', 600, 600, true );
+}
+add_action( 'after_setup_theme', 'cv_blocks_image_sizes' );

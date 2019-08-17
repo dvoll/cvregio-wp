@@ -30,19 +30,40 @@ function cvblocks_render_block_group_overview($attributes) {
 			$post_id = get_the_ID();
 
 			$post_thumb_id = get_post_thumbnail_id( $post_id );
-			$post_thumb_size = 'thumbnail';
-			$card_content = sprintf(
-				'<img class="" src="">%1$s',
-				wp_get_attachment_image( $post_thumb_id, $post_thumb_size )
-			);
+			// $post_thumb_size = 'cv-blocks-card';
+			// $card_content = wp_get_attachment_image( $post_thumb_id, $post_thumb_size, false, array( "class" => "cv-card" ) );
+			$card_content = '';
+			$target = get_post_meta( get_the_ID(), 'cv_blocks_meta_group_target', true);
+			$time = get_post_meta( get_the_ID(), 'cv_blocks_meta_group_time', true);
+			$location = get_post_meta( get_the_ID(), 'cv_blocks_meta_group_location', true);
+
+			if ($target) {
+				$card_content .= cv_info_row(array(
+					'title' => $target,
+					'label' => 'Zielgruppe',
+				));
+			}
+
+			if ($time) {
+				$card_content .= cv_info_row(array(
+					'title' => $time,
+					'label' => 'Zeit',
+				));
+			}
+
+			// $card_content .= cv_info_row(array(
+			// 	'title' => get_post_meta( get_the_ID(), 'cv_blocks_meta_group_time', true),
+			// 	'label' => 'Zeit'
+			// ));
 
 			get_post_meta( get_the_ID(), 'cv_blocks_meta_group_target', true );
 
 			$card = cv_card(array(
-				'subtitle' => get_post_meta( get_the_ID(), 'cv_blocks_meta_group_location', true ), // TODO: Check meaning auf true in get_post_meta()
+				'subtitle' => $location ? $location : '&nbsp;', // TODO: Check meaning auf true in get_post_meta()
 				'title' =>  get_the_title( $post_id ),
 				'content' => $card_content,
 				'link' => esc_url( get_permalink( $post_id ) ),
+				'imageId' => $post_thumb_id
 			));
 
 			$post_grid_markup .= $card;

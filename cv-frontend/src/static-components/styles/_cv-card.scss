@@ -2,8 +2,9 @@
     display: block;
     width: 290px;
     border: 1px solid $color__background-hr;
-    border-radius: 5px;
+    border-radius: 6px;
     position: relative;
+    box-sizing: content-box;
 
     text-decoration: none !important;
     color: $color__text-main;
@@ -40,7 +41,7 @@ a.cv-card {
         margin: 0 23px 20px 23px;
 
         &:first-child {
-            margin-top: 28px;
+            margin-top: 18px;
         }
 
         &:last-child {
@@ -52,10 +53,11 @@ a.cv-card {
 .cv-card__subtitle {
     margin-top: 27.5px;
     margin-bottom: 0px;
-    color: $color__text-lighter;
+    color: $color__text-light;
     font-family: $font__heading;
     @include font-size(0.8);
     font-style: italic;
+    text-transform: uppercase;
 
     &--capitalized {
         text-transform: uppercase;
@@ -71,7 +73,6 @@ a.cv-card {
 
 .cv-card__image {
     position: relative;
-    height: 170px;
     width: 100%;
     margin-left: 0;
     margin-right: 0;

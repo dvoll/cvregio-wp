@@ -1,12 +1,13 @@
 <?php
-function cv_info_row($parameter = array(), $print = true)
+function cv_base_icon($parameter = array(), $print = true)
 {
     $output = NULL;
 
     $iconName = isset($parameter['iconName']) ? $parameter['iconName'] : 'arrow-right';
     $viewBox = isset($parameter['viewBox']) ? $parameter['viewBox'] : '0 0 50 50';
-    $size = isset($parameter['size$size']) ? $parameter['size$size'] : false;
+    $size = isset($parameter['size']) ? $parameter['size'] : false;
     $fillRgb = isset($parameter['fillRgb']) ? $parameter['fillRgb'] : false;
+    $class = isset($parameter['class']) ? $parameter['class'] : '';
     // $label = isset($parameter['label']) ? $parameter['label'] : '';
     // $label = isset($parameter['label']) ? $parameter['label'] : '';
     
@@ -16,11 +17,11 @@ function cv_info_row($parameter = array(), $print = true)
     ?>
 
      <svg
-        class="base-icon  <?php $fillRgb ? 'base-icon--has-fill' : '' ?>"
-        viewBox="viewBox"
+        class="base-icon  <?php echo $fillRgb ? 'base-icon--has-fill' : '' ?> <?php echo $class ?>"
+        viewBox="<?php echo $viewBox ?>"
         style="
-            <?php $size ? '--fill-rgb: ' . $fillRgb . ';' : '' ?>
-            <?php $size ? 'width: ' . $size . 'px;height: ' . $size . 'px;' : '' ?>
+            <?php echo $size ? '--fill-rgb: ' . $fillRgb . ';' : '' ?>
+            <?php echo $size ? 'width: ' . $size . 'px;height: ' . $size . 'px;' : '' ?>
         "
     >
         <use href="#<?php echo $iconName?>" />

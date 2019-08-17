@@ -6,6 +6,14 @@ function cv_info_row($parameter = array(), $print = true)
     $title = isset($parameter['title']) ? $parameter['title'] : '';
     $label = isset($parameter['label']) ? $parameter['label'] : '';
     $iconName = isset($parameter['iconName']) ? $parameter['iconName'] : 'arrow-right';
+
+    $icon = '';
+    if ($iconName) {
+        $icon = cv_base_icon(array(
+            'size' => 12,
+            'class'=> 'info-row__icon'
+        ));
+    }
     
     // Start output buffering
     ob_start();
@@ -14,8 +22,8 @@ function cv_info_row($parameter = array(), $print = true)
 
     <div class="info-row">
         <div class="info-row__header">
-            <base-icon icon="><?php echo $iconName ?>" class="info-row__icon" size="12" />
-            <span class="info-row__label">><?php echo $label ?></span>
+            <?php echo $icon; ?>
+            <span class="info-row__label"><?php echo $label ?></span>
         </div>
         <div class="info-row__title"><?php echo $title ?></div>
     </div>
