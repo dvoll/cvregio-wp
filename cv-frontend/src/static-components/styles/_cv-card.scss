@@ -73,7 +73,7 @@ a.cv-card {
 
 .cv-card__image {
     position: relative;
-    width: 100%;
+    width: calc(100% - 18px);
     margin-left: 0;
     margin-right: 0;
 
