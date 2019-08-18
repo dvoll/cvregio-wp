@@ -25,7 +25,7 @@
 		?>
 	</header><!-- .entry-header -->
 
-	<?php twentynineteen_post_thumbnail(); ?>
+	<?php cvregio_post_thumbnail(); ?>
 
 	<div class="entry-content">
 		<?php

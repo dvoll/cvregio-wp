@@ -1,6 +1,10 @@
 <template>
     <article id="post-2" class="post-2 page type-page status-publish hentry entry">
-        <header class="entry-header">
+        <div class="featured-image">
+            <slot name="featuredImage" />
+        </div>
+
+        <header v-if="hasHeader" class="entry-header">
             <h1 class="entry-title">Beispiel-Seite</h1>
         </header>
 
@@ -53,3 +57,13 @@
         <!-- .entry-footer -->
     </article>
 </template>
+<script>
+export default {
+    props: {
+        hasHeader: {
+            type: Boolean,
+            default: true,
+        },
+    },
+};
+</script>

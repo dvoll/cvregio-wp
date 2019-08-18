@@ -4,6 +4,7 @@ import vueCustomElement from 'vue-custom-element';
 import Dev from './dev-pages/Dev.vue';
 import Homepage from './dev-pages/Home.vue';
 import Default from './dev-pages/Default.vue';
+import DefaultWithImage from './dev-pages/DefaultWithImage.vue';
 import Post from './dev-pages/Post.vue';
 import Groups from './dev-pages/Groups.vue';
 import CvStageElement from './custom-elements/CvStageElement.vue';
@@ -40,6 +41,11 @@ if (locationString.match(/index-dev.html$/)) {
     console.log('Location: default');
     new Vue({
         render: h => h(Default),
+    }).$mount('#app');
+} else if (locationString.match(/page-image.html$/)) {
+    console.log('Location: default');
+    new Vue({
+        render: h => h(DefaultWithImage),
     }).$mount('#app');
 } else {
     console.log('Location: Homepage');

@@ -67,113 +67,113 @@
     }
 
     /* Entry header */
-    .site-featured-image {
+    // .site-featured-image {
 
-        /* First layer: grayscale. */
-        .post-thumbnail img {
-            height: auto;
-            left: 50%;
-            max-width: 1000%;
-            min-height: 100%;
-            min-width: 100vw;
-            position: absolute;
-            top: 50%;
-            transform: translateX(-50%) translateY(-50%);
-            width: auto;
-            z-index: 1;
+    //     /* First layer: grayscale. */
+    //     .post-thumbnail img {
+    //         height: auto;
+    //         left: 50%;
+    //         max-width: 1000%;
+    //         min-height: 100%;
+    //         min-width: 100vw;
+    //         position: absolute;
+    //         top: 50%;
+    //         transform: translateX(-50%) translateY(-50%);
+    //         width: auto;
+    //         z-index: 1;
 
-            @supports (object-fit: cover) {
-                height: 100%;
-                left: 0;
-                object-fit: cover;
-                top: 0;
-                transform: none;
-                width: 100%;
-            }
+    //         @supports (object-fit: cover) {
+    //             height: 100%;
+    //             left: 0;
+    //             object-fit: cover;
+    //             top: 0;
+    //             transform: none;
+    //             width: 100%;
+    //         }
 
-            /* When image filters are active, make it grayscale to colorize it blue. */
-            .image-filters-enabled & {
-                filter: grayscale(100%);
-            }
-        }
+    //         /* When image filters are active, make it grayscale to colorize it blue. */
+    //         .image-filters-enabled & {
+    //             filter: grayscale(100%);
+    //         }
+    //     }
 
-        .entry-header {
-            margin-top: calc(4 * #{$size__spacing-unit});
-            margin-bottom: 0;
-            margin-left: 0;
-            margin-right: 0;
+    //     .entry-header {
+    //         margin-top: calc(4 * #{$size__spacing-unit});
+    //         margin-bottom: 0;
+    //         margin-left: 0;
+    //         margin-right: 0;
 
-            @include media(tablet) {
-                margin-left: $size__site-margins;
-                margin-right: $size__site-margins;
-            }
+    //         @include media(tablet) {
+    //             margin-left: $size__site-margins;
+    //             margin-right: $size__site-margins;
+    //         }
 
-            .entry-title {
-                &:before {
-                    background: $color__background-body;
-                }
-            }
+    //         .entry-title {
+    //             &:before {
+    //                 background: $color__background-body;
+    //             }
+    //         }
 
-            /* Entry meta */
+    //         /* Entry meta */
 
-            .entry-meta {
-                font-weight: 500;
+    //         .entry-meta {
+    //             font-weight: 500;
 
-                > span {
-                    margin-right: $size__spacing-unit;
-                    display: inline-block;
+    //             > span {
+    //                 margin-right: $size__spacing-unit;
+    //                 display: inline-block;
 
-                    &:last-child {
-                        margin-right: 0;
-                    }
-                }
+    //                 &:last-child {
+    //                     margin-right: 0;
+    //                 }
+    //             }
 
-                a {
-                    @include link-transition;
-                    color: currentColor;
+    //             a {
+    //                 @include link-transition;
+    //                 color: currentColor;
 
-                    &:hover {
-                        text-decoration: none;
-                    }
-                }
+    //                 &:hover {
+    //                     text-decoration: none;
+    //                 }
+    //             }
 
-                .svg-icon {
-                    position: relative;
-                    display: inline-block;
-                    vertical-align: middle;
-                    margin-right: 0.5em;
-                }
+    //             .svg-icon {
+    //                 position: relative;
+    //                 display: inline-block;
+    //                 vertical-align: middle;
+    //                 margin-right: 0.5em;
+    //             }
 
-                .discussion-avatar-list {
-                    display: none;
-                }
-            }
+    //             .discussion-avatar-list {
+    //                 display: none;
+    //             }
+    //         }
 
-            &.has-discussion {
-                @include media(tablet) {
-                    .entry-meta {
-                        display: flex;
-                        position: relative;
-                    }
+    //         &.has-discussion {
+    //             @include media(tablet) {
+    //                 .entry-meta {
+    //                     display: flex;
+    //                     position: relative;
+    //                 }
 
-                    .entry-title {
-                        padding-right: calc(1 * (100vw / 12) + #{$size__spacing-unit});
-                    }
+    //                 .entry-title {
+    //                     padding-right: calc(1 * (100vw / 12) + #{$size__spacing-unit});
+    //                 }
 
-                    .entry-meta .comment-count {
-                        position: absolute;
-                        right: 0;
-                    }
+    //                 .entry-meta .comment-count {
+    //                     position: absolute;
+    //                     right: 0;
+    //                 }
 
-                    .entry-meta .discussion-avatar-list {
-                        display: block;
-                        position: absolute;
-                        bottom: 100%;
-                    }
-                }
-            }
-        }
-    }
+    //                 .entry-meta .discussion-avatar-list {
+    //                     display: block;
+    //                     position: absolute;
+    //                     bottom: 100%;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
 
     /* Custom Logo Link */
 

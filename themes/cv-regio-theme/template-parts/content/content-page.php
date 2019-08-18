@@ -12,11 +12,24 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<?php if ( ! twentynineteen_can_show_post_thumbnail() ) : ?>
+	<?php if ( is_singular() && cvregio_can_show_post_thumbnail() ) : ?>
+		<div class="featured-image">
+			<?php
+				cvregio_post_thumbnail();
+				// the_post();
+				// $discussion = ! is_page() && get_post_type() != 'cvgroups' && cvregio_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null;
+
+				// $classes = 'entry-header';
+				// if ( ! empty( $discussion ) && absint( $discussion->responses ) > 0 ) {
+					// $classes = 'entry-header has-discussion';
+				// }
+				// rewind_posts()
+			?>
+		</div>
+	<?php endif; ?>
 	<header class="entry-header">
 		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
 	</header>
-	<?php endif; ?>
 
 	<div class="entry-content">
 		<?php

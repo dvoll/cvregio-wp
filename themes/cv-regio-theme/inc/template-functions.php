@@ -98,8 +98,8 @@ add_filter( 'get_the_archive_title', 'twentynineteen_get_the_archive_title' );
 /**
  * Determines if post thumbnail can be displayed.
  */
-function twentynineteen_can_show_post_thumbnail() {
-	return apply_filters( 'twentynineteen_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
+function cvregio_can_show_post_thumbnail() {
+	return apply_filters( 'cvregio_can_show_post_thumbnail', ! post_password_required() && ! is_attachment() && has_post_thumbnail() );
 }
 
 /**
@@ -117,7 +117,7 @@ function twentynineteen_image_filters_enabled() {
  * @param array $attr  Attributes for the image markup.
  * @return string Value for use in post thumbnail 'sizes' attribute.
  */
-function twentynineteen_post_thumbnail_sizes_attr( $attr ) {
+function cvregio_post_thumbnail_sizes_attr( $attr ) {
 
 	if ( is_admin() ) {
 		return $attr;
@@ -129,7 +129,7 @@ function twentynineteen_post_thumbnail_sizes_attr( $attr ) {
 
 	return $attr;
 }
-add_filter( 'wp_get_attachment_image_attributes', 'twentynineteen_post_thumbnail_sizes_attr', 10, 1 );
+add_filter( 'wp_get_attachment_image_attributes', 'cvregio_post_thumbnail_sizes_attr', 10, 1 );
 
 /**
  * Returns the size for avatars used in the theme.

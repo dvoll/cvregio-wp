@@ -7,7 +7,7 @@
  * @since 1.0.0
  */
 
-$discussion = ! is_page() && get_post_type() != 'cvgroups' && twentynineteen_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null; ?>
+$discussion = ! is_page() && get_post_type() != 'cvgroups' && cvregio_can_show_post_thumbnail() ? twentynineteen_get_discussion_data() : null; ?>
 
 <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 

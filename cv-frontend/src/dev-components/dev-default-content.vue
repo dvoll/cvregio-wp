@@ -1,5 +1,10 @@
 <template>
     <article id="post-225" class="post-225 page type-page status-publish hentry entry">
+
+        <div class="featured-image">
+            <slot name="featuredImage" />
+        </div>
+        
         <header class="entry-header">
             <h1 class="entry-title">Block Test</h1>
         </header>

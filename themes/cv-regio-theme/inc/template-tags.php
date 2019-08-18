@@ -132,15 +132,15 @@ if ( ! function_exists( 'twentynineteen_entry_footer' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'twentynineteen_post_thumbnail' ) ) :
+if ( ! function_exists( 'cvregio_post_thumbnail' ) ) :
 	/**
 	 * Displays an optional post thumbnail.
 	 *
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function twentynineteen_post_thumbnail() {
-		if ( ! twentynineteen_can_show_post_thumbnail() ) {
+	function cvregio_post_thumbnail() {
+		if ( ! cvregio_can_show_post_thumbnail() ) {
 			return;
 		}
 
