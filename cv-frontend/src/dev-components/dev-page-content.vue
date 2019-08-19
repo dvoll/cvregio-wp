@@ -4,9 +4,11 @@
             <slot name="featuredImage" />
         </div>
 
-        <header v-if="hasHeader" class="entry-header">
-            <h1 class="entry-title">Beispiel-Seite</h1>
-        </header>
+        <slot name="header">
+            <header v-if="hasHeader" class="entry-header">
+                <h1 class="entry-title">Beispiel-Seite</h1>
+            </header>
+        </slot>
 
         <div class="entry-content">
             <p>

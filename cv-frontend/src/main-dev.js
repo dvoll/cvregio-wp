@@ -5,6 +5,7 @@ import Dev from './dev-pages/Dev.vue';
 import Homepage from './dev-pages/Home.vue';
 import Default from './dev-pages/Default.vue';
 import DefaultWithImage from './dev-pages/DefaultWithImage.vue';
+import GroupDetail from './dev-pages/GroupDetail.vue';
 import Post from './dev-pages/Post.vue';
 import Groups from './dev-pages/Groups.vue';
 import CvStageElement from './custom-elements/CvStageElement.vue';
@@ -43,9 +44,14 @@ if (locationString.match(/index-dev.html$/)) {
         render: h => h(Default),
     }).$mount('#app');
 } else if (locationString.match(/page-image.html$/)) {
-    console.log('Location: default');
+    console.log('Location: default with image');
     new Vue({
         render: h => h(DefaultWithImage),
+    }).$mount('#app');
+} else if (locationString.match(/jungschar.html$/)) {
+    console.log('Location: group detail');
+    new Vue({
+        render: h => h(GroupDetail),
     }).$mount('#app');
 } else {
     console.log('Location: Homepage');
