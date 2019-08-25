@@ -249,7 +249,7 @@ body.no-scroll {
     width: 100%;
     transition: transform 0.3s;
     width: 100%;
-    background: #fff;
+    background: $color__background-body;
 
     &--small {
         transform: translateY(#{$smallHeaderHeight - $initialHeaderHeight} + 'px');
@@ -262,7 +262,7 @@ body.no-scroll {
     }
 
     &__page-header {
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid $color__background-body;
 
         .cv-header--small & {
             border-color: #dadada;
@@ -270,7 +270,7 @@ body.no-scroll {
 
         .cv-header--mobile-open &,
         .cv-header--submenu-open & {
-            border-color: #fff;
+            border-color: $color__background-body;
         }
     }
 

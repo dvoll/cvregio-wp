@@ -51,7 +51,7 @@ export default {
 
     &--block {
         color: $color__primary;
-        background-color: #fff;
+        background-color: $color__background-input;
         padding: 4px 10px;
         margin: 2px;
         justify-content: center;
@@ -66,7 +66,7 @@ export default {
     }
 
     &:hover {
-        background-color: hsl(0, 0%, 97%);
+        background-color: darken($color__background-input, 2%);
     }
 
     &__icon {

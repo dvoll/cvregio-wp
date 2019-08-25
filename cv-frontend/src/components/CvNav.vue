@@ -97,7 +97,7 @@ export default cvNav;
         flex-direction: column;
         height: 100vh;
         width: 100%;
-        background: #fff;
+        background: $color__background-body;
     }
 
     .menu-item {

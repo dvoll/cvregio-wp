@@ -60,7 +60,7 @@ $transitionSpeedShrink: 0.4s ease-out;
 .page-header {
     position: fixed;
     width: 100%;
-    background-color: #fff;
+    background-color: $color__background-body;
     overflow: hidden;
 
     &__link {

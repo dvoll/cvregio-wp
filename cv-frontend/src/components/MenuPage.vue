@@ -76,7 +76,7 @@ export default Vue.extend({
 
 <style lang="scss">
 .menu-page {
-    background: #fff;
+    background: $color__background-body;
     padding: 20px 40px;
 
     display: flex;
