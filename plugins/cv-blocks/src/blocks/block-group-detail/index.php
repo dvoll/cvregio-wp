@@ -1,8 +1,5 @@
 <?php
 
-
-
-
 function cvblocks_render_block_group_detail($attributes) {
 	$target = get_post_meta(get_the_ID(), 'cv_blocks_meta_group_target', true);
 	$time = get_post_meta(get_the_ID(), 'cv_blocks_meta_group_time', true);
@@ -31,7 +28,7 @@ function cvblocks_render_block_group_detail($attributes) {
 
 	$intro_box = cv_intro_box(array(
 		'contentLeft' => $info_rows,
-		'contentRight' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+		'contentRight' => has_excerpt(get_the_ID()) ? get_the_excerpt(get_the_ID()) : null,
 	));
 
 	return $intro_box;
