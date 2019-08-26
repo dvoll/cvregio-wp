@@ -45,13 +45,15 @@
         grid-template-columns: [main-start] 1fr [content-start] minmax(80%, 400px) [content-end] 1fr [main-end];
     }
     @include media(tablet) {
-        grid-template-columns: 1fr [main-start] minmax(0, 180px) [content-start] 600px [content-end]
+        grid-template-columns:
+            1fr [main-start] minmax(0, 180px) [content-start] 600px [content-end]
             minmax(0, 180px) [main-end] 2fr;
     }
     @include media(desktop) {
         grid-template-columns: 1fr 600px 1fr 1fr;
-        grid-template-columns: 2fr [main-start] minmax(0, 180px) [content-start] 600px [content-end]
-            minmax(0, 180px) [main-end] minmax(0, 350px) 3fr;
+        grid-template-columns:
+            2fr [main-start] minmax(0, 180px) [content-start] 600px [content-end]
+            minmax(0, 180px) [main-end sidebar-start] minmax(0, 350px) [sidebar-end] 3fr;
     }
 
     > * {
@@ -60,8 +62,16 @@
         &.alignwide {
             grid-column: content-start / main-end;
 
+            @include media(mobile) {
+                padding-right: 5%;
+            }
+
             &--both {
                 grid-column: main-start / main-end;
+
+                @include media(mobile) {
+                    padding-left: 5%;
+                }
             }
         }
 
@@ -74,6 +84,14 @@
             grid-column: content-start / content-end;
             justify-self: center;
             max-width: 100%;
+        }
+
+        &.mobile-padding--left {
+            padding-left: 5%;
+        }
+
+        &.mobile-padding--right {
+            padding-right: 5%;
         }
     }
 }
@@ -149,7 +167,7 @@
     grid-column: main-start / main-end;
 
     @include media(mobile) {
-        margin: 0 5%;
+        padding: 0 5%;
     }
 
     @include media(desktop) {
@@ -160,6 +178,10 @@
         outline: none;
     }
 
+    > img {
+        width: 100%;
+    }
+
     .post-thumbnail-inner {
         display: block;
 
@@ -168,36 +190,6 @@
             display: block;
             width: 100%;
         }
-    }
-}
-
-// .image-filters-enabled & {
-//     .post-thumbnail {
-//         position: relative;
-//         display: block;
-//     }
-// }
-
-.entry-content,
-.entry-summary,
-.featured-image {
-    display: grid;
-    grid-template-columns: 1fr [main-start content-start] 90% [content-end main-end] 1fr;
-
-    grid-gap: 0 10px;
-    margin-bottom: #{2 * $size__spacing-unit};
-
-    @include media(mobile) {
-        grid-template-columns: [main-start] 1fr [content-start] minmax(80%, 400px) [content-end] 1fr [main-end];
-    }
-    @include media(tablet) {
-        grid-template-columns: 1fr [main-start] minmax(0, 180px) [content-start] 600px [content-end]
-            minmax(0, 180px) [main-end] 2fr;
-    }
-    @include media(desktop) {
-        grid-template-columns: 1fr 600px 1fr 1fr;
-        grid-template-columns: 2fr [main-start] minmax(0, 180px) [content-start] 600px [content-end]
-            minmax(0, 180px) [main-end sidebar-start] minmax(0, 350px) [sidebar-end] 3fr;
     }
 }
 

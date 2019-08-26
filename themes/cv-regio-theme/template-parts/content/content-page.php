@@ -13,7 +13,7 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( is_singular() && cvregio_can_show_post_thumbnail() ) : ?>
-		<div class="featured-image">
+		<div class="featured-image mobile-padding--left mobile-padding--right">
 			<?php
 				cvregio_post_thumbnail();
 				// the_post();

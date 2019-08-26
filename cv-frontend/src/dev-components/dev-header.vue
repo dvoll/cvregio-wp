@@ -67,10 +67,10 @@
                                     class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-327"
                                 >
                                     <a
-                                        href="http://0.0.0.0:8000/?page_id=7"
+                                        href="/jungschar.html"
                                         aria-haspopup="true"
                                         aria-expanded="false"
-                                        >Aveeerrylongtextlink</a
+                                        >Club 28</a
                                     >
                                     <button class="submenu-expand" tabindex="-1">
                                         <svg

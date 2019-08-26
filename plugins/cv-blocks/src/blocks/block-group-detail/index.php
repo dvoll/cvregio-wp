@@ -4,12 +4,38 @@
 
 
 function cvblocks_render_block_group_detail($attributes) {
-    // var_dump( $attributes);
-    // if ($attributes['location']) {
-    //     return '<p>' . $attributes['location'] . '</p>';
-	// }
-	$value = get_post_meta( get_the_ID(), 'cv_blocks_meta_group_location', true );
-    return "<h1>HEading-Neu!</h1>" . count($attributes) . "Value: " . $value;
+	$target = get_post_meta(get_the_ID(), 'cv_blocks_meta_group_target', true);
+	$time = get_post_meta(get_the_ID(), 'cv_blocks_meta_group_time', true);
+	$location = get_post_meta(get_the_ID(), 'cv_blocks_meta_group_location', true);
+
+	$info_rows = '';
+	if ($location) {
+		$info_rows .= cv_info_row(array(
+			'title' => $location,
+			'label' => 'Ort',
+		));
+	}
+	if ($target) {
+		$info_rows .= cv_info_row(array(
+			'title' => $target,
+			'label' => 'Teilnehmer',
+		));
+	}
+
+	if ($time) {
+		$info_rows .= cv_info_row(array(
+			'title' => $time,
+			'label' => 'Zeit',
+		));
+	}
+
+	$intro_box = cv_intro_box(array(
+		'contentLeft' => $info_rows,
+		'contentRight' => 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.',
+	));
+
+	return $intro_box;
+	
 }
 
 /**

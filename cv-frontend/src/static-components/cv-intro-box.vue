@@ -1,6 +1,6 @@
 <template>
-    <div class="cv-intro-box__wrapper--overlay entry-header">
-        <div class="cv-intro-box--overlay">
+    <div class="entry-content">
+        <div class="cv-intro-box alignwide">
             <div class="cv-intro-box__header">
                 <slot name="header" />
             </div>
@@ -21,55 +21,6 @@ export default {};
 </script>
 
 <style lang="scss">
-.cv-intro-box__wrapper.entry-header {
-    position: relative;
-
-    // @include media(tablet) {
-    //     margin-top: -80px;
-    // }
-}
-
-.cv-intro-box {
-    @include media(mobile) {
-        // margin: 0 0 0 -30px;
-    }
-
-    // @include media(tablet) {
-    //     margin: 0 -30px;
-    // }
-
-    @include media(desktop) {
-        grid-column: content-start / main-end !important;
-    }
-
-    &__header {
-        margin-bottom: 30px;
-    }
-
-    &__content {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    &__col {
-        padding-bottom: 40px;
-    }
-
-    &__col1 {
-        flex-shrink: 0;
-        margin-right: 30px;
-    }
-
-    &__col2 {
-        font-size: 1.1rem;
-        line-height: 1.8;
-        flex-shrink: 1;
-        flex-basis: 300px;
-        flex-grow: 1;
-        min-width: 300px;
-    }
-}
-
 .cv-intro-box__wrapper--overlay.entry-header {
     position: relative;
 
