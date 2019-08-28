@@ -1,10 +1,8 @@
 node_modules
 .DS_Store
-dist/
 placeholder/
 uploads/
-*/cv-regio-theme/cv-frontend/
-*/cv-blocks/cv-frontend/
+cv-frontend/dist
 
 *.log
 advanced-cache.php
@@ -17,17 +15,12 @@ languages/
 uploads/
 mu-plugins/
 wp-cache-config.php
-plugins/hello.php
-plugins/akismet
-plugins/atomic-blocks
-plugins/coblocks
-plugins/cv-regio-extention
 
-themes/twentynineteen
-themes/twentyseventeen
-themes/twentysixteen
-themes/atomic-blocks-theme
-themes/cv-regio-theme-atomic
+plugins/*
+!plugins/cv-blocks/
+
+themes/*
+!themes/cv-regio-theme/
 
 /.htaccess
 /license.txt
