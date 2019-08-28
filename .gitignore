@@ -13,6 +13,7 @@ backups/
 blogs.dir/
 cache/
 upgrade/
+languages/
 uploads/
 mu-plugins/
 wp-cache-config.php
