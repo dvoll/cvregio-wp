@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 wp_enqueue_script('cv-frontend-chunk-vendors', content_url() . '/plugins/cv-blocks/cv-frontend/chunk-vendors.4f15e53b.js', array(), '1.0', true );
 
-wp_enqueue_script('cv-frontend-chunk-common', content_url() . '/plugins/cv-blocks/cv-frontend/chunk-common.45b1b91b.js', array(), '1.0', true );
+wp_enqueue_script('cv-frontend-chunk-common', content_url() . '/plugins/cv-blocks/cv-frontend/chunk-common.ba4d3af0.js', array(), '1.0', true );
 
 wp_enqueue_script('cv-frontend-plugin', content_url() . '/plugins/cv-blocks/cv-frontend/plugin.2ab4a21f.js', array(), '1.0', true );
 
