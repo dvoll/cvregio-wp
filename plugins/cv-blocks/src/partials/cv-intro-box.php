@@ -11,7 +11,7 @@ function cv_intro_box($parameter = array(), $print = true)
     ob_start();
     ?>
 
-    <div class="cv-intro-box alignwide">
+    <div class="cv-intro-box alignwide alignwide--only-right">
         <?php if ($header): ?> 
             <div class="cv-intro-box__header">
                 <?php echo $header; ?>

@@ -1,6 +1,6 @@
 <template>
     <div class="entry-content">
-        <div class="cv-intro-box alignwide">
+        <div class="cv-intro-box alignwide alignwide--only-right">
             <div class="cv-intro-box__header">
                 <slot name="header" />
             </div>

@@ -28,10 +28,10 @@
 		</div>
 	<?php endif; ?>
 	<header class="entry-header">
-		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
 	</header>
 
 	<div class="entry-content">
+		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
 		<?php
 		the_content();
 

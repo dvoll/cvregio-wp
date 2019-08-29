@@ -13,10 +13,3 @@
 <script>
 export default {};
 </script>
-
-<style lang="scss">
-.entry-content .cv-sidebar {
-    grid-column: sidebar-start / sidebar-end;
-    grid-row: 1 / span 15;
-}
-</style>
