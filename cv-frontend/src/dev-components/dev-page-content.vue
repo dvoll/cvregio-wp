@@ -44,6 +44,8 @@
                 <a href="http://0.0.0.0:8000/wp-admin/">Dashboard</a> aufrufen, um diese Seite zu
                 löschen und neue Seiten für deinen Inhalt zu erstellen. Viel Spaß!
             </p>
+
+            <cv-sidebar></cv-sidebar>
         </div>
         <!-- .entry-content -->
 
@@ -60,12 +62,17 @@
     </article>
 </template>
 <script>
+import CvSidebar from '../static-components/cv-sidebar.vue';
+
 export default {
     props: {
         hasHeader: {
             type: Boolean,
             default: true,
         },
+    },
+    components: {
+        CvSidebar,
     },
 };
 </script>
