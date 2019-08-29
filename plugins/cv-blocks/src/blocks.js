@@ -14,3 +14,4 @@ import './blocks/block-stage-item';
 import './blocks/block-stage';
 import './blocks/block-groups';
 import './blocks/block-group-detail';
+import './blocks/block-sidebar';
