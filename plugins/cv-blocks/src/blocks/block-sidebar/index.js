@@ -6,7 +6,6 @@
 import edit from './edit';
 
 // Import CSS
-// import './style.scss';
 import './editor.scss';
 
 // Components
@@ -44,8 +43,8 @@ registerBlockType('cv-blocks/cv-sidebar', {
 
 	edit,
 
-	save: function(props) {
-		const {} = props.attributes;
+	save: function (props) {
+		const { } = props.attributes;
 		// const itemList = items.map( item => {
 		//     return (
 		//         <div className="cv-stage__layer cv-stage-item" key={ item.title }>
@@ -66,7 +65,7 @@ registerBlockType('cv-blocks/cv-sidebar', {
 		//     );
 		// } );
 		return (
-			<section className={props.className + ' sidebar'}>
+			<section className={props.className + ' cv-sidebar'}>
 				<InnerBlocks.Content />
 			</section>
 		);
