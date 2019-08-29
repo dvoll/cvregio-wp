@@ -4,24 +4,24 @@
 .entry-summary > * {
     margin: 0 0 #{4 * $size__spacing-unit} 0;
 
-    &.alignwide {
-        grid-column: content-start / main-end;
+    // &.alignwide {
+    //     grid-column: content-start / main-end;
 
-        &--both {
-            grid-column: main-start / main-end;
-        }
-    }
+    //     &--both {
+    //         grid-column: main-start / main-end;
+    //     }
+    // }
 
-    &.alignfull {
-        grid-column: 1 / -1;
-        max-width: 100vw;
-    }
+    // &.alignfull {
+    //     grid-column: 1 / -1;
+    //     max-width: 100vw;
+    // }
 
-    &.aligncenter {
-        grid-column: content-start / content-end;
-        justify-self: center;
-        max-width: 100%;
-    }
+    // &.aligncenter {
+    //     grid-column: content-start / content-end;
+    //     justify-self: center;
+    //     max-width: 100%;
+    // }
 
     /* TODO: Add alignment options */
 
@@ -449,6 +449,7 @@
         }
 
         cite {
+
             /*
 			 * This requires a rem-based font size calculation instead of our normal em-based one,
 			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
@@ -470,6 +471,7 @@
 
             cite,
             footer {
+
                 /*
 				 * This requires a rem-based font size calculation instead of our normal em-based one,
 				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.

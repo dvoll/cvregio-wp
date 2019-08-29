@@ -1,3 +1,32 @@
-.cv-stage-item{background:#d2182e}.dvll-special{padding:30px;background:lightgray}
-.cv-stage-item{background:#d2182e}
-.cv-sidebar,.entry-content .cv-sidebar{grid-column:sidebar-start / sidebar-end;grid-row:1 / span 15}
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.cv-stage-item {
+  background: #d2182e; }
+
+.dvll-special {
+  padding: 30px;
+  background: lightgray; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+.cv-stage-item {
+  background: #d2182e; }
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
+/**
+ * #.# Common SCSS
+ *
+ * Can include things like variables and mixins
+ * that are used across the project.
+*/
