@@ -50,7 +50,7 @@
     }
     @include media(desktop) {
         grid-template-columns: 1fr 600px 1fr 1fr;
-        grid-template-columns: minmax(50px, 2fr) [main-start] minmax(50px, 180px) [content-start] minmax(500px, 600px) [content-end]
+        grid-template-columns: minmax(50px, 2fr) [main-start] minmax(50px, 180px) [content-start] minmax(500px, 700px) [content-end]
             minmax(50px, 180px) [main-end sidebar-start] auto [sidebar-end] minmax(50px, 3fr);
     }
 
