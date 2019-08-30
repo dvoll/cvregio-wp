@@ -1,5 +1,5 @@
 <template>
-    <div class="cv-sidebar">
+    <aside class="sidebar" :style="{ '--sidebar-row-start': rowStart }">
         <p>
             Dies ist eine Beispiel-Seite. Sie unterscheidet sich von Beiträgen, da sie stets an
             derselben Stelle bleibt und (bei den meisten Themes) in der Website-Navigation angezeigt
@@ -7,9 +7,16 @@
             uns“-Seite, um sich möglichen Besucher der Website vorzustellen. Dort könnte zum
             Beispiel stehen:
         </p>
-    </div>
+    </aside>
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        rowStart: {
+            type: Number,
+            default: 2,
+        },
+    },
+};
 </script>

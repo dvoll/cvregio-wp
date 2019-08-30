@@ -2,7 +2,7 @@
     <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#content">Zum Inhalt springen</a>
 
-        <header id="masthead" class="site-header" :class="{'featured-image': featuredImage}">
+        <header id="masthead" class="site-header" :class="{ 'featured-image': featuredImage }">
             <div class="site-branding-container">
                 <div>
                     <slot name="header"></slot>
@@ -70,8 +70,8 @@ export default {
     props: {
         featuredImage: {
             type: Boolean,
-            default: false
-        }
-    }
-}
+            default: false,
+        },
+    },
+};
 </script>

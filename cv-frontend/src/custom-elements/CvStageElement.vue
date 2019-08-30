@@ -9,11 +9,11 @@
         </swiper-slide>
         <div slot="pagination" class="cv-stage__controls">
             <div class="swiper-button-prev--custom">
-                <base-icon size="16" icon="arrow-left" />
+                <base-icon :size="16" icon="arrow-left" />
             </div>
             <div class="swiper-pagination"></div>
             <div class="swiper-button-next--custom">
-                <base-icon size="16" icon="arrow-right" />
+                <base-icon :size="16" icon="arrow-right" />
             </div>
         </div>
         <!-- <div class="swiper-button-next swiper-button-white"></div> -->
