@@ -51,6 +51,11 @@
     @include media(desktop) {
         grid-template-columns: 1fr 600px 1fr 1fr;
         grid-template-columns: minmax(50px, 2fr) [main-start] minmax(50px, 180px) [content-start] minmax(500px, 700px) [content-end]
+            minmax(50px, 180px) [main-end sidebar-start] auto [sidebar-end] minmax(50px, 1fr);
+    }
+    @include media(wide) {
+        grid-template-columns: 1fr 600px 1fr 1fr;
+        grid-template-columns: minmax(50px, 2fr) [main-start] minmax(50px, 180px) [content-start] minmax(500px, 700px) [content-end]
             minmax(50px, 180px) [main-end sidebar-start] auto [sidebar-end] minmax(50px, 3fr);
     }
 
@@ -165,16 +170,16 @@
 }
 
 .entry-footer {
-    margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
+    // margin: calc(2 * #{$size__spacing-unit}) $size__spacing-unit $size__spacing-unit;
 
-    @include media(tablet) {
-        margin: $size__spacing-unit $size__site-margins calc(3 * #{$size__spacing-unit});
-        max-width: $size__site-tablet-content;
-    }
+    // @include media(tablet) {
+    //     margin: $size__spacing-unit $size__site-margins calc(3 * #{$size__spacing-unit});
+    //     max-width: $size__site-tablet-content;
+    // }
 
-    @include media(tablet) {
-        max-width: $size__site-desktop-content;
-    }
+    // @include media(tablet) {
+    //     max-width: $size__site-desktop-content;
+    // }
 }
 
 .post-thumbnail {
