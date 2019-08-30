@@ -20,6 +20,13 @@
                             </p>
                             <h2>Neuigkeiten</h2>
                             <dev-news></dev-news>
+                            <cv-sidebar :row-start="6" />
+                            <p>
+                                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+                                nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+                                erat, sed diam voluptua. At vero eos et accusam et justo duo dolores
+                                et ea rebum.
+                            </p>
                         </div>
                     </article>
                 </main>
@@ -34,12 +41,14 @@
 import stage from '../dev-components/stage.vue';
 import DevHeader from '../dev-components/dev-header.vue';
 import DevNews from '../dev-components/dev-news.vue';
+import CvSidebar from '../static-components/cv-sidebar.vue';
 
 export default {
     components: {
         stage,
         DevHeader,
         DevNews,
+        CvSidebar,
     },
 };
 </script>
