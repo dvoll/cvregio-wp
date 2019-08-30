@@ -22,11 +22,22 @@ const { Component, Fragment } = wp.element;
 const { InspectorControls, InnerBlocks } = wp.editor;
 
 const {
-	// RichText,
-	// AlignmentToolbar,
-	// BlockControls,
-	// InspectorControls,
-	// MediaUpload,
+    PanelBody,
+    TextareaControl,
+    RangeControl,
+    SelectControl,
+    TextControl,
+    ToggleControl,
+    Button,
+    // FocalPointPicker,
+} = wp.components;
+
+const {
+    // RichText,
+    // AlignmentToolbar,
+    // BlockControls,
+    // InspectorControls,
+    // MediaUpload,
 } = wp.editor;
 
 const BLOCKS_TEMPLATE = [['cv-blocks/cv-stage-item', {}]];
@@ -36,16 +47,39 @@ const BLOCKS_TEMPLATE = [['cv-blocks/cv-stage-item', {}]];
 // ];
 
 export default class StageEditBlock extends Component {
-	render() {
-		const props = this.props;
-		return (
-			<Fragment>
-				<section className={props.className + ' sidebar'}>
-					<InnerBlocks />
-				</section>
-			</Fragment>
-		);
-	}
+    render() {
+        const props = this.props;
+        const attributes = props.attributes;
+        return (
+            <Fragment>
+                <InspectorControls>
+                    <PanelBody title={'Position'}>
+                        { /* <SelectControl
+                            label={ 'Hintergrundbild' }
+                            options={ imageCropOptions }
+                            value={ 'full' }
+                            onChange={ value =>
+                            // this.props.setAttributes( { imageCrop: value } )
+                                console.log( 'changed', value )
+                            }
+                        /> */ }
+                        <RangeControl
+                            label={'Nummer der Zeile, in der die Sidebar beginnen soll '}
+                            value={+attributes.rowOffset}
+                            onChange={value => {
+                                props.setAttributes({ rowOffset: value });
+                            }}
+                            min={0}
+                            max={20}
+                        />
+                    </PanelBody>
+                </InspectorControls>
+                <section className={props.className + ' sidebar'}>
+                    <InnerBlocks />
+                </section>
+            </Fragment>
+        );
+    }
 }
 
 // const MyModal = withState( {

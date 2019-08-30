@@ -62,15 +62,15 @@
             grid-column: main-start / main-end;
 
             @include media(mobile) {
-                padding-right: 5vw;
-                padding-left: 5vw;
+                padding-right: 50px;
+                padding-left: 50px;
             }
 
             // &--both {
             //     grid-column: main-start / main-end;
 
             //     @include media(mobile) {
-            //         padding-left: 5vw;
+            //         padding-left: 50px;
             //     }
             // }
             &--only-right {
@@ -91,19 +91,19 @@
         }
 
         &.mobile-padding--left {
-            padding-left: 5vw;
+            padding-left: 50px;
         }
 
         &.mobile-padding--right {
-            padding-right: 5vw;
+            padding-right: 50px;
         }
 
-        &.cv-sidebar,
         &.sidebar {
             @include media(desktop) {
                 width: 400px;
                 grid-column: sidebar-start / sidebar-end;
-                grid-row: 1 / span 15;
+                --sidebar-row-start: 1;
+                grid-row: var(--sidebar-row-start) / span 15;
                 padding-right: 60px;
             }
         }

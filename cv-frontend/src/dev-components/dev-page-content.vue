@@ -4,13 +4,8 @@
             <slot name="featuredImage" />
         </div>
 
-        <slot name="header">
-            <header v-if="hasHeader" class="entry-header">
-                <h1 class="entry-title">Beispiel-Seite</h1>
-            </header>
-        </slot>
-
         <div class="entry-content">
+            <h1 class="entry-title">Beispiel-Seite</h1>
             <p>
                 Dies ist eine Beispiel-Seite. Sie unterscheidet sich von Beiträgen, da sie stets an
                 derselben Stelle bleibt und (bei den meisten Themes) in der Website-Navigation
@@ -65,12 +60,6 @@
 import CvSidebar from '../static-components/cv-sidebar.vue';
 
 export default {
-    props: {
-        hasHeader: {
-            type: Boolean,
-            default: true,
-        },
-    },
     components: {
         CvSidebar,
     },

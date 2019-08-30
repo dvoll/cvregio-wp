@@ -26,6 +26,12 @@ registerBlockType('cv-blocks/cv-sidebar', {
 	icon: 'format-image', // TODO: Change icon
 	category: 'common',
 	keywords: ['Sidebar'],
+	attributes: {
+		rowOffset: {
+			type: 'number',
+			default: 1,
+		},
+	},
 
 	// getEditWrapperProps( attributes ) {
 	// 	const { align } = attributes;
@@ -44,7 +50,7 @@ registerBlockType('cv-blocks/cv-sidebar', {
 	edit,
 
 	save: function (props) {
-		const { } = props.attributes;
+		const { rowOffset } = props.attributes;
 		// const itemList = items.map( item => {
 		//     return (
 		//         <div className="cv-stage__layer cv-stage-item" key={ item.title }>
@@ -65,7 +71,7 @@ registerBlockType('cv-blocks/cv-sidebar', {
 		//     );
 		// } );
 		return (
-			<section className={props.className + ' cv-sidebar'}>
+			<section className={props.className + ' sidebar mytest'} style={'--sidebar-row-start: ' + (rowOffset + 1)}>
 				<InnerBlocks.Content />
 			</section>
 		);
