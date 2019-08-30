@@ -5,7 +5,9 @@
         </div>
 
         <div class="entry-content">
-            <h1 class="entry-title">Beispiel-Seite</h1>
+            <header class="entry-header">
+                <h1 class="entry-title">Beispiel-Seite</h1>
+            </header>
             <p>
                 Dies ist eine Beispiel-Seite. Sie unterscheidet sich von Beiträgen, da sie stets an
                 derselben Stelle bleibt und (bei den meisten Themes) in der Website-Navigation
@@ -41,18 +43,19 @@
             </p>
 
             <cv-sidebar></cv-sidebar>
+
+            <footer class="entry-footer">
+                <span class="edit-link"
+                    ><a
+                        class="post-edit-link"
+                        href="http://0.0.0.0:8000/wp-admin/post.php?post=2&#038;action=edit"
+                        ><span class="screen-reader-text">Beispiel-Seite</span> bearbeiten</a
+                    ></span
+                >
+            </footer>
         </div>
         <!-- .entry-content -->
 
-        <footer class="entry-footer">
-            <span class="edit-link"
-                ><a
-                    class="post-edit-link"
-                    href="http://0.0.0.0:8000/wp-admin/post.php?post=2&#038;action=edit"
-                    ><span class="screen-reader-text">Beispiel-Seite</span> bearbeiten</a
-                ></span
-            >
-        </footer>
         <!-- .entry-footer -->
     </article>
 </template>

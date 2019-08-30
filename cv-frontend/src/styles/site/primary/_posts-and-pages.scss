@@ -32,9 +32,7 @@
     }
 }
 
-.entry-header,
-.entry-content,
-.entry-summary {
+.entry-content {
     display: grid;
     grid-template-columns: 1fr [main-start content-start] 90% [content-end main-end] 1fr;
 
@@ -115,8 +113,8 @@
     }
 }
 
-.entry-header {
-    margin-top: 3 * $size__spacing-unit;
+.entry-content .entry-header {
+    margin-top: 5 * $size__spacing-unit;
     margin-bottom: 4 * $size__spacing-unit;
 }
 
