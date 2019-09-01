@@ -15,3 +15,4 @@ import './blocks/block-stage';
 import './blocks/block-groups';
 import './blocks/block-group-detail';
 import './blocks/block-sidebar';
+import './blocks/block-news';

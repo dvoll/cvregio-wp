@@ -26,7 +26,7 @@ const { InnerBlocks } = wp.editor;
 registerBlockType('cv-blocks/cv-group-detail', {
     title: 'CV Gruppen Eigenschaften',
     description: 'Eigenschaften einer Gruppe/eines Angebotes.',
-    icon: 'format-image',
+    icon: 'align-left',
     category: 'common',
     keywords: ['Angebot', 'Gruppe', 'Detail'],
 

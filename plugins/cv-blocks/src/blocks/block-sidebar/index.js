@@ -23,7 +23,7 @@ const { InnerBlocks } = wp.editor;
 registerBlockType('cv-blocks/cv-sidebar', {
 	title: 'Sidebar Container',
 	description: 'Ein Container, um Elemente neben dem Hauptinhalt anzuzeigen.',
-	icon: 'format-image', // TODO: Change icon
+	icon: 'welcome-widgets-menus',
 	category: 'common',
 	keywords: ['Sidebar'],
 	attributes: {

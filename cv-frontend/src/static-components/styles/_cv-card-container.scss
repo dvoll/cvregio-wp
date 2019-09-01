@@ -9,8 +9,12 @@
     grid-template-columns: repeat(auto-fit, 290px);
     grid-gap: 20px;
 
+    &--wider {
+        grid-template-columns: repeat(auto-fit, 320px);
+    }
+
     .cv-card-container--row & {
-        $card-height: 420px;
+        $card-height: 430px;
         $card-margin: 10px;
 
         grid-gap: 0;
@@ -21,6 +25,7 @@
 
         > * {
             height: $card-height;
+            overflow: hidden;
             flex: 0 0 1;
             margin: $card-margin;
         }

@@ -76,6 +76,11 @@
             //         padding-left: 50px;
             //     }
             // }
+            &--no-padding {
+                padding-right: 0;
+                padding-left: 0;
+            }
+
             &--only-right {
                 grid-column: content-start / main-end;
                 padding-left: 0;

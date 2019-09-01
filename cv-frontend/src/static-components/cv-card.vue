@@ -1,5 +1,5 @@
 <template>
-    <a :href="link" class="cv-card no-link-style">
+    <a :href="link" class="cv-card no-link-style" :class="{ ' cv-card--wider': wider }">
         <article class="cv-card__inner">
             <span
                 class="cv-card__subtitle"
@@ -39,6 +39,10 @@ export default {
         capitalized: {
             type: Boolean,
             default: true,
+        },
+        wider: {
+            type: Boolean,
+            default: false,
         },
     },
 };

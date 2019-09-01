@@ -44,6 +44,11 @@ function cv_blocks_loader()
 	require_once plugin_dir_path(__FILE__) . 'src/blocks/block-groups/index.php';
 
 	/**
+	 * Load News Block PHP
+	 */
+	require_once plugin_dir_path(__FILE__) . 'src/blocks/block-news/index.php';
+
+	/**
 	 * Load 
 	 */
 	require_once plugin_dir_path(__FILE__) . 'src/blocks/block-stage/index.php';
@@ -85,6 +90,7 @@ function cv_blocks_groups_custom_post_type()
 				'name'          => __('Angebote'),
 				'singular_name' => __('Angebot'),
 			),
+			'menu_icon' => 'dashicons-welcome-widgets-menus',
 			'public'      => true,
 			'has_archive' => true,
 			'hierarchical' => true,
