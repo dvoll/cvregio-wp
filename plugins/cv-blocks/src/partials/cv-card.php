@@ -9,15 +9,17 @@ function cv_card($parameter = array(), $print = true)
     $capitalized = isset($parameter['capitalized']) ? $parameter['capitalized'] : false;
     $link = isset($parameter['link']) ? $parameter['link'] : false;
     $imageId = isset($parameter['imageId']) ? $parameter['imageId'] : false;
+    $wider = isset($parameter['wider']) ? $parameter['wider'] : false;
     
     $post_thumb_size = 'cv-blocks-card';
     // Start output buffering
     ob_start();
+    $containerClass = 'cv-card no-link-style ' . ($wider ? 'cv-card--wider' : '');
 ?>
     <?php if ($link): ?> 
-        <a href="<?php echo $link ?>" class="cv-card no-link-style">
+        <a href="<?php echo $link ?>" class="<?php echo $containerClass ?>">
     <?php else: ?>
-        <div class="cv-card no-link-style">
+        <div class="<?php echo $containerClass ?>">
     <?php endif; ?>
     
         <article class="cv-card__inner">

@@ -22,7 +22,7 @@ const { registerBlockType } = wp.blocks;
 registerBlockType('cv-blocks/cv-groups', {
     title: 'CV Gruppenübersicht',
     description: 'Übersicht über alle Gruppen/Angebote.',
-    icon: 'format-image',
+    icon: 'screenoptions',
     category: 'common',
     keywords: ['Übersicht', 'Gruppe', 'Angebot'],
 

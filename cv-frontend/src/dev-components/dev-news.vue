@@ -1,7 +1,8 @@
 <template>
     <section class="cv-section alignfull">
-        <cv-card-container :singleRow="true">
+        <cv-card-container :singleRow="true" :wider="true">
             <cv-card
+                :wider="true"
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
                 imgSrc="/placeholder/05.jpg"
@@ -12,6 +13,7 @@
                 </p>
             </cv-card>
             <cv-card
+                :wider="true"
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
                 imgSrc="/placeholder/05.jpg"
@@ -19,6 +21,7 @@
                 <div></div>
             </cv-card>
             <cv-card
+                :wider="true"
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
                 imgSrc="/placeholder/05.jpg"
@@ -26,6 +29,7 @@
                 <div></div>
             </cv-card>
             <cv-card
+                :wider="true"
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
                 imgSrc="/placeholder/05.jpg"

@@ -20,11 +20,11 @@
 			?>
 		</div>
 	<?php endif; ?>
-	<header class="entry-header">
-		<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
-	</header>
 
 	<div class="entry-content">
+		<header class="entry-header">
+			<?php get_template_part( 'template-parts/header/entry', 'header' ); ?>
+		</header>
 		<?php
 		the_content(
 			sprintf(
@@ -48,14 +48,14 @@
 			)
 		);
 		?>
+		<footer class="entry-footer">
+			<?php twentynineteen_entry_footer(); ?>
+		</footer><!-- .entry-footer -->
+
+		<?php if ( ! is_singular( 'attachment' ) ) : ?>
+			<?php get_template_part( 'template-parts/post/author', 'bio' ); ?>
+		<?php endif; ?>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-footer">
-		<?php twentynineteen_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-
-	<?php if ( ! is_singular( 'attachment' ) ) : ?>
-		<?php get_template_part( 'template-parts/post/author', 'bio' ); ?>
-	<?php endif; ?>
 
 </article><!-- #post-${ID} -->
