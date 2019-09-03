@@ -36,7 +36,6 @@
     display: grid;
     grid-template-columns: 1fr [main-start content-start] 90% [content-end main-end] 1fr;
 
-    // grid-gap: 0 10px;
     margin-bottom: #{2 * $size__spacing-unit};
 
     @include media(mobile) {
@@ -47,14 +46,42 @@
             minmax(0, 180px) [main-end] 2fr;
     }
     @include media(desktop) {
-        // grid-template-columns: 1fr 600px 1fr 1fr;
         grid-template-columns: minmax(50px, 1fr) [main-start] minmax(50px, 180px) [content-start] minmax(500px, 700px) [content-end]
-            minmax(50px, 180px) [main-end sidebar-start] auto [sidebar-end] minmax(50px, 1fr);
+            minmax(50px, 180px) [main-end] minmax(50px, 1fr);
     }
     @include media(wide) {
         grid-template-columns: 1fr 600px 1fr 1fr;
         grid-template-columns: minmax(50px, 2fr) [main-start] minmax(50px, 180px) [content-start] minmax(500px, 700px) [content-end]
-            minmax(50px, 180px) [main-end sidebar-start] auto [sidebar-end] minmax(50px, 3fr);
+            minmax(50px, 180px) [main-end] minmax(50px, 3fr);
+    }
+
+    &--with-sidebar,
+    .cvgroups-template-default &,
+    .page-template-single-withsidebar &,
+    .post-template-single-withsidebar & {
+        @include media(desktop) {
+            grid-template-columns: minmax(50px, 1fr) [main-start] minmax(50px, 180px)
+                [content-start] minmax(500px, 700px) [content-end]
+                minmax(50px, 180px) [main-end sidebar-start] 360px [sidebar-end] minmax(50px, 1fr);
+        }
+        @include media(wide) {
+            grid-template-columns: 1fr 600px 1fr 1fr;
+            grid-template-columns: minmax(50px, 2fr) [main-start]
+                minmax(50px, 180px)
+                [content-start] minmax(500px, 700px) [content-end]
+                minmax(50px, 180px)
+                [main-end sidebar-start] 360px [sidebar-end] minmax(50px, 3fr);
+        }
+
+        .sidebar {
+            @include media(desktop) {
+                width: 100%;
+                grid-column: sidebar-start / sidebar-end;
+                --sidebar-row-start: 1;
+                grid-row: var(--sidebar-row-start) / span 15;
+                padding-right: 60px;
+            }
+        }
     }
 
     > * {
@@ -69,13 +96,6 @@
                 padding-left: 50px;
             }
 
-            // &--both {
-            //     grid-column: main-start / main-end;
-
-            //     @include media(mobile) {
-            //         padding-left: 50px;
-            //     }
-            // }
             &--no-padding {
                 padding-right: 0;
                 padding-left: 0;
@@ -104,16 +124,6 @@
 
         &.mobile-padding--right {
             padding-right: 50px;
-        }
-
-        &.sidebar {
-            @include media(desktop) {
-                width: 400px;
-                grid-column: sidebar-start / sidebar-end;
-                --sidebar-row-start: 1;
-                grid-row: var(--sidebar-row-start) / span 15;
-                padding-right: 60px;
-            }
         }
     }
 }
