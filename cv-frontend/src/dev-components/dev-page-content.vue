@@ -42,7 +42,9 @@
                 löschen und neue Seiten für deinen Inhalt zu erstellen. Viel Spaß!
             </p>
 
-            <cv-sidebar></cv-sidebar>
+            <!-- <cv-sidebar></cv-sidebar> -->
+
+            <cv-sidebar-container></cv-sidebar-container>
 
             <footer class="entry-footer">
                 <span class="edit-link"
@@ -61,9 +63,11 @@
 </template>
 <script>
 import CvSidebar from '../static-components/cv-sidebar.vue';
+import CvSidebarContainer from '../static-components/cv-sidebar-container.vue';
 
 export default {
     components: {
+        CvSidebarContainer,
         CvSidebar,
     },
 };
