@@ -1,6 +1,8 @@
 // @ts-nocheck
 import Vue from 'vue';
 import vueCustomElement from 'vue-custom-element';
+import 'document-register-element/build/document-register-element';
+
 
 import CvStageElement from './custom-elements/CvStageElement.vue';
 
