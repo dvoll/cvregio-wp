@@ -5,9 +5,11 @@
         </div>
 
         <div class="entry-content">
-            <header class="entry-header">
-                <h1 class="entry-title">Beispiel-Seite</h1>
-            </header>
+            <slot name="header">
+                <header class="entry-header">
+                    <h1 class="entry-title">Beispiel-Seite</h1>
+                </header>
+            </slot>
             <p>
                 Dies ist eine Beispiel-Seite. Sie unterscheidet sich von Beiträgen, da sie stets an
                 derselben Stelle bleibt und (bei den meisten Themes) in der Website-Navigation
@@ -42,7 +44,9 @@
                 löschen und neue Seiten für deinen Inhalt zu erstellen. Viel Spaß!
             </p>
 
-            <cv-sidebar></cv-sidebar>
+            <cv-sidebar>
+                <slot name="sidebar" />
+            </cv-sidebar>
 
             <footer class="entry-footer">
                 <span class="edit-link"

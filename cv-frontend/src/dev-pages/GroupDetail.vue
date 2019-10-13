@@ -44,6 +44,9 @@
                     </template>
                 </cv-intro-box>
             </template>
+            <template slot="sidebar">
+                <dev-related-associates />
+            </template>
         </dev-page-content>
     </dev-page-layout>
 </template>
@@ -54,6 +57,7 @@ import DevPageLayout from '../dev-components/dev-page-layout.vue';
 import DevPageContent from '../dev-components/dev-page-content.vue';
 import CvIntroBox from '../static-components/cv-intro-box.vue';
 import InfoRow from '../static-components/info-row.vue';
+import DevRelatedAssociates from '../dev-components/dev-related-associates.vue';
 
 export default {
     components: {
@@ -62,6 +66,7 @@ export default {
         DevPageLayout,
         CvIntroBox,
         InfoRow,
+        DevRelatedAssociates,
     },
 };
 </script>
