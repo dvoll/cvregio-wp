@@ -16,3 +16,4 @@ import './blocks/block-groups';
 import './blocks/block-group-detail';
 import './blocks/block-sidebar';
 import './blocks/block-news';
+import './blocks/block-associate-template';

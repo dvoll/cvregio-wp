@@ -184,3 +184,80 @@ function cv_blocks_image_sizes()
 	// add_image_size( 'cv-blocks-groups-square', 600, 600, true );
 }
 add_action('after_setup_theme', 'cv_blocks_image_sizes');
+
+// Add additional fields to users
+
+function extra_user_profile_fields( $user ) { ?>
+    <h3><?php _e("Extra profile information", "blank"); ?></h3>
+
+
+    <table class="form-table">
+    <tr>
+        <th><label for="address"><?php _e("Address"); ?></label></th>
+        <td>
+            <input type="text" name="address" id="address" value="<?php echo esc_attr( get_the_author_meta( 'address', $user->ID ) ); ?>" class="regular-text" /><br />
+            <span class="description"><?php _e("Please enter your address."); ?></span>
+        </td>
+    </tr>
+    <tr>
+        <th><label for="city"><?php _e("City"); ?></label></th>
+        <td>
+            <input type="text" name="city" id="city" value="<?php echo esc_attr( get_the_author_meta( 'city', $user->ID ) ); ?>" class="regular-text" /><br />
+            <span class="description"><?php _e("Please enter your city."); ?></span>
+        </td>
+    </tr>
+    <tr>
+    <th><label for="postalcode"><?php _e("Postal Code"); ?></label></th>
+        <td>
+            <input type="text" name="postalcode" id="postalcode" value="<?php echo esc_attr( get_the_author_meta( 'postalcode', $user->ID ) ); ?>" class="regular-text" /><br />
+            <span class="description"><?php _e("Please enter your postal code."); ?></span>
+        </td>
+    </tr>
+    </table>
+
+	<script>
+		const $ = jQuery;
+		const value = $('#adress');
+		console.log({value});
+		
+	</script>
+<?php }
+
+// add_action( 'show_user_profile', 'extra_user_profile_fields' );
+// add_action( 'edit_user_profile', 'extra_user_profile_fields' );
+
+
+// Add associates as custom post type
+
+function cv_blocks_associates_custom_post_type()
+{
+	register_post_type(
+		'cvassociates',
+		array(
+			'labels'      => array(
+				'name'          => __('Mitarbeiter'),
+				'singular_name' => __('Mitarbeiter'),
+			),
+			'menu_icon' => 'dashicons-buddicons-buddypress-logo',
+			'public'      => true,
+			'has_archive' => true,
+			'rewrite'     => array('slug' => 'mitarbeiter'),
+			'show_in_rest' => true,
+			'supports' => array('title', 'editor', 'excerpt', 'page-attributes', 'author', 'custom-fields', 'thumbnail'),
+			'template' => array(
+				// array('cv-blocks/cv-group-detail')
+				array( 'core/image', array(
+					'align' => 'left',
+				) ),
+				array( 'core/heading', array(
+					'placeholder' => 'The name...',
+				) ),
+				array( 'cv-blocks/cv-associate-template', array(
+				) ),
+			),
+			'template_lock' => 'all',
+		)
+	);
+}
+add_action('init', 'cv_blocks_associates_custom_post_type');
+
