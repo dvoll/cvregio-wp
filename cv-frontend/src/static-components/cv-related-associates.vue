@@ -3,8 +3,15 @@
         <div class="cv-related-associates__contact-container">
             <slot name="contact-associates" />
             <div class="cv-related-associates__contact">
-                <h6 v-if="contactHeading">{{ contactHeading }}</h6>
-                <a v-if="contactLinkSrc" :href="contactLinkSrc">{{ contactLinkLabel }}</a>
+                <h3 class="cv-related-associates__heading" v-if="contactHeading">
+                    {{ contactHeading }}
+                </h3>
+                <a
+                    class="cv-related-associates__link"
+                    v-if="contactLinkSrc"
+                    :href="contactLinkSrc"
+                    >{{ contactLinkLabel }}</a
+                >
             </div>
         </div>
         <div class="cv-related-associates__full-list">
@@ -35,6 +42,7 @@ export default {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 10px;
 
     > .cv-associate {
         flex: 0 0 150px;
@@ -43,16 +51,33 @@ export default {
     > .cv-related-associates__contact {
         min-width: 200px;
         max-width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: -10px;
+        margin-bottom: 20px;
     }
 }
 
 .cv-related-associates__full-list {
     display: flex;
     flex-wrap: wrap;
+    margin-top: -10px;
 
     > * {
         flex: 1 0 150px;
     }
+}
+
+.cv-related-associates__heading {
+    font-size: 1.1rem;
+    line-height: 1.4em;
+    font-style: normal;
+    margin-bottom: 0;
+}
+
+.cv-related-associates__link {
+    font-size: 0.8rem;
 }
 
 // @supports (display: grid) {

@@ -35,6 +35,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 .cv-associate__headline,
@@ -43,9 +44,18 @@ export default {
 }
 
 .cv-associate__headline {
-    flex-grow: 1;
     display: flex;
     align-items: center;
+    font-size: 0.8rem;
+    line-height: 1.3em;
+    margin-top: 8px;
+    margin-bottom: 3px;
+}
+
+.cv-associate__subline {
+    font-size: 0.5333rem;
+    color: $color__text-light;
+    text-transform: uppercase;
 }
 
 .cv-associate__picture,
@@ -59,5 +69,6 @@ export default {
     width: 70px;
     background: #464646;
     overflow: hidden;
+    font-size: 0.6rem;
 }
 </style>

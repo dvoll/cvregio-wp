@@ -4,7 +4,7 @@
             <slot name="featuredImage" />
         </div>
 
-        <div class="entry-content">
+        <div class="entry-content entry-content--with-sidebar">
             <slot name="header">
                 <header class="entry-header">
                     <h1 class="entry-title">Beispiel-Seite</h1>

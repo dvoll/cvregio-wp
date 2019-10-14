@@ -1,16 +1,14 @@
 <template>
-    <div class="entry-content">
-        <div class="cv-intro-box alignwide alignwide--only-right">
-            <div class="cv-intro-box__header">
-                <slot name="header" />
+    <div class="cv-intro-box alignwide alignwide--only-right">
+        <div class="cv-intro-box__header">
+            <slot name="header" />
+        </div>
+        <div class="cv-intro-box__content">
+            <div class="cv-intro-box__col cv-intro-box__col1">
+                <slot name="column1" />
             </div>
-            <div class="cv-intro-box__content">
-                <div class="cv-intro-box__col cv-intro-box__col1">
-                    <slot name="column1" />
-                </div>
-                <div class="cv-intro-box__col cv-intro-box__col2">
-                    <slot name="content" />
-                </div>
+            <div class="cv-intro-box__col cv-intro-box__col2">
+                <slot name="content" />
             </div>
         </div>
     </div>
