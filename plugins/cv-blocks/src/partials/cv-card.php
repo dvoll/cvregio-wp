@@ -21,19 +21,19 @@ function cv_card($parameter = array(), $print = true)
     <?php else: ?>
         <div class="<?php echo $containerClass ?>">
     <?php endif; ?>
-    
-        <article class="cv-card__inner">
-            <span
-                class="cv-card__subtitle <?php $capitalized ? 'cv-card__subtitle--capitalized' : '' ?>"
-                ><?php echo $subtitle ?></span
-            >
-            <h3 class="cv-card__title"><?php echo $title ?></h3>
-            <?php if ($imageId): ?> 
-                <?php echo wp_get_attachment_image( $imageId, $post_thumb_size, false, array( "class" => "cv-card__image" ) ); ?>
-            <?php endif; ?>
-            <?php echo $content ?>
-        </article>
-   
+        <div class="cv-card__inner-wrapper">    
+            <article class="cv-card__inner">
+                <span
+                    class="cv-card__subtitle <?php $capitalized ? 'cv-card__subtitle--capitalized' : '' ?>"
+                    ><?php echo $subtitle ?></span
+                >
+                <h3 class="cv-card__title"><?php echo $title ?></h3>
+                <?php if ($imageId): ?> 
+                    <?php echo wp_get_attachment_image( $imageId, $post_thumb_size, false, array( "class" => "cv-card__image" ) ); ?>
+                <?php endif; ?>
+                <?php echo $content ?>
+            </article>
+        </div>
     <?php if ($link): ?> 
         </a>
     <?php else : ?>
