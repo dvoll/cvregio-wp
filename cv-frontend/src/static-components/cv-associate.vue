@@ -59,11 +59,13 @@ export default {
 }
 
 .cv-associate__picture,
+.cv-associate img,
 .cv-associate__subline {
     flex-grow: 0;
 }
 
-.cv-associate__picture {
+.cv-associate__picture,
+.cv-associate img {
     border-radius: 50%;
     height: 70px;
     width: 70px;
