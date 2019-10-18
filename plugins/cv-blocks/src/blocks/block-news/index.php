@@ -71,14 +71,14 @@ function cvblocks_render_block_news_overview($attributes)
             /* Get the excerpt */
 
             // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound, PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket
-            $excerpt = apply_filters(
-                'the_excerpt',
-                get_post_field(
-                    'post_excerpt',
-                    $post_id,
-                    'display'
-                )
-            );
+            // $excerpt = apply_filters(
+            //     'the_excerpt',
+            //     get_post_field(
+            //         'post_excerpt',
+            //         $post_id,
+            //         'display'
+            //     )
+            // );
 
             if (empty($excerpt)) {
                 $exerpt_length = isset($attributes['excerptLength']) ? $attributes['excerptLength'] : 20;
@@ -100,6 +100,7 @@ function cvblocks_render_block_news_overview($attributes)
                         $exerpt_length
                     )
                 );
+                $excerpt = '<div class="line-clamp-container">' . $excerpt . '</div>';
             }
 
             if (!$excerpt) {
@@ -141,7 +142,7 @@ function cvblocks_render_block_news_overview($attributes)
             //     get_the_excerpt($post_id)
             // );
 
-            
+
             $card = cv_card(array(
                 'subtitle' => $category[0]->name . ' - ' . $date,
                 'title' =>  get_the_title($post_id),
@@ -150,10 +151,10 @@ function cvblocks_render_block_news_overview($attributes)
                 'imageId' => $post_thumb_id,
                 'wider' => true,
             ));
-            
+
             $post_grid_markup .= $card;
         }
-        
+
         /* Restore original post data */
         wp_reset_postdata();
 

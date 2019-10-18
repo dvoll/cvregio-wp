@@ -52,10 +52,11 @@ big {
     font-size: 125%;
 }
 
+.line-clamp-container p,
 .line-clamp {
     display: -webkit-box;
     -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;  
+    -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
