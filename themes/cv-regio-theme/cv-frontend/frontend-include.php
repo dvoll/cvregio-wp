@@ -6,11 +6,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 } 
 
 
-wp_enqueue_script('cv-frontend-chunk-vendors', content_url() . '/themes/cv-regio-theme/cv-frontend/chunk-vendors.4f15e53b.js', array(), '1.0', true );
+wp_enqueue_script('cv-frontend-chunk-vendors', content_url() . '/themes/cv-regio-theme/cv-frontend/chunk-vendors.c857d096.js', array(), '1.0', true );
 
-wp_enqueue_script('cv-frontend-chunk-common', content_url() . '/themes/cv-regio-theme/cv-frontend/chunk-common.ddc75c14.js', array(), '1.0', true );
+wp_enqueue_script('cv-frontend-chunk-common', content_url() . '/themes/cv-regio-theme/cv-frontend/chunk-common.89517d81.js', array(), '1.0', true );
 
-wp_enqueue_script('cv-frontend-app', content_url() . '/themes/cv-regio-theme/cv-frontend/app.5e4ca54b.js', array(), '1.0', true );
+wp_enqueue_script('cv-frontend-app', content_url() . '/themes/cv-regio-theme/cv-frontend/app.8c47b1e9.js', array(), '1.0', true );
 
 wp_register_style(
     'cv-frontend-chunk-vendors',
@@ -21,7 +21,7 @@ wp_enqueue_style('cv-frontend-chunk-vendors');
 
 wp_register_style(
     'cv-frontend-chunk-common',
-    content_url() . '/themes/cv-regio-theme/cv-frontend/chunk-common.85ec8f6d.css',
+    content_url() . '/themes/cv-regio-theme/cv-frontend/chunk-common.a015a794.css',
     array( 'wp-editor' )
 );
 wp_enqueue_style('cv-frontend-chunk-common');
