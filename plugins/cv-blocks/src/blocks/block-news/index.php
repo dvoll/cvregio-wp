@@ -71,14 +71,14 @@ function cvblocks_render_block_news_overview($attributes)
             /* Get the excerpt */
 
             // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound, PEAR.Functions.FunctionCallSignature.ContentAfterOpenBracket
-            // $excerpt = apply_filters(
-            //     'the_excerpt',
-            //     get_post_field(
-            //         'post_excerpt',
-            //         $post_id,
-            //         'display'
-            //     )
-            // );
+            $excerpt = apply_filters(
+                'the_excerpt',
+                get_post_field(
+                    'post_excerpt',
+                    $post_id,
+                    'display'
+                )
+            );
 
             if (empty($excerpt)) {
                 $exerpt_length = isset($attributes['excerptLength']) ? $attributes['excerptLength'] : 20;
