@@ -32,25 +32,20 @@ const CvHeaderElement = {
     },
     methods: {
         getMenuItems(items, menuItemsArray) {
-            for (let item in items) {
-                // @ts-ignore
-                if (!isNaN(item)) {
-                    item = items[item];
-                    // @ts-ignore
-                    const child = item.children ? item.children[0] : [];
-                    const menuItem = {
-                        title: child.childNodes[child.childNodes.length - 1].data,
-                        children: [],
-                        href: child.href,
-                    };
-                    if (item.classList.contains('current-menu-item')) {
-                        menuItem.current = true;
-                    }
-                    if (item.children[2]) {
-                        menuItem.children = this.getMenuItems(item.children[2].children, []);
-                    }
-                    menuItemsArray.push(menuItem);
+            for (let item of items) {
+                const child = item.children ? item.children[0] : [];
+                const menuItem = {
+                    title: child.childNodes[child.childNodes.length - 1].data,
+                    children: [],
+                    href: child.href,
+                };
+                if (item.classList.contains('current-menu-item')) {
+                    menuItem.current = true;
                 }
+                if (item.children[2]) {
+                    menuItem.children = this.getMenuItems(item.children[2].children, []);
+                }
+                menuItemsArray.push(menuItem);
             }
             return menuItemsArray;
         },
@@ -63,10 +58,8 @@ const CvHeaderElement = {
                 'text/html'
             );
             const mainMenu = htmlDoc.querySelector('.main-menu');
-            console.log('main menu', mainMenu);
 
             this.menuItems = this.getMenuItems(mainMenu.children, []);
-            console.log('menu items', this.menuItems);
         }
     },
 };
