@@ -67,7 +67,7 @@ export default {
                 innerHTML: htmlDoc.firstChild.children[1].innerHTML,
             });
         });
-        var mySwiper = new Swiper('.swiper-container', this.swiperOptions);
+        const mySwiper = new Swiper('.swiper-container', this.swiperOptions);
         this.$nextTick(() => {
             mySwiper.update();
         });
