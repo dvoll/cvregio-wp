@@ -69,6 +69,10 @@ export default CvHeaderElement;
 <style lang="scss">
 cv-header {
     display: block;
-    // height: 95px;
+    opacity: 0;
+
+    &[vce-ready] {
+        opacity: 1;
+    }
 }
 </style>
