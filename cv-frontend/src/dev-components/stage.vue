@@ -8,8 +8,8 @@
             >
                 <div
                     class="cv-stage-card__bg"
-                    data-background-url="./placeholder/05.jpg"
-                    :style="'background-image: url(./placeholder/0' + (index + 1) + '.jpg)'"
+                    data-background-url="./images/05.jpg"
+                    :style="'background-image: url(./images/0' + (index + 1) + '.jpg)'"
                 ></div>
                 <div class="cv-stage-card__overlay"></div>
                 <div class="cv-stage-card__body">
