@@ -1,5 +1,5 @@
 <template>
-    <div class="swiper-container">
+    <div ref="stageSwiper" class="swiper-container">
         <div class="swiper-wrapper">
             <div
                 class="swiper-slide cv-stage__item cv-stage-card"
@@ -23,10 +23,9 @@
 <script>
 // @ts-check
 import { Swiper, Parallax, Pagination, Navigation, EffectFade } from 'swiper/dist/js/swiper.esm';
+import 'swiper/dist/css/swiper.css';
 
 Swiper.use([Pagination, Parallax, Navigation, EffectFade]);
-
-import 'swiper/dist/css/swiper.css';
 
 export default {
     props: {
@@ -67,7 +66,7 @@ export default {
                 innerHTML: htmlDoc.firstChild.children[1].innerHTML,
             });
         });
-        const mySwiper = new Swiper('.swiper-container', this.swiperOptions);
+        const mySwiper = new Swiper(this.$refs.stageSwiper, this.swiperOptions);
         this.$nextTick(() => {
             mySwiper.update();
         });
