@@ -100,7 +100,6 @@ function cvblocks_render_block_news_overview($attributes)
                         $exerpt_length
                     )
                 );
-                $excerpt = '<div class="line-clamp-container">' . $excerpt . '</div>';
             }
 
             if (!$excerpt) {
@@ -120,28 +119,6 @@ function cvblocks_render_block_news_overview($attributes)
                     esc_html($title)
                 );
             }
-
-            /* Close the excerpt content */
-            // $post_grid_markup .= sprintf(
-            // 	'</div>'
-            // );
-
-            // /* Close the text content */
-            // $post_grid_markup .= sprintf(
-            // 	'</div>'
-            // );
-
-            // /* Close the post */
-            // $post_grid_markup .= "</article>\n";
-
-            // $excerpt = has_excerpt($post_id) ? get_the_excerpt($post_id) : null;
-            // $excerpt = sprintf(
-            //     '<%1$s class="%2$s">%3$s</%1$s>',
-            //     'p', //selector
-            //     '', // classes
-            //     get_the_excerpt($post_id)
-            // );
-
 
             $card = cv_card(array(
                 'subtitle' => $category[0]->name . ' - ' . $date,

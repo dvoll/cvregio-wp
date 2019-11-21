@@ -10,7 +10,7 @@ import './base-components';
 
 import './static-components/styles/_cv-stage-item.scss';
 
-console.log('Frontend loaded.');
+console.log('Plugin script loaded.');
 
 Vue.config.productionTip = false;
 Vue.use(vueCustomElement);
