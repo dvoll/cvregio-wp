@@ -7,10 +7,7 @@
             "label": "Start wordpress container",
             "type": "shell",
             "command": "docker-compose up -d",
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            },
+            "group": "build",
             "presentation": {
                 "reveal": "always",
                 "panel": "shared"
@@ -24,6 +21,13 @@
                 "reveal": "always",
                 "panel": "shared"
             },
+            "problemMatcher": []
+        },
+        {
+            "type": "npm",
+            "script": "build",
+            "path": "cv-frontend/",
+            "group": "build",
             "problemMatcher": []
         }
     ]
