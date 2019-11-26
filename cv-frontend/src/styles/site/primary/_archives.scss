@@ -1,41 +1,33 @@
 .archive .page-header,
 .search .page-header,
 .error404 .page-header {
+    .page-title {
+        color: $color__text-light;
+        display: inline;
+        letter-spacing: normal;
 
-	margin: $size__spacing-unit $size__spacing-unit calc(3 * #{$size__spacing-unit});
+        &:before {
+            display: none;
+        }
+    }
 
-	@include media(tablet) {
-		margin: 0 $size__site-margins $size__site-margins;
-	}
+    .search-term,
+    .page-description {
+        display: inherit;
+        clear: both;
 
-	.page-title {
-
-		color: $color__text-light;
-		display: inline;
-		letter-spacing: normal;
-
-		&:before {
-			display: none;
-		}
-	}
-
-	.search-term,
-	.page-description {
-		display: inherit;
-		clear: both;
-
-		&:after {
-			content: ".";
-			font-weight: bold;
-			color: $color__text-light;
-		}
-	}
+        &:after {
+            content: '.';
+            font-weight: bold;
+            color: $color__text-light;
+        }
+    }
 }
 
 .archive .page-header .page-description {
-	display: block;
-	color: $color__text-main;
-	font-size: 1em;
+    display: block;
+    color: $color__text-main;
+    font-size: 1em;
 }
 
 // .hfeed .entry .entry-header {
@@ -49,23 +41,22 @@
 
 .error-404.not-found,
 .no-results.not-found {
+    .page-title,
+    .page-content {
+        margin: calc(3 * #{$size__spacing-unit}) #{$size__spacing-unit};
 
-	.page-title,
-	.page-content {
+        @include media(tablet) {
+            margin: calc(3 * #{$size__spacing-unit}) $size__site-margins
+                calc(#{$size__spacing-unit} / 2);
+        }
+    }
 
-		margin: calc(3 * #{$size__spacing-unit}) #{$size__spacing-unit};
+    .search-submit {
+        vertical-align: middle;
+        margin: $size__spacing-unit 0;
+    }
 
-		@include media(tablet) {
-			margin: calc(3 * #{$size__spacing-unit}) $size__site-margins calc(#{ $size__spacing-unit } / 2);
-		}
-	}
-
-	.search-submit {
-		vertical-align: middle;
-		margin: $size__spacing-unit 0;
-	}
-
-	.search-field {
-		width: 100%;
-	}
+    .search-field {
+        width: 100%;
+    }
 }

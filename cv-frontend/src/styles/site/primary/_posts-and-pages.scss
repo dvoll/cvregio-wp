@@ -132,6 +132,15 @@
 .entry-content .entry-header {
     margin-top: 5 * $size__spacing-unit;
     margin-bottom: 4 * $size__spacing-unit;
+
+    .post-list & {
+        margin-top: 0;
+    }
+}
+
+.post-list > .entry-content:first-child .entry-header,
+.post-list > article:first-child .entry-header {
+    margin-top: 5 * $size__spacing-unit;
 }
 
 .entry-title {
@@ -197,14 +206,12 @@
 }
 
 .post-thumbnail {
-    grid-column: main-start / main-end;
-
     @include media(mobile) {
         padding: 0 5%;
-    }
 
-    @include media(desktop) {
-        grid-column: main-start / sidebar-end;
+        &--full-width {
+            padding: 0;
+        }
     }
 
     &:focus {
