@@ -25,14 +25,11 @@
 }
 
 .entry {
-    margin-top: calc(6 * #{$size__spacing-unit});
-
-    &:first-of-type {
-        margin-top: 0;
-    }
+    margin-bottom: calc(5 * #{$size__spacing-unit});
 }
 
-.entry-content {
+.entry-content,
+.page-container {
     display: grid;
     grid-template-columns: 1fr [main-start content-start] 90% [content-end main-end] 1fr;
 

@@ -27,8 +27,10 @@
 
 		<?php the_excerpt(); ?>
 
-		<footer class="entry-footer">
-			<?php twentynineteen_entry_footer(); ?>
-		</footer><!-- .entry-footer -->
+		<?php if (get_post_type() === 'post') : ?>
+			<footer class="entry-footer">
+				<?php twentynineteen_entry_footer(); ?>
+			</footer><!-- .entry-footer -->
+		<?php endif; ?>
 	</div><!-- .entry-content -->
 </article><!-- #post-${ID} -->
