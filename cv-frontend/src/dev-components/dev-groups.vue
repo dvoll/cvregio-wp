@@ -4,7 +4,7 @@
             <cv-card
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
-                imgSrc="/placeholder/05.jpg"
+                imgSrc="/images/05.jpg"
             >
                 <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
@@ -14,7 +14,7 @@
             <cv-card
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
-                imgSrc="/placeholder/05.jpg"
+                imgSrc="/images/05.jpg"
             >
                 <info-row label="Teilnehmer" title="Jungen von 7 bis 12 Jahren" iconName="edit" />
                 <info-row label="Zeit" title="samstags, 15 - 17 Uhr" iconName="edit" />
@@ -22,21 +22,21 @@
             <cv-card
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
-                imgSrc="/placeholder/05.jpg"
+                imgSrc="/images/05.jpg"
             >
                 <div></div>
             </cv-card>
             <cv-card
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
-                imgSrc="/placeholder/05.jpg"
+                imgSrc="/images/05.jpg"
             >
                 <div></div>
             </cv-card>
             <cv-card
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
-                imgSrc="/placeholder/05.jpg"
+                imgSrc="/images/05.jpg"
             >
                 <p>
                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
@@ -46,21 +46,21 @@
             <cv-card
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
-                imgSrc="/placeholder/05.jpg"
+                imgSrc="/images/05.jpg"
             >
                 <div></div>
             </cv-card>
             <cv-card
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
-                imgSrc="/placeholder/05.jpg"
+                imgSrc="/images/05.jpg"
             >
                 <div></div>
             </cv-card>
             <cv-card
                 title="Unsere neue Website"
                 subtitle="Allgemein - 22. Juli 2019"
-                imgSrc="/placeholder/05.jpg"
+                imgSrc="/images/05.jpg"
             >
                 <div></div>
             </cv-card>

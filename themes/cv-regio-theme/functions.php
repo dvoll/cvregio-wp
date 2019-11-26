@@ -296,6 +296,15 @@ function twentynineteen_colors_css_wrap() {
 }
 add_action( 'wp_head', 'twentynineteen_colors_css_wrap' );
 
+// fix wp bug with dynamic blocks https://github.com/WordPress/gutenberg/issues/12646
+remove_filter('the_content', 'wpautop');
+add_filter('the_content', function ($content) {
+    if (has_blocks()) {
+        return $content;
+    }
+    return wpautop($content);
+});
+
 /**
  * SVG Icons class.
  */

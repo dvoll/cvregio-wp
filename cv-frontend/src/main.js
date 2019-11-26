@@ -5,9 +5,11 @@ import 'document-register-element/build/document-register-element';
 
 import CvHeaderElement from './custom-elements/CvHeaderElement.vue';
 
+import './styles/main.scss';
 import './base-components';
 
-console.log('Frontend loaded.');
+
+console.log('Theme script loaded.');
 
 Vue.config.productionTip = false;
 Vue.use(vueCustomElement);

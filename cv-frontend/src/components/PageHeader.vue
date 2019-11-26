@@ -1,21 +1,21 @@
 <template>
     <div
-        class="page-header"
-        :class="{ 'page-header--small': small, 'page-header--mobile': mobile }"
+        class="cv-page-header"
+        :class="{ 'cv-page-header--small': small, 'cv-page-header--mobile': mobile }"
     >
-        <div class="page-header__body">
-            <a href="/" class="page-header__link">
-                <div class="page-header__logo-container">
-                    <img class="page-header__logo" :src="logoUrl" />
+        <div class="cv-page-header__body">
+            <a href="/" class="cv-page-header__link">
+                <div class="cv-page-header__logo-container">
+                    <img class="cv-page-header__logo" :src="logoUrl" />
                 </div>
-                <div class="page-header__title-wrapper">
-                    <span class="page-header__title">{{ title }}</span>
-                    <span class="page-header__subtitle">{{ subtitle }}</span>
+                <div class="cv-page-header__title-wrapper">
+                    <span class="cv-page-header__title">{{ title }}</span>
+                    <span class="cv-page-header__subtitle">{{ subtitle }}</span>
                 </div>
             </a>
-            <slot v-if="!mobile" name="default" class="page-header__nav" />
-            <div v-else class="page-header__menu-button">
-                <slot name="menu-button" class="page-header__menu-button"></slot>
+            <slot v-if="!mobile" name="default" class="cv-page-header__nav" />
+            <div v-else class="cv-page-header__menu-button">
+                <slot name="menu-button" class="cv-page-header__menu-button"></slot>
             </div>
         </div>
     </div>
@@ -57,7 +57,7 @@ $smallHeaderHeight: 50;
 $transitionSpeedGrow: 0.3s;
 $transitionSpeedShrink: 0.4s ease-out;
 
-.page-header {
+.cv-page-header {
     position: fixed;
     width: 100%;
     background-color: $color__background-body;
@@ -81,12 +81,12 @@ $transitionSpeedShrink: 0.4s ease-out;
         transition: transform 0.3s;
         padding: 0 50px;
 
-        .page-header--small & {
+        .cv-page-header--small & {
             transform: translateY(#{($initialHeaderHeight - $smallHeaderHeight) / 2} + 'px');
             transition: transform #{$transitionSpeedShrink};
         }
 
-        .page-header--mobile & {
+        .cv-page-header--mobile & {
             transition: none;
             transform: translateY(#{($initialHeaderHeight - $smallHeaderHeight) / 2 - 10} + 'px');
             padding-left: 0;
@@ -103,7 +103,7 @@ $transitionSpeedShrink: 0.4s ease-out;
         background-position: center center;
         transition: transform 0.3s;
 
-        .page-header--small & {
+        .cv-page-header--small & {
             transform: scale(0.5);
             transition: transform #{$transitionSpeedShrink};
         }
@@ -117,7 +117,7 @@ $transitionSpeedShrink: 0.4s ease-out;
         margin-left: 20px;
         margin-right: 20px;
 
-        .page-header--mobile & {
+        .cv-page-header--mobile & {
             // position: absolute;
             // left: 70px;
             margin-right: 0px;
@@ -131,7 +131,7 @@ $transitionSpeedShrink: 0.4s ease-out;
         line-height: 1.4rem;
         color: #000;
 
-        .page-header--small & {
+        .cv-page-header--small & {
             transform: translate(-40px, 9px) scale(0.9);
             transition: transform 0.4s;
         }
@@ -146,11 +146,11 @@ $transitionSpeedShrink: 0.4s ease-out;
         color: #999;
         transition: opacity 0.5s;
 
-        .page-header--small & {
+        .cv-page-header--small & {
             opacity: 0;
         }
 
-        .page-header--mobile & {
+        .cv-page-header--mobile & {
             white-space: nowrap;
             overflow: hidden;
             width: 1px;
