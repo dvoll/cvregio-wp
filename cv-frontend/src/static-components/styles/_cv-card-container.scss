@@ -33,7 +33,6 @@ $card-margin: 10px;
     .cv-card-container--row & {
         > * {
             height: $card-height;
-            overflow: hidden;
             flex: 0 0 1;
         }
     }
