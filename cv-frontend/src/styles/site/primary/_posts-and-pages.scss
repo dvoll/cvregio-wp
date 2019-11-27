@@ -204,7 +204,8 @@
 
 .post-thumbnail {
     @include media(mobile) {
-        padding: 0 5%;
+        padding-left: 5%;
+        padding-right: 5%;
 
         &--full-width {
             padding: 0;
@@ -227,6 +228,43 @@
             display: block;
             width: 100%;
         }
+    }
+}
+
+.featured-image .post-thumbnail {
+    @include media(desktop) {
+        padding-left: 5%;
+        padding-right: 5%;
+        height: 600px;
+        overflow: hidden;
+
+        &--full-width {
+            padding: 0;
+        }
+
+        > img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    @include media(wide) {
+        padding-left: 10%;
+        padding-right: 10%;
+
+        &--full-width {
+            padding: 0;
+        }
+    }
+
+    @include media(wideXl) {
+        padding-left: 5%;
+        padding-right: 5%;
+        height: 800px;
+        max-width: 2400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
