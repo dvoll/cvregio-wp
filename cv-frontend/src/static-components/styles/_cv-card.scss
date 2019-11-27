@@ -1,9 +1,11 @@
+$cv-card-border-radius: 6px;
+
 .cv-card {
     display: block;
     width: 290px;
     min-height: 380px;
     border: 1px solid $color__background-hr;
-    border-radius: 6px;
+    border-radius: $cv-card-border-radius;
     position: relative;
     box-sizing: content-box;
 
@@ -21,7 +23,7 @@
         right: 0;
         bottom: 0;
         left: 0;
-        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 20px 0px rgba(94, 94, 94, 0.2);
         opacity: 0;
         transition: opacity 0.2s ease-out;
     }
@@ -33,6 +35,14 @@
     &:hover {
         background: $color__background-input;
     }
+
+    &:focus {
+        outline: none;
+
+        &::after {
+            opacity: 1;
+        }
+    }
 }
 
 a.cv-card {
@@ -42,6 +52,7 @@ a.cv-card {
 .cv-card--fixed-height .cv-card__inner-wrapper {
     width: 100%;
     max-height: 100%;
+    overflow: hidden;
 
     &::after {
         content: '';
@@ -49,6 +60,7 @@ a.cv-card {
         bottom: 0;
         right: 0;
         left: 0;
+        border-radius: $cv-card-border-radius;
         height: 50px;
         background: linear-gradient(
             to bottom,

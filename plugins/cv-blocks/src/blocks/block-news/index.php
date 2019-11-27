@@ -127,6 +127,7 @@ function cvblocks_render_block_news_overview($attributes)
                 'link' => esc_url(get_permalink($post_id)),
                 'imageId' => $post_thumb_id,
                 'wider' => true,
+                'fixedHeight' => true,
             ));
 
             $post_grid_markup .= $card;
@@ -138,9 +139,9 @@ function cvblocks_render_block_news_overview($attributes)
         /* Build the block classes */
         // $class = "ab-block-post-grid featured{$attributes['postType']} align{$attributes['align']}";
 
-        if (isset($attributes['className'])) {
-            $class .= ' ' . $attributes['className'];
-        }
+        // if (isset($attributes['className'])) {
+        //     $class .= ' ' . $attributes['className'];
+        // }
 
         /* Layout orientation class */
         $grid_class = 'ab-post-grid-items';

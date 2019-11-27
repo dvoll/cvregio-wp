@@ -38,9 +38,15 @@ get_header();
 
 			// End the loop.
 			endwhile;
+			?>
+				<div class="page-container">
+			<?php
+				// Previous/next page navigation.
+				twentynineteen_the_posts_navigation();
+			?>
+				</div>
 
-			// Previous/next page navigation.
-			twentynineteen_the_posts_navigation();
+			<?php
 
 		// If no content, include the "No posts found" template.
 		else :

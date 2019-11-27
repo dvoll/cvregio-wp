@@ -136,6 +136,12 @@
                             id="menu-item-326"
                             class="menu-item menu-item-type-post_type menu-item-object-page menu-item-326"
                         >
+                            <a href="http://localhost:8080/post-list">Neuigkeiten</a>
+                        </li>
+                        <li
+                            id="menu-item-327"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-326"
+                        >
                             <a href="http://0.0.0.0:8000/?page_id=78">Kontakt</a>
                         </li>
                     </ul>

@@ -30,8 +30,15 @@ get_header();
 				get_template_part('template-parts/content/content', 'excerpt');
 			}
 
-			// Previous/next page navigation.
-			twentynineteen_the_posts_navigation();
+			?>
+				<div class="entry-content">
+			<?php
+				// Previous/next page navigation.
+				twentynineteen_the_posts_navigation();
+			?>
+				</div>
+
+			<?php
 		} else {
 
 			// If no content, include the "No posts found" template.

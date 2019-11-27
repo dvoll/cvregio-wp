@@ -22,6 +22,12 @@
             @content;
         }
     }
+
+    @if wideXl == $res {
+        @media only screen and (min-width: $wide_xl_width) {
+            @content;
+        }
+    }
 }
 
 @mixin link-transition($attr: color) {
