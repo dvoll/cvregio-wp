@@ -21,7 +21,7 @@ wp_enqueue_style('cv-frontend-chunk-vendors');
 
 wp_register_style(
     'cv-frontend-chunk-common',
-    content_url() . '/themes/cv-regio-theme/cv-frontend/chunk-common.70ff2c0c.css',
+    content_url() . '/themes/cv-regio-theme/cv-frontend/chunk-common.7def096b.css',
     array( 'wp-editor' )
 );
 wp_enqueue_style('cv-frontend-chunk-common');
