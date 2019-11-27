@@ -15,19 +15,12 @@
     }
 
     .nav-links {
-        margin: 0 $size__spacing-unit;
         max-width: 100%;
         display: flex;
         flex-direction: column;
 
-        @include media(tablet) {
-            margin: 0;
-        }
-
         @include media(desktop) {
             flex-direction: row;
-            margin: 0 $size__site-margins;
-            max-width: $size__site-desktop-content;
         }
 
         a {
