@@ -5,6 +5,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "node",
+      "request": "launch",
+      "name": "Run wordpress build import",
+      "program": "${workspaceFolder}/cv-frontend/wordpress-import.js",
+      "cwd": "${workspaceFolder}/cv-frontend/"
+    },
+    {
       "type": "chrome",
       "request": "launch",
       "name": "Frontend: Launch Chrome against localhost",

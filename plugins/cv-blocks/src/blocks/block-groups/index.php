@@ -60,7 +60,7 @@ function cvblocks_render_block_group_overview($attributes)
 			get_post_meta(get_the_ID(), 'cv_blocks_meta_group_target', true);
 
 			$card = cv_card(array(
-				'subtitle' => $location ? $location : '&nbsp;', // TODO: Check meaning auf true in get_post_meta()
+				'subtitle' => $location ? $location : '&nbsp;',
 				'title' =>  get_the_title($post_id),
 				'content' => $card_content,
 				'link' => esc_url(get_permalink($post_id)),

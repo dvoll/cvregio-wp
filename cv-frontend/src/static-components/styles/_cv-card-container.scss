@@ -1,3 +1,6 @@
+$card-height: 430px;
+$card-margin: 10px;
+
 .cv-card-container {
     margin-left: $size__spacing-unit;
     margin-right: $size__spacing-unit;
@@ -9,14 +12,12 @@
     grid-template-columns: repeat(auto-fit, 290px);
     grid-gap: 20px;
 
-    &--wider {
+    &--wider,
+    .cv-card-container--wider & {
         grid-template-columns: repeat(auto-fit, 320px);
     }
 
     .cv-card-container--row & {
-        $card-height: 430px;
-        $card-margin: 10px;
-
         grid-gap: 0;
         display: flex;
         flex-wrap: wrap;
@@ -24,10 +25,15 @@
         overflow: hidden;
 
         > * {
-            height: $card-height;
-            overflow: hidden;
-            flex: 0 0 1;
             margin: $card-margin;
+        }
+    }
+
+    .cv-card-container--fixed-height &,
+    .cv-card-container--row & {
+        > * {
+            height: $card-height;
+            flex: 0 0 1;
         }
     }
 }

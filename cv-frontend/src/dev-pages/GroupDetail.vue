@@ -10,18 +10,18 @@
                     <img
                         width="1200"
                         height="600"
-                        src="http://192.168.178.199:8082/wp-content/uploads/2019/08/02-1200x600.jpg"
+                        src="/images/01.jpg"
                         class="attachment-post-thumbnail size-post-thumbnail wp-post-image"
                         alt=""
-                        srcset="
-                            http://192.168.178.199:8082/wp-content/uploads/2019/08/02-1200x600.jpg 1568w,
-                            http://192.168.178.199:8082/wp-content/uploads/2019/08/02-1024x680.jpg 1024w,
-                            http://192.168.178.199:8082/wp-content/uploads/2019/08/02-768x510.jpg   768w,
-                            http://192.168.178.199:8082/wp-content/uploads/2019/08/02-300x199.jpg   300w
-                        "
-                        sizes="(max-width: 1568px) 100vw, 1568px"
                     />
                 </figure>
+                <!-- srcset="
+                    http://192.168.178.199:8082/wp-content/uploads/2019/08/02-1200x600.jpg 1568w,
+                    http://192.168.178.199:8082/wp-content/uploads/2019/08/02-1024x680.jpg 1024w,
+                    http://192.168.178.199:8082/wp-content/uploads/2019/08/02-768x510.jpg   768w,
+                    http://192.168.178.199:8082/wp-content/uploads/2019/08/02-300x199.jpg   300w
+                "
+                sizes="(max-width: 1568px) 100vw, 1568px" -->
             </template>
             <template slot="header">
                 <cv-intro-box>

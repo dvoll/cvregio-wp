@@ -1,9 +1,11 @@
+$cv-card-border-radius: 6px;
+
 .cv-card {
     display: block;
     width: 290px;
     min-height: 380px;
     border: 1px solid $color__background-hr;
-    border-radius: 6px;
+    border-radius: $cv-card-border-radius;
     position: relative;
     box-sizing: content-box;
 
@@ -21,22 +23,52 @@
         right: 0;
         bottom: 0;
         left: 0;
-        box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.3);
+        box-shadow: 0px 0px 20px 0px rgba(94, 94, 94, 0.2);
         opacity: 0;
         transition: opacity 0.2s ease-out;
     }
 
     &:hover::after {
-        opacity: 0.2;
+        opacity: 0.8;
     }
 
     &:hover {
         background: $color__background-input;
     }
+
+    &:focus {
+        outline: none;
+
+        &::after {
+            opacity: 1;
+        }
+    }
 }
 
 a.cv-card {
     color: inherit;
+}
+
+.cv-card--fixed-height .cv-card__inner-wrapper {
+    width: 100%;
+    max-height: 100%;
+    overflow: hidden;
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border-radius: $cv-card-border-radius;
+        height: 50px;
+        background: linear-gradient(
+            to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba($color__background-body, 1) 81%,
+            rgba($color__background-body, 1) 99%
+        );
+    }
 }
 
 .cv-card__inner {
@@ -78,21 +110,14 @@ a.cv-card {
     @include font-size(1.5);
     font-style: italic;
     font-weight: normal;
+
+    min-height: 3.6rem;
+    display: flex;
+    align-items: center;
 }
 
 .cv-card__image {
-    position: relative;
     width: calc(100% - 18px);
     margin-left: 0;
     margin-right: 0;
-
-    &::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        height: 100%;
-        width: 20px;
-        background: white;
-    }
 }

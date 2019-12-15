@@ -120,28 +120,6 @@ function cvblocks_render_block_news_overview($attributes)
                 );
             }
 
-            /* Close the excerpt content */
-            // $post_grid_markup .= sprintf(
-            // 	'</div>'
-            // );
-
-            // /* Close the text content */
-            // $post_grid_markup .= sprintf(
-            // 	'</div>'
-            // );
-
-            // /* Close the post */
-            // $post_grid_markup .= "</article>\n";
-
-            // $excerpt = has_excerpt($post_id) ? get_the_excerpt($post_id) : null;
-            // $excerpt = sprintf(
-            //     '<%1$s class="%2$s">%3$s</%1$s>',
-            //     'p', //selector
-            //     '', // classes
-            //     get_the_excerpt($post_id)
-            // );
-
-            
             $card = cv_card(array(
                 'subtitle' => $category[0]->name . ' - ' . $date,
                 'title' =>  get_the_title($post_id),
@@ -149,20 +127,21 @@ function cvblocks_render_block_news_overview($attributes)
                 'link' => esc_url(get_permalink($post_id)),
                 'imageId' => $post_thumb_id,
                 'wider' => true,
+                'fixedHeight' => true,
             ));
-            
+
             $post_grid_markup .= $card;
         }
-        
+
         /* Restore original post data */
         wp_reset_postdata();
 
         /* Build the block classes */
         // $class = "ab-block-post-grid featured{$attributes['postType']} align{$attributes['align']}";
 
-        if (isset($attributes['className'])) {
-            $class .= ' ' . $attributes['className'];
-        }
+        // if (isset($attributes['className'])) {
+        //     $class .= ' ' . $attributes['className'];
+        // }
 
         /* Layout orientation class */
         $grid_class = 'ab-post-grid-items';

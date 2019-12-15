@@ -25,14 +25,11 @@
 }
 
 .entry {
-    margin-top: calc(6 * #{$size__spacing-unit});
-
-    &:first-of-type {
-        margin-top: 0;
-    }
+    margin-bottom: calc(5 * #{$size__spacing-unit});
 }
 
-.entry-content {
+.entry-content,
+.page-container {
     display: grid;
     grid-template-columns: 1fr [main-start content-start] 90% [content-end main-end] 1fr;
 
@@ -57,6 +54,7 @@
 
     &--with-sidebar,
     .cvgroups-template-default &,
+    .page-template-homepage &,
     .page-template-single-withsidebar &,
     .post-template-single-withsidebar & {
         @include media(desktop) {
@@ -131,6 +129,15 @@
 .entry-content .entry-header {
     margin-top: 5 * $size__spacing-unit;
     margin-bottom: 4 * $size__spacing-unit;
+
+    .post-list & {
+        margin-top: 0;
+    }
+}
+
+.post-list > .entry-content:first-child .entry-header,
+.post-list > article:first-child .entry-header {
+    margin-top: 5 * $size__spacing-unit;
 }
 
 .entry-title {
@@ -196,14 +203,13 @@
 }
 
 .post-thumbnail {
-    grid-column: main-start / main-end;
-
     @include media(mobile) {
-        padding: 0 5%;
-    }
+        padding-left: 5%;
+        padding-right: 5%;
 
-    @include media(desktop) {
-        grid-column: main-start / sidebar-end;
+        &--full-width {
+            padding: 0;
+        }
     }
 
     &:focus {
@@ -222,6 +228,43 @@
             display: block;
             width: 100%;
         }
+    }
+}
+
+.featured-image .post-thumbnail {
+    @include media(desktop) {
+        padding-left: 5%;
+        padding-right: 5%;
+        height: 600px;
+        overflow: hidden;
+
+        &--full-width {
+            padding: 0;
+        }
+
+        > img {
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+
+    @include media(wide) {
+        padding-left: 10%;
+        padding-right: 10%;
+
+        &--full-width {
+            padding: 0;
+        }
+    }
+
+    @include media(wideXl) {
+        padding-left: 5%;
+        padding-right: 5%;
+        height: 800px;
+        max-width: 2400px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 

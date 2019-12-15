@@ -7,6 +7,7 @@ import Default from './dev-pages/Default.vue';
 import DefaultWithImage from './dev-pages/DefaultWithImage.vue';
 import GroupDetail from './dev-pages/GroupDetail.vue';
 import Post from './dev-pages/Post.vue';
+import PostList from './dev-pages/PostList.vue';
 import Groups from './dev-pages/Groups.vue';
 import CvStageElement from './custom-elements/CvStageElement.vue';
 import CvHeaderElement from './custom-elements/CvHeaderElement.vue';
@@ -32,6 +33,11 @@ if (locationString.match(/index-dev.html$/)) {
     console.log('Location: post');
     new Vue({
         render: h => h(Post),
+    }).$mount('#app');
+} else if (locationString.match(/post-list(.html)*$/)) {
+    console.log('Location: posts');
+    new Vue({
+        render: h => h(PostList),
     }).$mount('#app');
 } else if (locationString.match(/groups.html$/)) {
     console.log('Location: groups');

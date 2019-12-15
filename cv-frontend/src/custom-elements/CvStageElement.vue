@@ -1,35 +1,33 @@
 <template>
-    <swiper :options="swiperOptions">
-        <swiper-slide
-            class="cv-stage__item cv-stage-card"
-            v-for="item in stageItems"
-            :key="'swiper-item-' + item.id"
-            v-html="item.innerHTML"
-        >
-        </swiper-slide>
-        <div slot="pagination" class="cv-stage__controls">
-            <div class="swiper-button-prev--custom">
-                <base-icon :size="16" icon="arrow-left" />
-            </div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next--custom">
-                <base-icon :size="16" icon="arrow-right" />
+    <div ref="stageSwiper" class="swiper-container">
+        <div class="swiper-wrapper">
+            <div
+                class="swiper-slide cv-stage__item cv-stage-card"
+                v-for="item in stageItems"
+                :key="'swiper-item-' + item.id"
+                v-html="item.innerHTML"
+            />
+            <div slot="pagination" class="cv-stage__controls">
+                <div class="swiper-button-prev--custom">
+                    <base-icon :size="16" icon="arrow-left" />
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next--custom">
+                    <base-icon :size="16" icon="arrow-right" />
+                </div>
             </div>
         </div>
-        <!-- <div class="swiper-button-next swiper-button-white"></div> -->
-    </swiper>
+    </div>
 </template>
 
 <script>
 // @ts-check
-import { swiper, swiperSlide } from 'vue-awesome-swiper';
+import { Swiper, Parallax, Pagination, Navigation, EffectFade } from 'swiper/dist/js/swiper.esm';
 import 'swiper/dist/css/swiper.css';
 
+Swiper.use([Pagination, Parallax, Navigation, EffectFade]);
+
 export default {
-    components: {
-        swiper,
-        swiperSlide,
-    },
     props: {
         items: {
             type: String,
@@ -49,15 +47,10 @@ export default {
                 },
                 parallax: true,
                 effect: 'fade',
-                // fadeEffect: {
-                //     crossFade: true
-                // }
             },
         };
     },
     mounted() {
-        console.log('item string', this.items);
-
         this.$slots.default.forEach((elm, index) => {
             const htmlDoc = new DOMParser().parseFromString(
                 elm.data.domProps.innerHTML,
@@ -66,7 +59,6 @@ export default {
             htmlDoc
                 .querySelector('.cv-stage-card__body')
                 .setAttribute('data-swiper-parallax', '200');
-            // console.log('add attribute', htmlDoc);
 
             this.stageItems.push({
                 id: index,
@@ -74,7 +66,10 @@ export default {
                 innerHTML: htmlDoc.firstChild.children[1].innerHTML,
             });
         });
-        console.log('items', this.stageItems);
+        const mySwiper = new Swiper(this.$refs.stageSwiper, this.swiperOptions);
+        this.$nextTick(() => {
+            mySwiper.update();
+        });
     },
 };
 </script>

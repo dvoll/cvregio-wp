@@ -18,9 +18,11 @@ wp-cache-config.php
 
 plugins/*
 !plugins/cv-blocks/
+plugins/cv-blocks/cv-frontend/*
 
 themes/*
 !themes/cv-regio-theme/
+themes/cv-regio-theme/cv-frontend/*
 
 /.htaccess
 /license.txt
