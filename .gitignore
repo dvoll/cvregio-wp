@@ -18,6 +18,7 @@ wp-cache-config.php
 
 plugins/*
 !plugins/cv-blocks/
+!plugins/cv-regio-plugin/
 plugins/cv-blocks/cv-frontend/*
 
 themes/*
