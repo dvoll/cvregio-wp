@@ -1,12 +1,8 @@
-import { registerBlockType } from '@wordpress/blocks';
+import './blocks/cv-stage-item';
+import './blocks/cv-stage';
+import './blocks/cv-groups';
+import './blocks/cv-group-detail';
+import './blocks/cv-sidebar';
+import './blocks/cv-news';
+
 import './style.css';
-import GroupDetail from "./blocks/group-detail/index";
- 
-registerBlockType( 'myguten/test-block', {
-    title: 'Basic Example',
-    icon: 'smiley',
-    category: 'layout',
-    attributes: [],
-    edit: () => <div>Hola, mundo!</div>,
-    save: () => <div>Hola, mundo!</div>,
-} );
