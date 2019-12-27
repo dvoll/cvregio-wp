@@ -15,7 +15,7 @@ const srcDir = './dist/';
 const mapping = [
     {
         name: 'plugin',
-        targetPath: '/plugins/cv-blocks/',
+        targetPath: '/plugins/cv-regio-plugin/',
         distFolder: 'cv-frontend',
         files: [
             { type: 'js', name: 'chunk-vendors' },
