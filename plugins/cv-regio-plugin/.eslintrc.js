@@ -12,6 +12,7 @@ module.exports = {
         'prefer-destructuring': 'warn',
         'react/react-in-jsx-scope': 'off',
         'react/prop-types': 'warn',
+        'react/jsx-filename-extension': 'off',
     },
     parserOptions: {
         parser: 'babel-eslint',
