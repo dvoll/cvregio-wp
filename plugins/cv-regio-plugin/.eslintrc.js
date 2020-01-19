@@ -13,6 +13,13 @@ module.exports = {
         'react/react-in-jsx-scope': 'off',
         'react/prop-types': 'warn',
         'react/jsx-filename-extension': 'off',
+        'react/jsx-props-no-spreading': [
+            'error',
+            {
+                html: 'enforce',
+                custom: 'ignore',
+            },
+        ],
     },
     parserOptions: {
         parser: 'babel-eslint',
