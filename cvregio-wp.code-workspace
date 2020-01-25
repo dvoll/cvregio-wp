@@ -11,6 +11,9 @@
 		},
 		{
 			"path": "plugins/cv-regio-plugin"
+		},
+		{
+			"path": "cvregio-frontend"
 		}
 	],
 	"settings": {
