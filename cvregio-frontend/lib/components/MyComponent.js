@@ -1,0 +1,9 @@
+import * as React from 'react';
+import './MyComponent.scss';
+
+const MyComponent = () => {
+  return React.createElement("button", null, "MyCompButton123");
+};
+
+export default MyComponent;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb21wb25lbnRzL015Q29tcG9uZW50LnRzeCJdLCJuYW1lcyI6WyJSZWFjdCIsIk15Q29tcG9uZW50Il0sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLEtBQUtBLEtBQVosTUFBdUIsT0FBdkI7QUFDQSxPQUFPLG9CQUFQOztBQUVBLE1BQU1DLFdBQW9DLEdBQUcsTUFBTTtBQUMvQyxTQUFPLHNEQUFQO0FBQ0gsQ0FGRDs7QUFJQSxlQUFlQSxXQUFmIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0ICogYXMgUmVhY3QgZnJvbSAncmVhY3QnO1xuaW1wb3J0ICcuL015Q29tcG9uZW50LnNjc3MnO1xuXG5jb25zdCBNeUNvbXBvbmVudDogUmVhY3QuRnVuY3Rpb25Db21wb25lbnQgPSAoKSA9PiB7XG4gICAgcmV0dXJuIDxidXR0b24+TXlDb21wQnV0dG9uMTIzPC9idXR0b24+O1xufTtcblxuZXhwb3J0IGRlZmF1bHQgTXlDb21wb25lbnQ7XG4iXX0=

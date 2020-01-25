@@ -1,0 +1,60 @@
+@import '../../styles-global/main.scss';
+
+.menu-page {
+    background: $color__background-body;
+    padding: 20px 40px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-family: 'Open Sans';
+    position: absolute;
+    padding-top: 100px;
+    width: 100%;
+    padding: 100px 20px 0 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    overflow-y: auto;
+
+    &__header {
+        font-weight: normal;
+        font-style: italic;
+        font-size: 1.2rem;
+    }
+
+    &__back-link {
+        font-size: $font__size-xs;
+        visibility: hidden;
+
+        .base-icon {
+            height: 12px;
+        }
+
+        &--visible {
+            visibility: visible;
+        }
+    }
+
+    &__close-button {
+        // TODO: Add button component
+        background: none;
+        border: none;
+        padding: 4px 8px;
+        cursor: pointer;
+    }
+}
+
+.menu-list {
+    list-style: none;
+    max-height: 200px;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    &__item {
+        // width: 50%;
+        flex: 1;
+    }
+}

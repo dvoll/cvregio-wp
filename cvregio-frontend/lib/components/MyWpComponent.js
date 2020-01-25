@@ -1,0 +1,12 @@
+import * as React from 'react'; // import 'MyComponent.css';
+
+import { Button } from '@wordpress/components';
+
+const MyWpComponent = () => {
+  return React.createElement(Button, {
+    label: "WP Button"
+  }, "MyCompButton");
+};
+
+export default MyWpComponent;
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi4uLy4uL3NyYy9jb21wb25lbnRzL015V3BDb21wb25lbnQudHN4Il0sIm5hbWVzIjpbIlJlYWN0IiwiQnV0dG9uIiwiTXlXcENvbXBvbmVudCJdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxLQUFLQSxLQUFaLE1BQXVCLE9BQXZCLEMsQ0FDQTs7QUFDQSxTQUFTQyxNQUFULFFBQXVCLHVCQUF2Qjs7QUFHQSxNQUFNQyxhQUFzQyxHQUFHLE1BQU07QUFDakQsU0FBTyxvQkFBQyxNQUFEO0FBQVEsSUFBQSxLQUFLLEVBQUM7QUFBZCxvQkFBUDtBQUNILENBRkQ7O0FBSUEsZUFBZUEsYUFBZiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCAqIGFzIFJlYWN0IGZyb20gJ3JlYWN0Jztcbi8vIGltcG9ydCAnTXlDb21wb25lbnQuY3NzJztcbmltcG9ydCB7IEJ1dHRvbiB9IGZyb20gJ0B3b3JkcHJlc3MvY29tcG9uZW50cyc7XG5cblxuY29uc3QgTXlXcENvbXBvbmVudDogUmVhY3QuRnVuY3Rpb25Db21wb25lbnQgPSAoKSA9PiB7XG4gICAgcmV0dXJuIDxCdXR0b24gbGFiZWw9XCJXUCBCdXR0b25cIj5NeUNvbXBCdXR0b248L0J1dHRvbj47XG59O1xuXG5leHBvcnQgZGVmYXVsdCBNeVdwQ29tcG9uZW50O1xuIl19
