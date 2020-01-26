@@ -1,0 +1,9 @@
+@import '../../styles-global/main.scss';
+
+.base-icon {
+    fill: currentColor;
+
+    &--has-fill {
+        fill: 'rgb'(var(--fill-rgb), $color__primary);
+    }
+}

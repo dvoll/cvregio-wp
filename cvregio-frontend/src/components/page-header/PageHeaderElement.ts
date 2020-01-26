@@ -55,12 +55,16 @@ export default class PageHeaderElement extends HTMLElement {
 
     connectedCallback() {
         this.mountPoint = document.createElement('div');
+        const { innerHTML } = this;
+        this.innerHTML = '';
         this.appendChild(this.mountPoint);
 
         const title = this.getAttribute('title') || this.title;
         const subtitle = this.getAttribute('subtitle') || '';
         const logoUrl = this.getAttribute('logoUrl') || '';
-        const menuItems = this.mounted(this.innerHTML);
+
+        const menuItems = this.mounted(innerHTML);
+
         ReactDOM.render(this.createComponent(title, subtitle, logoUrl, menuItems), this.mountPoint);
     }
 

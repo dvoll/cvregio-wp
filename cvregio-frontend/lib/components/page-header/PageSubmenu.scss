@@ -1,0 +1,50 @@
+@import '../../styles-global/main.scss';
+
+.page-submenu {
+    background: #eee;
+    padding: 20px 40px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans';
+    position: absolute;
+    padding-top: 100px;
+    width: 100%;
+
+    &--list {
+        // height: calc(100vh - 75px);
+        padding: 100px 20px 0 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+    }
+}
+
+.description-block {
+    &__header {
+        font-weight: normal;
+        font-style: italic;
+        font-size: 1.2rem;
+    }
+}
+
+.page-submenu__menu-list {
+    list-style: none;
+    max-height: 200px;
+    padding: 0;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+
+    &--grid {
+        margin-left: 40px;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        // width: 50%;
+        flex: 1;
+    }
+}

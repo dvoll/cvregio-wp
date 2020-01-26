@@ -11,12 +11,7 @@ class Header extends React.Component {
                 subtitle="Christlicher Verein Junger Menschen"
                 logoUrl={logo}
             >
-                <nav
-                    id="site-navigation"
-                    className="main-navigation"
-                    aria-label="Oberes Menü"
-                    style={{ display: 'none' }}
-                >
+                <nav id="site-navigation" className="main-navigation" aria-label="Oberes Menü">
                     <div className="menu-primary-container">
                         <ul id="menu-primary" className="main-menu">
                             <li
