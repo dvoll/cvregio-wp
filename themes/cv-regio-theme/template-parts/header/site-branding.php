@@ -13,8 +13,7 @@
 		$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 		$custom_logo_url =  $image[0];
 	?>
-
-		<cv-header 
+		<page-header 
 			title="<?php bloginfo( 'name' ); ?>" 
 			subtitle="<?php bloginfo( 'description'); ?>" 
 			logourl="<?php echo $custom_logo_url; ?>"
@@ -32,7 +31,7 @@
 					?>
 				</nav><!-- #site-navigation -->
 			<?php endif; ?>
-		</cv-header>
+		</page-header>
 	<?php if ( has_nav_menu( 'social' ) ) : ?>
 		<nav class="social-navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'twentynineteen' ); ?>">
 			<?php

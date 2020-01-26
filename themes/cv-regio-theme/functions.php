@@ -217,9 +217,44 @@ add_action( 'after_setup_theme', 'twentynineteen_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function twentynineteen_scripts() {
-	// wp_enqueue_style( 'twentynineteen-style', get_template_directory_uri() . '/', array(), wp_get_theme()->get( 'Version' ) );
+	$asset_file = include( plugin_dir_path( __FILE__ ) . 'cvregio-frontend/theme.bundle.asset.php');
 
-	require_once get_template_directory() . '/cv-frontend/frontend-include.php';
+	wp_register_style(
+        'cv-regio-theme-css-common',
+		content_url() . '/themes/cv-regio-theme/cvregio-frontend/commons~plugin~theme.css',
+		[],
+        $asset_file['version']
+	);
+	wp_enqueue_style('cv-regio-theme-css-common');
+
+	
+	wp_register_style(
+        'cv-regio-theme-css',
+		content_url() . '/themes/cv-regio-theme/cvregio-frontend/theme.css',
+		['cv-regio-theme-css-common'],
+        $asset_file['version']
+	);
+	wp_enqueue_style('cv-regio-theme-css');
+
+
+	wp_register_script(
+		'cv-regio-theme-js-common',
+		content_url() . '/themes/cv-regio-theme/cvregio-frontend/commons~plugin~theme.bundle.js',
+		['wp-api-fetch', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-element', 'wp-polyfill', 'wp-url'],
+		$asset_file['version'],
+		true
+	);
+	wp_enqueue_script('cv-regio-theme-js-common');
+
+	wp_register_script(
+		'cv-regio-theme-js',
+		content_url() . '/themes/cv-regio-theme/cvregio-frontend/theme.bundle.js',
+		['cv-regio-theme-js-common'],
+		$asset_file['version'],
+		true
+	); 	
+	wp_enqueue_script('cv-regio-theme-js');
+	
 
 	wp_style_add_data( 'twentynineteen-style', 'rtl', 'replace' );
 
