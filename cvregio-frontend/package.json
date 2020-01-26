@@ -5,10 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "clean-components": "rimraf lib",
-    "clean-build": "npm run clean-components && npm run compile:types && npm run compile",
-    "compile": "npm run compile:types && npm run compile",
-    "build-only": "npm run compile:types && npm run compile",
+    "clean-build": "npm run clean-components && npm run compile",
+    "build-only": "npm run compile-types && npm run compile",
     "compile-types": "tsc --emitDeclarationOnly",
+    "compile": "npm run compile-types && npm run compile-js",
     "compile-js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline --copy-files --ignore node_modules,**/*.d.ts",
     "compile-js:watch": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline --watch --copy-files --ignore node_modules,**/*.d.ts",
     "build": "webpack --config ./config/webpack.config.js && node wordpress-import.js",
