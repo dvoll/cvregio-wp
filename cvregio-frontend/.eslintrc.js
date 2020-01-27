@@ -26,6 +26,7 @@ module.exports = {
         'react/destructuring-assignment': 'off',
         'react/no-did-update-set-state': 'off',
         'react/state-in-constructor': ['warn', 'never'],
+        '@typescript-eslint/ban-ts-ignore': 'warn',
 
         'import/extensions': ['error', 'ignorePackages', { tsx: 'never', ts: 'never' }],
 

@@ -4,6 +4,7 @@ import MyComponent from '../../src/components/MyComponent';
 import MyWpComponent from '../../src/components/MyWpComponent';
 import PageLayout from '../../src/layouts/PageLayout';
 import Header from '../components/Header';
+import Stage from '../components/Stage';
 
 class Home extends React.Component {
     public render() {
@@ -18,7 +19,7 @@ class Home extends React.Component {
                             className="post-78 page type-page status-publish hentry entry"
                         >
                             <div className="entry-content entry-content--starting-top">
-                                {/* <stage></stage> */}
+                                <Stage />
                                 <h1>
                                     Willkommen beim <br />
                                     CVJM Stift Quernheim e.V.

@@ -10,6 +10,14 @@
                 "$tsc"
             ],
             "group": "build"
+        },
+        {
+            "type": "npm",
+            "script": "compile",
+            "problemMatcher": [
+                "$tsc"
+            ],
+            "group": "build"
         }
     ]
 }

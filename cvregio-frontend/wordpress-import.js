@@ -19,12 +19,11 @@ const mapping = [
     //     targetPath: '/plugins/cv-regio-plugin/',
     //     distFolder: 'cvregio-frontend',
     //     files: [
-    //         { type: 'js', name: 'chunk-vendors' },
-    //         { type: 'js', name: 'chunk-common' },
+    //         { type: 'js', name: 'commons~plugin~plugin' },
     //         { type: 'js', name: 'plugin' },
-    //         { type: 'css', name: 'chunk-vendors' },
-    //         { type: 'css', name: 'chunk-common' },
+    //         { type: 'css', name: 'commons~plugin~plugin' },
     //         { type: 'css', name: 'plugin' },
+    //         { type: 'php', name: 'plugin' },
     //     ],
     // },
     {

@@ -2,6 +2,8 @@ import { RichText } from '@wordpress/editor';
 import { BlockEditProps } from '@wordpress/blocks';
 import { ComponentType } from '@wordpress/element';
 
+import './StageItem.scss';
+
 export interface StageItemAttributes {
     title: string;
     description: string;
@@ -13,9 +15,7 @@ export interface StageItemProps extends BlockEditProps<StageItemAttributes> {
     isEdit: boolean;
 }
 
-export type StageItemBackendComponentType = ComponentType<
-    BlockEditProps<StageItemAttributes>
->;
+export type StageItemBackendComponentType = ComponentType<BlockEditProps<StageItemAttributes>>;
 
 const StageItem: ComponentType<StageItemProps> = ({
     attributes,
@@ -32,8 +32,7 @@ const StageItem: ComponentType<StageItemProps> = ({
                 data-brightness={brightness}
                 style={{
                     backgroundImage: `url(${url})`,
-                    // @ts-ignore
-                    '--brightness': `${brightness}%`,
+                    ['--brightness' as any]: `${brightness}%`,
                 }}
             />
             <div className="cv-stage-card__overlay" />
@@ -44,8 +43,7 @@ const StageItem: ComponentType<StageItemProps> = ({
                             tagName="h2"
                             className="cv-stage-card__title"
                             style={{
-                                // @ts-ignore
-                                '--title-font-size-factor': '1',
+                                ['--title-font-size-factor' as any]: '1',
                             }}
                             value={title}
                         />
@@ -56,12 +54,11 @@ const StageItem: ComponentType<StageItemProps> = ({
                             tagName="span"
                             placeholder="Stage Überschrift"
                             keepPlaceholderOnFocus
-                            formattingControls={[]}
+                            // formattingControls={[]}
                             value={title}
                             className="cv-stage-card__title"
                             style={{
-                                // @ts-ignore
-                                '--title-font-size-factor': '1',
+                                ['--title-font-size-factor' as any]: '1',
                             }}
                             onChange={value =>
                                 setAttributes({
@@ -88,9 +85,7 @@ const StageItem: ComponentType<StageItemProps> = ({
                         formattingControls={['bold']}
                         value={description}
                         className="cv-stage-card__description"
-                        onChange={value =>
-                            setAttributes({ description: value })
-                        }
+                        onChange={value => setAttributes({ description: value })}
                     />
                 )}
                 <div className="cv-stage-card__link">

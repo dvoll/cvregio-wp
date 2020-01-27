@@ -54,6 +54,9 @@ export default class PageHeaderElement extends HTMLElement {
     }
 
     connectedCallback() {
+        console.log('pag header', this);
+        console.log('pag header', this.innerHTML);
+
         this.mountPoint = document.createElement('div');
         const { innerHTML } = this;
         this.innerHTML = '';
