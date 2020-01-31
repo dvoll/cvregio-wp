@@ -3,7 +3,7 @@ import StageItem from '../../../lib/components/stage-slider/StageItem.js';
 import StageItemInspector from './components/stage-item-inspector.js';
 
 /**
- * @type {import('../../../lib/components/stage-slider/StageItem').StageItemBackendComponentType}
+ * @type {import('../../components/stage-slider/StageItem.jsx').StageItemBackendComponentType}
  */
 const WpStageItemComponent = Component;
 export default class StageEditBlock extends WpStageItemComponent {

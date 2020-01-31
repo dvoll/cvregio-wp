@@ -1,12 +1,6 @@
 import { registerBlockType } from '@wordpress/blocks';
 import edit from './edit.js';
-
-// Import CSS
-// import './style.scss';
-// import './editor.scss';
-// import CvStageItem from './components/cv-stage-item';
-// import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageItem.scss';
-// import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageItem';
+import StageItem from '../../components/stage-slider/StageItem';
 
 // Register alignments
 // const validAlignments = [ 'center', 'wide' ];
@@ -61,8 +55,11 @@ registerBlockType('cv-blocks/cv-stage-item', {
 
     edit,
 
+    /**
+     *
+     * @param {import('../../components/stage-slider/StageItem.jsx').StageItemProps} props
+     */
     save(props) {
-        const { attributes } = props;
-        return <CvStageItem attributes={attributes} />;
+        return <StageItem {...props} />;
     },
 });
