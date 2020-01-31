@@ -1,6 +1,10 @@
 // @ts-nocheck // TODO: check to add types for custom elements
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/editor';
+import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageSliderElement';
+import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageSlider';
+import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageSlider.scss';
+// import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageItem.scss';
 import edit from './edit';
 
 // Import CSS
@@ -38,9 +42,9 @@ registerBlockType('cv-blocks/cv-stage', {
     save({ className }) {
         return (
             <section className={`${className} alignfull`}>
-                <cv-stage>
+                <stage-slider>
                     <InnerBlocks.Content />
-                </cv-stage>
+                </stage-slider>
             </section>
         );
     },

@@ -220,18 +220,18 @@ function twentynineteen_scripts() {
 	$asset_file = include( plugin_dir_path( __FILE__ ) . 'cvregio-frontend/theme.bundle.asset.php');
 
 	wp_register_style(
-        'cv-regio-theme-css-common',
+        'cv-regio-css-common',
 		content_url() . '/themes/cv-regio-theme/cvregio-frontend/commons~plugin~theme.css',
 		[],
         $asset_file['version']
 	);
-	wp_enqueue_style('cv-regio-theme-css-common');
+	wp_enqueue_style('cv-regio-css-common');
 
 	
 	wp_register_style(
         'cv-regio-theme-css',
 		content_url() . '/themes/cv-regio-theme/cvregio-frontend/theme.css',
-		['cv-regio-theme-css-common'],
+		['cv-regio-css-common'],
         $asset_file['version']
 	);
 	wp_enqueue_style('cv-regio-theme-css');

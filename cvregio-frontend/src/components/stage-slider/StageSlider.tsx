@@ -6,7 +6,6 @@ import Swiper, { SwiperOptions } from 'swiper';
 import Icon, { IconTypes } from '../base/Icon';
 import './swiper.scss';
 import './StageSlider.scss';
-import './StageItem.scss';
 
 export interface StageItem {
     id: number;

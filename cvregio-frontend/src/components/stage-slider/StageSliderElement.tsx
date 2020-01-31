@@ -9,15 +9,6 @@ export default class StageSliderElement extends HTMLElement {
 
     mounted(elements: HTMLElement[]) {
         if (elements) {
-            // const htmlDoc = new DOMParser().parseFromString(innerHTML, 'text/html');
-            // const cards = htmlDoc.querySelectorAll('.cv-stage-card');
-            // console.log('cards', cards);
-
-            // const mainMenu = htmlDoc.querySelector('.main-menu');
-            // const items = cards.map()
-            // console.log('this.childNodes', this.childNodes[0].childNodes);
-            // console.log(this.innerHTML);
-
             const stageItems = this.getStageItemAttributess(elements);
             return stageItems;
         }
@@ -30,8 +21,6 @@ export default class StageSliderElement extends HTMLElement {
         const list = items.map((item, index) => {
             const cardBody = item.children[item.children.length - 1];
             cardBody.setAttribute('data-swiper-parallax', '200');
-            // if (!item.children || !item.children[0]) return undefined;
-            // const child = item.children[0] as HTMLAnchorElement | HTMLButtonElement;
             const stageItem: StageItem = {
                 innerHTML: item.innerHTML,
                 id: index,
@@ -47,13 +36,7 @@ export default class StageSliderElement extends HTMLElement {
     }
 
     connectedCallback() {
-        console.log('cc', this);
-        console.log('cc', this.innerHTML);
-        console.log('cc', this.children);
-
         const children = Array.from(this.children) as HTMLElement[];
-        console.log('elm', children);
-
         this.mountPoint = document.createElement('div');
         this.innerHTML = '';
         this.appendChild(this.mountPoint);

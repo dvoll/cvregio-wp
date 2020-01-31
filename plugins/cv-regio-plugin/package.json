@@ -1,5 +1,5 @@
 {
-  "name": "cv-regio-plugin",
+  "name": "@dvoll/cv-regio-plugin",
   "version": "1.0.0",
   "description": "",
   "main": "build/index.js",
@@ -10,6 +10,12 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/wordpress__api-fetch": "^3.2.2",
+    "@types/wordpress__blocks": "^6.4.4",
+    "@types/wordpress__components": "^8.2.1",
+    "@types/wordpress__editor": "^9.4.1",
+    "@types/wordpress__element": "^2.4.0",
+    "@types/wordpress__url": "^2.3.0",
     "@wordpress/scripts": "6.1.0",
     "css-loader": "^3.4.0",
     "eslint": "^6.1.0",
@@ -26,6 +32,7 @@
     "sass-loader": "^8.0.0"
   },
   "dependencies": {
+    "@dvoll/cvregio-frontend": "file:../../cvregio-frontend",
     "@wordpress/api-fetch": "^3.8.0",
     "@wordpress/blocks": "^6.9.0",
     "@wordpress/components": "^8.5.0",

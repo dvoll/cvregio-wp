@@ -145,7 +145,6 @@ class PageHeader extends Component<PageHeaderProps, PageHeaderState> {
     }
 
     closeSubmenu() {
-        console.log('close submenu');
         this.setState({ activeItem: undefined });
     }
 

@@ -1,22 +1,18 @@
 import { Component, Fragment } from '@wordpress/element';
+import StageItem from '@dvoll/cvregio-frontend/lib/components/stage-slider/StageItem';
 import StageItemInspector from './components/stage-item-inspector';
-import CvStageItem from './components/cv-stage-item';
 
-export default class StageEditBlock extends Component {
+/**
+ * @type {import('@dvoll/cvregio-frontend/lib/components/stage-slider/StageItem').StageItemBackendComponentType}
+ */
+const WpStageItemComponent = Component;
+export default class StageEditBlock extends WpStageItemComponent {
     render() {
         const { attributes, setAttributes } = this.props;
-
-        // Check the image orientation
-        // const isLandscape = attributes.imageCrop === 'inset';
-
-        // Check the post type
-        // const isPost = attributes.postType === 'post';
-
-        // if ( ! hasPosts ) {
         return (
             <Fragment>
                 <StageItemInspector attributes={attributes} setAttributes={setAttributes} />
-                <CvStageItem attributes={attributes} isEdit setAttributes={setAttributes} />
+                <StageItem {...this.props} isEdit />
             </Fragment>
         );
     }

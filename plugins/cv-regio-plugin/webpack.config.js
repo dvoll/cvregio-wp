@@ -3,22 +3,24 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     ...defaultConfig,
-    optimization: {
-        splitChunks: {
-            cacheGroups: {
-                styles: {
-                    name: 'styles',
-                    test: /\.(scss|css)$/,
-                    chunks: 'all',
-                    enforce: true,
-                },
-            },
-        },
-    },
+    // optimization: {
+    //     splitChunks: {
+    //         cacheGroups: {
+    //             styles: {
+    //                 name: 'styles',
+    //                 test: /\.(scss|css)$/,
+    //                 chunks: 'all',
+    //                 enforce: true,
+    //             },
+    //         },
+    //     },
+    // },
     plugins: [
         ...defaultConfig.plugins,
         new MiniCssExtractPlugin({
             filename: '[name].css',
+            chunkFilename: '[id].css',
+            ignoreOrder: false, // Enable to remove warnings about conflicting order
         }),
     ],
     module: {
@@ -26,12 +28,21 @@ module.exports = {
         rules: [
             ...defaultConfig.module.rules,
             {
-                test: /\.css$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                test: /\.css$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    // 'style-loader',
+                    { loader: 'css-loader', options: { importLoaders: 1 } },
+                ],
             },
             {
-                test: /\.s[ac]ss$/i,
-                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+                test: /\.s[ac]ss$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    // 'style-loader',
+                    { loader: 'css-loader', options: { importLoaders: 1 } },
+                    'sass-loader',
+                ],
             },
         ],
     },

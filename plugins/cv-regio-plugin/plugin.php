@@ -51,7 +51,7 @@ function cv_blocks_loader()
 	/**
 	 * Load 
 	 */
-	// require_once plugin_dir_path(__FILE__) . 'src/blocks/block-stage/index.php';
+	require_once plugin_dir_path(__FILE__) . 'src/blocks/cv-stage/index.php';
 
 	/**
 	 * Load Post Grid PHP

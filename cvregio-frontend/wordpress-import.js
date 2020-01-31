@@ -14,18 +14,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 const srcDir = './dist/';
 
 const mapping = [
-    // {
-    //     name: 'plugin',
-    //     targetPath: '/plugins/cv-regio-plugin/',
-    //     distFolder: 'cvregio-frontend',
-    //     files: [
-    //         { type: 'js', name: 'commons~plugin~plugin' },
-    //         { type: 'js', name: 'plugin' },
-    //         { type: 'css', name: 'commons~plugin~plugin' },
-    //         { type: 'css', name: 'plugin' },
-    //         { type: 'php', name: 'plugin' },
-    //     ],
-    // },
+    {
+        name: 'plugin',
+        targetPath: '/plugins/cv-regio-plugin/',
+        distFolder: 'cvregio-frontend',
+        files: [
+            { type: 'js', name: 'commons~plugin~plugin' },
+            { type: 'js', name: 'plugin' },
+            { type: 'css', name: 'commons~plugin~theme' },
+            { type: 'css', name: 'plugin' },
+            { type: 'php', name: 'plugin' },
+        ],
+    },
     {
         name: 'theme',
         targetPath: '/themes/cv-regio-theme/',
