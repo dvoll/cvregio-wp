@@ -217,11 +217,11 @@ add_action( 'after_setup_theme', 'twentynineteen_content_width', 0 );
  * Enqueue scripts and styles.
  */
 function twentynineteen_scripts() {
-	$asset_file = include( plugin_dir_path( __FILE__ ) . 'cvregio-frontend/theme.bundle.asset.php');
+	$asset_file = include( plugin_dir_path( __FILE__ ) . 'cvregio-frontend-dist/theme.bundle.asset.php');
 
 	wp_register_style(
         'cv-regio-css-common',
-		content_url() . '/themes/cv-regio-theme/cvregio-frontend/commons~plugin~theme.css',
+		content_url() . '/themes/cv-regio-theme/cvregio-frontend-dist/commons~plugin~theme.css',
 		[],
         $asset_file['version']
 	);
@@ -230,7 +230,7 @@ function twentynineteen_scripts() {
 	
 	wp_register_style(
         'cv-regio-theme-css',
-		content_url() . '/themes/cv-regio-theme/cvregio-frontend/theme.css',
+		content_url() . '/themes/cv-regio-theme/cvregio-frontend-dist/theme.css',
 		['cv-regio-css-common'],
         $asset_file['version']
 	);
@@ -239,7 +239,7 @@ function twentynineteen_scripts() {
 
 	wp_register_script(
 		'cv-regio-js-common',
-		content_url() . '/themes/cv-regio-theme/cvregio-frontend/commons~plugin~theme.bundle.js',
+		content_url() . '/themes/cv-regio-theme/cvregio-frontend-dist/commons~plugin~theme.bundle.js',
 		['wp-api-fetch', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-element', 'wp-polyfill', 'wp-url'],
 		$asset_file['version'],
 		true
@@ -248,7 +248,7 @@ function twentynineteen_scripts() {
 
 	wp_register_script(
 		'cv-regio-theme-js',
-		content_url() . '/themes/cv-regio-theme/cvregio-frontend/theme.bundle.js',
+		content_url() . '/themes/cv-regio-theme/cvregio-frontend-dist/theme.bundle.js',
 		['cv-regio-js-common'],
 		$asset_file['version'],
 		true

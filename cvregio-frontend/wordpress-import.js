@@ -17,7 +17,7 @@ const mapping = [
     {
         name: 'plugin',
         targetPath: '/plugins/cv-regio-plugin/',
-        distFolder: 'cvregio-frontend',
+        distFolder: 'cvregio-frontend-dist',
         files: [
             { type: 'js', name: 'commons~plugin~theme' },
             { type: 'js', name: 'plugin' },
@@ -29,7 +29,7 @@ const mapping = [
     {
         name: 'theme',
         targetPath: '/themes/cv-regio-theme/',
-        distFolder: 'cvregio-frontend',
+        distFolder: 'cvregio-frontend-dist',
         files: [
             { type: 'js', name: 'commons~plugin~theme' },
             { type: 'js', name: 'theme' },
