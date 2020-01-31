@@ -5,6 +5,8 @@
 }
 
 stage-slider {
+    @include custom-element-visibility;
+
     .swiper-container {
         width: 100%;
         height: 100%;

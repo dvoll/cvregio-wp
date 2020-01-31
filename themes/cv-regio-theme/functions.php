@@ -238,18 +238,18 @@ function twentynineteen_scripts() {
 
 
 	wp_register_script(
-		'cv-regio-theme-js-common',
+		'cv-regio-js-common',
 		content_url() . '/themes/cv-regio-theme/cvregio-frontend/commons~plugin~theme.bundle.js',
 		['wp-api-fetch', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-element', 'wp-polyfill', 'wp-url'],
 		$asset_file['version'],
 		true
 	);
-	wp_enqueue_script('cv-regio-theme-js-common');
+	wp_enqueue_script('cv-regio-js-common');
 
 	wp_register_script(
 		'cv-regio-theme-js',
 		content_url() . '/themes/cv-regio-theme/cvregio-frontend/theme.bundle.js',
-		['cv-regio-theme-js-common'],
+		['cv-regio-js-common'],
 		$asset_file['version'],
 		true
 	); 	

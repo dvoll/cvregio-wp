@@ -10,6 +10,10 @@ body.no-scroll {
     overflow: hidden;
 }
 
+page-header {
+    @include custom-element-visibility;
+}
+
 .header-placeholder {
     width: 100%;
     height: #{$initialHeaderHeight}px;
@@ -71,13 +75,12 @@ body.no-scroll {
     }
 }
 
-
 .fade-enter {
     opacity: 0;
 }
 
 .fade-enter-active {
-    transition: opacity .2s ease;
+    transition: opacity 0.2s ease;
     opacity: 1;
 }
 
@@ -86,11 +89,9 @@ body.no-scroll {
 }
 
 .fade-exit-active {
-    transition: opacity .2s ease;
+    transition: opacity 0.2s ease;
     opacity: 0;
 }
-
-
 
 .fade-from-top-enter {
     opacity: 0;
@@ -109,23 +110,21 @@ body.no-scroll {
     transform: translateY(-50px);
 }
 
-
 .fade-from-left-enter {
     opacity: 0;
     transform: translateX(100px);
 }
 
 .fade-from-left-enter-active {
-    transition: opacity .2s ease, transform 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
     opacity: 1;
     transform: none;
 }
 .fade-from-left-exit-active {
-    transition: opacity .2s ease, transform 0.2s ease;
+    transition: opacity 0.2s ease, transform 0.2s ease;
     opacity: 0;
     transform: translateX(100px);
 }
-
 
 // TODO move to MeuPage.scss
 

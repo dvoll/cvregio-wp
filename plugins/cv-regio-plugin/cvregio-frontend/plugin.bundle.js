@@ -155,6 +155,29 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./lib/components/stage-slider/StageItem.js":
+/*!**************************************************!*\
+  !*** ./lib/components/stage-slider/StageItem.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/editor */ \"@wordpress/editor\");\n/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_editor__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _StageItem_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./StageItem.scss */ \"./lib/components/stage-slider/StageItem.scss\");\n/* harmony import */ var _StageItem_scss__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_StageItem_scss__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\nconst StageItem = ({\n  attributes,\n  isEdit = false,\n  setAttributes\n}) => {\n  const {\n    brightness,\n    title,\n    description,\n    url\n  } = attributes;\n  const classNames = `cv-stage-card${isEdit ? ' cv-stage-edit-item' : ''}`;\n  return React.createElement(\"div\", {\n    className: classNames\n  }, React.createElement(\"div\", {\n    className: \"cv-stage-card__bg\",\n    \"data-background-url\": url,\n    \"data-brightness\": brightness,\n    style: {\n      backgroundImage: `url(${url})`,\n      ['--brightness']: `${brightness}%`\n    }\n  }), React.createElement(\"div\", {\n    className: \"cv-stage-card__overlay\"\n  }), React.createElement(\"div\", {\n    className: \"cv-stage-card__body\"\n  }, React.createElement(\"div\", {\n    className: \"cv-stage-card__title-wrapper\"\n  }, !isEdit && React.createElement(_wordpress_editor__WEBPACK_IMPORTED_MODULE_0__[\"RichText\"].Content, {\n    tagName: \"h2\",\n    className: \"cv-stage-card__title\",\n    style: {\n      ['--title-font-size-factor']: '1'\n    },\n    value: title\n  }), isEdit && // if edit use a span to overcome styling issues\n  React.createElement(_wordpress_editor__WEBPACK_IMPORTED_MODULE_0__[\"RichText\"], {\n    tagName: \"span\",\n    placeholder: \"Stage \\xDCberschrift\",\n    keepPlaceholderOnFocus: true // formattingControls={[]}\n    ,\n    value: title,\n    className: \"cv-stage-card__title\",\n    style: {\n      ['--title-font-size-factor']: '1'\n    },\n    onChange: value => setAttributes({\n      title: value === '<br>' ? '' : value\n    })\n  })), !isEdit && React.createElement(_wordpress_editor__WEBPACK_IMPORTED_MODULE_0__[\"RichText\"].Content, {\n    tagName: \"p\",\n    className: \"cv-stage-card__description\",\n    value: description\n  }), isEdit && // if edit use a span to overcome styling issues\n  React.createElement(_wordpress_editor__WEBPACK_IMPORTED_MODULE_0__[\"RichText\"], {\n    tagName: \"span\",\n    placeholder: \"Stage Inhalt (optional)\",\n    keepPlaceholderOnFocus: true // @ts-ignore // TODO: check type error\n    ,\n    formattingControls: ['bold'],\n    value: description,\n    className: \"cv-stage-card__description\",\n    onChange: value => setAttributes({\n      description: value\n    })\n  }), React.createElement(\"div\", {\n    className: \"cv-stage-card__link\"\n  }, React.createElement(\"a\", {\n    \"v-if\": \"item.link\",\n    href: \"/\"\n  }))));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (StageItem);\n\n//# sourceURL=webpack:///./lib/components/stage-slider/StageItem.js?");
+
+/***/ }),
+
+/***/ "./lib/components/stage-slider/StageItem.scss":
+/*!****************************************************!*\
+  !*** ./lib/components/stage-slider/StageItem.scss ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./lib/components/stage-slider/StageItem.scss?");
+
+/***/ }),
+
 /***/ "./node_modules/dom7/dist/dom7.modular.js":
 /*!************************************************!*\
   !*** ./node_modules/dom7/dist/dom7.modular.js ***!
@@ -191,6 +214,77 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var dom7
 
 /***/ }),
 
+/***/ "./src/blocks/cv-stage-item/components/stage-item-inspector.js":
+/*!*********************************************************************!*\
+  !*** ./src/blocks/cv-stage-item/components/stage-item-inspector.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return StageItemInspector; });\n/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/components */ \"@wordpress/components\");\n/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ \"@wordpress/element\");\n/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/editor */ \"@wordpress/editor\");\n/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__);\n/**\n * Inspector Controls\n */\n// Setup the block\n\n\n // Import Inspector components\n\nconsole.log(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__[\"FocalPointPicker\"]);\nconsole.log(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__[\"RangeControl\"]); // const MAX_POSTS_COLUMNS = 4;\n\n/**\n * Create an Inspector Controls wrapper Component\n */\n\nclass StageItemInspector extends _wordpress_element__WEBPACK_IMPORTED_MODULE_1__[\"Component\"] {\n  render() {\n    // Setup the attributes\n    const {\n      attributes,\n      setAttributes\n    } = this.props;\n    return React.createElement(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__[\"InspectorControls\"], null, React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__[\"PanelBody\"], {\n      title: \"Hintergrund-Einstellungen\"\n    }, React.createElement(\"p\", null, React.createElement(_wordpress_editor__WEBPACK_IMPORTED_MODULE_2__[\"MediaUpload\"] // @ts-ignore // TODO: check type error\n    , {\n      buttonProps: {\n        className: 'change-image button-default'\n      },\n      onSelect: img => {\n        setAttributes({\n          url: img.url,\n          imgSize: img.filesizeInBytes\n        });\n      },\n      allowed: ['image'],\n      type: \"image\",\n      value: attributes.url,\n      render: ({\n        open\n      }) => React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__[\"Button\"], {\n        isDefault: true,\n        onClick: open\n      }, !attributes.url ? 'Bild auswählen' : 'Bild ändern')\n    }), attributes.imgSize > 400000 ? React.createElement(\"p\", {\n      style: {\n        color: '#c21d1d'\n      }\n    }, \"Das ausgew\\xE4hlte Bild ist sehr gro\\xDF.\") : null), _wordpress_components__WEBPACK_IMPORTED_MODULE_0__[\"FocalPointPicker\"] !== undefined && attributes.url && React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__[\"FocalPointPicker\"] // label={ 'Focal Point Picker' }\n    , {\n      url: attributes.url // @ts-ignore // TODO: check not supported parameter\n      ,\n      dimensions: {\n        width: 400,\n        height: 100\n      },\n      value: {\n        x: 0.5,\n        y: 0.5\n      },\n      onChange: // eslint-disable-next-line no-console\n      value => console.log('focal point changed', value)\n    }), React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_0__[\"RangeControl\"], {\n      label: \"Helligkeit des Hintergrundes\",\n      value: +attributes.brightness,\n      onChange: value => {\n        setAttributes({\n          brightness: value\n        });\n      },\n      min: 50,\n      max: 100\n    })));\n  }\n\n}\n\n//# sourceURL=webpack:///./src/blocks/cv-stage-item/components/stage-item-inspector.js?");
+
+/***/ }),
+
+/***/ "./src/blocks/cv-stage-item/edit.js":
+/*!******************************************!*\
+  !*** ./src/blocks/cv-stage-item/edit.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return StageEditBlock; });\n/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ \"@wordpress/element\");\n/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _lib_components_stage_slider_StageItem_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../lib/components/stage-slider/StageItem.js */ \"./lib/components/stage-slider/StageItem.js\");\n/* harmony import */ var _components_stage_item_inspector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/stage-item-inspector.js */ \"./src/blocks/cv-stage-item/components/stage-item-inspector.js\");\nfunction _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }\n\n\n\n\n/**\n * @type {import('../../../lib/components/stage-slider/StageItem').StageItemBackendComponentType}\n */\n\nconst WpStageItemComponent = _wordpress_element__WEBPACK_IMPORTED_MODULE_0__[\"Component\"];\nclass StageEditBlock extends WpStageItemComponent {\n  render() {\n    const {\n      attributes,\n      setAttributes\n    } = this.props;\n    return React.createElement(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__[\"Fragment\"], null, React.createElement(_components_stage_item_inspector_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n      attributes: attributes,\n      setAttributes: setAttributes\n    }), React.createElement(_lib_components_stage_slider_StageItem_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"], _extends({}, this.props, {\n      isEdit: true\n    })));\n  }\n\n}\n\n//# sourceURL=webpack:///./src/blocks/cv-stage-item/edit.js?");
+
+/***/ }),
+
+/***/ "./src/blocks/cv-stage-item/index.js":
+/*!*******************************************!*\
+  !*** ./src/blocks/cv-stage-item/index.js ***!
+  \*******************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ \"@wordpress/blocks\");\n/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./edit.js */ \"./src/blocks/cv-stage-item/edit.js\");\n\n // Import CSS\n// import './style.scss';\n// import './editor.scss';\n// import CvStageItem from './components/cv-stage-item';\n// import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageItem.scss';\n// import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageItem';\n// Register alignments\n// const validAlignments = [ 'center', 'wide' ];\n// Register the block\n\nObject(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__[\"registerBlockType\"])('cv-blocks/cv-stage-item', {\n  title: 'CV Landingpage Stage Element',\n  description: 'Ein Element des Header-Blocks.',\n  icon: 'format-image',\n  category: 'common',\n  keywords: ['Header', 'Image', 'Element'],\n  parent: ['cv-blocks/cv-stage'],\n  attributes: {\n    title: {\n      type: 'array',\n      // TODO: check if srouce paramter is valid\n      // @ts-ignore\n      source: 'children',\n      selector: '.cv-stage-card__title'\n    },\n    description: {\n      type: 'array',\n      // @ts-ignore\n      source: 'children',\n      selector: '.cv-stage-card__description'\n    },\n    url: {\n      type: 'string',\n      source: 'attribute',\n      attribute: 'data-background-url',\n      selector: '.cv-stage-card__bg'\n    },\n    imgSize: {\n      type: 'number'\n    },\n    brightness: {\n      type: 'string',\n      source: 'attribute',\n      attribute: 'data-brightness',\n      selector: '.cv-stage-card__bg',\n      default: '95'\n    }\n  },\n  // getEditWrapperProps() {\n  //     // if ( 'left' === containerWidth || 'right' === containerWidth || 'full' === containerWidth ) {\n  //     // \treturn { 'data-align': containerWidth };\n  //     // }\n  //     // return { 'data-align': 'full' };\n  // },\n  edit: _edit_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"],\n\n  save(props) {\n    const {\n      attributes\n    } = props;\n    return React.createElement(CvStageItem, {\n      attributes: attributes\n    });\n  }\n\n});\n\n//# sourceURL=webpack:///./src/blocks/cv-stage-item/index.js?");
+
+/***/ }),
+
+/***/ "./src/blocks/cv-stage/edit.js":
+/*!*************************************!*\
+  !*** ./src/blocks/cv-stage/edit.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return StageEditBlock; });\n/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ \"@wordpress/element\");\n/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/editor */ \"@wordpress/editor\");\n/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_editor__WEBPACK_IMPORTED_MODULE_1__);\n\n\nconst BLOCKS_TEMPLATE = [['cv-blocks/cv-stage-item', {}]]; // const BLOCKS_TEMPLATE = [\n//     [ 'core/image', {} ],\n//     [ 'core/paragraph', { placeholder: 'Image Details' } ],\n// ];\n\nclass StageEditBlock extends _wordpress_element__WEBPACK_IMPORTED_MODULE_0__[\"Component\"] {\n  render() {\n    const {\n      props\n    } = this;\n    return React.createElement(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__[\"Fragment\"], null, React.createElement(\"section\", {\n      className: `${props.className} alignfull cv-stage-edit`,\n      \"data-align\": \"full\"\n    }, React.createElement(_wordpress_editor__WEBPACK_IMPORTED_MODULE_1__[\"InnerBlocks\"], {\n      allowedBlocks: [] // @ts-ignore // TODO: check type error\n      ,\n      template: BLOCKS_TEMPLATE\n    })));\n  }\n\n}\n\n//# sourceURL=webpack:///./src/blocks/cv-stage/edit.js?");
+
+/***/ }),
+
+/***/ "./src/blocks/cv-stage/editor.scss":
+/*!*****************************************!*\
+  !*** ./src/blocks/cv-stage/editor.scss ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/blocks/cv-stage/editor.scss?");
+
+/***/ }),
+
+/***/ "./src/blocks/cv-stage/index.js":
+/*!**************************************!*\
+  !*** ./src/blocks/cv-stage/index.js ***!
+  \**************************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/blocks */ \"@wordpress/blocks\");\n/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/editor */ \"@wordpress/editor\");\n/* harmony import */ var _wordpress_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_editor__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _components_stage_slider_StageSliderElement__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/stage-slider/StageSliderElement */ \"./src/components/stage-slider/StageSliderElement.tsx\");\n/* harmony import */ var _edit_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./edit.js */ \"./src/blocks/cv-stage/edit.js\");\n/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ \"./src/blocks/cv-stage/editor.scss\");\n/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_editor_scss__WEBPACK_IMPORTED_MODULE_4__);\n// @ts-nocheck // TODO: check to add types for custom elements\n\n // import '../../components/page-header/PageHeaderElement';\n\n // import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageSlider';\n// import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageSlider.scss';\n// import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageItem.scss';\n\n // Import CSS\n\n // Register alignments\n// const validAlignments = [ 'center', 'wide' ];\n// Register the block\n\nObject(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__[\"registerBlockType\"])('cv-blocks/cv-stage', {\n  title: 'CV Landingpage Stage',\n  description: 'Ein Header Image Slider für die Landingpage.',\n  icon: 'format-image',\n  category: 'common',\n  keywords: ['Intro', 'Header', 'Slider'],\n  attributes: [],\n\n  // getEditWrapperProps( attributes ) {\n  // \tconst { align } = attributes;\n  // \tif ( -1 !== validAlignments.indexOf( align ) ) {\n  // \t\treturn { 'data-align': align };\n  // \t}\n  // },\n  getEditWrapperProps() {\n    // if ( 'left' === containerWidth || 'right' === containerWidth || 'full' === containerWidth ) {\n    // \treturn { 'data-align': containerWidth };\n    // }\n    return {\n      'data-align': 'full'\n    };\n  },\n\n  edit: _edit_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"],\n\n  // @ts-ignore // TODO: check error\n  save({\n    className\n  }) {\n    return React.createElement(\"section\", {\n      className: `${className} alignfull`\n    }, React.createElement(\"stage-slider\", null, React.createElement(_wordpress_editor__WEBPACK_IMPORTED_MODULE_1__[\"InnerBlocks\"].Content, null)));\n  }\n\n});\n\n//# sourceURL=webpack:///./src/blocks/cv-stage/index.js?");
+
+/***/ }),
+
 /***/ "./src/components/stage-slider/StageSlider.scss":
 /*!******************************************************!*\
   !*** ./src/components/stage-slider/StageSlider.scss ***!
@@ -214,6 +308,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var reac
 
 /***/ }),
 
+/***/ "./src/components/stage-slider/StageSliderElement.tsx":
+/*!************************************************************!*\
+  !*** ./src/components/stage-slider/StageSliderElement.tsx ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return StageSliderElement; });\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ \"react\");\n/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ \"react-dom\");\n/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _StageSlider__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./StageSlider */ \"./src/components/stage-slider/StageSlider.tsx\");\n/* eslint-disable @typescript-eslint/no-namespace */\n\n\n // import * as retargetEvents from 'react-shadow-dom-retarget-events';\n\nclass StageSliderElement extends HTMLElement {\n  mounted(elements) {\n    if (elements) {\n      const stageItems = this.getStageItemAttributess(elements);\n      return stageItems;\n    }\n\n    return [];\n  }\n\n  getStageItemAttributess(items) {\n    if (!items) return [];\n    const list = items.map((item, index) => {\n      const cardBody = item.children[item.children.length - 1];\n      cardBody.setAttribute('data-swiper-parallax', '200');\n      const stageItem = {\n        innerHTML: item.innerHTML,\n        id: index\n      };\n      return stageItem;\n    });\n    return list.filter(item => item !== undefined);\n  }\n\n  createComponent(attributes) {\n    const {\n      items\n    } = attributes;\n    return react__WEBPACK_IMPORTED_MODULE_0__[\"createElement\"](_StageSlider__WEBPACK_IMPORTED_MODULE_2__[\"default\"], {\n      items\n    });\n  }\n\n  connectedCallback() {\n    const children = Array.from(this.children);\n    this.innerHTML = '';\n    this.setAttribute('element-loaded', '');\n    const stageItems = this.mounted(children);\n    react_dom__WEBPACK_IMPORTED_MODULE_1__[\"render\"](this.createComponent({\n      items: stageItems\n    }), this);\n  }\n\n}\nwindow.customElements.define('stage-slider', StageSliderElement);\n\n//# sourceURL=webpack:///./src/components/stage-slider/StageSliderElement.tsx?");
+
+/***/ }),
+
 /***/ "./src/components/stage-slider/swiper.scss":
 /*!*************************************************!*\
   !*** ./src/components/stage-slider/swiper.scss ***!
@@ -233,7 +339,51 @@ eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_global_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles-global/main.scss */ \"./src/styles-global/main.scss\");\n/* harmony import */ var _styles_global_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_global_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _components_stage_slider_StageSlider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/stage-slider/StageSlider */ \"./src/components/stage-slider/StageSlider.tsx\");\n// import MyComponent from './components/MyComponent';\n// import MyWpComponent from './components/MyWpComponent';\n\n // export {MyComponent};\n\n//# sourceURL=webpack:///./src/index-plugin.ts?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _blocks_cv_stage_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./blocks/cv-stage/index.js */ \"./src/blocks/cv-stage/index.js\");\n/* harmony import */ var _blocks_cv_stage_item_index_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/cv-stage-item/index.js */ \"./src/blocks/cv-stage-item/index.js\");\n// import MyComponent from './components/MyComponent';\n// import MyWpComponent from './components/MyWpComponent';\n// import './styles-global/main.scss';\n// import './components/stage-slider/StageSlider';\n// import './components/stage-slider/StageItem';\n\n // export {MyComponent};\n\n//# sourceURL=webpack:///./src/index-plugin.ts?");
+
+/***/ }),
+
+/***/ "@wordpress/blocks":
+/*!*****************************************!*\
+  !*** external {"this":["wp","blocks"]} ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("(function() { module.exports = this[\"wp\"][\"blocks\"]; }());\n\n//# sourceURL=webpack:///external_%7B%22this%22:%5B%22wp%22,%22blocks%22%5D%7D?");
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!*********************************************!*\
+  !*** external {"this":["wp","components"]} ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("(function() { module.exports = this[\"wp\"][\"components\"]; }());\n\n//# sourceURL=webpack:///external_%7B%22this%22:%5B%22wp%22,%22components%22%5D%7D?");
+
+/***/ }),
+
+/***/ "@wordpress/editor":
+/*!*****************************************!*\
+  !*** external {"this":["wp","editor"]} ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("(function() { module.exports = this[\"wp\"][\"editor\"]; }());\n\n//# sourceURL=webpack:///external_%7B%22this%22:%5B%22wp%22,%22editor%22%5D%7D?");
+
+/***/ }),
+
+/***/ "@wordpress/element":
+/*!******************************************!*\
+  !*** external {"this":["wp","element"]} ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("(function() { module.exports = this[\"wp\"][\"element\"]; }());\n\n//# sourceURL=webpack:///external_%7B%22this%22:%5B%22wp%22,%22element%22%5D%7D?");
 
 /***/ }),
 
@@ -245,6 +395,17 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sty
 /***/ (function(module, exports) {
 
 eval("module.exports = React;\n\n//# sourceURL=webpack:///external_%22React%22?");
+
+/***/ }),
+
+/***/ "react-dom":
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = ReactDOM;\n\n//# sourceURL=webpack:///external_%22ReactDOM%22?");
 
 /***/ })
 

@@ -19,7 +19,7 @@ const mapping = [
         targetPath: '/plugins/cv-regio-plugin/',
         distFolder: 'cvregio-frontend',
         files: [
-            { type: 'js', name: 'commons~plugin~plugin' },
+            { type: 'js', name: 'commons~plugin~theme' },
             { type: 'js', name: 'plugin' },
             { type: 'css', name: 'commons~plugin~theme' },
             { type: 'css', name: 'plugin' },
@@ -31,10 +31,8 @@ const mapping = [
         targetPath: '/themes/cv-regio-theme/',
         distFolder: 'cvregio-frontend',
         files: [
-            // { type: 'js', name: 'chunk-vendors' },
             { type: 'js', name: 'commons~plugin~theme' },
             { type: 'js', name: 'theme' },
-            // { type: 'css', name: 'chunk-vendors' },
             { type: 'css', name: 'commons~plugin~theme' },
             { type: 'css', name: 'theme' },
             { type: 'php', name: 'theme' },
@@ -47,7 +45,7 @@ async function readDir(dir) {
     try {
         files = await fsp.readdir(dir);
     } catch (err) {
-        console.error('Error reding directory: ', err);
+        console.error('Error reading directory: ', err);
         return [];
     }
     return files;

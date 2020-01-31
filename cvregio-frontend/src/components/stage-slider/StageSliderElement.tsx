@@ -5,8 +5,6 @@ import StageSlider, { StageSliderProps, StageItem } from './StageSlider';
 // import * as retargetEvents from 'react-shadow-dom-retarget-events';
 
 export default class StageSliderElement extends HTMLElement {
-    mountPoint: HTMLSpanElement | null = null;
-
     mounted(elements: HTMLElement[]) {
         if (elements) {
             const stageItems = this.getStageItemAttributess(elements);
@@ -37,12 +35,11 @@ export default class StageSliderElement extends HTMLElement {
 
     connectedCallback() {
         const children = Array.from(this.children) as HTMLElement[];
-        this.mountPoint = document.createElement('div');
         this.innerHTML = '';
-        this.appendChild(this.mountPoint);
+        this.setAttribute('element-loaded', '');
 
         const stageItems = this.mounted(children);
-        ReactDOM.render(this.createComponent({ items: stageItems }), this.mountPoint);
+        ReactDOM.render(this.createComponent({ items: stageItems }), this);
     }
 }
 

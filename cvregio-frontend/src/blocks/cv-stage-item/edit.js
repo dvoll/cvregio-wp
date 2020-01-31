@@ -1,9 +1,9 @@
 import { Component, Fragment } from '@wordpress/element';
-import StageItem from '@dvoll/cvregio-frontend/lib/components/stage-slider/StageItem';
-import StageItemInspector from './components/stage-item-inspector';
+import StageItem from '../../../lib/components/stage-slider/StageItem.js';
+import StageItemInspector from './components/stage-item-inspector.js';
 
 /**
- * @type {import('@dvoll/cvregio-frontend/lib/components/stage-slider/StageItem').StageItemBackendComponentType}
+ * @type {import('../../../lib/components/stage-slider/StageItem').StageItemBackendComponentType}
  */
 const WpStageItemComponent = Component;
 export default class StageEditBlock extends WpStageItemComponent {

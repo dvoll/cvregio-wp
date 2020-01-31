@@ -9,9 +9,9 @@ export default class PageHeaderElement extends HTMLElement {
         return ['title'];
     }
 
-    mountPoint: HTMLSpanElement | null = null;
-
     title = '';
+
+    isMounted = false;
 
     menuItems: MenuItem[] = [];
 
@@ -54,10 +54,11 @@ export default class PageHeaderElement extends HTMLElement {
     }
 
     connectedCallback() {
-        this.mountPoint = document.createElement('div');
         const { innerHTML } = this;
         this.innerHTML = '';
-        this.appendChild(this.mountPoint);
+        this.isMounted = true;
+
+        this.setAttribute('element-loaded', '');
 
         const title = this.getAttribute('title') || this.title;
         const subtitle = this.getAttribute('subtitle') || '';
@@ -65,12 +66,12 @@ export default class PageHeaderElement extends HTMLElement {
 
         const menuItems = this.mounted(innerHTML);
 
-        ReactDOM.render(this.createComponent(title, subtitle, logoUrl, menuItems), this.mountPoint);
+        ReactDOM.render(this.createComponent(title, subtitle, logoUrl, menuItems), this);
     }
 
-    attributeChangedCallback(title: string, oldValue: string, newValue: string) {
-        if (this.mountPoint && title === 'title') {
-            ReactDOM.render(this.createComponent(newValue, '', '', []), this.mountPoint);
+    attributeChangedCallback(attributeName: string, oldValue: string, newValue: string) {
+        if (this.isMounted && attributeName === 'title') {
+            ReactDOM.render(this.createComponent(newValue, '', '', []), this);
         }
     }
 }

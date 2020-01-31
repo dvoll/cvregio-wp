@@ -1,11 +1,12 @@
 // @ts-nocheck // TODO: check to add types for custom elements
 import { registerBlockType } from '@wordpress/blocks';
 import { InnerBlocks } from '@wordpress/editor';
-import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageSliderElement';
-import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageSlider';
-import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageSlider.scss';
+// import '../../components/page-header/PageHeaderElement';
+import '../../components/stage-slider/StageSliderElement';
+// import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageSlider';
+// import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageSlider.scss';
 // import '@dvoll/cvregio-frontend/lib/components/stage-slider/StageItem.scss';
-import edit from './edit';
+import edit from './edit.js';
 
 // Import CSS
 import './editor.scss';

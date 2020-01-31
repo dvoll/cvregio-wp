@@ -347,6 +347,11 @@
 body.no-scroll {
   overflow: hidden; }
 
+page-header {
+  opacity: 0; }
+  page-header[element-loaded] {
+    opacity: 1; }
+
 .header-placeholder {
   width: 100%;
   height: 95px; }
@@ -388,14 +393,14 @@ body.no-scroll {
   opacity: 0; }
 
 .fade-enter-active {
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
   opacity: 1; }
 
 .fade-exit {
   opacity: 1; }
 
 .fade-exit-active {
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
   opacity: 0; }
 
 .fade-from-top-enter {
@@ -417,12 +422,12 @@ body.no-scroll {
   transform: translateX(100px); }
 
 .fade-from-left-enter-active {
-  transition: opacity .2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   opacity: 1;
   transform: none; }
 
 .fade-from-left-exit-active {
-  transition: opacity .2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease, transform 0.2s ease;
   opacity: 0;
   transform: translateX(100px); }
 
@@ -489,6 +494,21 @@ body.no-scroll {
 
 .burger.burger-slip.open .burger-lines:after {
   transform: translateX(-2em) rotate(-135deg); }
+
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
 
 @charset "UTF-8";
 /*--------------------------------------------------------------
