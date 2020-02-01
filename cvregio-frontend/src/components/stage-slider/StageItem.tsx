@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import { RichText } from '@wordpress/editor';
 import { BlockEditProps } from '@wordpress/blocks';
 import { ComponentType } from '@wordpress/element';

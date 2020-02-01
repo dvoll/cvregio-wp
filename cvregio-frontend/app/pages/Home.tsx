@@ -5,6 +5,7 @@ import MyWpComponent from '../../src/components/MyWpComponent';
 import PageLayout from '../../src/layouts/PageLayout';
 import Header from '../components/Header';
 import Stage from '../components/Stage';
+import NewsRow from '../components/NewsRow';
 
 class Home extends React.Component {
     public render() {
@@ -31,7 +32,7 @@ class Home extends React.Component {
                                     justo duo dolores et ea rebum.
                                 </p>
                                 <h2>Neuigkeiten</h2>
-                                {/* <dev-news></dev-news> */}
+                                <NewsRow />
                                 {/* <cv-sidebar data-row-start="6" /> */}
                                 <p>
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed

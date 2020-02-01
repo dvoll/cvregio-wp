@@ -1,6 +1,8 @@
 import { registerBlockType } from '@wordpress/blocks';
-import edit from './edit';
-import './editor.scss';
+import edit from './edit.js';
+// import './editor.scss';
+import '../../components/card/Card.scss';
+import '../../components/card/CardContainer.scss';
 
 // Register alignments
 const validAlignments = ['full', 'wide'];

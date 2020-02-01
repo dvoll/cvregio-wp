@@ -7,4 +7,6 @@
 import './blocks/cv-stage/index.js';
 import './blocks/cv-stage-item/index.js';
 
+import './blocks/cv-news/index.js';
+
 // export {MyComponent};

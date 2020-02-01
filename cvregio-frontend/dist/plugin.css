@@ -898,3 +898,143 @@ stage-slider {
     flex-direction: column;
     justify-items: end; }
 
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
+.cv-card {
+  display: block;
+  width: 290px;
+  min-height: 380px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  position: relative;
+  box-sizing: content-box;
+  text-decoration: none !important;
+  color: #202020; }
+  .cv-card--wider {
+    width: 320px; }
+  .cv-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px 0px 20px 0px rgba(94, 94, 94, 0.2);
+    opacity: 0;
+    transition: opacity 0.2s ease-out; }
+  .cv-card:hover::after {
+    opacity: 0.8; }
+  .cv-card:hover {
+    background: #fbfbfb; }
+  .cv-card:focus {
+    outline: none; }
+    .cv-card:focus::after {
+      opacity: 1; }
+
+a.cv-card {
+  color: inherit; }
+
+.cv-card--fixed-height .cv-card__inner-wrapper {
+  width: 100%;
+  max-height: 100%;
+  overflow: hidden; }
+  .cv-card--fixed-height .cv-card__inner-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 6px;
+    height: 50px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #fafafa 81%, #fafafa 99%); }
+
+.cv-card__inner {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column; }
+  .cv-card__inner > * {
+    margin: 0 23px 20px 23px; }
+    .cv-card__inner > *:first-child {
+      margin-top: 18px; }
+    .cv-card__inner > *:last-child {
+      margin-bottom: 28px; }
+
+.cv-card__subtitle {
+  margin-top: 27.5px;
+  margin-bottom: 0px;
+  color: #767676;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 12.8px;
+  font-size: 0.8rem;
+  font-style: italic;
+  text-transform: uppercase; }
+  .cv-card__subtitle--capitalized {
+    text-transform: uppercase; }
+
+.cv-card__title {
+  color: #202020;
+  font-size: 24px;
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: normal;
+  min-height: 3.6rem;
+  display: flex;
+  align-items: center; }
+
+.cv-card__image {
+  width: calc(100% - 18px);
+  margin-left: 0;
+  margin-right: 0; }
+
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
+.cv-card-container {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem; }
+
+.cv-card-container__grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 290px);
+  grid-gap: 20px; }
+  .cv-card-container__grid--wider,
+  .cv-card-container--wider .cv-card-container__grid {
+    grid-template-columns: repeat(auto-fit, 320px); }
+  .cv-card-container--row .cv-card-container__grid {
+    grid-gap: 0;
+    display: flex;
+    flex-wrap: wrap;
+    height: 460px;
+    overflow: hidden; }
+    .cv-card-container--row .cv-card-container__grid > * {
+      margin: 10px; }
+  .cv-card-container--fixed-height .cv-card-container__grid > *,
+  .cv-card-container--row .cv-card-container__grid > * {
+    height: 430px;
+    flex: 0 0 1; }
+

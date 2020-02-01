@@ -27,7 +27,7 @@ function cv_blocks_loader()
 	 */
 	require_once plugin_dir_path(__FILE__) . 'init.php';
 
-	// require_once plugin_dir_path(__FILE__) . 'src/partials/index.php';
+	require_once plugin_dir_path(__FILE__) . 'src/partials/index.php';
 	/**
 	 * Load Getting Started page
 	 */
@@ -46,7 +46,7 @@ function cv_blocks_loader()
 	/**
 	 * Load News Block PHP
 	 */
-	// require_once plugin_dir_path(__FILE__) . 'src/blocks/block-news/index.php';
+	require_once plugin_dir_path(__FILE__) . 'src/news/index.php';
 
 	/**
 	 * Load 

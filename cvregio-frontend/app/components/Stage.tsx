@@ -1,5 +1,6 @@
 import * as React from 'react';
 import '../../src/components/stage-slider/StageSliderElement';
+import StageItem from '../../src/components/stage-slider/StageItem';
 
 class Stage extends React.Component {
     public render() {
@@ -36,25 +37,14 @@ class Stage extends React.Component {
         ];
         const itemElements = items.map((item, index) => {
             return (
-                <div key={`stage-item-${item.title}`} className="cv-stage__item cv-stage-card">
-                    <div
-                        className="cv-stage-card__bg"
-                        data-background-url="./images/05.jpg"
-                        style={{ backgroundImage: `url(./images/0${index + 1}.jpg)` }}
-                    />
-                    <div className="cv-stage-card__overlay" />
-                    <div className="cv-stage-card__body">
-                        <div className="cv-stage-card__title-wrapper">
-                            <p className=" cv-stage-card__title">{item.title}</p>
-                        </div>
-                        <div className="cv-stage-card__description">{item.description}</div>
-                        <div className="cv-stage-card__link">
-                            <a v-if="item.link" href="/">
-                                {item.link}
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                <StageItem
+                    isEdit={false}
+                    attributes={{ ...item, brightness: 80, url: '' }}
+                    key={`stage-item-${item.title}`}
+                    isSelected={false}
+                    setAttributes={null}
+                    className=""
+                />
             );
         });
         return (
