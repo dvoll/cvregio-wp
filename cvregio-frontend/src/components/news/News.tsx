@@ -6,7 +6,8 @@ export interface NewsItem {
     title: string;
     subtitle: string;
     imgSrc?: string;
-    content: React.ReactNode;
+    content?: React.ReactNode;
+    htmlContent?: string;
 }
 
 export interface NewsProps {
@@ -25,6 +26,7 @@ class News extends React.Component<NewsProps> {
                 title={item.title}
                 subtitle={item.subtitle}
                 imgSrc={item.imgSrc}
+                htmlContent={item.htmlContent}
             >
                 {item.content}
             </Card>

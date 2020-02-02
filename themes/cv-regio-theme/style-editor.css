@@ -707,10 +707,6 @@ body .wp-block {
 }
 
 /** === Content Width === */
-.wp-block .wp-block {
-  width: 100%;
-}
-
 /** === Base Typography === */
 body {
   -webkit-font-smoothing: antialiased;
@@ -720,6 +716,7 @@ body {
   line-height: 1.8;
   color: #202020;
   font-weight: 400;
+  background-color: #fafafa;
 }
 
 p {
@@ -1113,7 +1110,6 @@ figcaption,
 
 .wp-block[data-type="core/pullquote"][data-align="left"] .editor-block-list__block-edit,
 .wp-block[data-type="core/pullquote"][data-align="right"] .editor-block-list__block-edit {
-  width: calc(4 * (100vw / 12));
   max-width: 50%;
 }
 

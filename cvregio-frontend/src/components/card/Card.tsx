@@ -9,6 +9,7 @@ export interface CardProps {
     capitalized?: boolean;
     wider?: boolean;
     fixedHeight?: boolean;
+    htmlContent?: string;
 }
 
 class Card extends React.Component<CardProps> {
@@ -22,6 +23,7 @@ class Card extends React.Component<CardProps> {
             wider = false,
             fixedHeight = false,
             children = [],
+            htmlContent,
         } = this.props;
         return (
             <a
@@ -39,8 +41,18 @@ class Card extends React.Component<CardProps> {
                         >
                             {subtitle}
                         </span>
-                        <h3 className="cv-card__title">{title}</h3>
+                        <h3
+                            className="cv-card__title"
+                            // eslint-disable-next-line react/no-danger
+                            dangerouslySetInnerHTML={{ __html: title }}
+                        />
                         {imgSrc && <img className="cv-card__image" src={imgSrc} alt="" />}
+                        {htmlContent && (
+                            <div
+                                // eslint-disable-next-line react/no-danger
+                                dangerouslySetInnerHTML={{ __html: htmlContent }}
+                            />
+                        )}
                         {children}
                     </article>
                 </div>

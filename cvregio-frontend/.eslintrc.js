@@ -39,6 +39,7 @@ module.exports = {
         '@typescript-eslint/ban-ts-ignore': 'warn',
         '@typescript-eslint/no-explicit-any': 'off',
         '@typescript-eslint/explicit-function-return-type': 'off',
+        '@typescript-eslint/camelcase': 'off',
     },
 
     settings: {

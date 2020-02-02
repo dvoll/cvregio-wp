@@ -4,8 +4,35 @@ Twenty Nineteen Editor Styles
 
 /** === Includes === */
 
-@import "sass/variables-site/variables-site";
-@import "sass/mixins/mixins-master";
+@import "../../cvregio-frontend/src/styles-global/main.scss";
 
 /** === Editor Frame === */
+
+.cv-blocks-dynamic-block-preview {
+    position: relative;
+
+    &::after {
+        content: 'Vorschau';
+        font-size: $font__size-xl;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        background-color: $color__background-hr;
+        opacity: 0;
+        transition: opacity .2s ease-in-out;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &:hover {
+        &::after {
+            opacity: .2;
+        }
+    }
+}
 

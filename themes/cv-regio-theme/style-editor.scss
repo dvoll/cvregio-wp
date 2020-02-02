@@ -113,17 +113,11 @@ body {
 		width: 100%;
 		max-width: 100%;
 	}
+}
 
 
 /** === Content Width === */
 
-.wp-block {
-
-	// Only the top level blocks need specific widths, therefore override for every nested block.
-	.wp-block {
-		width: 100%;
-	}
-}
 
 /** === Base Typography === */
 
@@ -135,6 +129,7 @@ body {
 	line-height: $font__line-height-body;
 	color: $color__text-main;
 	font-weight: $font__weight--base;
+	background-color: $color__background-body;
 }
 
 p {

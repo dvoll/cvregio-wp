@@ -1,5 +1,5 @@
 import { registerBlockType } from '@wordpress/blocks';
-import edit from './edit.js';
+import edit from './edit';
 // import './editor.scss';
 import '../../components/card/Card.scss';
 import '../../components/card/CardContainer.scss';
