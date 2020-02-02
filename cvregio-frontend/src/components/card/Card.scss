@@ -45,10 +45,69 @@ $cv-card-border-radius: 6px;
             opacity: 1;
         }
     }
+
+    .cv-card__inner {
+        width: 100%;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+
+        > * {
+            margin: 0 23px 20px 23px;
+
+            &:first-child {
+                margin-top: 18px;
+            }
+
+            &:last-child {
+                margin-bottom: 28px;
+            }
+
+            p {
+                margin: 0;
+            }
+        }
+    }
+
+    .cv-card__subtitle {
+        margin-top: 27.5px;
+        margin-bottom: 0px;
+        color: $color__text-light;
+        font-family: $font__heading;
+        @include font-size(0.8);
+        font-style: italic;
+        text-transform: uppercase;
+
+        &--capitalized {
+            text-transform: uppercase;
+        }
+    }
+
+    .cv-card__title {
+        color: $color__text-main;
+        @include font-size(1.5);
+        font-style: italic;
+        font-weight: normal;
+        min-height: 3.6rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .cv-card__image {
+        width: calc(100% - 18px);
+        margin-left: 0;
+        margin-right: 0;
+    }
 }
 
-a.cv-card {
+.entry-content .cv-card,
+.editor-block-list__layout .cv-card {
     color: inherit;
+
+    &:hover {
+        color: inherit;
+    }
 }
 
 .cv-card--fixed-height .cv-card__inner-wrapper {
@@ -71,55 +130,4 @@ a.cv-card {
             rgba($color__background-body, 1) 99%
         );
     }
-}
-
-.cv-card__inner {
-    width: 100%;
-    overflow: hidden;
-
-    display: flex;
-    flex-direction: column;
-
-    > * {
-        margin: 0 23px 20px 23px;
-
-        &:first-child {
-            margin-top: 18px;
-        }
-
-        &:last-child {
-            margin-bottom: 28px;
-        }
-    }
-}
-
-.cv-card__subtitle {
-    margin-top: 27.5px;
-    margin-bottom: 0px;
-    color: $color__text-light;
-    font-family: $font__heading;
-    @include font-size(0.8);
-    font-style: italic;
-    text-transform: uppercase;
-
-    &--capitalized {
-        text-transform: uppercase;
-    }
-}
-
-.cv-card__title {
-    color: $color__text-main;
-    @include font-size(1.5);
-    font-style: italic;
-    font-weight: normal;
-
-    min-height: 3.6rem;
-    display: flex;
-    align-items: center;
-}
-
-.cv-card__image {
-    width: calc(100% - 18px);
-    margin-left: 0;
-    margin-right: 0;
 }

@@ -58,7 +58,7 @@ function cv_blocks_editor_assets() { // phpcs:ignore
 	// 	// filemtime( plugin_dir_path( __DIR__ ) . 'dist/blocks.editor.build.css' ) // Version: File modification time.
 	// );
 
-	$asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
+	// $asset_file = include( plugin_dir_path( __FILE__ ) . 'build/index.asset.php');
  
 	$frontend_asset_file = include( plugin_dir_path( __FILE__ ) . 'cvregio-frontend-dist/plugin.bundle.asset.php');
 
@@ -66,27 +66,13 @@ function cv_blocks_editor_assets() { // phpcs:ignore
 	// echo plugins_url( '/dist/blocks.build.js', dirname( __FILE__ ) );
 	// echo plugins_url( 'build/index.js', __FILE__ );
 
-	wp_register_style(
-        'cv-regio-css-common',
-		content_url() . '/plugins/cv-regio-plugin/cvregio-frontend-dist/commons~plugin~theme.css',
-		[],
-        $frontend_asset_file['version']
-	);
-	wp_enqueue_style('cv-regio-css-common');
-
-	wp_register_style(
-        'cv-regio-plugin-css',
-		content_url() . '/plugins/cv-regio-plugin/cvregio-frontend-dist/plugin.css',
-		['cv-regio-css-common'],
-        $frontend_asset_file['version']
-	);
-	wp_enqueue_style('cv-regio-plugin-css');
+	
 
 	wp_register_script(
 		'cv-regio-js-common',
 		content_url() . '/plugins/cv-regio-plugin/cvregio-frontend-dist/commons~plugin~theme.bundle.js',
 		['wp-api-fetch', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-element', 'wp-polyfill', 'wp-url'],
-		$asset_file['version'],
+		$frontend_asset_file['version'],
 		true
 	);
 	wp_enqueue_script('cv-regio-js-common');
@@ -95,7 +81,7 @@ function cv_blocks_editor_assets() { // phpcs:ignore
 		'cv-regio-plugin-js',
 		content_url() . '/plugins/cv-regio-plugin/cvregio-frontend-dist/plugin.bundle.js',
 		['cv-regio-js-common'],
-		$asset_file['version'],
+		$frontend_asset_file['version'],
 		true
 	); 	
 	wp_enqueue_script('cv-regio-plugin-js');
@@ -123,3 +109,27 @@ function cv_blocks_editor_assets() { // phpcs:ignore
 
 // Hook: Editor assets.
 add_action( 'enqueue_block_assets', 'cv_blocks_editor_assets' );
+
+function cv_blocks_init_styles() {
+
+
+	$frontend_asset_file = include( plugin_dir_path( __FILE__ ) . 'cvregio-frontend-dist/plugin.bundle.asset.php');
+
+	wp_register_style(
+        'cv-regio-css-common',
+		content_url() . '/plugins/cv-regio-plugin/cvregio-frontend-dist/commons~plugin~theme.css',
+		[],
+        $frontend_asset_file['version']
+	);
+	wp_enqueue_style('cv-regio-css-common');
+
+	wp_register_style(
+        'cv-regio-plugin-css',
+		content_url() . '/plugins/cv-regio-plugin/cvregio-frontend-dist/plugin.css',
+		['cv-regio-css-common'],
+        $frontend_asset_file['version']
+	);
+	wp_enqueue_style('cv-regio-plugin-css');
+}
+
+add_action( 'enqueue_block_assets', 'cv_blocks_init_styles' );
