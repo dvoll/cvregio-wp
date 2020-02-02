@@ -143,7 +143,7 @@ class Header extends React.Component {
                                 id="menu-item-326"
                                 className="menu-item menu-item-type-post_type menu-item-object-page menu-item-326"
                             >
-                                <a href="http://localhost:8080/post-list">Neuigkeiten</a>
+                                <a href="http://localhost:8080/news">Neuigkeiten</a>
                             </li>
                             <li
                                 id="menu-item-327"

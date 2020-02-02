@@ -1,9 +1,10 @@
 import * as React from 'react';
-import Home from './pages/Home';
-import Groups from './pages/Groups';
+import HomePage from './pages/HomePage';
+import GroupsPage from './pages/GroupsPage';
 
 import '../src/styles-global/main.scss';
 import '../src/styles/main.scss';
+import NewsPage from './pages/NewsPage';
 
 class App extends React.Component<{}, { location: Location }> {
     readonly state: { location: Location } = {
@@ -11,9 +12,10 @@ class App extends React.Component<{}, { location: Location }> {
     };
 
     pages = [
-        { path: '/', component: Home },
-        { path: '/home', component: Home },
-        { path: '/groups', component: Groups },
+        { path: '/', component: HomePage },
+        { path: '/home', component: HomePage },
+        { path: '/groups', component: GroupsPage },
+        { path: '/news', component: NewsPage },
     ];
 
     componentDidMount(): void {

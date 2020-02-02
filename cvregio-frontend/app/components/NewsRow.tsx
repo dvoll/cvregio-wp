@@ -1,5 +1,9 @@
 import * as React from 'react';
 import News, { NewsItem } from '../../src/components/news/News';
+import image01 from '../assets/images/01.jpg';
+import image02 from '../assets/images/02.jpg';
+import image03 from '../assets/images/03.jpg';
+import image04 from '../assets/images/04.jpg';
 
 class NewsRow extends React.Component {
     public render() {
@@ -7,7 +11,7 @@ class NewsRow extends React.Component {
             {
                 title: 'Jungscharwochenende der Mädchenjungschar',
                 subtitle: 'Allgemein - 22. Juli 2019',
-                imgSrc: '/images/05.jpg',
+                imgSrc: image01,
                 content: (
                     <div className="">
                         <p className="">
@@ -27,7 +31,7 @@ class NewsRow extends React.Component {
             {
                 title: 'Dem Regen getrotzt und eine Rekordsumme eingesammelt',
                 subtitle: 'Allgemein - 22. Juli 2019',
-                imgSrc: '/images/01.jpg',
+                imgSrc: image02,
                 content: (
                     <p className="">
                         Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy

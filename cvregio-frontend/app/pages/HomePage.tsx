@@ -7,7 +7,7 @@ import Header from '../components/Header';
 import Stage from '../components/Stage';
 import NewsRow from '../components/NewsRow';
 
-class Home extends React.Component {
+class HomePage extends React.Component {
     public render() {
         return (
             // <React.Fragment>
@@ -53,4 +53,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default HomePage;
