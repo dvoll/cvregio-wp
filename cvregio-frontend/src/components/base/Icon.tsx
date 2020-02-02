@@ -5,6 +5,7 @@ import './Icon.scss';
 export enum IconTypes {
     ArrowRight = 'arrow-right',
     ArrowLeft = 'arrow-left',
+    Edit = 'edit',
 }
 
 export interface IconProps {

@@ -1,14 +1,23 @@
 import { registerBlockType } from '@wordpress/blocks';
 import edit from './edit';
-// import './editor.scss';
 import '../../components/card/Card.scss';
 import '../../components/card/CardContainer.scss';
 
+export interface NewsBlockAttributes {
+    layoutType: 'row' | 'grid';
+    categories: string | undefined;
+    postsToShow: number;
+    align: 'wide' | 'full' | 'center' | 'left' | 'right' | undefined;
+}
+
 // Register alignments
-const validAlignments = ['full', 'wide'];
+const validAlignments: Array<'wide' | 'full' | 'center' | 'left' | 'right' | undefined> = [
+    'full',
+    'wide',
+];
 
 // Register the block
-registerBlockType('cv-blocks/cv-news', {
+registerBlockType<NewsBlockAttributes>('cv-blocks/cv-news', {
     title: 'Beitragsübersicht',
     description: 'Auflistung von News/Beiträgen.',
     icon: 'screenoptions',
@@ -21,6 +30,7 @@ registerBlockType('cv-blocks/cv-news', {
             default: 'grid',
         },
         categories: {
+            // TODO: Check type
             type: 'string',
         },
         postsToShow: {
@@ -33,22 +43,13 @@ registerBlockType('cv-blocks/cv-news', {
         },
     },
 
-    // @ts-ignore // TODO: check error
     getEditWrapperProps(attributes) {
         const { align } = attributes;
-        // @ts-ignore // TODO: check error
-        if (validAlignments.indexOf(align) !== -1) {
+        if (align && validAlignments.indexOf(align) !== -1) {
             return { 'data-align': align };
         }
-        return {};
+        return { 'data-align': 'wide' };
     },
-
-    // getEditWrapperProps() {
-    //     // if ( 'left' === containerWidth || 'right' === containerWidth || 'full' === containerWidth ) {
-    //     // 	return { 'data-align': containerWidth };
-    //     // }
-    //     return { 'data-align': 'full' };
-    // },
 
     edit,
 

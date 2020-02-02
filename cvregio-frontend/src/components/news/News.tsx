@@ -5,6 +5,7 @@ import CardContainer from '../card/CardContainer';
 export interface NewsItem {
     title: string;
     subtitle: string;
+    link: string;
     imgSrc?: string;
     content?: React.ReactNode;
     htmlContent?: string;
@@ -27,6 +28,7 @@ class News extends React.Component<NewsProps> {
                 subtitle={item.subtitle}
                 imgSrc={item.imgSrc}
                 htmlContent={item.htmlContent}
+                link={item.link}
             >
                 {item.content}
             </Card>

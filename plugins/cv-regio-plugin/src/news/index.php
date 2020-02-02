@@ -120,8 +120,13 @@ function cvblocks_render_block_news_overview($attributes)
                 );
             }
 
+            $categoryName = '';
+            if (isset($category[0])) {
+                $categoryName = $category[0]->name . ' - ';
+            }
+
             $card = cv_card(array(
-                'subtitle' => $category[0]->name . ' - ' . $date,
+                'subtitle' => $categoryName . $date,
                 'title' =>  get_the_title($post_id),
                 'content' => $excerpt ? $excerpt : '',
                 'link' => esc_url(get_permalink($post_id)),

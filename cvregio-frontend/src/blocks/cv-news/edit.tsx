@@ -7,26 +7,22 @@ import { compose } from '@wordpress/compose';
 import apiFetch, { Schema } from '@wordpress/api-fetch';
 import { BlockEditProps } from '@wordpress/blocks';
 import News, { NewsItem } from '../../components/news/News';
+import { NewsBlockAttributes } from '.';
 
-interface GroupsEditBlockProps
-    extends BlockEditProps<{
-        layoutType: 'row' | 'grid';
-        align: 'wide' | 'full' | 'center' | 'left' | 'right' | undefined;
-        categories: number;
-    }> {
+interface NewsEditBlockProps extends BlockEditProps<NewsBlockAttributes> {
     newsItems?: NewsItem[] | null;
 }
 
-interface GroupsEditBlockState {
+interface NewsEditBlockState {
     categoriesList: Array<any>;
 }
 
-class GroupsEditBlock extends Component<GroupsEditBlockProps, GroupsEditBlockState> {
+class NewsEditBlock extends Component<NewsEditBlockProps, NewsEditBlockState> {
     stillMounted = true;
 
     fetchRequest: Promise<unknown> | undefined = undefined;
 
-    state: GroupsEditBlockState = { categoriesList: [] };
+    state: NewsEditBlockState = { categoriesList: [] };
 
     componentDidMount() {
         this.fetchRequest = apiFetch<Array<any>>({
@@ -49,8 +45,6 @@ class GroupsEditBlock extends Component<GroupsEditBlockProps, GroupsEditBlockSta
     }
 
     render() {
-        console.log('pops', this.props);
-
         const { props } = this;
         const { attributes, setAttributes } = props;
         const { layoutType } = attributes;
@@ -89,16 +83,16 @@ class GroupsEditBlock extends Component<GroupsEditBlockProps, GroupsEditBlockSta
                     <PanelBody title="Inhaltsoptionen">
                         <QueryControls
                             categoriesList={categoriesList}
-                            selectedCategoryId={attributes.categories}
+                            selectedCategoryId={attributes.categories ? +attributes.categories : -1}
                             onCategoryChange={value =>
-                                // @ts-ignore // TODO: Check usage of categories as number. Should it be an array or string?
-                                setAttributes({ categories: value !== '' ? value : undefined })
+                                // TODO: Check usage of categories as number. Should it be an array or string?
+                                setAttributes({ categories: `${value}` })
                             }
                         />
                     </PanelBody>
                 </InspectorControls>
                 {/* TODO Add alignment attribute value */}
-                <section className={`${props.className} alignfull cv-blocks-dynamic-block-preview`}>
+                <section className={`${props.className} alignwide cv-blocks-dynamic-block-preview`}>
                     <News items={newsItems} singleRow={layoutType === 'row'} />
                 </section>
             </Fragment>
@@ -176,8 +170,9 @@ export default compose([
             }
 
             const date = new Date(item.date);
+            const day = date.getDate();
             const month = date.getMonth() + 1;
-            const dateFormatted = `${date.getDate()}.${
+            const dateFormatted = `${day > 9 ? day : `0${day}`}.${
                 month > 9 ? month : `0${month}`
             }.${date.getFullYear()}`;
             return {
@@ -185,6 +180,7 @@ export default compose([
                 subtitle: `Kategorie${item.categories.toString()} - ${dateFormatted}`,
                 imgSrc: imgSrc?.media_details?.sizes?.medium?.source_url,
                 content: <p>{excerpt}</p>,
+                link: item.link,
             };
         });
 
@@ -192,4 +188,4 @@ export default compose([
             newsItems,
         };
     }),
-])(GroupsEditBlock);
+])(NewsEditBlock);

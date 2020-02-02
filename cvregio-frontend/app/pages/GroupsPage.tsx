@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PageLayout from '../../src/layouts/PageLayout';
 import Header from '../components/Header';
+import GroupOverview from '../components/GroupOverview';
 
 class GroupsPage extends React.Component {
     public render() {
@@ -17,6 +18,7 @@ class GroupsPage extends React.Component {
                                 <header className="entry-header">
                                     <h1 className="entry-title">Angebote</h1>
                                 </header>
+                                <GroupOverview />
                             </div>
                         </article>
                     </React.Fragment>

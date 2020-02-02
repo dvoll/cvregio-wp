@@ -7,10 +7,6 @@ import { FocalPointPicker, RangeControl, PanelBody, Button } from '@wordpress/co
 import { Component } from '@wordpress/element';
 import { InspectorControls, MediaUpload } from '@wordpress/editor';
 
-// Import Inspector components
-console.log(FocalPointPicker);
-console.log(RangeControl);
-
 // const MAX_POSTS_COLUMNS = 4;
 
 /**
