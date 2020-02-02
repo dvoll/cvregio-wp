@@ -1,5 +1,5 @@
 import { Component, Fragment } from '@wordpress/element';
-import StageItem from '../../../lib/components/stage-slider/StageItem.js';
+import StageItem from '../../components/stage-slider/StageItem';
 import StageItemInspector from './components/stage-item-inspector.js';
 
 /**
