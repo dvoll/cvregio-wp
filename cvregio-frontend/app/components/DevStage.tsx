@@ -2,7 +2,7 @@ import * as React from 'react';
 import '../../src/components/stage-slider/StageSliderElement';
 import StageItem from '../../src/components/stage-slider/StageItem';
 
-class Stage extends React.Component {
+class DevStage extends React.Component {
     public render() {
         const items = [
             {
@@ -55,4 +55,4 @@ class Stage extends React.Component {
     }
 }
 
-export default Stage;
+export default DevStage;

@@ -5,9 +5,9 @@ import '../../components/card/CardContainer.scss';
 
 export interface NewsBlockAttributes {
     layoutType: 'row' | 'grid';
-    categories: string | undefined;
+    categories?: string;
     postsToShow: number;
-    align: 'wide' | 'full' | 'center' | 'left' | 'right' | undefined;
+    align?: 'wide' | 'full' | 'center' | 'left' | 'right';
 }
 
 // Register alignments

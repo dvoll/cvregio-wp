@@ -29,6 +29,7 @@ class News extends React.Component<NewsProps> {
                 imgSrc={item.imgSrc}
                 htmlContent={item.htmlContent}
                 link={item.link}
+                key={`news-${item.title}`}
             >
                 {item.content}
             </Card>

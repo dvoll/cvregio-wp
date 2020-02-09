@@ -3,16 +3,16 @@ import '../../src/components/cetest/CetestElement';
 import MyComponent from '../../src/components/MyComponent';
 import MyWpComponent from '../../src/components/MyWpComponent';
 import PageLayout from '../../src/layouts/PageLayout';
-import Header from '../components/Header';
-import Stage from '../components/Stage';
-import NewsRow from '../components/NewsRow';
+import DevHeader from '../components/DevHeader';
+import DevStage from '../components/DevStage';
+import DevNewsRow from '../components/DevNewsRow';
 
 class HomePage extends React.Component {
     public render() {
         return (
             // <React.Fragment>
             <PageLayout
-                header={<Header />}
+                header={<DevHeader />}
                 content={
                     <React.Fragment>
                         <article
@@ -20,7 +20,7 @@ class HomePage extends React.Component {
                             className="post-78 page type-page status-publish hentry entry"
                         >
                             <div className="entry-content entry-content--starting-top">
-                                <Stage />
+                                <DevStage />
                                 <h1>
                                     Willkommen beim <br />
                                     CVJM Stift Quernheim e.V.
@@ -32,7 +32,7 @@ class HomePage extends React.Component {
                                     justo duo dolores et ea rebum.
                                 </p>
                                 <h2>Neuigkeiten</h2>
-                                <NewsRow />
+                                <DevNewsRow />
                                 {/* <cv-sidebar data-row-start="6" /> */}
                                 <p>
                                     Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed

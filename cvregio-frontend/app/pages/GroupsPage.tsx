@@ -1,13 +1,13 @@
 import * as React from 'react';
 import PageLayout from '../../src/layouts/PageLayout';
-import Header from '../components/Header';
-import GroupOverview from '../components/GroupOverview';
+import DevHeader from '../components/DevHeader';
+import GroupOverview from '../components/DevGroupOverview';
 
 class GroupsPage extends React.Component {
     public render() {
         return (
             <PageLayout
-                header={<Header />}
+                header={<DevHeader />}
                 content={
                     <React.Fragment>
                         <article

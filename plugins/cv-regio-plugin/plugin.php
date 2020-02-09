@@ -56,7 +56,7 @@ function cv_blocks_loader()
 	/**
 	 * Load Post Grid PHP
 	 */
-	// require_once plugin_dir_path(__FILE__) . 'src/blocks/block-group-detail/index.php';
+	require_once plugin_dir_path(__FILE__) . 'src/groups/BlockGroupSummery.php';
 }
 add_action('plugins_loaded', 'cv_blocks_loader');
 

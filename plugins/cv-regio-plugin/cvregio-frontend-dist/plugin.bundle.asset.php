@@ -1,1 +1,1 @@
-<?php return array('dependencies' => array('wp-api-fetch', 'wp-blocks', 'wp-components', 'wp-compose', 'wp-data', 'wp-editor', 'wp-element', 'wp-url'), 'version' => 'fbc4e6d36d11cf21f2f5f662ce11bb9a');
+<?php return array('dependencies' => array('wp-api-fetch', 'wp-blocks', 'wp-components', 'wp-compose', 'wp-data', 'wp-editor', 'wp-element', 'wp-url'), 'version' => '0f834fead9b578370d77dddb7cf0ec93');

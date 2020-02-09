@@ -975,3 +975,40 @@ stage-slider {
 .info-row + .info-row {
   margin-top: -6px; }
 
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
+.cv-intro-box__header {
+  margin-bottom: 30px; }
+
+.cv-intro-box__content {
+  display: flex;
+  flex-wrap: wrap; }
+
+.cv-intro-box__col {
+  padding-bottom: 40px; }
+
+.cv-intro-box__col1 {
+  flex-shrink: 0;
+  margin-right: 30px; }
+
+.cv-intro-box__col2 {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  flex-shrink: 1;
+  flex-basis: 300px;
+  flex-grow: 1;
+  min-width: 300px; }
+
+

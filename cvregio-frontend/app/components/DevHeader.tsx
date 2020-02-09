@@ -3,7 +3,7 @@ import * as React from 'react';
 import '../../src/components/page-header/PageHeaderElement';
 import logo from '../assets/cv-logo18.png';
 
-class Header extends React.Component {
+class DevHeader extends React.Component {
     public render() {
         return (
             <page-header
@@ -72,7 +72,7 @@ class Header extends React.Component {
                                         className="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-327"
                                     >
                                         <a
-                                            href="/jungschar"
+                                            href="/group-detail"
                                             aria-haspopup="true"
                                             aria-expanded="false"
                                         >
@@ -217,4 +217,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+export default DevHeader;

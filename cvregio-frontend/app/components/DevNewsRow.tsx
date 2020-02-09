@@ -5,7 +5,7 @@ import image02 from '../assets/images/02.jpg';
 import image03 from '../assets/images/03.jpg';
 import image04 from '../assets/images/04.jpg';
 
-class NewsRow extends React.Component {
+class DevNewsRow extends React.Component {
     public render() {
         const items: NewsItem[] = [
             {
@@ -27,6 +27,7 @@ class NewsRow extends React.Component {
                         </p>
                     </div>
                 ),
+                link: '/',
             },
             {
                 title: 'Dem Regen getrotzt und eine Rekordsumme eingesammelt',
@@ -38,6 +39,7 @@ class NewsRow extends React.Component {
                         eirmod tempor.
                     </p>
                 ),
+                link: '/',
             },
             {
                 title: 'Unsere neue Website',
@@ -57,6 +59,7 @@ class NewsRow extends React.Component {
                         </p>
                     </div>
                 ),
+                link: '/',
             },
         ];
         return (
@@ -67,4 +70,4 @@ class NewsRow extends React.Component {
     }
 }
 
-export default NewsRow;
+export default DevNewsRow;

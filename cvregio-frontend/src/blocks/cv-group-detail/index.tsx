@@ -5,8 +5,15 @@ import './editor.scss';
 // Register alignments
 // const validAlignments = [ 'center', 'wide' ];
 
+export interface GroupSummeryAttributes {
+    location?: string;
+    target?: string;
+    time?: string;
+    locationPreview?: string;
+}
+
 // Register the block
-registerBlockType('cv-blocks/cv-group-detail', {
+registerBlockType<GroupSummeryAttributes>('cv-blocks/cv-group-detail', {
     title: 'CV Gruppen Eigenschaften',
     description: 'Eigenschaften einer Gruppe/eines Angebotes.',
     icon: 'align-left',

@@ -1,0 +1,38 @@
+@import '../../styles-global/main.scss';
+
+.cv-intro-box {
+    // grid-column: content-start / main-end;
+    // margin-right: 5%;
+    // @include media(desktop) {
+    // margin-right: 0;
+    // grid-column: content-start / main-end !important;
+    // grid-column: content-start / main-end;
+    // }
+
+    &__header {
+        margin-bottom: 30px;
+    }
+
+    &__content {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__col {
+        padding-bottom: 40px;
+    }
+
+    &__col1 {
+        flex-shrink: 0;
+        margin-right: 30px;
+    }
+
+    &__col2 {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        flex-shrink: 1;
+        flex-basis: 300px;
+        flex-grow: 1;
+        min-width: 300px;
+    }
+}

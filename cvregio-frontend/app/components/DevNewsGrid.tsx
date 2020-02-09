@@ -5,7 +5,7 @@ import image02 from '../assets/images/02.jpg';
 import image03 from '../assets/images/03.jpg';
 import image04 from '../assets/images/04.jpg';
 
-class NewsGrid extends React.Component {
+class DevNewsGrid extends React.Component {
     public render() {
         let items: NewsItem[] = [
             {
@@ -18,6 +18,7 @@ class NewsGrid extends React.Component {
                         eirmod tempor invidunt ut labore et dolore magna aliquyam…
                     </p>
                 ),
+                link: '/',
             },
             {
                 title: 'Dem Regen getrotzt und eine Rekordsumme eingesammelt',
@@ -29,6 +30,7 @@ class NewsGrid extends React.Component {
                         lösche ihn und beginne mit dem Schreiben!
                     </p>
                 ),
+                link: '/',
             },
             {
                 title: 'Jungscharwochenende der Mädchenjungschar',
@@ -40,6 +42,7 @@ class NewsGrid extends React.Component {
                         eirmod tempor invidunt ut labore et dolore magna aliquyam…
                     </p>
                 ),
+                link: '/',
             },
             {
                 title: 'Dem Regen getrotzt und eine Rekordsumme eingesammelt',
@@ -51,6 +54,7 @@ class NewsGrid extends React.Component {
                         lösche ihn und beginne mit dem Schreiben!
                     </p>
                 ),
+                link: '/',
             },
         ];
         items = items.concat(items.slice(1, 3));
@@ -63,4 +67,4 @@ class NewsGrid extends React.Component {
     }
 }
 
-export default NewsGrid;
+export default DevNewsGrid;
