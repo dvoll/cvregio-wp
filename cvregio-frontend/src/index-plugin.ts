@@ -12,4 +12,6 @@ import './blocks/cv-groups/index';
 
 import './blocks/cv-group-detail/index';
 
+import './blocks/cv-sidebar/index';
+
 // export {MyComponent};

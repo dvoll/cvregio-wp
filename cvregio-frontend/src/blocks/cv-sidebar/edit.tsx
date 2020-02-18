@@ -1,11 +1,18 @@
 import { Component, Fragment } from '@wordpress/element';
 import { PanelBody, RangeControl } from '@wordpress/components';
 import { InspectorControls, InnerBlocks } from '@wordpress/editor';
+import { BlockEditProps } from '@wordpress/blocks';
+import { SidebarBlockAttributes } from '.';
+import { GroupGridItem } from '../../components/groups/GroupGrid';
 
-export default class StageEditBlock extends Component {
+interface SidebarEditBlockProps extends BlockEditProps<SidebarBlockAttributes> {
+    groups?: GroupGridItem[] | null;
+}
+
+export default class StageEditBlock extends Component<SidebarEditBlockProps> {
     render() {
-        const { props } = this;
-        const { attributes } = props;
+        const { attributes, setAttributes, className } = this.props;
+        const { rowOffset = 0 } = attributes;
         return (
             <Fragment>
                 <InspectorControls>
@@ -21,16 +28,16 @@ export default class StageEditBlock extends Component {
                         /> */}
                         <RangeControl
                             label="Nummer der Zeile, in der die Sidebar beginnen soll "
-                            value={+attributes.rowOffset}
+                            value={+rowOffset}
                             onChange={value => {
-                                props.setAttributes({ rowOffset: value });
+                                setAttributes({ rowOffset: value });
                             }}
                             min={0}
                             max={20}
                         />
                     </PanelBody>
                 </InspectorControls>
-                <section className={`${props.className} sidebar`}>
+                <section className={`${className} sidebar`}>
                     <InnerBlocks />
                 </section>
             </Fragment>
