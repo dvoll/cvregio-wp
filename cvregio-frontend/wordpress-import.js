@@ -17,7 +17,7 @@ const srcDir = './dist/';
 const mapping = [
     {
         name: 'plugin',
-        targetPath: '/plugins/cv-regio-plugin/',
+        targetPath: '/plugins/cvregio-plugin/',
         distFolder: 'cvregio-frontend-dist',
         files: [
             { type: 'js', name: 'commons~plugin~theme' },
@@ -29,7 +29,7 @@ const mapping = [
     },
     {
         name: 'theme',
-        targetPath: '/themes/cv-regio-theme/',
+        targetPath: '/themes/cvregio-theme/',
         distFolder: 'cvregio-frontend-dist',
         files: [
             { type: 'js', name: 'commons~plugin~theme' },

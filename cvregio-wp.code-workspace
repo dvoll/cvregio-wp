@@ -1,10 +1,10 @@
 {
 	"folders": [
 		{
-			"path": "themes/cv-regio-theme"
+			"path": "themes/cvregio-theme"
 		},
 		{
-			"path": "plugins/cv-regio-plugin"
+			"path": "plugins/cvregio-plugin"
 		},
 		{
 			"path": "cvregio-frontend"
