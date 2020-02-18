@@ -78,11 +78,10 @@ export default compose([
             offset,
             // exclude: [select('core/editor').getCurrentPostId()],
         });
-        const latestPosts = getEntityRecords(
-            'postType',
-            'cvgroups',
-            latestPostsQuery
-        ) as Schema.BasePost<'edit'>[];
+        const latestPosts =
+            (getEntityRecords('postType', 'cvgroups', latestPostsQuery) as Schema.BasePost<
+                'edit'
+            >[]) || [];
 
         const groupGridItems: GroupGridItem[] = latestPosts.map(item => {
             let imgSrc: Schema.BaseMedia<'edit'> | undefined;

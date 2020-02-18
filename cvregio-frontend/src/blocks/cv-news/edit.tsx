@@ -6,6 +6,7 @@ import { withSelect } from '@wordpress/data';
 import { compose } from '@wordpress/compose';
 import apiFetch, { Schema } from '@wordpress/api-fetch';
 import { BlockEditProps } from '@wordpress/blocks';
+import { loadavg } from 'os';
 import News, { NewsItem } from '../../components/news/News';
 import { NewsBlockAttributes } from '.';
 
@@ -147,11 +148,13 @@ export default compose([
             offset: props.attributes.offset,
             exclude: [select('core/editor').getCurrentPostId()],
         });
-        const latestPosts = getEntityRecords(
-            'postType',
-            props.attributes.postType || 'post',
-            latestPostsQuery
-        ) as Schema.BasePost<'edit'>[];
+
+        const latestPosts =
+            (getEntityRecords(
+                'postType',
+                props.attributes.postType || 'post',
+                latestPostsQuery
+            ) as Schema.BasePost<'edit'>[]) || [];
 
         const newsItems: NewsItem[] = latestPosts.map(item => {
             let imgSrc: Schema.BaseMedia<'edit'> | undefined;

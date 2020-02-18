@@ -65,18 +65,14 @@ export default compose([
         }
     >((select, props) => {
         // const {  } = props.attributes;
-
-        console.log('post props', props);
         const { getEntityRecord } = select('core');
 
         const postId = select('core/editor').getCurrentPostId();
 
         const post = getEntityRecord('postType', 'cvgroups', postId) as Schema.BasePost<'edit'>;
 
-        console.log('post', post);
-
         return {
-            postDescription: post.excerpt.raw,
+            postDescription: post?.excerpt?.raw ?? '',
         };
     }),
 ])(GroupSummeryEdit);
