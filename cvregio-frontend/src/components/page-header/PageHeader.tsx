@@ -224,18 +224,19 @@ class PageHeader extends Component<PageHeaderProps, PageHeaderState> {
                             close={() => {
                                 this.closeSubmenu();
                             }}
-                        >
-                            <template slot="info">
-                                <p className="description-block__text" />
-                                <a
-                                    href={activeItem?.href}
-                                    className="button description-block__link"
-                                >
-                                    <Icon icon={IconTypes.ArrowRight} />
-                                    Übersicht
-                                </a>
-                            </template>
-                        </MenuPage>
+                            info={
+                                <React.Fragment>
+                                    <p className="description-block__text" />
+                                    <a
+                                        href={activeItem?.href}
+                                        className="button description-block__link"
+                                    >
+                                        <Icon icon={IconTypes.ArrowRight} />
+                                        Übersicht
+                                    </a>
+                                </React.Fragment>
+                            }
+                        />
                     </CSSTransition>
                     {!isMobile && (
                         <PageSubmenu
