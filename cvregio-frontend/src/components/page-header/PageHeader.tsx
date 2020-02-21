@@ -140,8 +140,8 @@ class PageHeader extends Component<PageHeaderProps, PageHeaderState> {
         if (mobileOpen && this.submenuIsOpen()) {
             this.closeSubmenu();
         }
+        this.disableBodyScroll(!mobileOpen);
         this.setState({ mobileOpen: !mobileOpen });
-        this.disableBodyScroll(mobileOpen);
     }
 
     closeSubmenu() {
