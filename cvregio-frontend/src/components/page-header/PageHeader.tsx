@@ -54,7 +54,7 @@ class PageHeader extends Component<PageHeaderProps, PageHeaderState> {
 
     shouldShowSmallHeader() {
         const { smallHeader, isMobile } = this.state;
-        return smallHeader || isMobile;
+        return smallHeader;
     }
 
     disableBodyScroll(noscroll: boolean) {

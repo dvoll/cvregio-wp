@@ -3,23 +3,24 @@
 .burger {
     height: 3em;
     width: 3em;
+    padding: 4px;
     position: relative;
     font-size: 8px;
     cursor: pointer;
     transition: 0.2s all;
     -webkit-tap-highlight-color: transparent;
+    outline: none;
 
     &:after {
         content: '';
         display: block;
         position: absolute;
-        height: 150%;
-        width: 150%;
     }
 
     .burger-lines {
         top: 50%;
-        margin-top: -0.125em;
+        margin-top: -0.25em;
+        left: -1px;
 
         &,
         &:after,
@@ -37,12 +38,19 @@
 
         &:after {
             left: 0;
-            top: -1em;
+            top: -0.75em;
+
+            @include media(mobile) {
+                top: -1em;
+            }
         }
 
         &:before {
-            // left: 1em;
-            top: 1em;
+            top: 0.75em;
+
+            @include media(mobile) {
+                top: 1em;
+            }
         }
     }
 }
