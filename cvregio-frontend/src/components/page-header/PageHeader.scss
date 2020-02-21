@@ -1,0 +1,178 @@
+@import '../../styles-global/main.scss';
+
+$initialHeaderHeight: 95;
+$smallHeaderHeight: 50;
+$transitionSpeedGrow: 0.3s;
+$transitionSpeedShrink: 0.4s ease-out;
+
+body.no-scroll {
+    overflow: hidden;
+}
+
+page-header {
+    @include custom-element-visibility;
+}
+
+.header-placeholder {
+    width: 100%;
+    height: #{$initialHeaderHeight}px;
+}
+
+.cv-header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: transform 0.3s;
+    width: 100%;
+    background: $color__background-body;
+
+    &--small {
+        transform: translateY(#{$smallHeaderHeight - $initialHeaderHeight}px);
+        transition: transform #{$transitionSpeedShrink};
+    }
+
+    &__page-header {
+        border-bottom: 1px solid $color__background-body;
+
+        .cv-header--small & {
+            border-color: #dadada;
+        }
+
+        .cv-header--mobile-open &,
+        .cv-header--submenu-open & {
+            border-color: $color__background-body;
+        }
+    }
+
+    &__mobile-menu,
+    &__mobile-submenu {
+        position: absolute;
+        width: 100%;
+        height: calc(100vh + 45px);
+        // padding-bottom: 100px;
+    }
+
+    &__submenu {
+        .cv-header--mobile & {
+            height: calc(100vh - 75px);
+        }
+    }
+
+    &__nav {
+        margin-left: 40px;
+    }
+}
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    transition: opacity 0.2s ease;
+    opacity: 1;
+}
+
+.fade-exit {
+    opacity: 1;
+}
+
+.fade-exit-active {
+    transition: opacity 0.2s ease;
+    opacity: 0;
+}
+
+.fade-from-top-enter {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.fade-from-top-enter-active {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease;
+    opacity: 1;
+    transform: none;
+}
+
+.fade-from-top-exit-active {
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease;
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+.fade-from-left-enter {
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+.fade-from-left-enter-active {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 1;
+    transform: none;
+}
+.fade-from-left-exit-active {
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    opacity: 0;
+    transform: translateX(100px);
+}
+
+// TODO move to MeuPage.scss
+
+// .menu-page {
+//     background: $color__background-body;
+//     padding: 20px 40px;
+
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     font-family: 'Open Sans';
+//     position: absolute;
+//     padding-top: 100px;
+//     width: 100%;
+//     padding: 100px 20px 0 20px;
+//     flex-direction: column;
+//     align-items: flex-start;
+//     justify-content: flex-start;
+//     overflow-y: auto;
+
+//     &__header {
+//         font-weight: normal;
+//         font-style: italic;
+//         font-size: 1.2rem;
+//     }
+
+//     &__back-link {
+//         font-size: $font__size-xs;
+//         visibility: hidden;
+
+//         .base-icon {
+//             height: 12px;
+//         }
+
+//         &--visible {
+//             visibility: visible;
+//         }
+//     }
+
+//     &__close-button {
+//         // TODO: Add button component
+//         background: none;
+//         border: none;
+//         padding: 4px 8px;
+//         cursor: pointer;
+//     }
+// }
+
+// .menu-list {
+//     list-style: none;
+//     max-height: 200px;
+//     padding: 0;
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+
+//     &__item {
+//         // width: 50%;
+//         flex: 1;
+//     }
+// }

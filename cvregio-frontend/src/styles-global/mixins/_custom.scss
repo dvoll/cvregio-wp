@@ -1,0 +1,8 @@
+// Center block
+@mixin custom-element-visibility {
+    opacity: 0;
+
+    &[element-loaded] {
+        opacity: 1;
+    }
+}

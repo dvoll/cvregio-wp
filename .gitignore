@@ -2,7 +2,8 @@ node_modules
 .DS_Store
 placeholder/
 uploads/
-cv-frontend/dist
+cvregio-frontend/dist
+cv-frontend/
 
 *.log
 advanced-cache.php
@@ -17,10 +18,10 @@ mu-plugins/
 wp-cache-config.php
 
 plugins/*
-!plugins/cv-blocks/
+!plugins/cvregio-plugin/
 
 themes/*
-!themes/cv-regio-theme/
+!themes/cvregio-theme/
 
 /.htaccess
 /license.txt
