@@ -20,7 +20,12 @@ class GroupGrid extends React.Component<GroupGridProps> {
     public render() {
         const { groups } = this.props;
         const groupCards = groups.map(group => (
-            <Card title={group.title} subtitle={group.location} imgSrc={group.imgSrc}>
+            <Card
+                title={group.title}
+                subtitle={group.location}
+                imgSrc={group.imgSrc}
+                key={`group-card-${group.title}-${group.location}`}
+            >
                 {group.target && (
                     <InfoRow label="Teilnehmer" title={group.target} icon={IconTypes.ArrowRight} />
                 )}
