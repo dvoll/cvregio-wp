@@ -16,6 +16,7 @@ languages/
 uploads/
 mu-plugins/
 wp-cache-config.php
+vendor/
 
 plugins/*
 !plugins/cvregio-plugin/
