@@ -1,0 +1,14 @@
+{
+    "name": "dvoll/cv-regio-plugin",
+    "description": "CV Regio Website Wordpress Plugin",
+    "require": {
+        "google/apiclient": "^2.0",
+        "vlucas/phpdotenv": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Data\\": "data",
+            "Model\\": "model"
+        }
+    }
+}

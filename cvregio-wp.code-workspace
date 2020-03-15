@@ -8,6 +8,9 @@
 		},
 		{
 			"path": "cvregio-frontend"
+		},
+		{
+			"path": "plugins/cvregio-events"
 		}
 	],
 	"settings": {

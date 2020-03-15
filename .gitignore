@@ -19,7 +19,7 @@ wp-cache-config.php
 vendor/
 
 plugins/*
-!plugins/cvregio-plugin/
+!plugins/cvregio-*/
 
 themes/*
 !themes/cvregio-theme/
