@@ -73,7 +73,7 @@ function cvregio_events_field_calendarid_cb($args)
     $options = get_option('cvregio_events_options');
     // output the field
 ?>
-    <input type="text" name="cvregio_events_options[<?php echo esc_attr($args['label_for']); ?>]" id="<?php echo esc_attr($args['label_for']); ?>" value="<?php echo isset($options[$args['label_for']]) ? esc_attr( $options[$args['label_for']] ) : ''; ?>">
+    <input type="text" style="max-width: 40em; width: 100%" name="cvregio_events_options[<?php echo esc_attr($args['label_for']); ?>]" id="<?php echo esc_attr($args['label_for']); ?>" value="<?php echo isset($options[$args['label_for']]) ? esc_attr( $options[$args['label_for']] ) : ''; ?>">
     <p class="description">
         Gib hier eine Google Kalender ID ein. Zusätzlich muss der Google Account <code><?php echo getenv('WP_CVREGIO_EVENTS_GOOGLE_ACCOUNT_ID') ?></code> in den Kalendereinstellungen zum Kalender hinzugefügt werden. 
     </p>

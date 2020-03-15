@@ -9,6 +9,8 @@ class Event {
     private $allDay;
     private $start;
     private $end;
+    private $category;
+    private $categorySlug;
 
     // private $colorId;
     // private $status;
@@ -23,6 +25,26 @@ class Event {
         $this->$allDay = $allDay;
         $this->start = $start;
         $this->end = $end;
+    }
+
+    public function getCategory() 
+    {
+        return $this->category;
+    }
+
+    public function setCategory($category) 
+    {
+        $this->category = $category;
+    }
+
+    public function getCategorySlug() 
+    {
+        return $this->categorySlug;
+    }
+
+    public function setCategorySlug($categorySlug) 
+    {
+        $this->categorySlug = $categorySlug;
     }
 
     public function getEnd() 
@@ -63,11 +85,6 @@ class Event {
     public function setLocation($location) 
     {
         $this->location = $location;
-    }
-    public function setLocationFromSlug($locationSlug) 
-    {
-        // TODO: Add slug to category conversion
-        $this->location = $locationSlug;
     }
 
     public function getDescription() 
