@@ -28,6 +28,11 @@ function cvregio_events_loader()
 	$dotenv->load();
 
 	require_once plugin_dir_path(__FILE__) . 'plugin-settings-page.php';
+
+	/**
+	 * Load blocks
+	 */
+	require_once plugin_dir_path(__FILE__) . 'blocks/events/index.php';
 }
 add_action('plugins_loaded', 'cvregio_events_loader');
 
