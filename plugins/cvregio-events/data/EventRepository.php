@@ -92,6 +92,7 @@ class EventRepository {
         }
         // always use last match to ignore other [] pairs
         $eventOptionsString = $eventOptionStrings[count($eventOptionStrings) - 1];
+        // TODO: Remove event option string from description
         preg_match_all('/(\w*):\s*([\w,]*)[;]*/', $eventOptionsString, $eventOptions);
         if (count($eventOptions) == 0 || !isset($eventOptions[1]) || !isset($eventOptions[2])) {
             // wrong format of option string
@@ -100,7 +101,7 @@ class EventRepository {
         for ($i=0; $i < count($eventOptions[1]); $i++) { 
             $option = $eventOptions[1][$i];
             if (preg_match('/kategorie/i', $option) > 0) {
-                // TODO: for multi categories explode comma list and extend model
+                // for multi categories explode comma list and extend model
                 $categoryName = $eventOptions[2][$i];
                 $categoryId = isset($this->categoriesDict[$categoryName]) ? $this->categoriesDict[$categoryName] : null;
                 if ( $categoryId != null ) {
