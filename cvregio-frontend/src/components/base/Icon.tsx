@@ -6,6 +6,9 @@ export enum IconTypes {
     ArrowRight = 'arrow-right',
     ArrowLeft = 'arrow-left',
     Edit = 'edit',
+    Mail = 'mail',
+    MailBlack = 'mail—black',
+    Phone = 'phone',
 }
 
 export interface IconProps {
