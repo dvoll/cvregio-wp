@@ -189,29 +189,8 @@ function cvregio_blocks_register_associate_post_type()
 			'supports' => array('editor', 'excerpt', 'page-attributes', 'author', 'custom-fields'),
 			'template' => array(
 				array('cv-blocks/cv-associate-template')
-				// array( 'core/image', array(
-				// 	'align' => 'left',
-				// ) ),
-				// array( 'core/heading', array(
-				// 	'placeholder' => 'Add Author...',
-				// ) ),
-				// array( 'core/columns', array(), array(
-				// 	array( 'core/column', array(), array() ),
-				// 	array( 'core/column', array(), array(
-				// 		array( 'core/paragraph', array(
-				// 			'placeholder' => 'Add a inner paragraph'
-				// 		) ),
-				// 	) ),
-				// ) )
 			),
-			// 'template_lock' => 'all',
-			//    'supports' => array(
-			// 	   'title',
-			// 	   'excerpt',
-			// 	   'editor',
-			// 	   'page-attributes',
-			// 	   'author',
-			//    )
+			'template_lock' => 'all',
 		)
 	);
 }
@@ -225,7 +204,8 @@ function cvregio_associates_set_custom_columns($columns)
 	$date = $columns['date'];
 	unset( $columns['author'] );
 	unset( $columns['date'] );
-	// unset( $columns['title'] );
+
+	$columns['title'] = 'ID';
 	$columns['lastname'] = 'Nachname';
 	$columns['firstname'] = 'Vorname';
 	$columns['author'] = $author;
@@ -267,6 +247,11 @@ function cvregio_associates_template_init()
 		'single' => true,
 		'type' => 'string',
 	));
+	register_post_meta('cvassociates', 'cvregio_meta_associate_contact_items', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
 }
 add_action('init', 'cvregio_associates_template_init');
 
@@ -277,16 +262,13 @@ function cvregio_associates_save_action($post_id) {
 
 	$post = get_post($post_id);
 		
-	$firstname = get_post_meta($post_id, 'cvregio_meta_associate_firstname', true);
-	$lastname = get_post_meta($post_id, 'cvregio_meta_associate_lastname', true);
- 
-    // Check if this post is in default category
-    if ( get_post_type($post) === 'cvassociates' ) {
+	// Check if this post is in default category
+	if ( get_post_type($post) === 'cvassociates' ) {
         // unhook this function so it doesn't loop infinitely
         remove_action( 'save_post_cvassociates', 'cvregio_associates_save_action' );
  
         // update the post, which calls save_post again
-        wp_update_post( array( 'ID' => $post_id, 'post_title' =>  $firstname . ' ' . $lastname) );
+        wp_update_post( array( 'ID' => $post_id, 'post_title' =>  $post_id) );
  
         // re-hook this function
         add_action( 'save_post_cvassociates', 'cvregio_associates_save_action' );
@@ -317,4 +299,3 @@ function cvregio_associates_posts_orderby( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'cvregio_associates_posts_orderby' );
-
