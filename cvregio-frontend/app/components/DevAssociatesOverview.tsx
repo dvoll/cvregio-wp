@@ -31,10 +31,12 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                 imgSrc: image03,
                 contactItems: [
                     {
+                        id: 1,
                         content: 'jungenjungschar@cvjm-stift-quernheim.de',
                         type: 'email',
                     },
                     {
+                        id: 2,
                         content: '01234 567901',
                         type: 'phone',
                     },
@@ -47,10 +49,12 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                 imgSrc: image04,
                 contactItems: [
                     {
+                        id: 1,
                         content: 'vorstand@cvjm-kirchlengern.de',
                         type: 'email',
                     },
                     {
+                        id: 2,
                         content: '01234 567901',
                         type: 'phone',
                     },
@@ -63,10 +67,12 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                 imgSrc: image05,
                 contactItems: [
                     {
+                        id: 1,
                         content: 'posaunenchor@cvjm-kirchlengern.de',
                         type: 'email',
                     },
                     {
+                        id: 2,
                         content: '01234 567901',
                         type: 'phone',
                     },
@@ -79,10 +85,12 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                 imgSrc: image03,
                 contactItems: [
                     {
+                        id: 1,
                         content: 'jungen@cvjm-kirchlengern.de',
                         type: 'email',
                     },
                     {
+                        id: 2,
                         content: '01234 567901',
                         type: 'phone',
                     },
