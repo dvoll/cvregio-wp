@@ -219,10 +219,10 @@ function cvregio_associates_set_custom_columns_content($column, $post_id)
 {
 	switch ($column) {
 		case 'lastname':
-			echo get_post_meta($post_id, 'cvregio_meta_associate_lastname', true);
+			echo '<strong>'. get_post_meta($post_id, 'cvregio_meta_associate_lastname', true) . '</strong>';
 			break;
 		case 'firstname':
-			echo get_post_meta($post_id, 'cvregio_meta_associate_firstname', true);
+			echo '<strong>'. get_post_meta($post_id, 'cvregio_meta_associate_firstname', true) . '</strong>';
 			break;
 	}
 }
