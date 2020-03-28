@@ -95,7 +95,6 @@ class Associate extends React.Component<AssociateProps, AssociateState> {
 
     private fetchImage(imageId: number) {
         return apiFetch({ path: `/wp/v2/media/${imageId}` }).then((imageResponse: any) => {
-            console.log(imageResponse, imageResponse?.media_details?.sizes?.thumbnail?.source_url);
             const imageUrl = imageResponse?.media_details?.sizes?.thumbnail?.source_url;
             this.setState({ imagePath: imageUrl });
         });
@@ -155,7 +154,6 @@ class Associate extends React.Component<AssociateProps, AssociateState> {
                 )}
                 <h4>Profilbild</h4>
                 <div className="associate-template__picture-row">
-                    {console.log('imageid', imageId)}
                     <MediaUploadCheck>
                         <MediaUpload
                             onSelect={el => this.handleImageChange(el)}
