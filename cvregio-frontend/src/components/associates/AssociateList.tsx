@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Associate, { AssociateProps } from './Associate';
+import Associate, { AssociateProps } from './AssociateItem';
 
 import './AssociateList.scss';
 

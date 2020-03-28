@@ -73,7 +73,7 @@ class ContactDetails extends React.Component<ContactDetailsProps> {
                         </div>
                     )}
                     {!edit && type.icon && (
-                        <Icon icon={type.icon} size={20} className="contact-details__icon" />
+                        <Icon icon={type.icon} size={16} className="contact-details__icon" />
                     )}
                     {edit ? (
                         <div className="">

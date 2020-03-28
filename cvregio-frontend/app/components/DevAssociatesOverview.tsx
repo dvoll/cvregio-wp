@@ -6,7 +6,8 @@ import AssociateList from '../../src/components/associates/AssociateList';
 import image03 from '../assets/images/03.jpg';
 import image04 from '../assets/images/04.jpg';
 import image05 from '../assets/images/05.jpg';
-import { AssociateProps } from '../../src/components/associates/Associate';
+import { AssociateItemProps } from '../../src/components/associates/AssociateItem';
+import { ContactItemTypes } from '../../src/components/associates/ContactDetails';
 
 export interface AssociatesOverviewProps {
     alignment?: 'wide' | 'full';
@@ -15,7 +16,7 @@ export interface AssociatesOverviewProps {
 class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
     public render() {
         const { alignment = 'wide' } = this.props;
-        let items: AssociateProps[] = [
+        let items: AssociateItemProps[] = [
             {
                 firstname: 'Max',
                 lastname: 'Mustermann',
@@ -33,12 +34,12 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                     {
                         id: 1,
                         content: 'jungenjungschar@cvjm-stift-quernheim.de',
-                        type: 'email',
+                        type: ContactItemTypes.EMAIL,
                     },
                     {
                         id: 2,
                         content: '01234 567901',
-                        type: 'phone',
+                        type: ContactItemTypes.PHONE,
                     },
                 ],
             },
@@ -51,12 +52,12 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                     {
                         id: 1,
                         content: 'vorstand@cvjm-kirchlengern.de',
-                        type: 'email',
+                        type: ContactItemTypes.EMAIL,
                     },
                     {
                         id: 2,
                         content: '01234 567901',
-                        type: 'phone',
+                        type: ContactItemTypes.PHONE,
                     },
                 ],
             },
@@ -69,12 +70,12 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                     {
                         id: 1,
                         content: 'posaunenchor@cvjm-kirchlengern.de',
-                        type: 'email',
+                        type: ContactItemTypes.EMAIL,
                     },
                     {
                         id: 2,
                         content: '01234 567901',
-                        type: 'phone',
+                        type: ContactItemTypes.PHONE,
                     },
                 ],
             },
@@ -87,12 +88,17 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                     {
                         id: 1,
                         content: 'jungen@cvjm-kirchlengern.de',
-                        type: 'email',
+                        type: ContactItemTypes.EMAIL,
                     },
                     {
                         id: 2,
                         content: '01234 567901',
-                        type: 'phone',
+                        type: ContactItemTypes.PHONE,
+                    },
+                    {
+                        id: 3,
+                        content: 'Briefkasten Rauchfang',
+                        type: ContactItemTypes.OTHER,
                     },
                 ],
             },

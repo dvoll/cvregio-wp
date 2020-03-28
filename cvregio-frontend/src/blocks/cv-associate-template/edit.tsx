@@ -1,7 +1,7 @@
 import { Component, Fragment } from '@wordpress/element';
 import { BlockEditProps } from '@wordpress/blocks';
 import { AssociateTemplateAttributes } from '.';
-import AssociateTemplate from '../../components/associates/AssociateTemplate';
+import AssociateTemplate from '../../components/associates/Associate';
 import { ContactItem } from '../../components/associates/ContactDetails';
 
 import './editor.scss';
