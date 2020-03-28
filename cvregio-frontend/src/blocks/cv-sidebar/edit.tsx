@@ -4,6 +4,7 @@ import { InspectorControls, InnerBlocks } from '@wordpress/editor';
 import { BlockEditProps } from '@wordpress/blocks';
 import { SidebarBlockAttributes } from '.';
 import { GroupGridItem } from '../../components/groups/GroupGrid';
+import Sidebar from '../../components/sidebar/Sidebar';
 
 interface SidebarEditBlockProps extends BlockEditProps<SidebarBlockAttributes> {
     groups?: GroupGridItem[] | null;
@@ -37,9 +38,9 @@ export default class StageEditBlock extends Component<SidebarEditBlockProps> {
                         />
                     </PanelBody>
                 </InspectorControls>
-                <section className={`${className} sidebar`}>
+                <Sidebar className={className}>
                     <InnerBlocks />
-                </section>
+                </Sidebar>
             </Fragment>
         );
     }

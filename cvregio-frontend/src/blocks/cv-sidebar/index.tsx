@@ -18,7 +18,7 @@ registerBlockType<SidebarBlockAttributes>('cv-blocks/cv-sidebar', {
     attributes: {
         rowOffset: {
             type: 'number',
-            default: 1,
+            default: 0,
         },
     },
 
