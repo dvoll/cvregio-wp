@@ -1,15 +1,28 @@
 import * as React from 'react';
-import { RichText } from '@wordpress/block-editor';
+import { TextControl, SelectControl, Button } from '@wordpress/components';
 import Icon, { IconTypes } from '../base/Icon';
 
 import './ContactDetails.scss';
 
+type ContactItemTypeTypes = 'PHONE' | 'EMAIL' | 'OTHER';
+
+export const ContactItemTypes: { [key in ContactItemTypeTypes]: ContactItemType } = {
+    PHONE: { value: 'PHONE', label: 'Telefon', icon: IconTypes.Phone },
+    EMAIL: { value: 'EMAIL', label: 'E-Mail', icon: IconTypes.MailBlack },
+    OTHER: { value: 'OTHER', label: 'Sonstige', icon: IconTypes.ArrowRight },
+};
+
+export interface ContactItemType {
+    value: ContactItemTypeTypes;
+    label: string;
+    icon: IconTypes;
+}
+
 export interface ContactItem {
-    // icon?: IconTypes;
     id: number;
     content: string;
     link?: string;
-    type?: 'phone' | 'email';
+    type: ContactItemType;
 }
 
 export interface ContactDetailsProps {
@@ -20,49 +33,68 @@ export interface ContactDetailsProps {
 
 class ContactDetails extends React.Component<ContactDetailsProps> {
     public render() {
-        const { items = [], edit = false, onChange = (item: any) => null } = this.props;
+        const { items = [], edit = false, onChange = () => null } = this.props;
         const contactItems = items.map(item => {
             const { content, type } = item;
             let isLink = false;
             let href;
-            if (type === 'phone') {
+            if (type.value === 'PHONE') {
                 isLink = true;
                 href = `tel:${content}`;
             }
-            if (type === 'email') {
+            if (type.value === 'EMAIL') {
                 isLink = true;
                 href = `mailto:${content}`;
             }
             const ItemTag: keyof JSX.IntrinsicElements = !edit && isLink ? 'a' : 'div';
-            let icon = IconTypes.ArrowRight;
-            if (type && type === 'phone') {
-                icon = IconTypes.Phone;
-            }
-            if (type && type === 'email') {
-                icon = IconTypes.MailBlack;
-            }
+            const options = Object.keys(ContactItemTypes).map(typeKey => {
+                const typeItem = ContactItemTypes[typeKey as ContactItemTypeTypes];
+                return { value: typeItem.value, label: typeItem.label };
+            });
             return (
                 <ItemTag
                     href={href}
                     className={`contact-details__item ${
                         isLink ? 'contact-details__item--link' : ''
-                    }`}
+                    } ${edit ? 'contact-details__item--edit' : ''}`}
                 >
-                    {icon && <Icon icon={icon} size={20} className="contact-details__icon" />}
+                    {edit && (
+                        <div className="">
+                            <SelectControl
+                                label="Art"
+                                value={type.value}
+                                options={options}
+                                onChange={value => {
+                                    const changedType = ContactItemTypes[value];
+                                    const changedItem = { ...item, type: changedType };
+                                    return onChange(changedItem);
+                                }}
+                            />
+                        </div>
+                    )}
+                    {!edit && type.icon && (
+                        <Icon icon={type.icon} size={20} className="contact-details__icon" />
+                    )}
                     {edit ? (
-                        <RichText
-                            tagName="span"
-                            placeholder="Nummer/Mail-Adresse/..."
-                            keepPlaceholderOnFocus
-                            value={content}
-                            className="info-row__title"
-                            onChange={value => {
-                                const newItem = { ...item, content: value };
-                                return onChange(newItem);
-                            }}
-                        />
+                        <div className="">
+                            <TextControl
+                                label="Inhalt"
+                                placeholder="Nummer/Mail-Adresse/..."
+                                type="text"
+                                value={content}
+                                onChange={value => {
+                                    const changedItem = { ...item, content: value };
+                                    return onChange(changedItem);
+                                }}
+                            />
+                        </div>
                     ) : (
                         content
+                    )}
+                    {edit && (
+                        <Button style={{ alignSelf: 'center' }} isTertiary>
+                            Entfernen
+                        </Button>
                     )}
                 </ItemTag>
             );

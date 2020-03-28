@@ -8,8 +8,9 @@ import './editor.scss';
 export interface AssociateTemplateAttributes {
     firstname?: string;
     lastname?: string;
-    imagePath?: string;
-    contactItems?: any[];
+    imageId?: string;
+    contactItems?: string;
+    // contactItemsString?: string;
 }
 
 // Register the block
@@ -31,14 +32,15 @@ registerBlockType<AssociateTemplateAttributes>('cv-blocks/cv-associate-template'
             source: 'meta',
             meta: 'cvregio_meta_associate_lastname',
         },
-        imagePath: {
+        imageId: {
             type: 'string',
             source: 'meta',
-            meta: 'cvregio_meta_associate_imagepath',
+            meta: 'cvregio_meta_associate_imageid',
         },
         contactItems: {
-            type: 'array',
-            // TODO: save in meta
+            type: 'string',
+            source: 'meta',
+            meta: 'cvregio_meta_associate_contact_items',
         },
     },
 

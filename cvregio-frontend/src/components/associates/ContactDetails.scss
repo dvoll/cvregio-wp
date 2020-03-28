@@ -25,6 +25,12 @@
         &--link {
             color: $color__accent-gray;
         }
+
+        &--edit {
+            > * {
+                margin-right: 10px;
+            }
+        }
     }
 
     &__icon {

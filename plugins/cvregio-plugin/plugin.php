@@ -184,7 +184,7 @@ function cvregio_blocks_register_associate_post_type()
 			'public'      => true,
 			'has_archive' => true,
 			'hierarchical' => false,
-			// 'rewrite'     => array('slug' => 'mitarbeiter'),
+			'rewrite'     => array('slug' => 'mitarbeiter'),
 			'show_in_rest' => true,
 			'supports' => array('editor', 'excerpt', 'page-attributes', 'author', 'custom-fields'),
 			'template' => array(
@@ -242,7 +242,7 @@ function cvregio_associates_template_init()
 		'single' => true,
 		'type' => 'string',
 	));
-	register_post_meta('cvassociates', 'cvregio_meta_associate_imagepath', array(
+	register_post_meta('cvassociates', 'cvregio_meta_associate_imageid', array(
 		'show_in_rest' => true,
 		'single' => true,
 		'type' => 'string',

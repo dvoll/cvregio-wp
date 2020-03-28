@@ -1,77 +1,84 @@
 import { Component, Fragment } from '@wordpress/element';
 import { BlockEditProps } from '@wordpress/blocks';
-import { compose } from '@wordpress/compose';
-import { withSelect } from '@wordpress/data';
-import { Schema } from '@wordpress/api-fetch';
 import { AssociateTemplateAttributes } from '.';
 import AssociateTemplate from '../../components/associates/AssociateTemplate';
+import { ContactItem } from '../../components/associates/ContactDetails';
 
-// const { Component, Fragment } = wp.element;
-
-// interface AssociateTemplateEditProps extends BlockEditProps<AssociateTemplateAttributes> {
-//     postDescription: string;
-// }
+import './editor.scss';
 
 class AssociateTemplateEdit extends Component<BlockEditProps<AssociateTemplateAttributes>> {
-    handleValueChange(fieldName: 'firstname' | 'lastname' | 'image-path', value: string) {
+    handleValueChange(fieldName: 'firstname' | 'lastname' | 'image-id', value: string | number) {
         /* eslint-disable indent */
         switch (fieldName) {
             case 'firstname':
-                this.props.setAttributes({ firstname: value });
+                this.props.setAttributes({ firstname: `${value}` });
                 break;
             case 'lastname':
-                this.props.setAttributes({ lastname: value });
+                this.props.setAttributes({ lastname: `${value}` });
                 break;
-            case 'image-path':
-                this.props.setAttributes({ imagePath: value });
+            case 'image-id':
+                this.props.setAttributes({ imageId: `${value}` });
                 break;
             default:
         }
         /* eslint-enable */
     }
 
-    render() {
-        const { firstname, lastname, imagePath, contactItems } = this.props.attributes;
+    handleContactItemChange(items: ContactItem[]) {
+        this.props.setAttributes({ contactItems: JSON.stringify(items) });
+    }
 
+    render() {
+        const { firstname, lastname, imageId, contactItems } = this.props.attributes;
+        let contactItemArray = [] as ContactItem[];
+        if (contactItems) {
+            try {
+                contactItemArray = JSON.parse(contactItems) as ContactItem[];
+            } catch (e) {
+                console.error('Error parsing contact items.', contactItems);
+            }
+        }
         return (
             <Fragment>
                 <AssociateTemplate
                     edit
                     firstname={firstname}
                     lastname={lastname}
-                    imagePath={imagePath}
-                    contactItems={contactItems}
+                    imageId={imageId && imageId !== '' ? +imageId : undefined}
+                    contactItems={contactItemArray}
                     handleValueChange={(title, value) => this.handleValueChange(title, value)}
+                    handleContactItemChange={items => this.handleContactItemChange(items)}
                 />
             </Fragment>
         );
     }
 }
 
-export default compose([
-    /**
-     * @param {string} props
-     */
-    withSelect<
-        any,
-        {
-            attributes: BlockEditProps<{}> & {
-                order: string;
-                orderBy: string;
-                postsToShow: number;
-                offset: number;
-            };
-        }
-    >((select, props) => {
-        // const {  } = props.attributes;
-        const { getEntityRecord } = select('core');
+export default AssociateTemplateEdit;
+// export default compose([
+//     /**
+//      * @param {string} props
+//      */
+//     withSelect<
+//         any,
+//         {
+//             attributes: BlockEditProps<{}> & {
+//                 order: string;
+//                 orderBy: string;
+//                 postsToShow: number;
+//                 offset: number;
+//             };
+//         }
+//     >((select, props) => {
+//         // const {  } = props.attributes;
+//         const { getEntityRecord } = select('core');
 
-        const postId = select('core/editor').getCurrentPostId();
+//         const postId = select('core/editor').getCurrentPostId();
 
-        const post = getEntityRecord('postType', 'cvassociates', postId) as Schema.BasePost<'edit'>;
+//         const post = getEntityRecord('postType', 'cvassociates', postId) as Schema.BasePost<'edit'>;
 
-        return {
-            postDescription: post?.excerpt?.raw ?? '',
-        };
-    }),
-])(AssociateTemplateEdit);
+//         return {
+//             postDescription: post?.excerpt?.raw ?? '',
+//         };
+//     }),
+// ])(AssociateTemplateEdit);
