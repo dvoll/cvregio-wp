@@ -6,7 +6,6 @@ import { withSelect } from '@wordpress/data';
 import { compose } from '@wordpress/compose';
 import apiFetch, { Schema } from '@wordpress/api-fetch';
 import { BlockEditProps } from '@wordpress/blocks';
-import { loadavg } from 'os';
 import News, { NewsItem } from '../../components/news/News';
 import { NewsBlockAttributes } from '.';
 
