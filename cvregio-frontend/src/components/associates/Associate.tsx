@@ -1,18 +1,11 @@
 import * as React from 'react';
 
-// import './Associate.scss';
 import { MediaUploadCheck, MediaUpload } from '@wordpress/block-editor';
 import { Button, TextControl } from '@wordpress/components';
 import apiFetch from '@wordpress/api-fetch';
 import ContactDetails, { ContactItem, ContactItemTypes } from './ContactDetails';
 
 import './AssociateItem.scss';
-
-// export interface AssociateAttributes {
-//     location?: string;
-//     target?: string;
-//     time?: string;
-// }
 
 export interface AssociateProps {
     firstname?: string;
@@ -28,10 +21,7 @@ export interface AssociateProps {
 }
 
 interface AssociateState {
-    // firstname?: string;
-    // lastname?: string;
     imagePath?: string;
-    // contactItems?: ContactItem[];
 }
 
 class Associate extends React.Component<AssociateProps, AssociateState> {
@@ -49,7 +39,6 @@ class Associate extends React.Component<AssociateProps, AssociateState> {
     }
 
     private onContactItemChange(changedItem: ContactItem) {
-        // this.setState(prevState => {
         const items = this.props.contactItems?.map(prevItem => {
             if (prevItem.id === changedItem.id) {
                 return changedItem;
@@ -58,11 +47,6 @@ class Associate extends React.Component<AssociateProps, AssociateState> {
         });
         // eslint-disable-next-line no-unused-expressions
         this.props.handleContactItemChange && this.props.handleContactItemChange(items ?? []);
-        // return {
-        //     ...prevState,
-        //     contactItems: items,
-        // };
-        // });
     }
 
     private handleNewContactItem() {
@@ -78,19 +62,6 @@ class Associate extends React.Component<AssociateProps, AssociateState> {
         // eslint-disable-next-line no-unused-expressions
         this.props.handleContactItemChange &&
             this.props.handleContactItemChange(this.props.contactItems.concat([newItem]));
-        // this.setState(prevState => {
-        //     const newItem = {
-        //         id: prevState.contactItems ? prevState.contactItems.length : 0,
-        //         content: '',
-        //         type,
-        //     };
-        //     return {
-        //         ...prevState,
-        //         contactItems: prevState.contactItems
-        //             ? [...prevState.contactItems, newItem]
-        //             : [newItem],
-        //     };
-        // });
     }
 
     private fetchImage(imageId: number) {
@@ -107,9 +78,6 @@ class Associate extends React.Component<AssociateProps, AssociateState> {
             [k: string]: any;
         }
     ) {
-        // if (element.id === this.props.imageId) {
-        //     return;
-        // }
         this.fetchImage(element.id);
         const { handleValueChange = () => null } = this.props;
         handleValueChange('image-id', element.id);
