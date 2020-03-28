@@ -13,6 +13,7 @@ export interface AssociateItemProps {
     lastname: string;
     roles: AssociateItemRole[];
     pictureSources?: { src: string; media: string }[];
+    showImage?: boolean;
     imgSrc?: string;
     contactItems?: ContactItem[];
     className?: string;
@@ -25,6 +26,7 @@ class AssociateItem extends React.Component<AssociateItemProps> {
             lastname,
             roles = [],
             pictureSources = [],
+            showImage = true,
             imgSrc = false,
             contactItems = [],
             className = '',
@@ -42,20 +44,17 @@ class AssociateItem extends React.Component<AssociateItemProps> {
                 </div>
             );
         });
+        const imageSection = imgSrc ? (
+            <picture className="associate-item__picture">
+                {sources}
+                <img className="associate-item__img" src={imgSrc} alt={`Profilbild von ${name}`} />
+            </picture>
+        ) : (
+            <div className="associate-item__picture-placeholder" />
+        );
         return (
             <div className={`associate-item ${className}`}>
-                {imgSrc ? (
-                    <picture className="associate-item__picture">
-                        {sources}
-                        <img
-                            className="associate-item__img"
-                            src={imgSrc}
-                            alt={`Profilbild von ${name}`}
-                        />
-                    </picture>
-                ) : (
-                    <div className="associate-item__picture-placeholder" />
-                )}
+                {showImage && imageSection}
                 <h4 className="associate-item__name">{name}</h4>
                 {roleElements.length > 0 && (
                     <div className="associate-item__roles">{roleElements}</div>

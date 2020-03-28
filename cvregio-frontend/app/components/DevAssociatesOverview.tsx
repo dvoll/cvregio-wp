@@ -11,16 +11,18 @@ import { ContactItemTypes } from '../../src/components/associates/ContactDetails
 
 export interface AssociatesOverviewProps {
     alignment?: 'wide' | 'full';
+    showImages?: boolean;
 }
 
 class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
     public render() {
-        const { alignment = 'wide' } = this.props;
+        const { alignment = 'wide', showImages = true } = this.props;
         let items: AssociateItemProps[] = [
             {
                 firstname: 'Max',
                 lastname: 'Mustermann',
                 roles: [{ label: '1. Vorsitzender', name: '1vorsitzender' }],
+                showImage: showImages,
             },
             {
                 firstname: 'Claudia',
@@ -42,6 +44,7 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                         type: ContactItemTypes.PHONE,
                     },
                 ],
+                showImage: showImages,
             },
             {
                 firstname: 'Claudia',
@@ -60,6 +63,7 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                         type: ContactItemTypes.PHONE,
                     },
                 ],
+                showImage: showImages,
             },
             {
                 firstname: 'Claudia',
@@ -78,6 +82,7 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                         type: ContactItemTypes.PHONE,
                     },
                 ],
+                showImage: showImages,
             },
             {
                 firstname: 'Claudia',
@@ -101,6 +106,7 @@ class AssociatesOverview extends React.Component<AssociatesOverviewProps> {
                         type: ContactItemTypes.OTHER,
                     },
                 ],
+                showImage: showImages,
             },
             // {
             //     location: 'Rauchfang',

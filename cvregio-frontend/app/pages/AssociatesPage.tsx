@@ -25,6 +25,15 @@ class AssociatesPage extends React.Component {
                                     justo duo dolores et ea rebum.
                                 </p>
                                 <AssociatesOverview />
+                                <p />
+                                <h2>Liste ohne Bilder</h2>
+                                <p>
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
+                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
+                                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
+                                    justo duo dolores et ea rebum.
+                                </p>
+                                <AssociatesOverview showImages={false} />
                             </div>
                         </article>
                     </React.Fragment>
