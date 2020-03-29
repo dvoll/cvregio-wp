@@ -1,4 +1,4 @@
-version: '3.3'
+version: "3.3"
 services:
   db:
     image: mariadb:latest
@@ -30,6 +30,9 @@ services:
       WORDPRESS_DB_PASSWORD: wordpressdevdbpassword
       WORDPRESS_DB_NAME: wp
       WORDPRESS_DEBUG: 1
+      WORDPRESS_CONFIG_EXTRA: |
+        /* JS Script debug */
+        define('SCRIPT_DEBUG', true );
     restart: always
 volumes:
   db_data: {}
