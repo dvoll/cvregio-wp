@@ -39,7 +39,7 @@ class AssociateItem extends React.Component<AssociateItemProps> {
         const roleElements = roles.map(({ label }, index) => {
             const comma = index < roles.length - 1 ? ',' : '';
             return (
-                <div className="associate-item__role">
+                <div className="associate-item__role" key={label}>
                     {label}
                     {comma}
                 </div>
