@@ -9,6 +9,7 @@ export interface AssociateItemRole {
 }
 
 export interface AssociateItemProps {
+    id?: string | number;
     firstname: string;
     lastname: string;
     roles: AssociateItemRole[];
@@ -55,10 +56,8 @@ class AssociateItem extends React.Component<AssociateItemProps> {
         return (
             <div className={`associate-item ${className}`}>
                 {showImage && imageSection}
-                <h4 className="associate-item__name">{name}</h4>
-                {roleElements.length > 0 && (
-                    <div className="associate-item__roles">{roleElements}</div>
-                )}
+                <span className="associate-item__name">{name}</span>
+                {roleElements.length > 0 && <div className="associate-item__roles">{roleElements}</div>}
                 {contactItems.length > 0 && <ContactDetails items={contactItems} />}
             </div>
         );

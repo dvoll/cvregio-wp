@@ -16,4 +16,6 @@ import './blocks/cv-sidebar/index';
 
 import './blocks/cv-associate-template/index';
 
+import './blocks/cv-related-associates/index';
+
 // export {MyComponent};

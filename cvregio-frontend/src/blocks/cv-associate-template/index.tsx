@@ -40,7 +40,7 @@ registerBlockType<AssociateTemplateAttributes>('cv-blocks/cv-associate-template'
         contactItems: {
             type: 'string',
             source: 'meta',
-            meta: 'cvregio_meta_associate_contact_items',
+            meta: 'cvregio_meta_contact_items',
         },
     },
 

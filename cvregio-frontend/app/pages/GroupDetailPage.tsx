@@ -7,13 +7,11 @@ class GroupDetailPage extends React.Component {
     public render() {
         return (
             <PageLayout
+                templateClassName="cvgroups-template-default"
                 header={<Header />}
                 content={
                     <React.Fragment>
-                        <article
-                            id="post-78"
-                            className="post-78 page type-page status-publish hentry entry"
-                        >
+                        <article id="post-78" className="post-78 page type-page status-publish hentry entry">
                             <div className="entry-content">
                                 {/* <header className="entry-header">
                                     <h1 className="entry-title">Jungschar</h1>

@@ -6,3 +6,12 @@
         opacity: 1;
     }
 }
+
+@mixin styles-width-sidebar {
+    .cvgroups-template-default &,
+    .page-template-homepage &,
+    .page-template-single-withsidebar &,
+    .post-template-single-withsidebar & {
+        @content;
+    }
+}

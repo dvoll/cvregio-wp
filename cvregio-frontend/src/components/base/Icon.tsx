@@ -9,6 +9,7 @@ export enum IconTypes {
     Mail = 'mail',
     MailBlack = 'mail—black',
     Phone = 'phone',
+    Delete = 'delete',
 }
 
 export interface IconProps {

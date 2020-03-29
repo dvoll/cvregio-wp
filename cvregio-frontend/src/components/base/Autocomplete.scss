@@ -1,0 +1,44 @@
+@import '../../styles-global/main.scss';
+
+.autocomplete {
+    position: relative;
+
+    &__input {
+        width: 100%;
+    }
+}
+
+.autocomplete__suggestions {
+    position: absolute;
+    margin: 0;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: $color__background-input;
+    border: 1px solid rgb(214, 214, 214);
+    z-index: 1;
+}
+
+.autocomplete__suggestion {
+    padding: 4px 13px 4px 13px;
+    margin: 0;
+    cursor: pointer;
+
+    &--active {
+        background: darken($color__background-input, 10%);
+    }
+
+    &:hover {
+        background: darken($color__background-input, 13%);
+    }
+}
+
+.autocomplete-hint {
+    opacity: 0;
+    min-height: 2rem;
+    margin-bottom: 0.5rem;
+
+    &--visible {
+        opacity: 1;
+    }
+}

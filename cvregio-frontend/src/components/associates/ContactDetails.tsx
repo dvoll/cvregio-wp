@@ -4,12 +4,13 @@ import Icon, { IconTypes } from '../base/Icon';
 
 import './ContactDetails.scss';
 
-type ContactItemTypeTypes = 'PHONE' | 'EMAIL' | 'OTHER';
+type ContactItemTypeTypes = 'PHONE' | 'EMAIL' | 'OTHER' | 'LINK';
 
 export const ContactItemTypes: { [key in ContactItemTypeTypes]: ContactItemType } = {
     PHONE: { value: 'PHONE', label: 'Telefon', icon: IconTypes.Phone },
     EMAIL: { value: 'EMAIL', label: 'E-Mail', icon: IconTypes.MailBlack },
     OTHER: { value: 'OTHER', label: 'Sonstige', icon: IconTypes.ArrowRight },
+    LINK: { value: 'LINK', label: 'Link', icon: IconTypes.ArrowRight },
 };
 
 export interface ContactItemType {
@@ -29,11 +30,12 @@ export interface ContactDetailsProps {
     items?: ContactItem[];
     edit?: boolean;
     onChange?: (item: ContactItem) => any;
+    onDelete?: (item: ContactItem) => any;
 }
 
 class ContactDetails extends React.Component<ContactDetailsProps> {
     public render() {
-        const { items = [], edit = false, onChange = () => null } = this.props;
+        const { items = [], edit = false, onChange = () => null, onDelete = () => null } = this.props;
         const contactItems = items.map(item => {
             const { content, type } = item;
             let isLink = false;
@@ -46,6 +48,10 @@ class ContactDetails extends React.Component<ContactDetailsProps> {
                 isLink = true;
                 href = `mailto:${content}`;
             }
+            if (type.value === 'LINK') {
+                isLink = true;
+                href = `${content}`;
+            }
             const ItemTag: keyof JSX.IntrinsicElements = !edit && isLink ? 'a' : 'div';
             const options = Object.keys(ContactItemTypes).map(typeKey => {
                 const typeItem = ContactItemTypes[typeKey as ContactItemTypeTypes];
@@ -54,9 +60,10 @@ class ContactDetails extends React.Component<ContactDetailsProps> {
             return (
                 <ItemTag
                     href={href}
-                    className={`contact-details__item ${
-                        isLink ? 'contact-details__item--link' : ''
-                    } ${edit ? 'contact-details__item--edit' : ''}`}
+                    className={`contact-details__item ${isLink ? 'contact-details__item--link' : ''} ${
+                        edit ? 'contact-details__item--edit' : ''
+                    }`}
+                    key={item.id}
                 >
                     {edit && (
                         <div className="">
@@ -72,9 +79,7 @@ class ContactDetails extends React.Component<ContactDetailsProps> {
                             />
                         </div>
                     )}
-                    {!edit && type.icon && (
-                        <Icon icon={type.icon} size={16} className="contact-details__icon" />
-                    )}
+                    {!edit && type.icon && <Icon icon={type.icon} size={16} className="contact-details__icon" />}
                     {edit ? (
                         <div className="">
                             <TextControl
@@ -92,7 +97,7 @@ class ContactDetails extends React.Component<ContactDetailsProps> {
                         content
                     )}
                     {edit && (
-                        <Button style={{ alignSelf: 'center' }} isTertiary>
+                        <Button style={{ alignSelf: 'center' }} isTertiary onClick={() => onDelete(item)}>
                             Entfernen
                         </Button>
                     )}

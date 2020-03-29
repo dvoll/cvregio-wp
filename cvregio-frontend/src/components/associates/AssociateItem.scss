@@ -4,8 +4,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 160px;
-    max-width: 350px;
+    max-width: 250px;
     margin-bottom: 2.25rem;
 
     &__picture-placeholder,
@@ -31,6 +30,10 @@
         font-style: normal;
         font-size: $font__size_base;
         text-align: center;
+        letter-spacing: -0.02em;
+        line-height: $font__line-height-heading;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
 
     &__roles {

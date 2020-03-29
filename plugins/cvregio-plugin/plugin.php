@@ -77,29 +77,7 @@ function cv_blocks_groups_custom_post_type()
 			'supports' => array('title', 'editor', 'excerpt', 'page-attributes', 'author', 'custom-fields', 'thumbnail'),
 			'template' => array(
 				array('cv-blocks/cv-group-detail')
-				// array( 'core/image', array(
-				// 	'align' => 'left',
-				// ) ),
-				// array( 'core/heading', array(
-				// 	'placeholder' => 'Add Author...',
-				// ) ),
-				// array( 'core/columns', array(), array(
-				// 	array( 'core/column', array(), array() ),
-				// 	array( 'core/column', array(), array(
-				// 		array( 'core/paragraph', array(
-				// 			'placeholder' => 'Add a inner paragraph'
-				// 		) ),
-				// 	) ),
-				// ) )
 			),
-			// 'template_lock' => 'all',
-			//    'supports' => array(
-			// 	   'title',
-			// 	   'excerpt',
-			// 	   'editor',
-			// 	   'page-attributes',
-			// 	   'author',
-			//    )
 		)
 	);
 }
@@ -132,8 +110,9 @@ function custom_cvgroup_column($column, $post_id)
 add_action('manage_cvgroups_posts_custom_column', 'custom_cvgroup_column', 10, 2);
 
 
-function cv_group_block_init()
+function cvregio_register_meta()
 {
+	//groups
 	register_post_meta('cvgroups', 'cv_blocks_meta_group_location', array(
 		'show_in_rest' => true,
 		'single' => true,
@@ -149,8 +128,40 @@ function cv_group_block_init()
 		'single' => true,
 		'type' => 'string',
 	));
+	register_post_meta('cvgroups', 'cvregio_meta_associates', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+	register_post_meta('cvgroups', 'cvregio_meta_contact_items', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+
+	// associates
+	register_post_meta('cvassociates', 'cvregio_meta_associate_firstname', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+	register_post_meta('cvassociates', 'cvregio_meta_associate_lastname', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+	register_post_meta('cvassociates', 'cvregio_meta_associate_imageid', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+	register_post_meta('cvassociates', 'cvregio_meta_contact_items', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
 }
-add_action('init', 'cv_group_block_init');
+add_action('init', 'cvregio_register_meta');
 
 
 
@@ -230,30 +241,30 @@ function cvregio_associates_set_custom_columns_content($column, $post_id)
 add_action('manage_cvassociates_posts_custom_column', 'cvregio_associates_set_custom_columns_content', 10, 2);
 
 
-function cvregio_associates_template_init()
-{
-	register_post_meta('cvassociates', 'cvregio_meta_associate_firstname', array(
-		'show_in_rest' => true,
-		'single' => true,
-		'type' => 'string',
-	));
-	register_post_meta('cvassociates', 'cvregio_meta_associate_lastname', array(
-		'show_in_rest' => true,
-		'single' => true,
-		'type' => 'string',
-	));
-	register_post_meta('cvassociates', 'cvregio_meta_associate_imageid', array(
-		'show_in_rest' => true,
-		'single' => true,
-		'type' => 'string',
-	));
-	register_post_meta('cvassociates', 'cvregio_meta_associate_contact_items', array(
-		'show_in_rest' => true,
-		'single' => true,
-		'type' => 'string',
-	));
-}
-add_action('init', 'cvregio_associates_template_init');
+// function cvregio_associates_template_init()
+// {
+// 	register_post_meta('cvassociates', 'cvregio_meta_associate_firstname', array(
+// 		'show_in_rest' => true,
+// 		'single' => true,
+// 		'type' => 'string',
+// 	));
+// 	register_post_meta('cvassociates', 'cvregio_meta_associate_lastname', array(
+// 		'show_in_rest' => true,
+// 		'single' => true,
+// 		'type' => 'string',
+// 	));
+// 	register_post_meta('cvassociates', 'cvregio_meta_associate_imageid', array(
+// 		'show_in_rest' => true,
+// 		'single' => true,
+// 		'type' => 'string',
+// 	));
+// 	register_post_meta('cvassociates', 'cvregio_meta_associate_contact_items', array(
+// 		'show_in_rest' => true,
+// 		'single' => true,
+// 		'type' => 'string',
+// 	));
+// }
+// add_action('init', 'cvregio_associates_template_init');
 
 function cvregio_associates_save_action($post_id) {
     // If this is a revision, get real post ID
@@ -299,3 +310,10 @@ function cvregio_associates_posts_orderby( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'cvregio_associates_posts_orderby' );
+
+
+function add_sprite_to_body() {
+	echo @include plugin_dir_path(__FILE__) . 'svg-sprite.html';
+}
+
+add_action( 'in_admin_header', 'add_sprite_to_body');

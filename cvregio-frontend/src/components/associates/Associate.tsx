@@ -13,10 +13,7 @@ export interface AssociateProps {
     imageId?: number;
     contactItems: ContactItem[];
     edit?: boolean;
-    handleValueChange?: (
-        title: 'firstname' | 'lastname' | 'image-id',
-        value: string | number
-    ) => void;
+    handleValueChange?: (title: 'firstname' | 'lastname' | 'image-id', value: string | number) => void;
     handleContactItemChange?: (items: ContactItem[]) => void;
 }
 
@@ -101,9 +98,7 @@ class Associate extends React.Component<AssociateProps, AssociateState> {
                         label="Vorname"
                         type="text"
                         value={firstname}
-                        onChange={value =>
-                            handleValueChange('firstname', value === '<br>' ? '' : value)
-                        }
+                        onChange={value => handleValueChange('firstname', value === '<br>' ? '' : value)}
                     />
                 ) : (
                     <span>{firstname}</span>
@@ -113,9 +108,7 @@ class Associate extends React.Component<AssociateProps, AssociateState> {
                         label="Nachname"
                         type="text"
                         value={lastname}
-                        onChange={value =>
-                            handleValueChange('lastname', value === '<br>' ? '' : value)
-                        }
+                        onChange={value => handleValueChange('lastname', value === '<br>' ? '' : value)}
                     />
                 ) : (
                     <span>{lastname}</span>
@@ -132,11 +125,7 @@ class Associate extends React.Component<AssociateProps, AssociateState> {
                                     <React.Fragment>
                                         <div className="associate-item__picture">
                                             <picture>
-                                                <img
-                                                    className="associate-item__img"
-                                                    src={imagePath}
-                                                    alt="profile"
-                                                />
+                                                <img className="associate-item__img" src={imagePath} alt="profile" />
                                             </picture>
                                         </div>
                                         <Button onClick={open}>Bild ändern</Button>
