@@ -11,8 +11,8 @@ function cv_contact_details($parameter = array())
     ob_start();
     ?>
     <div class="contact-details">
-        <? foreach ($items as $key => $item): ?>
-                <? 
+        <?php foreach ($items as $key => $item): ?>
+                <?php 
                     $icon = $item->type->icon;
                     $content = $item->content;
                     $type = $item->type;
@@ -28,11 +28,11 @@ function cv_contact_details($parameter = array())
                     }
 
                 ?>
-                <<? echo ($href ? "a href='$href'" : "div"); ?>  class="contact-details__item <? echo ($href ? 'contact-details__item--link' : ''); ?>">
-                    <? echo cv_base_icon([ 'iconName' => $icon, 'class' => 'contact-details__icon', 'size' => '16']); ?>
-                    <? echo $content ?>
-                </<? echo ($href ? "a" : "div"); ?> >
-        <? endforeach; ?>
+                <<?php echo ($href ? "a href='$href'" : "div"); ?>  class="contact-details__item <?php echo ($href ? 'contact-details__item--link' : ''); ?>">
+                    <?php echo cv_base_icon([ 'iconName' => $icon, 'class' => 'contact-details__icon', 'size' => '16']); ?>
+                    <?php echo $content ?>
+                </<?php echo ($href ? "a" : "div"); ?> >
+        <?php endforeach; ?>
     </div>
 
 
