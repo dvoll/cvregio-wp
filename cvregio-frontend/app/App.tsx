@@ -1,9 +1,9 @@
 import * as React from 'react';
-import HomePage from './pages/HomePage';
-import GroupsPage from './pages/GroupsPage';
 import './common.d';
 import '../src/styles-global/main.scss';
 import '../src/styles/main.scss';
+import HomePage from './pages/HomePage';
+import GroupsPage from './pages/GroupsPage';
 import NewsPage from './pages/NewsPage';
 import GroupDetailPage from './pages/GroupDetailPage';
 import AssociatesPage from './pages/AssociatesPage';

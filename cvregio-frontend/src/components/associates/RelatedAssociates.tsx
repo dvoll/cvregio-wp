@@ -15,6 +15,8 @@ export interface RelatedAssociatesProps {
     associates?: AssociateItemProps[];
     edit?: boolean;
     onContactItemsChange?: (contactItems: ContactItem[]) => void;
+    onHeadlineChange?: (value: string) => void;
+    onDescriptionChange?: (value: string) => void;
 }
 
 class RelatedAssociates extends React.Component<RelatedAssociatesProps> {
@@ -56,17 +58,18 @@ class RelatedAssociates extends React.Component<RelatedAssociatesProps> {
             associates = [],
             headline,
             edit = false,
+            onHeadlineChange = () => null,
+            onDescriptionChange = () => null,
         } = this.props;
         return (
             <React.Fragment>
-                {edit && <RichText tagName="h2" value={headline || ''} onChange={() => null} />}
+                {edit && <RichText tagName="h2" value={headline || ''} onChange={onHeadlineChange} />}
                 {!edit && headline && <RichText.Content tagName="h2" value={headline} />}
-                {/* {!edit && headline && <h2>{headline}</h2>} */}
                 <div className="related-associates">
                     <div className="related-associates__contacts">
                         <AssociateList associates={contactAssociates} itemIsPreview={edit} fullWidth={false}>
                             <div className="related-associates__contact-info">
-                                {edit && <RichText tagName="p" value={description} onChange={() => null} />}
+                                {edit && <RichText tagName="p" value={description} onChange={onDescriptionChange} />}
                                 {!edit && <RichText.Content tagName="p" value={description || ''} />}
                                 <ContactDetails
                                     items={contactItems}

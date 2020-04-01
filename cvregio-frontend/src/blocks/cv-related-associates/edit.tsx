@@ -114,10 +114,7 @@ class RelatedAssociatesEdit extends Component<RelatedAssociatesEditProps, Relate
     }
 
     render() {
-        const {
-            headline = 'Mitarbeiter',
-            description = 'Hast du Fragen? Wir freuen uns über deine Nachricht.',
-        } = this.props.attributes;
+        const { headline = '', description = '' } = this.props.attributes;
         const { associates, isSelected } = this.props;
         const { selectedAssociates, contactItems } = this.state;
 
@@ -149,6 +146,8 @@ class RelatedAssociatesEdit extends Component<RelatedAssociatesEditProps, Relate
                     contactAssociates={contacts}
                     associates={otherAssociates}
                     onContactItemsChange={items => this.handleContactItemChange(items)}
+                    onHeadlineChange={value => this.handleValueChange('headline', value)}
+                    onDescriptionChange={value => this.handleValueChange('description', value)}
                     // handleValueChange={(title, value) => this.handleValueChange(title, value)}
                     // handleContactItemChange={items => this.handleContactItemChange(items)}
                 />

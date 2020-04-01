@@ -20,11 +20,13 @@ registerBlockType<RelatedAssociatesAttributes>('cv-blocks/cv-related-associates'
     attributes: {
         headline: {
             type: 'string',
+            default: 'Mitarbeiter',
             // source: 'meta',
             // meta: 'cvregio_related_associate_headline',
         },
         description: {
             type: 'string',
+            default: 'Hast du Fragen? Wir freuen uns über deine Nachricht.',
             // source: 'meta',
             // meta: 'cvregio_meta_associate_lastname',
         },

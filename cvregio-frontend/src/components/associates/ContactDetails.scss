@@ -41,4 +41,13 @@
 
 a.contact-details__item--link {
     text-decoration: none;
+
+    &:visited {
+        color: $color__accent-gray;
+    }
+
+    &:hover,
+    &:active {
+        color: $color__link-hover;
+    }
 }

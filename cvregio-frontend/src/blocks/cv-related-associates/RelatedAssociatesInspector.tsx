@@ -44,7 +44,7 @@ class RelatedAssociatesInspector extends Component<RelatedAssociatesInspectorPro
             <PanelListItem title={title} onDelete={() => onDelete(id)}>
                 <ToggleControl
                     label="ist Ansprechpartner"
-                    help={checked ? 'Ist kein Ansprechpartner' : 'Kein Ansprechpartner.'}
+                    help={checked ? 'Ist Ansprechpartner' : 'Kein Ansprechpartner.'}
                     checked={checked}
                     onChange={value => onCheck(id, value)}
                 />

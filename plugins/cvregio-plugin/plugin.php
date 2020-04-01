@@ -39,6 +39,7 @@ function cv_blocks_loader()
 	require_once plugin_dir_path(__FILE__) . 'blocks/news/index.php';
 	require_once plugin_dir_path(__FILE__) . 'blocks/cv-stage/index.php';
 	require_once plugin_dir_path(__FILE__) . 'blocks/groups/BlockGroupSummery.php';
+	require_once plugin_dir_path(__FILE__) . 'blocks/associates/related-associates.php';
 }
 add_action('plugins_loaded', 'cv_blocks_loader');
 
@@ -313,7 +314,7 @@ add_action( 'pre_get_posts', 'cvregio_associates_posts_orderby' );
 
 
 function add_sprite_to_body() {
-	echo @include plugin_dir_path(__FILE__) . 'svg-sprite.html';
+	include plugin_dir_path(__FILE__) . 'svg-sprite.html';
 }
 
 add_action( 'in_admin_header', 'add_sprite_to_body');
