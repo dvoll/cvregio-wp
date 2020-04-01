@@ -3,6 +3,7 @@ import { InnerBlocks } from '@wordpress/editor';
 
 // Import block dependencies and components
 import edit from './edit';
+import Sidebar from '../../components/sidebar/Sidebar';
 
 export interface SidebarBlockAttributes {
     rowOffset?: number;
@@ -27,12 +28,9 @@ registerBlockType<SidebarBlockAttributes>('cv-blocks/cv-sidebar', {
     save({ attributes }) {
         const { rowOffset = 0 } = attributes;
         return (
-            <section
-                className="sidebar mytest"
-                style={{ ['--sidebar-row-start' as any]: rowOffset + 1 }}
-            >
+            <Sidebar rowOffset={rowOffset}>
                 <InnerBlocks.Content />
-            </section>
+            </Sidebar>
         );
     },
 });
