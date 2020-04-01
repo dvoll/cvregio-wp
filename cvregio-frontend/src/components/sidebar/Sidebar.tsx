@@ -12,7 +12,7 @@ class Sidebar extends React.Component<SidebarProps> {
         return (
             <section
                 className={`sidebar ${edit ? 'sidebar--edit' : ''} ${className}`}
-                style={{ ['--sidebar-row-start' as any]: rowOffset + 1 }}
+                style={{ ['--sidebar-row-start' as any]: `${rowOffset + 1}` }}
             >
                 {children}
             </section>
