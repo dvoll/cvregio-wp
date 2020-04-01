@@ -4190,13 +4190,10 @@ a {
       grid-template-columns: 1fr 600px 1fr 1fr;
       grid-template-columns: minmax(50px, 2fr) [main-start] minmax(50px, 180px) [content-start] minmax(500px, 700px) [content-end] minmax(50px, 180px) [main-end] minmax(50px, 3fr); } }
   @media only screen and (min-width: 1168px) {
-    .entry-content--with-sidebar,
     .cvgroups-template-default .entry-content,
     .page-template-homepage .entry-content,
     .page-template-single-withsidebar .entry-content,
-    .post-template-single-withsidebar .entry-content,
-    .page-container--with-sidebar,
-    .cvgroups-template-default
+    .post-template-single-withsidebar .entry-content, .cvgroups-template-default
     .page-container,
     .page-template-homepage
     .page-container,
@@ -4206,13 +4203,10 @@ a {
     .page-container {
       grid-template-columns: minmax(50px, 1fr) [main-start] minmax(50px, 180px) [content-start] minmax(500px, 700px) [content-end] minmax(50px, 180px) [main-end sidebar-start] 360px [sidebar-end] minmax(50px, 1fr); } }
   @media only screen and (min-width: 1379px) {
-    .entry-content--with-sidebar,
     .cvgroups-template-default .entry-content,
     .page-template-homepage .entry-content,
     .page-template-single-withsidebar .entry-content,
-    .post-template-single-withsidebar .entry-content,
-    .page-container--with-sidebar,
-    .cvgroups-template-default
+    .post-template-single-withsidebar .entry-content, .cvgroups-template-default
     .page-container,
     .page-template-homepage
     .page-container,
@@ -4223,13 +4217,10 @@ a {
       grid-template-columns: 1fr 600px 1fr 1fr;
       grid-template-columns: minmax(50px, 2fr) [main-start] minmax(50px, 180px) [content-start] minmax(500px, 700px) [content-end] minmax(50px, 180px) [main-end sidebar-start] 360px [sidebar-end] minmax(50px, 3fr); } }
   @media only screen and (min-width: 1168px) {
-    .entry-content--with-sidebar .sidebar,
     .cvgroups-template-default .entry-content .sidebar,
     .page-template-homepage .entry-content .sidebar,
     .page-template-single-withsidebar .entry-content .sidebar,
-    .post-template-single-withsidebar .entry-content .sidebar,
-    .page-container--with-sidebar .sidebar,
-    .cvgroups-template-default
+    .post-template-single-withsidebar .entry-content .sidebar, .cvgroups-template-default
     .page-container .sidebar,
     .page-template-homepage
     .page-container .sidebar,

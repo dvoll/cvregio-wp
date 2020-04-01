@@ -1012,3 +1012,268 @@ stage-slider {
   min-width: 300px; }
 
 
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
+.contact-details {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  font-size: 0.84656em;
+  font-weight: normal;
+  color: #838383;
+  line-height: 1;
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-start; }
+  .contact-details__item {
+    position: relative;
+    display: flex;
+    margin-bottom: 0.625rem; }
+    @media only screen and (min-width: 600px) {
+      .contact-details__item {
+        margin-bottom: 0.325rem; } }
+    .contact-details__item--link {
+      color: #838383; }
+    .contact-details__item--edit > * {
+      margin-right: 10px; }
+  .contact-details__icon {
+    flex: 1 0 auto;
+    margin-right: 0.325rem; }
+
+a.contact-details__item--link {
+  text-decoration: none; }
+  a.contact-details__item--link:visited {
+    color: #838383; }
+  a.contact-details__item--link:hover, a.contact-details__item--link:active {
+    color: #881717; }
+
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
+.associate-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 250px;
+  margin-bottom: 2.25rem; }
+  .associate-item__picture-placeholder, .associate-item__picture {
+    height: 5.5rem;
+    width: 5.5rem;
+    margin-bottom: 0.5rem;
+    background-color: #eee;
+    border-radius: 50%;
+    overflow: hidden; }
+  .associate-item__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center; }
+  .associate-item__name {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-style: normal;
+    font-size: 16px;
+    text-align: center;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .associate-item__roles {
+    font-size: 0.80808em;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #838383;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+    letter-spacing: -0.02em; }
+  .associate-item__role {
+    margin-bottom: 0.1rem; }
+
+.block-editor__container img.associate__img {
+  height: 100%; }
+
+.associate-template__picture-row {
+  display: flex;
+  align-items: center; }
+
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
+.associate-list {
+  overflow: hidden; }
+  .associate-list--full-width {
+    width: 100%; }
+  .associate-list__grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -0.5rem; }
+    .associate-list__grid > * {
+      padding: 0 0.5rem; }
+    .associate-list__grid > *.associate-item {
+      flex: 1 0 190px; }
+      .cvgroups-template-default .associate-list__grid > *.associate-item,
+      .page-template-homepage .associate-list__grid > *.associate-item,
+      .page-template-single-withsidebar .associate-list__grid > *.associate-item,
+      .post-template-single-withsidebar .associate-list__grid > *.associate-item {
+        flex-basis: 155px; }
+      .associate-list--slim-items .associate-list__grid > *.associate-item {
+        flex-basis: 155px; }
+      @media only screen and (min-width: 600px) {
+        .associate-list__grid > *.associate-item {
+          flex-basis: 205px; }
+          .cvgroups-template-default .associate-list__grid > *.associate-item,
+          .page-template-homepage .associate-list__grid > *.associate-item,
+          .page-template-single-withsidebar .associate-list__grid > *.associate-item,
+          .post-template-single-withsidebar .associate-list__grid > *.associate-item {
+            flex-basis: 155px; }
+          .associate-list--slim-items .associate-list__grid > *.associate-item {
+            flex-basis: 155px; } }
+
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
+.related-associates__contact-info {
+  margin-bottom: 4rem;
+  max-width: 600px; }
+
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
+.autocomplete {
+  position: relative; }
+  .autocomplete__input {
+    width: 100%; }
+
+.autocomplete__suggestions {
+  position: absolute;
+  margin: 0;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fbfbfb;
+  border: 1px solid #d6d6d6;
+  z-index: 1; }
+
+.autocomplete__suggestion {
+  padding: 4px 13px 4px 13px;
+  margin: 0;
+  cursor: pointer; }
+  .autocomplete__suggestion--active {
+    background: #e2e2e2; }
+  .autocomplete__suggestion:hover {
+    background: #dadada; }
+
+.autocomplete-hint {
+  opacity: 0;
+  min-height: 2rem;
+  margin-bottom: 0.5rem; }
+  .autocomplete-hint--visible {
+    opacity: 1; }
+
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
+.panel-list-item {
+  border: 1px solid #e2e2e2;
+  padding: 10px 13px 5px 13px; }
+  .panel-list-item__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; }
+  .panel-list-item:hover {
+    background: #f2f2f2; }
+  .panel-list-item__close {
+    padding: 4px;
+    cursor: pointer; }
+
+/*
+ * Chrome renders extra-wide &nbsp; characters for the Hoefler Text font.
+ * This results in a jumping cursor when typing in both the Classic and block
+ * editors. The following font-face override fixes the issue by manually inserting
+ * a custom font that includes just a Hoefler Text space replacement for that
+ * character instead.
+ */
+/* If we add the border using a regular CSS border, it won't look good on non-retina devices,
+ * since its edges can look jagged due to lack of antialiasing. In this case, we are several
+ * layers of box-shadow to add the border visually, which will render the border smoother. */
+/* Calculates maximum width for post content */
+/* Nested sub-menu padding: 10 levels deep */
+/* Ensure all font family declarations come with non-latin fallbacks */
+/* Build our non-latin font styles */
+.editor-styles-wrapper .related-associates__contact-info > p {
+  margin: 0; }
+
+.editor-styles-wrapper a.contact-details__item--link {
+  color: #838383; }
+
