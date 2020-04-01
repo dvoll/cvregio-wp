@@ -1,0 +1,21 @@
+@import '../../styles-global/main.scss';
+
+.panel-list-item {
+    border: 1px solid rgb(226, 226, 226);
+    padding: 10px 13px 5px 13px;
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &:hover {
+        background: darken(#fff, $amount: 5%);
+    }
+
+    &__close {
+        padding: 4px;
+        cursor: pointer;
+    }
+}

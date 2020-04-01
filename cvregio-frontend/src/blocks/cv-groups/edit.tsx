@@ -28,9 +28,7 @@ class GroupsEditBlock extends Component<GroupsEditBlockProps> {
                     />
                 </BlockControls>
                 <section
-                    className={`cv-blocks-dynamic-block-preview ${className} ${
-                        align ? ` align${align}` : ''
-                    }`}
+                    className={`cv-blocks-dynamic-block-preview ${className} ${align ? ` align${align}` : ''}`}
                     data-align="full"
                 >
                     <GroupGrid groups={groups} />
@@ -79,9 +77,7 @@ export default compose([
             // exclude: [select('core/editor').getCurrentPostId()],
         });
         const latestPosts =
-            (getEntityRecords('postType', 'cvgroups', latestPostsQuery) as Schema.BasePost<
-                'edit'
-            >[]) || [];
+            (getEntityRecords('postType', 'cvgroups', latestPostsQuery) as Schema.BasePost<'edit'>[]) || [];
 
         const groupGridItems: GroupGridItem[] = latestPosts.map(item => {
             let imgSrc: Schema.BaseMedia<'edit'> | undefined;

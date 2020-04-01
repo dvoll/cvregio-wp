@@ -1,11 +1,12 @@
 import * as React from 'react';
-import HomePage from './pages/HomePage';
-import GroupsPage from './pages/GroupsPage';
 import './common.d';
 import '../src/styles-global/main.scss';
 import '../src/styles/main.scss';
+import HomePage from './pages/HomePage';
+import GroupsPage from './pages/GroupsPage';
 import NewsPage from './pages/NewsPage';
 import GroupDetailPage from './pages/GroupDetailPage';
+import AssociatesPage from './pages/AssociatesPage';
 
 class App extends React.Component<{}, { location: Location }> {
     readonly state: { location: Location } = {
@@ -18,6 +19,7 @@ class App extends React.Component<{}, { location: Location }> {
         { path: '/news', component: NewsPage },
         { path: '/groups', component: GroupsPage },
         { path: '/group-detail', component: GroupDetailPage },
+        { path: '/associates', component: AssociatesPage },
     ];
 
     componentDidMount(): void {

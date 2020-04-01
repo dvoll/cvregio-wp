@@ -1,0 +1,13 @@
+@import '../../styles-global/main.scss';
+
+.editor-styles-wrapper {
+    .related-associates__contact-info {
+        > p {
+            margin: 0;
+        }
+    }
+
+    a.contact-details__item--link {
+        color: $color__accent-gray;
+    }
+}

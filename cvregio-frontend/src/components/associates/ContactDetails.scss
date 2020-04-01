@@ -1,0 +1,53 @@
+@import '../../styles-global/main.scss';
+
+.contact-details {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    font-size: $font__size-sm;
+    font-weight: normal;
+    color: $color__accent-gray;
+    line-height: 1;
+    font-family: $font__heading;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-items: flex-start;
+
+    &__item {
+        position: relative;
+        display: flex;
+        margin-bottom: 0.625rem;
+
+        @include media(mobile) {
+            margin-bottom: 0.325rem;
+        }
+
+        &--link {
+            color: $color__accent-gray;
+        }
+
+        &--edit {
+            > * {
+                margin-right: 10px;
+            }
+        }
+    }
+
+    &__icon {
+        flex: 1 0 auto;
+        margin-right: 0.325rem;
+    }
+}
+
+a.contact-details__item--link {
+    text-decoration: none;
+
+    &:visited {
+        color: $color__accent-gray;
+    }
+
+    &:hover,
+    &:active {
+        color: $color__link-hover;
+    }
+}

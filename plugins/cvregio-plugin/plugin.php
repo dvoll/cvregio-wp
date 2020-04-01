@@ -27,36 +27,19 @@ function cv_blocks_loader()
 	 */
 	require_once plugin_dir_path(__FILE__) . 'init.php';
 
-	require_once plugin_dir_path(__FILE__) . 'src/partials/index.php';
 	/**
-	 * Load Getting Started page
+	 * Load partials
 	 */
-	// require_once plugin_dir_path( __FILE__ ) . 'dist/getting-started/getting-started.php';
+	require_once plugin_dir_path(__FILE__) . 'partials/index.php';
 
 	/**
-	 * Load Social Block PHP
+	 * Load blocks
 	 */
-	// require_once plugin_dir_path( __FILE__ ) . 'src/blocks/block-sharing/index.php';
-
-	/**
-	 * Load Groups Block PHP
-	 */
-	require_once plugin_dir_path(__FILE__) . 'src/groups/index.php';
-
-	/**
-	 * Load News Block PHP
-	 */
-	require_once plugin_dir_path(__FILE__) . 'src/news/index.php';
-
-	/**
-	 * Load 
-	 */
-	require_once plugin_dir_path(__FILE__) . 'src/cv-stage/index.php';
-
-	/**
-	 * Load Post Grid PHP
-	 */
-	require_once plugin_dir_path(__FILE__) . 'src/groups/BlockGroupSummery.php';
+	require_once plugin_dir_path(__FILE__) . 'blocks/groups/index.php';
+	require_once plugin_dir_path(__FILE__) . 'blocks/news/index.php';
+	require_once plugin_dir_path(__FILE__) . 'blocks/cv-stage/index.php';
+	require_once plugin_dir_path(__FILE__) . 'blocks/groups/BlockGroupSummery.php';
+	require_once plugin_dir_path(__FILE__) . 'blocks/associates/related-associates.php';
 }
 add_action('plugins_loaded', 'cv_blocks_loader');
 
@@ -71,12 +54,7 @@ add_action('plugins_loaded', 'cv_blocks_loader');
 // add_action( 'init', 'cv_blocks_init' );
 
 // function cv_blocks_frontend_loader()
-// { // phpcs:ignore
-// 	// Dependency to include the CSS after it. TODO: check if should be added.
-
-// 	// wp_register_script('cv-frontend-components', plugins_url( 'frontend/dist/js', dirname( __FILE__ )), array(), '1.0', true );  
-// 	// wp_enqueue_script('cv-frontend-components');  
-// 	require_once plugin_dir_path(__FILE__) . './cv-frontend/frontend-include.php';
+// { 
 // }
 
 // // Hook: Frontend assets.
@@ -100,29 +78,7 @@ function cv_blocks_groups_custom_post_type()
 			'supports' => array('title', 'editor', 'excerpt', 'page-attributes', 'author', 'custom-fields', 'thumbnail'),
 			'template' => array(
 				array('cv-blocks/cv-group-detail')
-				// array( 'core/image', array(
-				// 	'align' => 'left',
-				// ) ),
-				// array( 'core/heading', array(
-				// 	'placeholder' => 'Add Author...',
-				// ) ),
-				// array( 'core/columns', array(), array(
-				// 	array( 'core/column', array(), array() ),
-				// 	array( 'core/column', array(), array(
-				// 		array( 'core/paragraph', array(
-				// 			'placeholder' => 'Add a inner paragraph'
-				// 		) ),
-				// 	) ),
-				// ) )
 			),
-			// 'template_lock' => 'all',
-			//    'supports' => array(
-			// 	   'title',
-			// 	   'excerpt',
-			// 	   'editor',
-			// 	   'page-attributes',
-			// 	   'author',
-			//    )
 		)
 	);
 }
@@ -155,8 +111,9 @@ function custom_cvgroup_column($column, $post_id)
 add_action('manage_cvgroups_posts_custom_column', 'custom_cvgroup_column', 10, 2);
 
 
-function cv_group_block_init()
+function cvregio_register_meta()
 {
+	//groups
 	register_post_meta('cvgroups', 'cv_blocks_meta_group_location', array(
 		'show_in_rest' => true,
 		'single' => true,
@@ -172,8 +129,43 @@ function cv_group_block_init()
 		'single' => true,
 		'type' => 'string',
 	));
+	register_post_meta('cvgroups', 'cvregio_meta_associates', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+	register_post_meta('cvgroups', 'cvregio_meta_contact_items', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+
+	// associates
+	register_post_meta('cvassociates', 'cvregio_meta_associate_firstname', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+	register_post_meta('cvassociates', 'cvregio_meta_associate_lastname', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+	register_post_meta('cvassociates', 'cvregio_meta_associate_imageid', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
+	register_post_meta('cvassociates', 'cvregio_meta_contact_items', array(
+		'show_in_rest' => true,
+		'single' => true,
+		'type' => 'string',
+	));
 }
-add_action('init', 'cv_group_block_init');
+add_action('init', 'cvregio_register_meta');
+
+
+
 
 /**
  * Add image sizes
@@ -186,3 +178,143 @@ function cv_blocks_image_sizes()
 }
 add_action('after_setup_theme', 'cv_blocks_image_sizes');
 
+
+
+
+// associate
+
+function cvregio_blocks_register_associate_post_type()
+{
+	register_post_type(
+		'cvassociates',
+		array(
+			'labels'      => array(
+				'name'          => __('Mitarbeiter'),
+				// 'singular_name' => __('Angebot'),
+			),
+			'menu_icon' => 'dashicons-welcome-widgets-menus',
+			'public'      => true,
+			'has_archive' => true,
+			'hierarchical' => false,
+			'rewrite'     => array('slug' => 'mitarbeiter'),
+			'show_in_rest' => true,
+			'supports' => array('editor', 'excerpt', 'page-attributes', 'author', 'custom-fields'),
+			'template' => array(
+				array('cv-blocks/cv-associate-template')
+			),
+			'template_lock' => 'all',
+		)
+	);
+}
+add_action('init', 'cvregio_blocks_register_associate_post_type');
+
+
+// Add the custom columns to the book post type:
+function cvregio_associates_set_custom_columns($columns)
+{
+	$author = $columns['author'];
+	$date = $columns['date'];
+	unset( $columns['author'] );
+	unset( $columns['date'] );
+
+	$columns['title'] = 'ID';
+	$columns['lastname'] = 'Nachname';
+	$columns['firstname'] = 'Vorname';
+	$columns['author'] = $author;
+	$columns['date'] = $date;
+
+	return $columns;
+}
+add_filter('manage_cvassociates_posts_columns', 'cvregio_associates_set_custom_columns');
+
+function cvregio_associates_set_custom_columns_content($column, $post_id)
+{
+	switch ($column) {
+		case 'lastname':
+			echo '<strong>'. get_post_meta($post_id, 'cvregio_meta_associate_lastname', true) . '</strong>';
+			break;
+		case 'firstname':
+			echo '<strong>'. get_post_meta($post_id, 'cvregio_meta_associate_firstname', true) . '</strong>';
+			break;
+	}
+}
+// Add the data to the custom columns for the book post type:
+add_action('manage_cvassociates_posts_custom_column', 'cvregio_associates_set_custom_columns_content', 10, 2);
+
+
+// function cvregio_associates_template_init()
+// {
+// 	register_post_meta('cvassociates', 'cvregio_meta_associate_firstname', array(
+// 		'show_in_rest' => true,
+// 		'single' => true,
+// 		'type' => 'string',
+// 	));
+// 	register_post_meta('cvassociates', 'cvregio_meta_associate_lastname', array(
+// 		'show_in_rest' => true,
+// 		'single' => true,
+// 		'type' => 'string',
+// 	));
+// 	register_post_meta('cvassociates', 'cvregio_meta_associate_imageid', array(
+// 		'show_in_rest' => true,
+// 		'single' => true,
+// 		'type' => 'string',
+// 	));
+// 	register_post_meta('cvassociates', 'cvregio_meta_associate_contact_items', array(
+// 		'show_in_rest' => true,
+// 		'single' => true,
+// 		'type' => 'string',
+// 	));
+// }
+// add_action('init', 'cvregio_associates_template_init');
+
+function cvregio_associates_save_action($post_id) {
+    // If this is a revision, get real post ID
+    if ( $parent_id = wp_is_post_revision( $post_id ) ) 
+		$post_id = $parent_id;
+
+	$post = get_post($post_id);
+		
+	// Check if this post is in default category
+	if ( get_post_type($post) === 'cvassociates' ) {
+        // unhook this function so it doesn't loop infinitely
+        remove_action( 'save_post_cvassociates', 'cvregio_associates_save_action' );
+ 
+        // update the post, which calls save_post again
+        wp_update_post( array( 'ID' => $post_id, 'post_title' =>  $post_id) );
+ 
+        // re-hook this function
+        add_action( 'save_post_cvassociates', 'cvregio_associates_save_action' );
+    }
+}
+add_action( 'save_post_cvassociates', 'cvregio_associates_save_action' );
+
+function cvregio_associates_sortable_columns( $columns ) {
+	$columns['firstname'] = 'firstname';
+	$columns['lastname'] = 'lastname';
+	return $columns;
+}
+add_filter( 'manage_edit-cvassociates_sortable_columns', 'cvregio_associates_sortable_columns');
+
+function cvregio_associates_posts_orderby( $query ) {
+	if( ! is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+	
+	if ( 'lastname' === $query->get( 'orderby') ) {
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'meta_key', 'cvregio_meta_associate_lastname' );
+		// $query->set( 'meta_type', 'numeric' );
+	}
+	if ( 'firstname' === $query->get( 'orderby') ) {
+		$query->set( 'orderby', 'meta_value' );
+		$query->set( 'meta_key', 'cvregio_meta_associate_firstname' );
+	}
+}
+add_action( 'pre_get_posts', 'cvregio_associates_posts_orderby' );
+
+
+function add_sprite_to_body() {
+	include plugin_dir_path(__FILE__) . 'svg-sprite.html';
+}
+
+add_action( 'in_admin_header', 'add_sprite_to_body');
