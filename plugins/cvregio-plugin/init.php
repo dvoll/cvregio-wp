@@ -77,7 +77,7 @@ function cv_blocks_init_styles()
 		'cv-regio-css-common',
 		content_url() . '/plugins/cvregio-plugin/cvregio-frontend-dist/commons~plugin~theme.css',
 		[],
-		$frontend_asset_file['version']
+		$frontend_asset_file['version'],
 	);
 	wp_enqueue_style('cv-regio-css-common');
 
@@ -90,4 +90,5 @@ function cv_blocks_init_styles()
 	wp_enqueue_style('cv-regio-plugin-css');
 }
 
-add_action('enqueue_block_assets', 'cv_blocks_init_styles');
+add_action('wp_enqueue_scripts', 'cv_blocks_init_styles', 11);
+add_action('enqueue_block_editor_assets', 'cv_blocks_init_styles', 11);

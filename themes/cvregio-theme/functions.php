@@ -235,7 +235,8 @@ function twentynineteen_scripts()
 	wp_register_style(
 		'cv-regio-theme-css',
 		content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/theme.css',
-		['cv-regio-css-common'],
+		[],
+		// ['cv-regio-css-common'],
 		$asset_file['version']
 	);
 	wp_enqueue_style('cv-regio-theme-css');
