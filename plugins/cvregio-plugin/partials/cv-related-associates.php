@@ -15,15 +15,15 @@ function cv_related_associates($parameter = array())
     ob_start();
     ?>
 
-    <h2><? echo $headline ?></h2>
+    <h2><?php echo $headline ?></h2>
     <div class="related-associates">
         <div class="related-associates__contacts">
             <div class="associate-list">
                 <div class="associate-list__grid">
-                    <? echo $contactAssociates ?>
+                    <?php echo $contactAssociates ?>
                     <div class="related-associates__contact-info">
-                        <p><? echo $description ?></p>
-                        <? echo $contactDetails ?>
+                        <p><?php echo $description ?></p>
+                        <?php echo $contactDetails ?>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,7 @@ function cv_related_associates($parameter = array())
         <div class="related-associates__list">
             <div class="associate-list">
                 <div class="associate-list__grid">
-                    <? echo $associates ?>
+                    <?php echo $associates ?>
                 </div>
             </div>
         </div>

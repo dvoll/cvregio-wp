@@ -17,27 +17,27 @@ function cv_associate($parameter = array())
     ?>
 
     <div class="associate-item">
-        <? if ($showImage): ?>
-            <? if ($imgId): ?>
+        <?php if ($showImage): ?>
+            <?php if ($imgId): ?>
                 <picture class="associate-item__picture">
-                    <? echo wp_get_attachment_image($imgId, 'thumbnail', false, [ 'class' => 'associate-item__img', 'alt' => "Profilbild von " . $name]); ?>
+                    <?php echo wp_get_attachment_image($imgId, 'thumbnail', false, [ 'class' => 'associate-item__img', 'alt' => "Profilbild von " . $name]); ?>
                 </picture>
-            <? else : ?>
+            <?php else : ?>
                 <div class="associate-item__picture-placeholder" > </div>
-            <? endif; ?>
-        <? endif; ?>
-        <span class="associate-item__name"><? echo $name ?></span>
-        <? if (count($roles) > 0): ?>
+            <?php endif; ?>
+        <?php endif; ?>
+        <span class="associate-item__name"><?php echo $name ?></span>
+        <?php if (count($roles) > 0): ?>
             <div class="associate-item__roles">
-            <? foreach ($roles as $index => $role): ?>
+            <?php foreach ($roles as $index => $role): ?>
                 <div class="associate-item__role">
-                    <? echo $role->label ?>
-                    <? echo $index < count($roles) - 1 ? ',' : '' ?>
+                    <?php echo $role->label ?>
+                    <?php echo $index < count($roles) - 1 ? ',' : '' ?>
                 </div>
-            <? endforeach; ?>
+            <?php endforeach; ?>
             </div>
-        <? endif; ?>
-        <? 
+        <?php endif; ?>
+        <?php 
             if (count($contactItems) > 0) {
                 cv_contact_details($contactItems);
             }
