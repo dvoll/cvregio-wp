@@ -33,11 +33,7 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/,
-                loaders: [
-                    'style-loader',
-                    { loader: 'css-loader', options: { importLoaders: 1 } },
-                    'sass-loader',
-                ],
+                loaders: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'sass-loader'],
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
