@@ -91,7 +91,6 @@ class NewsEditBlock extends Component<NewsEditBlockProps, NewsEditBlockState> {
                         />
                     </PanelBody>
                 </InspectorControls>
-                {/* TODO Add alignment attribute value */}
                 <section
                     className={`${props.className} ${
                         layoutType === 'row' ? 'alignwide alignwide--no-padding' : 'alignfull'
