@@ -1,5 +1,5 @@
 import * as React from 'react';
-import PageLayout from '../../src/layouts/PageLayout';
+import PageLayout from '../layouts/PageLayout';
 import Header from '../components/DevHeader';
 import DevGroupSummery from '../components/DevGroupSummery';
 
