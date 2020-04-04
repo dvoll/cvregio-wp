@@ -4,6 +4,7 @@
   "description": "",
   "main": "src/index.js",
   "scripts": {
+    "start": "wp-scripts start src/index-plugin.ts",
     "clean-components": "rimraf lib",
     "clean-build": "npm run clean-components && npm run compile",
     "build-only": "npm run compile-types && npm run compile",
@@ -67,7 +68,7 @@
     "@types/wordpress__url": "^2.3.0",
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
-    "@wordpress/dependency-extraction-webpack-plugin": "^2.1.0",
+    "@wordpress/dependency-extraction-webpack-plugin": "^2.4.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
