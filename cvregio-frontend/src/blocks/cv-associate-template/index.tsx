@@ -20,6 +20,9 @@ registerBlockType<AssociateTemplateAttributes>('cv-blocks/cv-associate-template'
     icon: 'align-left',
     category: 'common',
     keywords: ['Mitarbeiter', 'Kontakt'],
+    supports: {
+        inserter: false,
+    },
 
     attributes: {
         firstname: {

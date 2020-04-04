@@ -11,11 +11,11 @@ export interface RelatedAssociatesAttributes {
 
 // Register the block
 registerBlockType<RelatedAssociatesAttributes>('cv-blocks/cv-related-associates', {
-    title: 'CV Gruppen Mitarbeiter',
+    title: 'Kontakt mit Mitarbeitern',
     description: 'Verbinde Mitarbeiter mit einer Gruppe.',
     icon: 'align-left',
-    category: 'common',
-    keywords: ['Mitarbeiter', 'Gruppe'],
+    category: 'cvregio-content',
+    keywords: ['Mitarbeiter', 'Gruppe', 'Kontakt'],
 
     attributes: {
         headline: {

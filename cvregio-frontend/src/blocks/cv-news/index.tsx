@@ -11,17 +11,14 @@ export interface NewsBlockAttributes {
 }
 
 // Register alignments
-const validAlignments: Array<'wide' | 'full' | 'center' | 'left' | 'right' | undefined> = [
-    'full',
-    'wide',
-];
+const validAlignments: Array<'wide' | 'full' | 'center' | 'left' | 'right' | undefined> = ['full', 'wide'];
 
 // Register the block
 registerBlockType<NewsBlockAttributes>('cv-blocks/cv-news', {
-    title: 'Beitragsübersicht',
+    title: 'Beitrags-übersicht',
     description: 'Auflistung von News/Beiträgen.',
     icon: 'screenoptions',
-    category: 'common',
+    category: 'cvregio-content',
     keywords: ['Übersicht', 'Beitrag', 'Beiträge', 'News', 'Neuigkeiten'],
 
     attributes: {

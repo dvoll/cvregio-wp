@@ -19,6 +19,9 @@ registerBlockType<GroupSummeryAttributes>('cv-blocks/cv-group-detail', {
     icon: 'align-left',
     category: 'common',
     keywords: ['Angebot', 'Gruppe', 'Detail'],
+    supports: {
+        inserter: false,
+    },
 
     attributes: {
         target: {

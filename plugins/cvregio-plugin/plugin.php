@@ -318,3 +318,19 @@ function add_sprite_to_body() {
 }
 
 add_action( 'in_admin_header', 'add_sprite_to_body');
+
+
+// custom block category
+function cvregio_block_categories( $categories, $post ) {
+    return array_merge(
+        $categories,
+        array(
+            array(
+                'slug' => 'cvregio-content',
+                'icon'  => 'wordpress',
+                'title' => 'CV Regio Inhalt',
+            ),
+        )
+    );
+}
+add_filter( 'block_categories', 'cvregio_block_categories', 10, 2 );
