@@ -11,7 +11,8 @@
     "compile": "rimraf lib & npm run compile-types && npm run compile-js",
     "compile-js": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline --copy-files --ignore node_modules,**/*.d.ts",
     "compile-js:watch": "babel src --out-dir lib --extensions \".ts,.tsx\" --source-maps inline --watch --copy-files --ignore node_modules,**/*.d.ts",
-    "build": "webpack --config ./config/webpack.config.js && node wordpress-import.js",
+    "build": "webpack --mode=production --config ./config/webpack.config.js && node wordpress-import.js",
+    "build:dev": "webpack --mode=development --config ./config/webpack.config.js && node wordpress-import.js",
     "serve:app": "webpack-dev-server --mode development --config ./config/webpack.config.app.js --host 0.0.0.0"
   },
   "author": "dvoll",

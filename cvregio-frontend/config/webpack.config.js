@@ -8,7 +8,6 @@ module.exports = {
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
-    mode: 'development',
     //   context: resolve(__dirname, '../src'),
     entry: {
         plugin: './src/index-plugin',
