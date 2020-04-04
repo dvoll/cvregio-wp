@@ -66,6 +66,11 @@ body {
 			&.wp-block[data-align="wide"],
 			&.alignwide {
 				grid-column: main-start / main-end;
+
+				@include media(mobile) {
+					padding-right: 50px;
+					padding-left: 50px;
+				}
 	
 				&--no-padding {
 					padding-right: 0;
