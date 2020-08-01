@@ -1,4 +1,5 @@
 import React from 'react';
+import Footer from '../components/footer/footer';
 
 export interface PageLayoutProps {
     header: React.ReactNode;
@@ -33,41 +34,7 @@ const PageLayout: React.FC<PageLayoutProps> = ({ header, content, templateClassN
                         </section>
                     </div>
 
-                    <footer id="colophon" className="site-footer">
-                        <aside className="widget-area" aria-label="Footer">
-                            <div className="widget-column footer-widget-1">
-                                <section id="search-4" className="widget widget_search">
-                                    <form role="search" method="get" className="search-form" action="/">
-                                        <label htmlFor="footer-search">
-                                            <span className="screen-reader-text">Suche nach:</span>
-                                            <input
-                                                type="search"
-                                                className="search-field"
-                                                placeholder="Suche&#160;&hellip;"
-                                                name="s"
-                                            />
-                                        </label>
-                                        <input
-                                            name="footer-search"
-                                            type="submit"
-                                            className="search-submit"
-                                            value="Suche"
-                                        />
-                                    </form>
-                                </section>
-                            </div>
-                        </aside>
-
-                        <div className="site-info">
-                            <a className="site-name" href="http://0.0.0.0:8000/" rel="home">
-                                CVJM Hagekirchstift e.V.
-                            </a>
-                            ,
-                            <a href="https://de.wordpress.org/" className="imprint">
-                                Stolz präsentiert von WordPress.
-                            </a>
-                        </div>
-                    </footer>
+                    <Footer />
                 </div>
             </div>
         </React.Fragment>
