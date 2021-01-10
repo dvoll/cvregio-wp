@@ -696,7 +696,7 @@ body .block-editor-block-list__layout.is-root-container {
 @media only screen and (min-width: 1168px) {
   body .edit-post-visual-editor__post-title-wrapper,
   body .block-editor-block-list__layout.is-root-container {
-    grid-template-columns: minmax(50px, 1fr) [main-start] minmax(50px, 180px) [content-start] minmax(530px, 730px) [content-end] minmax(50px, 180px) [main-end] minmax(50px, 1fr);
+    grid-template-columns: minmax(50px, 1fr) [main-start] minmax(50px, 180px) [content-start] minmax(530px, 700px) [content-end] minmax(50px, 180px) [main-end] minmax(50px, 1fr);
   }
 }
 
@@ -704,7 +704,7 @@ body .block-editor-block-list__layout.is-root-container {
   body .edit-post-visual-editor__post-title-wrapper,
   body .block-editor-block-list__layout.is-root-container {
     grid-template-columns: 1fr 600px 1fr 1fr;
-    grid-template-columns: minmax(50px, 2fr) [main-start] minmax(50px, 180px) [content-start] minmax(530px, 730px) [content-end] minmax(50px, 180px) [main-end] minmax(50px, 3fr);
+    grid-template-columns: minmax(50px, 2fr) [main-start] minmax(50px, 180px) [content-start] minmax(530px, 700px) [content-end] minmax(50px, 180px) [main-end] minmax(50px, 3fr);
   }
 }
 
