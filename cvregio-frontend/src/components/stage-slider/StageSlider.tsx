@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Swiper, { SwiperOptions } from 'swiper';
+import Swiper, { EffectFade, Navigation, Pagination, Parallax, SwiperOptions } from 'swiper';
 // import * as Swiper from 'swiper/dist/js/swiper.js'
 // import 'swiper/dist/css/swiper.css';
 // import { Swiper, Parallax, Pagination, Navigation, EffectFade } from 'swiper/dist/js/swiper.esm';
 import Icon, { IconTypes } from '../base/Icon';
-import './swiper.scss';
+import 'swiper/swiper-bundle.css';
 import './StageSlider.scss';
 
 export interface StageItem {
@@ -18,6 +18,8 @@ export interface StageSliderProps {
 export interface StageSliderState {
     swiperOptions: SwiperOptions;
 }
+
+Swiper.use([Parallax, Pagination, Navigation, EffectFade]);
 
 class StageSlider extends React.Component<StageSliderProps, StageSliderState> {
     readonly state: StageSliderState = {
@@ -38,15 +40,12 @@ class StageSlider extends React.Component<StageSliderProps, StageSliderState> {
     readonly swiperRef: React.RefObject<HTMLDivElement> = React.createRef();
 
     componentDidMount() {
-        const mySwiper = new Swiper(
-            this.swiperRef.current as HTMLElement,
-            this.state.swiperOptions
-        );
+        const mySwiper = new Swiper(this.swiperRef.current as HTMLElement, this.state.swiperOptions);
     }
 
     public render() {
         const { items } = this.props;
-        const slides = items.map(item => (
+        const slides = items.map((item) => (
             <div
                 className="swiper-slide cv-stage__item cv-stage-card"
                 key={`swiper-item-${item.id}`}
