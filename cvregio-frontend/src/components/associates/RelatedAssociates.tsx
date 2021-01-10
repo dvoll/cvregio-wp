@@ -69,8 +69,21 @@ class RelatedAssociates extends React.Component<RelatedAssociatesProps> {
                     <div className="related-associates__contacts">
                         <AssociateList associates={contactAssociates} itemIsPreview={edit} fullWidth={false}>
                             <div className="related-associates__contact-info">
-                                {edit && <RichText tagName="p" value={description} onChange={onDescriptionChange} />}
-                                {!edit && <RichText.Content tagName="p" value={description || ''} />}
+                                {edit && (
+                                    <RichText
+                                        tagName="span"
+                                        value={description}
+                                        className="related-associates__contact-info-description"
+                                        onChange={onDescriptionChange}
+                                    />
+                                )}
+                                {!edit && (
+                                    <RichText.Content
+                                        tagName="span"
+                                        className="related-associates__contact-info-description"
+                                        value={description || ''}
+                                    />
+                                )}
                                 <ContactDetails
                                     items={contactItems}
                                     edit={edit}

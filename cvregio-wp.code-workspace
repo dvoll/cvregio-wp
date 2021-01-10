@@ -8,6 +8,10 @@
 		},
 		{
 			"path": "cvregio-frontend"
+		},
+		{
+			"path": ".",
+			"name": ".workspace",
 		}
 	],
 	"settings": {

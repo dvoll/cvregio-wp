@@ -20,9 +20,9 @@ const mapping = [
         targetPath: '/plugins/cvregio-plugin/',
         distFolder: 'cvregio-frontend-dist',
         files: [
-            { type: 'js', name: 'commons~plugin~theme' },
+            { type: 'js', name: '714' },
             { type: 'js', name: 'plugin' },
-            { type: 'css', name: 'commons~plugin~theme' },
+            { type: 'css', name: '714' },
             { type: 'css', name: 'plugin' },
             { type: 'php', name: 'plugin' },
         ],
@@ -32,9 +32,9 @@ const mapping = [
         targetPath: '/themes/cvregio-theme/',
         distFolder: 'cvregio-frontend-dist',
         files: [
-            { type: 'js', name: 'commons~plugin~theme' },
+            { type: 'js', name: '714' },
             { type: 'js', name: 'theme' },
-            { type: 'css', name: 'commons~plugin~theme' },
+            { type: 'css', name: '714' },
             { type: 'css', name: 'theme' },
             { type: 'php', name: 'theme' },
         ],

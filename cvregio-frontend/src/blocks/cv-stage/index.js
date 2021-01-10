@@ -16,10 +16,10 @@ import './editor.scss';
 
 // Register the block
 registerBlockType('cv-blocks/cv-stage', {
-    title: 'CV Landingpage Stage',
-    description: 'Ein Header Image Slider für die Landingpage.',
-    icon: 'format-image',
-    category: 'common',
+    title: 'Bühne (Slider)',
+    description: 'Ein Slider für die Landingpage.',
+    icon: 'format-gallery',
+    category: 'cvregio-content',
     keywords: ['Intro', 'Header', 'Slider'],
     attributes: [],
 

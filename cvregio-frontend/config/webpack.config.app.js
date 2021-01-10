@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { resolve } = require('path');
 
@@ -33,11 +34,11 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/,
-                loaders: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'sass-loader'],
+                use: ['style-loader', { loader: 'css-loader', options: { importLoaders: 1 } }, 'sass-loader'],
             },
             {
                 test: /\.(jpe?g|png|gif|svg)$/i,
-                loaders: [
+                use: [
                     'file-loader?hash=sha512&digest=hex&name=img/[hash].[ext]',
                     // 'image-webpack-loader?bypassOnDebug&optipng.optimizationLevel=7&gifsicle.interlaced=false',
                 ],
@@ -52,5 +53,8 @@ module.exports = {
         // new CheckerPlugin(),
         // new DependencyExtractionWebpackPlugin(),
         new HtmlWebpackPlugin({ template: 'app/index.html' }),
+        new webpack.DefinePlugin({
+            'process.env.FORCE_REDUCED_MOTION': JSON.stringify('false'),
+        }),
     ],
 };

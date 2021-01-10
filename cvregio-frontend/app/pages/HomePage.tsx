@@ -1,8 +1,6 @@
 import * as React from 'react';
 import '../../src/components/cetest/CetestElement';
-import MyComponent from '../../src/components/MyComponent';
-import MyWpComponent from '../../src/components/MyWpComponent';
-import PageLayout from '../../src/layouts/PageLayout';
+import PageLayout from '../layouts/PageLayout';
 import DevHeader from '../components/DevHeader';
 import DevStage from '../components/DevStage';
 import DevNewsRow from '../components/DevNewsRow';
@@ -15,10 +13,7 @@ class HomePage extends React.Component {
                 header={<DevHeader />}
                 content={
                     <React.Fragment>
-                        <article
-                            id="post-78"
-                            className="post-78 page type-page status-publish hentry entry"
-                        >
+                        <article id="post-78" className="post-78 page type-page status-publish hentry entry">
                             <div className="entry-content entry-content--starting-top">
                                 <DevStage />
                                 <h1>
@@ -26,25 +21,21 @@ class HomePage extends React.Component {
                                     CVJM Stift Quernheim e.V.
                                 </h1>
                                 <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                    justo duo dolores et ea rebum.
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+                                    eos et accusam et justo duo dolores et ea rebum.
                                 </p>
                                 <h2>Neuigkeiten</h2>
                                 <DevNewsRow />
                                 {/* <cv-sidebar data-row-start="6" /> */}
                                 <p>
-                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed
-                                    diam nonumy eirmod tempor invidunt ut labore et dolore magna
-                                    aliquyam erat, sed diam voluptua. At vero eos et accusam et
-                                    justo duo dolores et ea rebum.
+                                    Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+                                    tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero
+                                    eos et accusam et justo duo dolores et ea rebum.
                                 </p>
                                 <collapsible-panel name="asd" />
                             </div>
                         </article>
-                        <MyComponent />
-                        <MyWpComponent />
                     </React.Fragment>
                 }
             />

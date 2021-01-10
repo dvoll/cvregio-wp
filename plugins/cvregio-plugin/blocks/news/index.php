@@ -193,6 +193,8 @@ function cvblocks_render_block_news_overview($attributes)
             'singleRow' => $singleRow
         ));
 
+        $post_grid_markup = '<div class="cv-news">' . $post_grid_markup . '</div>';
+
         $alignClass = 'alignwide alignwide--no-padding';
         if (isset($attributes['align']) && $attributes['align'] === 'full') {
             $alignClass = 'alignfull';

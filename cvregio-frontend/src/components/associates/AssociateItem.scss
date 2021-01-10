@@ -37,15 +37,14 @@
     }
 
     &__roles {
-        font-size: $font__size-xs;
+        font-size: 11px;
         font-weight: normal;
         text-transform: uppercase;
-        color: $color__accent-gray;
+        color: $color__accent-gray-light;
         line-height: 1;
         margin-bottom: 0.5rem;
         text-align: center;
         font-family: $font__heading;
-        letter-spacing: -0.02em;
     }
 
     &__role {

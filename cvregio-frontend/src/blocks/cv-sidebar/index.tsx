@@ -14,7 +14,7 @@ registerBlockType<SidebarBlockAttributes>('cv-blocks/cv-sidebar', {
     title: 'Sidebar Container',
     description: 'Ein Container, um Elemente neben dem Hauptinhalt anzuzeigen.',
     icon: 'welcome-widgets-menus',
-    category: 'common',
+    category: 'layout',
     keywords: ['Sidebar'],
     attributes: {
         rowOffset: {

@@ -6,6 +6,8 @@ import { SidebarBlockAttributes } from '.';
 import { GroupGridItem } from '../../components/groups/GroupGrid';
 import Sidebar from '../../components/sidebar/Sidebar';
 
+import './editor.scss';
+
 interface SidebarEditBlockProps extends BlockEditProps<SidebarBlockAttributes> {
     groups?: GroupGridItem[] | null;
 }

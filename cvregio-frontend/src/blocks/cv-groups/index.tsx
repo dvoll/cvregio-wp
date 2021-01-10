@@ -9,10 +9,10 @@ const validAlignments = ['full', 'wide'];
 
 // Register the block
 registerBlockType<GroupsBlockAttributes>('cv-blocks/cv-groups', {
-    title: 'CV Gruppenübersicht',
+    title: 'Gruppen-übersicht',
     description: 'Übersicht über alle Gruppen/Angebote.',
     icon: 'screenoptions',
-    category: 'common',
+    category: 'cvregio-content',
     keywords: ['Übersicht', 'Gruppe', 'Angebot'],
     attributes: {
         align: {

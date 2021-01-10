@@ -1,6 +1,6 @@
 import { Component, Fragment } from '@wordpress/element';
 import { Toolbar, QueryControls, PanelBody, ToolbarButton } from '@wordpress/components';
-import { InspectorControls, BlockAlignmentToolbar, BlockControls } from '@wordpress/editor';
+import { InspectorControls, BlockAlignmentToolbar, BlockControls } from '@wordpress/block-editor';
 import { addQueryArgs } from '@wordpress/url';
 import { withSelect } from '@wordpress/data';
 import { compose } from '@wordpress/compose';
@@ -91,8 +91,11 @@ class NewsEditBlock extends Component<NewsEditBlockProps, NewsEditBlockState> {
                         />
                     </PanelBody>
                 </InspectorControls>
-                {/* TODO Add alignment attribute value */}
-                <section className={`${props.className} alignwide cv-blocks-dynamic-block-preview`}>
+                <section
+                    className={`${props.className} ${
+                        layoutType === 'row' ? 'alignwide alignwide--no-padding' : 'alignfull'
+                    } cv-blocks-dynamic-block-preview`}
+                >
                     <News items={newsItems} singleRow={layoutType === 'row'} />
                 </section>
             </Fragment>
@@ -149,11 +152,9 @@ export default compose([
         });
 
         const latestPosts =
-            (getEntityRecords(
-                'postType',
-                props.attributes.postType || 'post',
-                latestPostsQuery
-            ) as Schema.BasePost<'edit'>[]) || [];
+            (getEntityRecords('postType', props.attributes.postType || 'post', latestPostsQuery) as Schema.BasePost<
+                'edit'
+            >[]) || [];
 
         const newsItems: NewsItem[] = latestPosts.map(item => {
             let imgSrc: Schema.BaseMedia<'edit'> | undefined;
