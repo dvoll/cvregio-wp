@@ -22,7 +22,7 @@ function cv_related_associates($parameter = array())
                 <div class="associate-list__grid">
                     <?php echo $contactAssociates ?>
                     <div class="related-associates__contact-info">
-                        <p><?php echo $description ?></p>
+                        <span class="related-associates__contact-info-description"><?php echo $description ?></span>
                         <?php echo $contactDetails ?>
                     </div>
                 </div>

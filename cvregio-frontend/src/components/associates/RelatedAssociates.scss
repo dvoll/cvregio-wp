@@ -1,8 +1,13 @@
 @import '../../styles-global/main.scss';
 
 .related-associates {
+    margin-bottom: 2rem;
     &__contact-info {
-        margin-bottom: 4rem;
+        margin-bottom: 2rem;
         max-width: 600px;
+    }
+    &__contact-info-description {
+        display: block;
+        margin-bottom: 0.5rem;
     }
 }

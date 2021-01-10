@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './style.scss';
 
 export interface SidebarProps {
     rowOffset?: number;
@@ -11,7 +12,7 @@ class Sidebar extends React.Component<SidebarProps> {
         const { children, rowOffset = 0, className = '', edit = false } = this.props;
         return (
             <section
-                className={`sidebar ${edit ? 'sidebar--edit' : ''} ${className}`}
+                className={`cv-sidebar sidebar ${edit ? 'sidebar--edit' : ''} ${className}`}
                 style={{ ['--sidebar-row-start' as any]: `${rowOffset + 1}` }}
             >
                 {children}

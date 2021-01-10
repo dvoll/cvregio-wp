@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Card from '../card/Card';
 import CardContainer from '../card/CardContainer';
+import './news.scss';
 
 export interface NewsItem {
     title: string;
@@ -35,9 +36,11 @@ class News extends React.Component<NewsProps> {
             </Card>
         ));
         return (
-            <CardContainer singleRow={singleRow} wider>
-                {newsCards}
-            </CardContainer>
+            <div className="cv-news">
+                <CardContainer singleRow={singleRow} wider>
+                    {newsCards}
+                </CardContainer>
+            </div>
         );
     }
 }

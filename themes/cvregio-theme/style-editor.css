@@ -17,13 +17,17 @@ Twenty Nineteen Editor Styles
 /* Nested sub-menu padding: 10 levels deep */
 /* Ensure all font family declarations come with non-latin fallbacks */
 /* Build our non-latin font styles */
-body:lang(ar), .editor-post-title__input:lang(ar),
+@import url("https://fonts.googleapis.com/css?family=Lato:400,400i,700|Open+Sans:400,600,600i,700");
+body:lang(ar), .editor-block-list__layout .editor-block-list__block:lang(ar),
+.editor-post-title__block .editor-post-title__input:lang(ar),
 h1:lang(ar),
 h2:lang(ar),
 h3:lang(ar),
 h4:lang(ar),
 h5:lang(ar),
-h6:lang(ar), figcaption:lang(ar),
+h6:lang(ar),
+#post-title-0:lang(ar),
+table:lang(ar), .has-drop-cap:lang(ar):not(:focus):first-letter, figcaption:lang(ar),
 .gallery-caption:lang(ar), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(ar), .wp-block-paragraph.has-drop-cap:lang(ar):not(:focus)::first-letter, .wp-block-table:lang(ar), .wp-block-cover h2:lang(ar),
 .wp-block-cover .wp-block-cover-text:lang(ar), .wp-block-button .wp-block-button__link:lang(ar), .wp-block-quote cite:lang(ar),
 .wp-block-quote footer:lang(ar),
@@ -35,13 +39,16 @@ h6:lang(ar), figcaption:lang(ar),
   font-family: Tahoma, Arial, sans-serif;
 }
 
-body:lang(ary), .editor-post-title__input:lang(ary),
+body:lang(ary), .editor-block-list__layout .editor-block-list__block:lang(ary),
+.editor-post-title__block .editor-post-title__input:lang(ary),
 h1:lang(ary),
 h2:lang(ary),
 h3:lang(ary),
 h4:lang(ary),
 h5:lang(ary),
-h6:lang(ary), figcaption:lang(ary),
+h6:lang(ary),
+#post-title-0:lang(ary),
+table:lang(ary), .has-drop-cap:lang(ary):not(:focus):first-letter, figcaption:lang(ary),
 .gallery-caption:lang(ary), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(ary), .wp-block-paragraph.has-drop-cap:lang(ary):not(:focus)::first-letter, .wp-block-table:lang(ary), .wp-block-cover h2:lang(ary),
 .wp-block-cover .wp-block-cover-text:lang(ary), .wp-block-button .wp-block-button__link:lang(ary), .wp-block-quote cite:lang(ary),
 .wp-block-quote footer:lang(ary),
@@ -53,13 +60,16 @@ h6:lang(ary), figcaption:lang(ary),
   font-family: Tahoma, Arial, sans-serif;
 }
 
-body:lang(azb), .editor-post-title__input:lang(azb),
+body:lang(azb), .editor-block-list__layout .editor-block-list__block:lang(azb),
+.editor-post-title__block .editor-post-title__input:lang(azb),
 h1:lang(azb),
 h2:lang(azb),
 h3:lang(azb),
 h4:lang(azb),
 h5:lang(azb),
-h6:lang(azb), figcaption:lang(azb),
+h6:lang(azb),
+#post-title-0:lang(azb),
+table:lang(azb), .has-drop-cap:lang(azb):not(:focus):first-letter, figcaption:lang(azb),
 .gallery-caption:lang(azb), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(azb), .wp-block-paragraph.has-drop-cap:lang(azb):not(:focus)::first-letter, .wp-block-table:lang(azb), .wp-block-cover h2:lang(azb),
 .wp-block-cover .wp-block-cover-text:lang(azb), .wp-block-button .wp-block-button__link:lang(azb), .wp-block-quote cite:lang(azb),
 .wp-block-quote footer:lang(azb),
@@ -71,13 +81,16 @@ h6:lang(azb), figcaption:lang(azb),
   font-family: Tahoma, Arial, sans-serif;
 }
 
-body:lang(ckb), .editor-post-title__input:lang(ckb),
+body:lang(ckb), .editor-block-list__layout .editor-block-list__block:lang(ckb),
+.editor-post-title__block .editor-post-title__input:lang(ckb),
 h1:lang(ckb),
 h2:lang(ckb),
 h3:lang(ckb),
 h4:lang(ckb),
 h5:lang(ckb),
-h6:lang(ckb), figcaption:lang(ckb),
+h6:lang(ckb),
+#post-title-0:lang(ckb),
+table:lang(ckb), .has-drop-cap:lang(ckb):not(:focus):first-letter, figcaption:lang(ckb),
 .gallery-caption:lang(ckb), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(ckb), .wp-block-paragraph.has-drop-cap:lang(ckb):not(:focus)::first-letter, .wp-block-table:lang(ckb), .wp-block-cover h2:lang(ckb),
 .wp-block-cover .wp-block-cover-text:lang(ckb), .wp-block-button .wp-block-button__link:lang(ckb), .wp-block-quote cite:lang(ckb),
 .wp-block-quote footer:lang(ckb),
@@ -89,13 +102,16 @@ h6:lang(ckb), figcaption:lang(ckb),
   font-family: Tahoma, Arial, sans-serif;
 }
 
-body:lang(fa-IR), .editor-post-title__input:lang(fa-IR),
+body:lang(fa-IR), .editor-block-list__layout .editor-block-list__block:lang(fa-IR),
+.editor-post-title__block .editor-post-title__input:lang(fa-IR),
 h1:lang(fa-IR),
 h2:lang(fa-IR),
 h3:lang(fa-IR),
 h4:lang(fa-IR),
 h5:lang(fa-IR),
-h6:lang(fa-IR), figcaption:lang(fa-IR),
+h6:lang(fa-IR),
+#post-title-0:lang(fa-IR),
+table:lang(fa-IR), .has-drop-cap:lang(fa-IR):not(:focus):first-letter, figcaption:lang(fa-IR),
 .gallery-caption:lang(fa-IR), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(fa-IR), .wp-block-paragraph.has-drop-cap:lang(fa-IR):not(:focus)::first-letter, .wp-block-table:lang(fa-IR), .wp-block-cover h2:lang(fa-IR),
 .wp-block-cover .wp-block-cover-text:lang(fa-IR), .wp-block-button .wp-block-button__link:lang(fa-IR), .wp-block-quote cite:lang(fa-IR),
 .wp-block-quote footer:lang(fa-IR),
@@ -107,13 +123,16 @@ h6:lang(fa-IR), figcaption:lang(fa-IR),
   font-family: Tahoma, Arial, sans-serif;
 }
 
-body:lang(haz), .editor-post-title__input:lang(haz),
+body:lang(haz), .editor-block-list__layout .editor-block-list__block:lang(haz),
+.editor-post-title__block .editor-post-title__input:lang(haz),
 h1:lang(haz),
 h2:lang(haz),
 h3:lang(haz),
 h4:lang(haz),
 h5:lang(haz),
-h6:lang(haz), figcaption:lang(haz),
+h6:lang(haz),
+#post-title-0:lang(haz),
+table:lang(haz), .has-drop-cap:lang(haz):not(:focus):first-letter, figcaption:lang(haz),
 .gallery-caption:lang(haz), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(haz), .wp-block-paragraph.has-drop-cap:lang(haz):not(:focus)::first-letter, .wp-block-table:lang(haz), .wp-block-cover h2:lang(haz),
 .wp-block-cover .wp-block-cover-text:lang(haz), .wp-block-button .wp-block-button__link:lang(haz), .wp-block-quote cite:lang(haz),
 .wp-block-quote footer:lang(haz),
@@ -125,13 +144,16 @@ h6:lang(haz), figcaption:lang(haz),
   font-family: Tahoma, Arial, sans-serif;
 }
 
-body:lang(ps), .editor-post-title__input:lang(ps),
+body:lang(ps), .editor-block-list__layout .editor-block-list__block:lang(ps),
+.editor-post-title__block .editor-post-title__input:lang(ps),
 h1:lang(ps),
 h2:lang(ps),
 h3:lang(ps),
 h4:lang(ps),
 h5:lang(ps),
-h6:lang(ps), figcaption:lang(ps),
+h6:lang(ps),
+#post-title-0:lang(ps),
+table:lang(ps), .has-drop-cap:lang(ps):not(:focus):first-letter, figcaption:lang(ps),
 .gallery-caption:lang(ps), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(ps), .wp-block-paragraph.has-drop-cap:lang(ps):not(:focus)::first-letter, .wp-block-table:lang(ps), .wp-block-cover h2:lang(ps),
 .wp-block-cover .wp-block-cover-text:lang(ps), .wp-block-button .wp-block-button__link:lang(ps), .wp-block-quote cite:lang(ps),
 .wp-block-quote footer:lang(ps),
@@ -143,13 +165,16 @@ h6:lang(ps), figcaption:lang(ps),
   font-family: Tahoma, Arial, sans-serif;
 }
 
-body:lang(be), .editor-post-title__input:lang(be),
+body:lang(be), .editor-block-list__layout .editor-block-list__block:lang(be),
+.editor-post-title__block .editor-post-title__input:lang(be),
 h1:lang(be),
 h2:lang(be),
 h3:lang(be),
 h4:lang(be),
 h5:lang(be),
-h6:lang(be), figcaption:lang(be),
+h6:lang(be),
+#post-title-0:lang(be),
+table:lang(be), .has-drop-cap:lang(be):not(:focus):first-letter, figcaption:lang(be),
 .gallery-caption:lang(be), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(be), .wp-block-paragraph.has-drop-cap:lang(be):not(:focus)::first-letter, .wp-block-table:lang(be), .wp-block-cover h2:lang(be),
 .wp-block-cover .wp-block-cover-text:lang(be), .wp-block-button .wp-block-button__link:lang(be), .wp-block-quote cite:lang(be),
 .wp-block-quote footer:lang(be),
@@ -161,13 +186,16 @@ h6:lang(be), figcaption:lang(be),
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
 }
 
-body:lang(bg-BG), .editor-post-title__input:lang(bg-BG),
+body:lang(bg-BG), .editor-block-list__layout .editor-block-list__block:lang(bg-BG),
+.editor-post-title__block .editor-post-title__input:lang(bg-BG),
 h1:lang(bg-BG),
 h2:lang(bg-BG),
 h3:lang(bg-BG),
 h4:lang(bg-BG),
 h5:lang(bg-BG),
-h6:lang(bg-BG), figcaption:lang(bg-BG),
+h6:lang(bg-BG),
+#post-title-0:lang(bg-BG),
+table:lang(bg-BG), .has-drop-cap:lang(bg-BG):not(:focus):first-letter, figcaption:lang(bg-BG),
 .gallery-caption:lang(bg-BG), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(bg-BG), .wp-block-paragraph.has-drop-cap:lang(bg-BG):not(:focus)::first-letter, .wp-block-table:lang(bg-BG), .wp-block-cover h2:lang(bg-BG),
 .wp-block-cover .wp-block-cover-text:lang(bg-BG), .wp-block-button .wp-block-button__link:lang(bg-BG), .wp-block-quote cite:lang(bg-BG),
 .wp-block-quote footer:lang(bg-BG),
@@ -179,13 +207,16 @@ h6:lang(bg-BG), figcaption:lang(bg-BG),
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
 }
 
-body:lang(kk), .editor-post-title__input:lang(kk),
+body:lang(kk), .editor-block-list__layout .editor-block-list__block:lang(kk),
+.editor-post-title__block .editor-post-title__input:lang(kk),
 h1:lang(kk),
 h2:lang(kk),
 h3:lang(kk),
 h4:lang(kk),
 h5:lang(kk),
-h6:lang(kk), figcaption:lang(kk),
+h6:lang(kk),
+#post-title-0:lang(kk),
+table:lang(kk), .has-drop-cap:lang(kk):not(:focus):first-letter, figcaption:lang(kk),
 .gallery-caption:lang(kk), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(kk), .wp-block-paragraph.has-drop-cap:lang(kk):not(:focus)::first-letter, .wp-block-table:lang(kk), .wp-block-cover h2:lang(kk),
 .wp-block-cover .wp-block-cover-text:lang(kk), .wp-block-button .wp-block-button__link:lang(kk), .wp-block-quote cite:lang(kk),
 .wp-block-quote footer:lang(kk),
@@ -197,13 +228,16 @@ h6:lang(kk), figcaption:lang(kk),
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
 }
 
-body:lang(mk-MK), .editor-post-title__input:lang(mk-MK),
+body:lang(mk-MK), .editor-block-list__layout .editor-block-list__block:lang(mk-MK),
+.editor-post-title__block .editor-post-title__input:lang(mk-MK),
 h1:lang(mk-MK),
 h2:lang(mk-MK),
 h3:lang(mk-MK),
 h4:lang(mk-MK),
 h5:lang(mk-MK),
-h6:lang(mk-MK), figcaption:lang(mk-MK),
+h6:lang(mk-MK),
+#post-title-0:lang(mk-MK),
+table:lang(mk-MK), .has-drop-cap:lang(mk-MK):not(:focus):first-letter, figcaption:lang(mk-MK),
 .gallery-caption:lang(mk-MK), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(mk-MK), .wp-block-paragraph.has-drop-cap:lang(mk-MK):not(:focus)::first-letter, .wp-block-table:lang(mk-MK), .wp-block-cover h2:lang(mk-MK),
 .wp-block-cover .wp-block-cover-text:lang(mk-MK), .wp-block-button .wp-block-button__link:lang(mk-MK), .wp-block-quote cite:lang(mk-MK),
 .wp-block-quote footer:lang(mk-MK),
@@ -215,13 +249,16 @@ h6:lang(mk-MK), figcaption:lang(mk-MK),
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
 }
 
-body:lang(mn), .editor-post-title__input:lang(mn),
+body:lang(mn), .editor-block-list__layout .editor-block-list__block:lang(mn),
+.editor-post-title__block .editor-post-title__input:lang(mn),
 h1:lang(mn),
 h2:lang(mn),
 h3:lang(mn),
 h4:lang(mn),
 h5:lang(mn),
-h6:lang(mn), figcaption:lang(mn),
+h6:lang(mn),
+#post-title-0:lang(mn),
+table:lang(mn), .has-drop-cap:lang(mn):not(:focus):first-letter, figcaption:lang(mn),
 .gallery-caption:lang(mn), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(mn), .wp-block-paragraph.has-drop-cap:lang(mn):not(:focus)::first-letter, .wp-block-table:lang(mn), .wp-block-cover h2:lang(mn),
 .wp-block-cover .wp-block-cover-text:lang(mn), .wp-block-button .wp-block-button__link:lang(mn), .wp-block-quote cite:lang(mn),
 .wp-block-quote footer:lang(mn),
@@ -233,13 +270,16 @@ h6:lang(mn), figcaption:lang(mn),
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
 }
 
-body:lang(ru-RU), .editor-post-title__input:lang(ru-RU),
+body:lang(ru-RU), .editor-block-list__layout .editor-block-list__block:lang(ru-RU),
+.editor-post-title__block .editor-post-title__input:lang(ru-RU),
 h1:lang(ru-RU),
 h2:lang(ru-RU),
 h3:lang(ru-RU),
 h4:lang(ru-RU),
 h5:lang(ru-RU),
-h6:lang(ru-RU), figcaption:lang(ru-RU),
+h6:lang(ru-RU),
+#post-title-0:lang(ru-RU),
+table:lang(ru-RU), .has-drop-cap:lang(ru-RU):not(:focus):first-letter, figcaption:lang(ru-RU),
 .gallery-caption:lang(ru-RU), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(ru-RU), .wp-block-paragraph.has-drop-cap:lang(ru-RU):not(:focus)::first-letter, .wp-block-table:lang(ru-RU), .wp-block-cover h2:lang(ru-RU),
 .wp-block-cover .wp-block-cover-text:lang(ru-RU), .wp-block-button .wp-block-button__link:lang(ru-RU), .wp-block-quote cite:lang(ru-RU),
 .wp-block-quote footer:lang(ru-RU),
@@ -251,13 +291,16 @@ h6:lang(ru-RU), figcaption:lang(ru-RU),
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
 }
 
-body:lang(sah), .editor-post-title__input:lang(sah),
+body:lang(sah), .editor-block-list__layout .editor-block-list__block:lang(sah),
+.editor-post-title__block .editor-post-title__input:lang(sah),
 h1:lang(sah),
 h2:lang(sah),
 h3:lang(sah),
 h4:lang(sah),
 h5:lang(sah),
-h6:lang(sah), figcaption:lang(sah),
+h6:lang(sah),
+#post-title-0:lang(sah),
+table:lang(sah), .has-drop-cap:lang(sah):not(:focus):first-letter, figcaption:lang(sah),
 .gallery-caption:lang(sah), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(sah), .wp-block-paragraph.has-drop-cap:lang(sah):not(:focus)::first-letter, .wp-block-table:lang(sah), .wp-block-cover h2:lang(sah),
 .wp-block-cover .wp-block-cover-text:lang(sah), .wp-block-button .wp-block-button__link:lang(sah), .wp-block-quote cite:lang(sah),
 .wp-block-quote footer:lang(sah),
@@ -269,13 +312,16 @@ h6:lang(sah), figcaption:lang(sah),
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
 }
 
-body:lang(sr-RS), .editor-post-title__input:lang(sr-RS),
+body:lang(sr-RS), .editor-block-list__layout .editor-block-list__block:lang(sr-RS),
+.editor-post-title__block .editor-post-title__input:lang(sr-RS),
 h1:lang(sr-RS),
 h2:lang(sr-RS),
 h3:lang(sr-RS),
 h4:lang(sr-RS),
 h5:lang(sr-RS),
-h6:lang(sr-RS), figcaption:lang(sr-RS),
+h6:lang(sr-RS),
+#post-title-0:lang(sr-RS),
+table:lang(sr-RS), .has-drop-cap:lang(sr-RS):not(:focus):first-letter, figcaption:lang(sr-RS),
 .gallery-caption:lang(sr-RS), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(sr-RS), .wp-block-paragraph.has-drop-cap:lang(sr-RS):not(:focus)::first-letter, .wp-block-table:lang(sr-RS), .wp-block-cover h2:lang(sr-RS),
 .wp-block-cover .wp-block-cover-text:lang(sr-RS), .wp-block-button .wp-block-button__link:lang(sr-RS), .wp-block-quote cite:lang(sr-RS),
 .wp-block-quote footer:lang(sr-RS),
@@ -287,13 +333,16 @@ h6:lang(sr-RS), figcaption:lang(sr-RS),
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
 }
 
-body:lang(tt-RU), .editor-post-title__input:lang(tt-RU),
+body:lang(tt-RU), .editor-block-list__layout .editor-block-list__block:lang(tt-RU),
+.editor-post-title__block .editor-post-title__input:lang(tt-RU),
 h1:lang(tt-RU),
 h2:lang(tt-RU),
 h3:lang(tt-RU),
 h4:lang(tt-RU),
 h5:lang(tt-RU),
-h6:lang(tt-RU), figcaption:lang(tt-RU),
+h6:lang(tt-RU),
+#post-title-0:lang(tt-RU),
+table:lang(tt-RU), .has-drop-cap:lang(tt-RU):not(:focus):first-letter, figcaption:lang(tt-RU),
 .gallery-caption:lang(tt-RU), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(tt-RU), .wp-block-paragraph.has-drop-cap:lang(tt-RU):not(:focus)::first-letter, .wp-block-table:lang(tt-RU), .wp-block-cover h2:lang(tt-RU),
 .wp-block-cover .wp-block-cover-text:lang(tt-RU), .wp-block-button .wp-block-button__link:lang(tt-RU), .wp-block-quote cite:lang(tt-RU),
 .wp-block-quote footer:lang(tt-RU),
@@ -305,13 +354,16 @@ h6:lang(tt-RU), figcaption:lang(tt-RU),
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
 }
 
-body:lang(uk), .editor-post-title__input:lang(uk),
+body:lang(uk), .editor-block-list__layout .editor-block-list__block:lang(uk),
+.editor-post-title__block .editor-post-title__input:lang(uk),
 h1:lang(uk),
 h2:lang(uk),
 h3:lang(uk),
 h4:lang(uk),
 h5:lang(uk),
-h6:lang(uk), figcaption:lang(uk),
+h6:lang(uk),
+#post-title-0:lang(uk),
+table:lang(uk), .has-drop-cap:lang(uk):not(:focus):first-letter, figcaption:lang(uk),
 .gallery-caption:lang(uk), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(uk), .wp-block-paragraph.has-drop-cap:lang(uk):not(:focus)::first-letter, .wp-block-table:lang(uk), .wp-block-cover h2:lang(uk),
 .wp-block-cover .wp-block-cover-text:lang(uk), .wp-block-button .wp-block-button__link:lang(uk), .wp-block-quote cite:lang(uk),
 .wp-block-quote footer:lang(uk),
@@ -323,13 +375,16 @@ h6:lang(uk), figcaption:lang(uk),
   font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;
 }
 
-body:lang(zh-HK), .editor-post-title__input:lang(zh-HK),
+body:lang(zh-HK), .editor-block-list__layout .editor-block-list__block:lang(zh-HK),
+.editor-post-title__block .editor-post-title__input:lang(zh-HK),
 h1:lang(zh-HK),
 h2:lang(zh-HK),
 h3:lang(zh-HK),
 h4:lang(zh-HK),
 h5:lang(zh-HK),
-h6:lang(zh-HK), figcaption:lang(zh-HK),
+h6:lang(zh-HK),
+#post-title-0:lang(zh-HK),
+table:lang(zh-HK), .has-drop-cap:lang(zh-HK):not(:focus):first-letter, figcaption:lang(zh-HK),
 .gallery-caption:lang(zh-HK), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(zh-HK), .wp-block-paragraph.has-drop-cap:lang(zh-HK):not(:focus)::first-letter, .wp-block-table:lang(zh-HK), .wp-block-cover h2:lang(zh-HK),
 .wp-block-cover .wp-block-cover-text:lang(zh-HK), .wp-block-button .wp-block-button__link:lang(zh-HK), .wp-block-quote cite:lang(zh-HK),
 .wp-block-quote footer:lang(zh-HK),
@@ -341,13 +396,16 @@ h6:lang(zh-HK), figcaption:lang(zh-HK),
   font-family: -apple-system, BlinkMacSystemFont, "PingFang HK", "Helvetica Neue", "Microsoft YaHei New", STHeiti Light, sans-serif;
 }
 
-body:lang(zh-TW), .editor-post-title__input:lang(zh-TW),
+body:lang(zh-TW), .editor-block-list__layout .editor-block-list__block:lang(zh-TW),
+.editor-post-title__block .editor-post-title__input:lang(zh-TW),
 h1:lang(zh-TW),
 h2:lang(zh-TW),
 h3:lang(zh-TW),
 h4:lang(zh-TW),
 h5:lang(zh-TW),
-h6:lang(zh-TW), figcaption:lang(zh-TW),
+h6:lang(zh-TW),
+#post-title-0:lang(zh-TW),
+table:lang(zh-TW), .has-drop-cap:lang(zh-TW):not(:focus):first-letter, figcaption:lang(zh-TW),
 .gallery-caption:lang(zh-TW), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(zh-TW), .wp-block-paragraph.has-drop-cap:lang(zh-TW):not(:focus)::first-letter, .wp-block-table:lang(zh-TW), .wp-block-cover h2:lang(zh-TW),
 .wp-block-cover .wp-block-cover-text:lang(zh-TW), .wp-block-button .wp-block-button__link:lang(zh-TW), .wp-block-quote cite:lang(zh-TW),
 .wp-block-quote footer:lang(zh-TW),
@@ -359,13 +417,16 @@ h6:lang(zh-TW), figcaption:lang(zh-TW),
   font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Helvetica Neue", "Microsoft YaHei New", STHeiti Light, sans-serif;
 }
 
-body:lang(zh-CN), .editor-post-title__input:lang(zh-CN),
+body:lang(zh-CN), .editor-block-list__layout .editor-block-list__block:lang(zh-CN),
+.editor-post-title__block .editor-post-title__input:lang(zh-CN),
 h1:lang(zh-CN),
 h2:lang(zh-CN),
 h3:lang(zh-CN),
 h4:lang(zh-CN),
 h5:lang(zh-CN),
-h6:lang(zh-CN), figcaption:lang(zh-CN),
+h6:lang(zh-CN),
+#post-title-0:lang(zh-CN),
+table:lang(zh-CN), .has-drop-cap:lang(zh-CN):not(:focus):first-letter, figcaption:lang(zh-CN),
 .gallery-caption:lang(zh-CN), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(zh-CN), .wp-block-paragraph.has-drop-cap:lang(zh-CN):not(:focus)::first-letter, .wp-block-table:lang(zh-CN), .wp-block-cover h2:lang(zh-CN),
 .wp-block-cover .wp-block-cover-text:lang(zh-CN), .wp-block-button .wp-block-button__link:lang(zh-CN), .wp-block-quote cite:lang(zh-CN),
 .wp-block-quote footer:lang(zh-CN),
@@ -377,13 +438,16 @@ h6:lang(zh-CN), figcaption:lang(zh-CN),
   font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Microsoft YaHei New", STHeiti Light, sans-serif;
 }
 
-body:lang(bn-BD), .editor-post-title__input:lang(bn-BD),
+body:lang(bn-BD), .editor-block-list__layout .editor-block-list__block:lang(bn-BD),
+.editor-post-title__block .editor-post-title__input:lang(bn-BD),
 h1:lang(bn-BD),
 h2:lang(bn-BD),
 h3:lang(bn-BD),
 h4:lang(bn-BD),
 h5:lang(bn-BD),
-h6:lang(bn-BD), figcaption:lang(bn-BD),
+h6:lang(bn-BD),
+#post-title-0:lang(bn-BD),
+table:lang(bn-BD), .has-drop-cap:lang(bn-BD):not(:focus):first-letter, figcaption:lang(bn-BD),
 .gallery-caption:lang(bn-BD), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(bn-BD), .wp-block-paragraph.has-drop-cap:lang(bn-BD):not(:focus)::first-letter, .wp-block-table:lang(bn-BD), .wp-block-cover h2:lang(bn-BD),
 .wp-block-cover .wp-block-cover-text:lang(bn-BD), .wp-block-button .wp-block-button__link:lang(bn-BD), .wp-block-quote cite:lang(bn-BD),
 .wp-block-quote footer:lang(bn-BD),
@@ -395,13 +459,16 @@ h6:lang(bn-BD), figcaption:lang(bn-BD),
   font-family: Arial, sans-serif;
 }
 
-body:lang(hi-IN), .editor-post-title__input:lang(hi-IN),
+body:lang(hi-IN), .editor-block-list__layout .editor-block-list__block:lang(hi-IN),
+.editor-post-title__block .editor-post-title__input:lang(hi-IN),
 h1:lang(hi-IN),
 h2:lang(hi-IN),
 h3:lang(hi-IN),
 h4:lang(hi-IN),
 h5:lang(hi-IN),
-h6:lang(hi-IN), figcaption:lang(hi-IN),
+h6:lang(hi-IN),
+#post-title-0:lang(hi-IN),
+table:lang(hi-IN), .has-drop-cap:lang(hi-IN):not(:focus):first-letter, figcaption:lang(hi-IN),
 .gallery-caption:lang(hi-IN), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(hi-IN), .wp-block-paragraph.has-drop-cap:lang(hi-IN):not(:focus)::first-letter, .wp-block-table:lang(hi-IN), .wp-block-cover h2:lang(hi-IN),
 .wp-block-cover .wp-block-cover-text:lang(hi-IN), .wp-block-button .wp-block-button__link:lang(hi-IN), .wp-block-quote cite:lang(hi-IN),
 .wp-block-quote footer:lang(hi-IN),
@@ -413,13 +480,16 @@ h6:lang(hi-IN), figcaption:lang(hi-IN),
   font-family: Arial, sans-serif;
 }
 
-body:lang(mr), .editor-post-title__input:lang(mr),
+body:lang(mr), .editor-block-list__layout .editor-block-list__block:lang(mr),
+.editor-post-title__block .editor-post-title__input:lang(mr),
 h1:lang(mr),
 h2:lang(mr),
 h3:lang(mr),
 h4:lang(mr),
 h5:lang(mr),
-h6:lang(mr), figcaption:lang(mr),
+h6:lang(mr),
+#post-title-0:lang(mr),
+table:lang(mr), .has-drop-cap:lang(mr):not(:focus):first-letter, figcaption:lang(mr),
 .gallery-caption:lang(mr), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(mr), .wp-block-paragraph.has-drop-cap:lang(mr):not(:focus)::first-letter, .wp-block-table:lang(mr), .wp-block-cover h2:lang(mr),
 .wp-block-cover .wp-block-cover-text:lang(mr), .wp-block-button .wp-block-button__link:lang(mr), .wp-block-quote cite:lang(mr),
 .wp-block-quote footer:lang(mr),
@@ -431,13 +501,16 @@ h6:lang(mr), figcaption:lang(mr),
   font-family: Arial, sans-serif;
 }
 
-body:lang(ne-NP), .editor-post-title__input:lang(ne-NP),
+body:lang(ne-NP), .editor-block-list__layout .editor-block-list__block:lang(ne-NP),
+.editor-post-title__block .editor-post-title__input:lang(ne-NP),
 h1:lang(ne-NP),
 h2:lang(ne-NP),
 h3:lang(ne-NP),
 h4:lang(ne-NP),
 h5:lang(ne-NP),
-h6:lang(ne-NP), figcaption:lang(ne-NP),
+h6:lang(ne-NP),
+#post-title-0:lang(ne-NP),
+table:lang(ne-NP), .has-drop-cap:lang(ne-NP):not(:focus):first-letter, figcaption:lang(ne-NP),
 .gallery-caption:lang(ne-NP), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(ne-NP), .wp-block-paragraph.has-drop-cap:lang(ne-NP):not(:focus)::first-letter, .wp-block-table:lang(ne-NP), .wp-block-cover h2:lang(ne-NP),
 .wp-block-cover .wp-block-cover-text:lang(ne-NP), .wp-block-button .wp-block-button__link:lang(ne-NP), .wp-block-quote cite:lang(ne-NP),
 .wp-block-quote footer:lang(ne-NP),
@@ -449,13 +522,16 @@ h6:lang(ne-NP), figcaption:lang(ne-NP),
   font-family: Arial, sans-serif;
 }
 
-body:lang(el), .editor-post-title__input:lang(el),
+body:lang(el), .editor-block-list__layout .editor-block-list__block:lang(el),
+.editor-post-title__block .editor-post-title__input:lang(el),
 h1:lang(el),
 h2:lang(el),
 h3:lang(el),
 h4:lang(el),
 h5:lang(el),
-h6:lang(el), figcaption:lang(el),
+h6:lang(el),
+#post-title-0:lang(el),
+table:lang(el), .has-drop-cap:lang(el):not(:focus):first-letter, figcaption:lang(el),
 .gallery-caption:lang(el), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(el), .wp-block-paragraph.has-drop-cap:lang(el):not(:focus)::first-letter, .wp-block-table:lang(el), .wp-block-cover h2:lang(el),
 .wp-block-cover .wp-block-cover-text:lang(el), .wp-block-button .wp-block-button__link:lang(el), .wp-block-quote cite:lang(el),
 .wp-block-quote footer:lang(el),
@@ -467,13 +543,16 @@ h6:lang(el), figcaption:lang(el),
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-body:lang(gu), .editor-post-title__input:lang(gu),
+body:lang(gu), .editor-block-list__layout .editor-block-list__block:lang(gu),
+.editor-post-title__block .editor-post-title__input:lang(gu),
 h1:lang(gu),
 h2:lang(gu),
 h3:lang(gu),
 h4:lang(gu),
 h5:lang(gu),
-h6:lang(gu), figcaption:lang(gu),
+h6:lang(gu),
+#post-title-0:lang(gu),
+table:lang(gu), .has-drop-cap:lang(gu):not(:focus):first-letter, figcaption:lang(gu),
 .gallery-caption:lang(gu), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(gu), .wp-block-paragraph.has-drop-cap:lang(gu):not(:focus)::first-letter, .wp-block-table:lang(gu), .wp-block-cover h2:lang(gu),
 .wp-block-cover .wp-block-cover-text:lang(gu), .wp-block-button .wp-block-button__link:lang(gu), .wp-block-quote cite:lang(gu),
 .wp-block-quote footer:lang(gu),
@@ -485,13 +564,16 @@ h6:lang(gu), figcaption:lang(gu),
   font-family: Arial, sans-serif;
 }
 
-body:lang(he-IL), .editor-post-title__input:lang(he-IL),
+body:lang(he-IL), .editor-block-list__layout .editor-block-list__block:lang(he-IL),
+.editor-post-title__block .editor-post-title__input:lang(he-IL),
 h1:lang(he-IL),
 h2:lang(he-IL),
 h3:lang(he-IL),
 h4:lang(he-IL),
 h5:lang(he-IL),
-h6:lang(he-IL), figcaption:lang(he-IL),
+h6:lang(he-IL),
+#post-title-0:lang(he-IL),
+table:lang(he-IL), .has-drop-cap:lang(he-IL):not(:focus):first-letter, figcaption:lang(he-IL),
 .gallery-caption:lang(he-IL), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(he-IL), .wp-block-paragraph.has-drop-cap:lang(he-IL):not(:focus)::first-letter, .wp-block-table:lang(he-IL), .wp-block-cover h2:lang(he-IL),
 .wp-block-cover .wp-block-cover-text:lang(he-IL), .wp-block-button .wp-block-button__link:lang(he-IL), .wp-block-quote cite:lang(he-IL),
 .wp-block-quote footer:lang(he-IL),
@@ -503,13 +585,16 @@ h6:lang(he-IL), figcaption:lang(he-IL),
   font-family: "Arial Hebrew", Arial, sans-serif;
 }
 
-body:lang(ja), .editor-post-title__input:lang(ja),
+body:lang(ja), .editor-block-list__layout .editor-block-list__block:lang(ja),
+.editor-post-title__block .editor-post-title__input:lang(ja),
 h1:lang(ja),
 h2:lang(ja),
 h3:lang(ja),
 h4:lang(ja),
 h5:lang(ja),
-h6:lang(ja), figcaption:lang(ja),
+h6:lang(ja),
+#post-title-0:lang(ja),
+table:lang(ja), .has-drop-cap:lang(ja):not(:focus):first-letter, figcaption:lang(ja),
 .gallery-caption:lang(ja), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(ja), .wp-block-paragraph.has-drop-cap:lang(ja):not(:focus)::first-letter, .wp-block-table:lang(ja), .wp-block-cover h2:lang(ja),
 .wp-block-cover .wp-block-cover-text:lang(ja), .wp-block-button .wp-block-button__link:lang(ja), .wp-block-quote cite:lang(ja),
 .wp-block-quote footer:lang(ja),
@@ -521,13 +606,16 @@ h6:lang(ja), figcaption:lang(ja),
   font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", Meiryo, "Helvetica Neue", sans-serif;
 }
 
-body:lang(ko-KR), .editor-post-title__input:lang(ko-KR),
+body:lang(ko-KR), .editor-block-list__layout .editor-block-list__block:lang(ko-KR),
+.editor-post-title__block .editor-post-title__input:lang(ko-KR),
 h1:lang(ko-KR),
 h2:lang(ko-KR),
 h3:lang(ko-KR),
 h4:lang(ko-KR),
 h5:lang(ko-KR),
-h6:lang(ko-KR), figcaption:lang(ko-KR),
+h6:lang(ko-KR),
+#post-title-0:lang(ko-KR),
+table:lang(ko-KR), .has-drop-cap:lang(ko-KR):not(:focus):first-letter, figcaption:lang(ko-KR),
 .gallery-caption:lang(ko-KR), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(ko-KR), .wp-block-paragraph.has-drop-cap:lang(ko-KR):not(:focus)::first-letter, .wp-block-table:lang(ko-KR), .wp-block-cover h2:lang(ko-KR),
 .wp-block-cover .wp-block-cover-text:lang(ko-KR), .wp-block-button .wp-block-button__link:lang(ko-KR), .wp-block-quote cite:lang(ko-KR),
 .wp-block-quote footer:lang(ko-KR),
@@ -539,13 +627,16 @@ h6:lang(ko-KR), figcaption:lang(ko-KR),
   font-family: "Apple SD Gothic Neo", "Malgun Gothic", "Nanum Gothic", Dotum, sans-serif;
 }
 
-body:lang(th), .editor-post-title__input:lang(th),
+body:lang(th), .editor-block-list__layout .editor-block-list__block:lang(th),
+.editor-post-title__block .editor-post-title__input:lang(th),
 h1:lang(th),
 h2:lang(th),
 h3:lang(th),
 h4:lang(th),
 h5:lang(th),
-h6:lang(th), figcaption:lang(th),
+h6:lang(th),
+#post-title-0:lang(th),
+table:lang(th), .has-drop-cap:lang(th):not(:focus):first-letter, figcaption:lang(th),
 .gallery-caption:lang(th), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(th), .wp-block-paragraph.has-drop-cap:lang(th):not(:focus)::first-letter, .wp-block-table:lang(th), .wp-block-cover h2:lang(th),
 .wp-block-cover .wp-block-cover-text:lang(th), .wp-block-button .wp-block-button__link:lang(th), .wp-block-quote cite:lang(th),
 .wp-block-quote footer:lang(th),
@@ -557,13 +648,16 @@ h6:lang(th), figcaption:lang(th),
   font-family: "Sukhumvit Set", "Helvetica Neue", helvetica, arial, sans-serif;
 }
 
-body:lang(vi), .editor-post-title__input:lang(vi),
+body:lang(vi), .editor-block-list__layout .editor-block-list__block:lang(vi),
+.editor-post-title__block .editor-post-title__input:lang(vi),
 h1:lang(vi),
 h2:lang(vi),
 h3:lang(vi),
 h4:lang(vi),
 h5:lang(vi),
-h6:lang(vi), figcaption:lang(vi),
+h6:lang(vi),
+#post-title-0:lang(vi),
+table:lang(vi), .has-drop-cap:lang(vi):not(:focus):first-letter, figcaption:lang(vi),
 .gallery-caption:lang(vi), .block-editor-default-block-appender .block-editor-default-block-appender__content:lang(vi), .wp-block-paragraph.has-drop-cap:lang(vi):not(:focus)::first-letter, .wp-block-table:lang(vi), .wp-block-cover h2:lang(vi),
 .wp-block-cover .wp-block-cover-text:lang(vi), .wp-block-button .wp-block-button__link:lang(vi), .wp-block-quote cite:lang(vi),
 .wp-block-quote footer:lang(vi),
@@ -576,32 +670,8 @@ h6:lang(vi), figcaption:lang(vi),
 }
 
 /** === Editor Frame === */
-body .block-editor-block-list__block[data-align="full"] {
-  margin: 0;
-}
-
-body .block-editor-block-list__block[data-align="right"] {
-  height: auto;
-  z-index: auto;
-}
-
-body [data-block] {
-  margin-top: 0;
-}
-
-body .block-editor-writing-flow {
-  width: 100%;
-  max-width: 100%;
-}
-
-@media only screen and (min-width: 600px) {
-  body .block-editor-writing-flow > div > div > div > div:first-child {
-    padding: 0 46px;
-  }
-}
-
-body .block-editor-writing-flow > div > div > div > div:first-child,
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout {
+body .edit-post-visual-editor__post-title-wrapper,
+body .block-editor-block-list__layout.is-root-container {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr [main-start content-start] 90% [content-end main-end] 1fr;
@@ -610,81 +680,92 @@ body .block-editor-writing-flow > div > div > div > div > .block-editor-block-li
 }
 
 @media only screen and (min-width: 600px) {
-  body .block-editor-writing-flow > div > div > div > div:first-child,
-  body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout {
+  body .edit-post-visual-editor__post-title-wrapper,
+  body .block-editor-block-list__layout.is-root-container {
     grid-template-columns: [main-start] 1fr [content-start] minmax(80%, 400px) [content-end] 1fr [main-end];
   }
 }
 
 @media only screen and (min-width: 768px) {
-  body .block-editor-writing-flow > div > div > div > div:first-child,
-  body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout {
+  body .edit-post-visual-editor__post-title-wrapper,
+  body .block-editor-block-list__layout.is-root-container {
     grid-template-columns: 1fr [main-start] minmax(0, 180px) [content-start] minmax(80%, 630px) [content-end] minmax(0, 180px) [main-end] 2fr;
   }
 }
 
 @media only screen and (min-width: 1168px) {
-  body .block-editor-writing-flow > div > div > div > div:first-child,
-  body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout {
+  body .edit-post-visual-editor__post-title-wrapper,
+  body .block-editor-block-list__layout.is-root-container {
     grid-template-columns: minmax(50px, 1fr) [main-start] minmax(50px, 180px) [content-start] minmax(530px, 730px) [content-end] minmax(50px, 180px) [main-end] minmax(50px, 1fr);
   }
 }
 
 @media only screen and (min-width: 1379px) {
-  body .block-editor-writing-flow > div > div > div > div:first-child,
-  body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout {
+  body .edit-post-visual-editor__post-title-wrapper,
+  body .block-editor-block-list__layout.is-root-container {
     grid-template-columns: 1fr 600px 1fr 1fr;
     grid-template-columns: minmax(50px, 2fr) [main-start] minmax(50px, 180px) [content-start] minmax(530px, 730px) [content-end] minmax(50px, 180px) [main-end] minmax(50px, 3fr);
   }
 }
 
-body .block-editor-writing-flow > div > div > div > div:first-child > *,
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > * {
+body .edit-post-visual-editor__post-title-wrapper > *,
+body .block-editor-block-list__layout.is-root-container > * {
   grid-column: content-start / content-end;
   width: 100%;
 }
 
-body .block-editor-writing-flow > div > div > div > div:first-child > *.wp-block[data-align="wide"], body .block-editor-writing-flow > div > div > div > div:first-child > *.alignwide,
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > *.wp-block[data-align="wide"],
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > *.alignwide {
+body .edit-post-visual-editor__post-title-wrapper > *[data-align="wide"], body .edit-post-visual-editor__post-title-wrapper > *.alignwide,
+body .block-editor-block-list__layout.is-root-container > *[data-align="wide"],
+body .block-editor-block-list__layout.is-root-container > *.alignwide {
   grid-column: main-start / main-end;
 }
 
-body .block-editor-writing-flow > div > div > div > div:first-child > *.wp-block[data-align="wide"]--no-padding, body .block-editor-writing-flow > div > div > div > div:first-child > *.alignwide--no-padding,
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > *.wp-block[data-align="wide"]--no-padding,
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > *.alignwide--no-padding {
+body .edit-post-visual-editor__post-title-wrapper > *[data-align="wide"]--only-right, body .edit-post-visual-editor__post-title-wrapper > *.alignwide--only-right,
+body .block-editor-block-list__layout.is-root-container > *[data-align="wide"]--only-right,
+body .block-editor-block-list__layout.is-root-container > *.alignwide--only-right {
+  grid-column: content-start / main-end;
+}
+
+@media only screen and (min-width: 600px) {
+  body .edit-post-visual-editor__post-title-wrapper > *[data-align="wide"] > *:not([data-align="wide"]),
+  body .block-editor-block-list__layout.is-root-container > *[data-align="wide"] > *:not([data-align="wide"]) {
+    padding-right: 50px;
+    padding-left: 50px;
+  }
+}
+
+body .edit-post-visual-editor__post-title-wrapper > *[data-align="wide"] > *:not([data-align="wide"])--no-padding,
+body .block-editor-block-list__layout.is-root-container > *[data-align="wide"] > *:not([data-align="wide"])--no-padding {
   padding-right: 0;
   padding-left: 0;
 }
 
-body .block-editor-writing-flow > div > div > div > div:first-child > *.wp-block[data-align="wide"]--only-right, body .block-editor-writing-flow > div > div > div > div:first-child > *.alignwide--only-right,
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > *.wp-block[data-align="wide"]--only-right,
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > *.alignwide--only-right {
-  grid-column: content-start / main-end;
+body .edit-post-visual-editor__post-title-wrapper > *[data-align="wide"] > *:not([data-align="wide"])--only-right,
+body .block-editor-block-list__layout.is-root-container > *[data-align="wide"] > *:not([data-align="wide"])--only-right {
   padding-left: 0;
 }
 
-body .block-editor-writing-flow > div > div > div > div:first-child > *.wp-block[data-align="full"], body .block-editor-writing-flow > div > div > div > div:first-child > *.alignfull,
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > *.wp-block[data-align="full"],
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > *.alignfull {
+body .edit-post-visual-editor__post-title-wrapper > *[data-align="full"], body .edit-post-visual-editor__post-title-wrapper > *.alignfull,
+body .block-editor-block-list__layout.is-root-container > *[data-align="full"],
+body .block-editor-block-list__layout.is-root-container > *.alignfull {
   grid-column: 1 / -1;
   max-width: 100vw;
 }
 
-body .block-editor-writing-flow > div > div > div > div:first-child > *.aligncenter,
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > *.aligncenter {
+body .edit-post-visual-editor__post-title-wrapper > *.aligncenter,
+body .block-editor-block-list__layout.is-root-container > *.aligncenter {
   grid-column: content-start / content-end;
   justify-self: center;
   max-width: 100%;
 }
 
-body .block-editor-writing-flow > div > div > div > div:first-child > *.mobile-padding--left,
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > *.mobile-padding--left {
+body .edit-post-visual-editor__post-title-wrapper > *.mobile-padding--left,
+body .block-editor-block-list__layout.is-root-container > *.mobile-padding--left {
   padding-left: 50px;
 }
 
-body .block-editor-writing-flow > div > div > div > div:first-child > *.mobile-padding--right,
-body .block-editor-writing-flow > div > div > div > div > .block-editor-block-list__layout > *.mobile-padding--right {
+body .edit-post-visual-editor__post-title-wrapper > *.mobile-padding--right,
+body .block-editor-block-list__layout.is-root-container > *.mobile-padding--right {
   padding-right: 50px;
 }
 
@@ -695,6 +776,11 @@ body .editor-post-title {
 body .wp-block {
   width: 100%;
   max-width: 100%;
+}
+
+.block-editor-block-list__block {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 /** === Content Width === */
@@ -710,19 +796,23 @@ body {
   background-color: #fafafa;
 }
 
+p.rich-text.block-editor-rich-text__editable,
 p {
   font-size: 16px;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 2rem;
 }
 
-.editor-post-title__input,
+.editor-block-list__layout .editor-block-list__block,
+.editor-post-title__block .editor-post-title__input,
 h1,
 h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+#post-title-0,
+table {
   font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   font-style: italic;
   font-weight: normal;
@@ -730,8 +820,16 @@ h6 {
   line-height: 1.2;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1.rich-text.block-editor-rich-text__editable,
+h2.rich-text.block-editor-rich-text__editable,
+h3.rich-text.block-editor-rich-text__editable,
+h4.rich-text.block-editor-rich-text__editable,
+h5.rich-text.block-editor-rich-text__editable,
+h6.rich-text.block-editor-rich-text__editable {
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -843,6 +941,21 @@ a:focus {
 .has-white-background-color h6,
 .has-white-background-color a {
   color: #202020;
+}
+
+.has-drop-cap:not(:focus):first-letter {
+  font-family: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 2.8125em;
+  line-height: 1;
+  margin: 0 0.25em 0 0;
+}
+
+figure {
+  margin: 0;
+}
+
+.block-editor-block-list__block.wp-block-embed, .block-editor-block-list__block.wp-block-image {
+  margin-bottom: 2rem;
 }
 
 figcaption,

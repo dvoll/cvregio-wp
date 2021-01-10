@@ -1,6 +1,6 @@
 import { Component, Fragment } from '@wordpress/element';
 import { Toolbar, QueryControls, PanelBody, ToolbarButton } from '@wordpress/components';
-import { InspectorControls, BlockAlignmentToolbar, BlockControls } from '@wordpress/editor';
+import { InspectorControls, BlockAlignmentToolbar, BlockControls } from '@wordpress/block-editor';
 import { addQueryArgs } from '@wordpress/url';
 import { withSelect } from '@wordpress/data';
 import { compose } from '@wordpress/compose';

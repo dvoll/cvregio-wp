@@ -1,93 +1,90 @@
 /* !Block styles */
 
-.entry-content > *,
-.sidebar > *,
-.entry-summary > * {
-    margin: 0 0 #{4 * $size__spacing-unit} 0;
+// .entry-content > *,
+// .sidebar > *,
+// .entry-summary > * {
+// margin: 0 0 #{4 * $size__spacing-unit} 0;
 
-    // &.alignwide {
-    //     grid-column: content-start / main-end;
+// &.alignwide {
+//     grid-column: content-start / main-end;
 
-    //     &--both {
-    //         grid-column: main-start / main-end;
-    //     }
-    // }
+//     &--both {
+//         grid-column: main-start / main-end;
+//     }
+// }
 
-    // &.alignfull {
-    //     grid-column: 1 / -1;
-    //     max-width: 100vw;
-    // }
+// &.alignfull {
+//     grid-column: 1 / -1;
+//     max-width: 100vw;
+// }
 
-    // &.aligncenter {
-    //     grid-column: content-start / content-end;
-    //     justify-self: center;
-    //     max-width: 100%;
-    // }
+// &.aligncenter {
+//     grid-column: content-start / content-end;
+//     justify-self: center;
+//     max-width: 100%;
+// }
 
-    /* TODO: Add alignment options */
+/* TODO: Add alignment options */
 
-    // &.alignleft {
-    //     /*rtl:ignore*/
-    //     float: left;
-    //     max-width: calc(5 * (100vw / 12));
-    //     margin-top: 0;
-    //     margin-left: 0;
+// &.alignleft {
+//     /*rtl:ignore*/
+//     float: left;
+//     max-width: calc(5 * (100vw / 12));
+//     margin-top: 0;
+//     margin-left: 0;
 
-    //     /*rtl:ignore*/
-    //     margin-right: $size__spacing-unit;
+//     /*rtl:ignore*/
+//     margin-right: $size__spacing-unit;
 
-    //     @include media(tablet) {
-    //         max-width: calc(4 * (100vw / 12));
+//     @include media(tablet) {
+//         max-width: calc(4 * (100vw / 12));
 
-    //         /*rtl:ignore*/
-    //         margin-right: calc(2 * #{$size__spacing-unit});
-    //     }
-    // }
+//         /*rtl:ignore*/
+//         margin-right: calc(2 * #{$size__spacing-unit});
+//     }
+// }
 
-    // &.alignright {
+// &.alignright {
 
-    //     /*rtl:ignore*/
-    //     float: right;
-    //     max-width: calc(5 * (100vw / 12));
-    //     margin-top: 0;
-    //     margin-right: 0;
+//     /*rtl:ignore*/
+//     float: right;
+//     max-width: calc(5 * (100vw / 12));
+//     margin-top: 0;
+//     margin-right: 0;
 
-    //     /*rtl:ignore*/
-    //     margin-left: $size__spacing-unit;
+//     /*rtl:ignore*/
+//     margin-left: $size__spacing-unit;
 
-    //     @include media(tablet) {
-    //         max-width: calc(4 * (100vw / 12));
-    //         margin-right: 0;
+//     @include media(tablet) {
+//         max-width: calc(4 * (100vw / 12));
+//         margin-right: 0;
 
-    //         /*rtl:ignore*/
-    //         margin-left: calc(2 * #{$size__spacing-unit});
-    //     }
-    // }
-}
+//         /*rtl:ignore*/
+//         margin-left: calc(2 * #{$size__spacing-unit});
+//     }
+// }
+// }
 
-.entry-content > h1,
-.entry-summary > h1,
-.sidebar > h1,
-.entry-content > h2,
-.entry-summary > h2,
-.sidebar > h2 {
-    margin-bottom: 2 * $size__spacing-unit;
-}
-
-.entry-content > h3,
-.entry-summary > h3,
-.sidebar > h3,
-.entry-content > h4,
-.entry-summary > h4,
-.sidebar > h4,
-.entry-content > h5,
-.entry-summary > h5,
-.sidebar > h5,
-.entry-content > h6,
-.entry-summary > h6,
-.sidebar > h6 {
-    margin-bottom: 2 * $size__spacing-unit;
-}
+// .entry-content > h1,
+// .entry-summary > h1,
+// .sidebar > h1,
+// .entry-content > h2,
+// .entry-summary > h2,
+// .sidebar > h2,
+// .entry-content > h3,
+// .entry-summary > h3,
+// .sidebar > h3,
+// .entry-content > h4,
+// .entry-summary > h4,
+// .sidebar > h4,
+// .entry-content > h5,
+// .entry-summary > h5,
+// .sidebar > h5,
+// .entry-content > h6,
+// .entry-summary > h6,
+// .sidebar > h6 {
+//     margin-bottom: 2 * $size__spacing-unit;
+// }
 
 /*
  * Unset nested content selector styles
@@ -308,8 +305,7 @@
             @include font-family($font__heading);
             font-size: $font__size-xxxl;
             line-height: 1;
-            font-weight: bold;
-            margin: 0 0.25em 0 0;
+            margin: 0.2em 0.1em 0 0;
         }
     }
 
@@ -459,7 +455,6 @@
         }
 
         cite {
-
             /*
 			 * This requires a rem-based font size calculation instead of our normal em-based one,
 			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
@@ -481,7 +476,6 @@
 
             cite,
             footer {
-
                 /*
 				 * This requires a rem-based font size calculation instead of our normal em-based one,
 				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
@@ -503,6 +497,7 @@
     //! Image
     .wp-block-image {
         max-width: 100%;
+        margin-bottom: 2rem;
 
         img {
             display: block;
@@ -666,6 +661,11 @@
                 display: none;
             }
         }
+    }
+
+    //! Twitter Embed
+    .wp-block-embed {
+        margin-bottom: 2rem;
     }
 
     //! Twitter Embed
