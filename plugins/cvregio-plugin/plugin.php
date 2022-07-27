@@ -321,7 +321,7 @@ add_action( 'in_admin_header', 'add_sprite_to_body');
 
 
 // custom block category
-function cvregio_block_categories( $categories, $post ) {
+function cvregio_block_categories( $categories, $block_editor_context  ) {
     return array_merge(
         $categories,
         array(
@@ -333,4 +333,4 @@ function cvregio_block_categories( $categories, $post ) {
         )
     );
 }
-add_filter( 'block_categories', 'cvregio_block_categories', 10, 2 );
+add_filter( 'block_categories_all', 'cvregio_block_categories', 10, 2 );
