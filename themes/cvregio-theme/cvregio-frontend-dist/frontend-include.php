@@ -6,16 +6,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 } 
 
 
-wp_enqueue_script('cv-frontend-commons~plugin~theme', content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/commons~plugin~theme.bundle.js', array(), '1.0', true );
+wp_enqueue_script('cv-frontend-714', content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/714.bundle.js', array(), '1.0', true );
 
 wp_enqueue_script('cv-frontend-theme', content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/theme.bundle.js', array(), '1.0', true );
 
 wp_register_style(
-    'cv-frontend-commons~plugin~theme',
-    content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/commons~plugin~theme.css',
+    'cv-frontend-714',
+    content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/714.css',
     array( 'wp-editor' )
 );
-wp_enqueue_style('cv-frontend-commons~plugin~theme');
+wp_enqueue_style('cv-frontend-714');
 
 wp_register_style(
     'cv-frontend-theme',
