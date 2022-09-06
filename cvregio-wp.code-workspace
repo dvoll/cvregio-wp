@@ -91,6 +91,11 @@
 			"zip",
 			"zlib",
 			"wordpress"
-		]
+		],
+		"files.exclude": {
+			"themes/": true,
+			"plugins/": true,
+			"cvregio-frontend/": true,
+		}
 	}
 }
