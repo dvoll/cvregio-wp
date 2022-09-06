@@ -22,6 +22,7 @@ plugins/*
 
 themes/*
 !themes/cvregio-theme/
+!themes/cvregio-block-2022child/
 
 /.htaccess
 /license.txt
