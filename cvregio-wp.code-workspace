@@ -7,14 +7,20 @@
 			"path": "themes/cvregio-block-2022child"
 		},
 		{
+			"path": "themes/ev-region22-theme"
+		},
+		{
 			"path": "plugins/cvregio-plugin"
+		},
+		{
+			"path": "plugins/regio-blocks"
 		},
 		{
 			"path": "cvregio-frontend"
 		},
 		{
 			"path": ".",
-			"name": ".workspace",
+			"name": "root",
 		}
 	],
 	"settings": {
@@ -94,6 +100,7 @@
 		],
 		"files.exclude": {
 			"themes/": true,
+			"themes/ev-region22-theme": true,
 			"plugins/": true,
 			"cvregio-frontend/": true,
 		}
