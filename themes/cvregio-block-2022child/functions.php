@@ -17,7 +17,7 @@ if ( ! function_exists( 'cvregioblockchild_styles' ) ) :
 		wp_register_style(
 			'cvregioblockchild-style',
 			get_stylesheet_directory_uri() . '/style.css',
-			array('twentytwentytwo-style'),
+			array(), // array('twentytwentytwo-style'),
 			$version_string
 		);
 
