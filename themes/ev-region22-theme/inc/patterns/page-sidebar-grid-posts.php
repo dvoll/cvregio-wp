@@ -9,7 +9,7 @@ return array(
 	'content'    => '<!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"var(--wp--custom--spacing--small, 1.25rem)","bottom":"var(--wp--custom--spacing--small, 1.25rem)"}}},"layout":{"inherit":true}} -->
 					<div class="wp-block-group alignfull" style="padding-top:var(--wp--custom--spacing--small, 1.25rem);padding-bottom:var(--wp--custom--spacing--small, 1.25rem)"><!-- wp:columns {"align":"wide","style":{"spacing":{"margin":{"top":"0px","bottom":"0px"}}}} -->
 					<div class="wp-block-columns alignwide" style="margin-top:0px;margin-bottom:0px"><!-- wp:column {"width":"30%"} -->
-					<div class="wp-block-column" style="flex-basis:30%"><!-- wp:site-title {"isLink":false,"style":{"spacing":{"margin":{"top":"0px","bottom":"1rem"}},"typography":{"fontStyle":"italic","fontWeight":"300","lineHeight":"1.1"}},"fontSize":"var(--wp--custom--typography--font-size--huge, clamp(2.25rem, 4vw, 2.75rem))","fontFamily":"source-serif-pro"} /-->
+					<div class="wp-block-column" style="flex-basis:30%"><!-- wp:site-title {"isLink":false,"style":{"spacing":{"margin":{"top":"0px","bottom":"1rem"}},"typography":{"fontStyle":"italic","fontWeight":"300","lineHeight":"1.1"}},"fontSize":"var(--wp--custom--typography--font-size--huge, clamp(2.25rem, 4vw, 2.75rem))","fontFamily":"quciksand"} /-->
 
 					<!-- wp:site-tagline {"fontSize":"small"} /-->
 
@@ -54,7 +54,7 @@ return array(
 					<!-- wp:post-featured-image {"isLink":true,"width":"100%","height":"200px"} /-->
 
 					<!-- wp:group {"layout":{"type":"flex","justifyContent":"space-between"}} -->
-					<div class="wp-block-group"><!-- wp:post-title {"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontSize":"small","fontFamily":"system-font"} /-->
+					<div class="wp-block-group"><!-- wp:post-title {"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"400"}},"fontSize":"small","fontFamily":"nunito"} /-->
 
 					<!-- wp:post-date {"format":"m.d.y","style":{"typography":{"fontStyle":"italic","fontWeight":"400"}},"fontSize":"small"} /--></div>
 					<!-- /wp:group -->

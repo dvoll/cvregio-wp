@@ -13,7 +13,7 @@ return array(
 
 					<!-- wp:columns {"isStackedOnMobile":false,"style":{"spacing":{"blockGap":"0.5rem"}}} -->
 					<div class="wp-block-columns is-not-stacked-on-mobile"><!-- wp:column -->
-					<div class="wp-block-column"><!-- wp:post-title {"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"spacing":{"margin":{"top":"0.2em"}}},"fontSize":"small","fontFamily":"system-font"} /--></div>
+					<div class="wp-block-column"><!-- wp:post-title {"isLink":true,"style":{"typography":{"fontStyle":"normal","fontWeight":"400"},"spacing":{"margin":{"top":"0.2em"}}},"fontSize":"small","fontFamily":"nunito"} /--></div>
 					<!-- /wp:column -->
 
 					<!-- wp:column {"width":"4em"} -->

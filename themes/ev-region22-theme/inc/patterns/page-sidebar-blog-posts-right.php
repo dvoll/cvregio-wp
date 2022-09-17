@@ -63,7 +63,7 @@ return array(
 					<div style="height:4px" aria-hidden="true" class="wp-block-spacer"></div>
 					<!-- /wp:spacer -->
 
-					<!-- wp:site-title {"isLink":false,"style":{"typography":{"fontStyle":"normal","fontWeight":"300","lineHeight":"1.2"}},"fontSize":"large","fontFamily":"source-serif-pro"} /-->
+					<!-- wp:site-title {"isLink":false,"style":{"typography":{"fontStyle":"normal","fontWeight":"300","lineHeight":"1.2"}},"fontSize":"large","fontFamily":"quicksand"} /-->
 
 					<!-- wp:site-tagline /-->
 
