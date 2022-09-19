@@ -1,18 +1,24 @@
-<!-- wp:group {"layout":{"inherit":true}} -->
+<!-- wp:group {"layout":{"inherit":false,"wideSize":"1326px"}} -->
 <div class="wp-block-group">
-    <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"var(--wp--custom--spacing--large, 8rem)","top":"var(--wp--custom--spacing--small, 1.25rem)"}}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
+    <!-- wp:group {"align":"wide","style":{"spacing":{"padding":{"bottom":"var(--wp--custom--spacing--xsmall, 1rem)","top":"var(--wp--custom--spacing--xsmall, 1rem)"}}},"layout":{"type":"flex","justifyContent":"space-between"}} -->
     <div class="wp-block-group alignwide"
-        style="padding-top:var(--wp--custom--spacing--small, 1.25rem);padding-bottom:var(--wp--custom--spacing--large, 8rem)">
-        <!-- wp:group {"layout":{"type":"flex"}} -->
+        style="padding-top:var(--wp--custom--spacing--xsmall, 1rem);padding-bottom:var(--wp--custom--spacing--xsmall, 1rem)">
+        <!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap"}} -->
         <div class="wp-block-group">
-            <!-- wp:site-logo {"width":64} /-->
+            <!-- wp:site-logo {"width":64,"shouldSyncIcon":true} /-->
 
-            <!-- wp:site-title /-->
+            <!-- wp:group {"style":{"spacing":{"blockGap":"0px"}},"layout":{"type":"flex","orientation":"vertical"}} -->
+            <div class="wp-block-group">
+                <!-- wp:site-title {"style":{"elements":{"link":{"color":{"text":"var:preset|color|primary"}}}},"textColor":"foreground"} /-->
+
+                <!-- wp:site-tagline {"style":{"typography":{"fontSize":"0.7rem","lineHeight":"1.2"}},"textColor":"secondary"} /-->
+            </div>
+            <!-- /wp:group -->
         </div>
         <!-- /wp:group -->
 
-        <!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"}} -->
-        <!-- wp:page-list {"isNavigationChild":true,"showSubmenuIcon":true,"openSubmenusOnClick":false} /-->
+        <!-- wp:navigation {"layout":{"type":"flex","setCascadingProperties":true,"justifyContent":"right"},"style":{"fontSize":"x-small"},"fontSize":"small"} -->
+        <!-- wp:page-list /-->
         <!-- /wp:navigation -->
     </div>
     <!-- /wp:group -->
