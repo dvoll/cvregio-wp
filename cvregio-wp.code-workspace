@@ -99,10 +99,12 @@
 			"wordpress"
 		],
 		"files.exclude": {
-			"themes/": true,
 			"themes/ev-region22-theme": true,
-			"plugins/": true,
-			"cvregio-frontend/": true,
+			"themes/cvregio-theme": true,
+			"themes/cvregio-block-2022child": true,
+			"plugins/cvregio-plugin": true,
+			"plugins/regio-blocks": true,
+			"cvregio-frontend/": true
 		}
 	}
 }
