@@ -273,7 +273,8 @@
 					"fontSize": "var(--wp--preset--font-size--medium)",
 					"fontStyle": "normal",
 					"fontWeight": "normal",
-					"letterSpacing": "-0.03em"
+					"letterSpacing": "-0.03em",
+					"textDecoration": "none"
 				}
 			}
 		},
