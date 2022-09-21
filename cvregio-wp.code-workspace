@@ -105,6 +105,9 @@
 			"plugins/cvregio-plugin": true,
 			"plugins/regio-blocks": true,
 			"cvregio-frontend/": true
+		},
+		"[html]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		}
 	}
 }
