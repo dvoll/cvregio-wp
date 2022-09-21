@@ -114,6 +114,7 @@ function evregion22theme_register_block_patterns()
 		'query-image-grid',
 		'query-large-titles',
 		'query-irregular-grid',
+		'logo-full-white',
 	);
 
 	/**
