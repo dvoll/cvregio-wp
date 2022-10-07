@@ -73,15 +73,6 @@ const edit = ({ attributes, setAttributes, isSelected, style }: any) => {
                 style: {
                     typography: { fontSize: '1.5rem' },
                     color: { text: 'var(--wp--preset--color--primary)' },
-                    spacing: {
-                        padding: {
-                            top: '0.5rem',
-                        },
-                        margin: {
-                            top: '0rem',
-                            bottom: '0.5rem',
-                        },
-                    },
                 },
             },
         ] as Template,
@@ -91,12 +82,6 @@ const edit = ({ attributes, setAttributes, isSelected, style }: any) => {
                 placeholder: 'Beschreibung',
                 style: {
                     typography: { fontSize: '1rem', lineHeight: 1.375 },
-                    spacing: {
-                        margin: {
-                            top: '0rem',
-                            bottom: '0rem',
-                        },
-                    },
                 },
             },
         ] as Template,
