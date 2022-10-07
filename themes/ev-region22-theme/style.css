@@ -26,6 +26,8 @@ Ev. Region 22 Block Theme is distributed under the terms of the GNU GPL.
 body {
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
+
+	background: var(--wp--preset--color--quaternary);
 }
 
 /*
