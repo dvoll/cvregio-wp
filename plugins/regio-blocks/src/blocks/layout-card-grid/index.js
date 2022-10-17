@@ -26,7 +26,7 @@ import metadata from './block.json';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( /** @type {any} */ (metadata), {
-	edit,
-	save,
-} );
+registerBlockType(/** @type {any} */ (metadata), {
+    edit,
+    save,
+});

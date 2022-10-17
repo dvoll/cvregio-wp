@@ -63,3 +63,11 @@
         position: absolute;
     }
 }
+
+.ev-region22-block-column-bigleft {
+    flex-basis: calc(75% + 8px) !important;
+}
+
+.ev-region22-block-column-smallright {
+    flex-basis: calc(25% - 8px) !important;
+}
