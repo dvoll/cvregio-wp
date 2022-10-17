@@ -1,11 +1,1 @@
-/*!***************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./src/blocks/layout-card-grid/style.scss ***!
-  \***************************************************************************************************************************************************************************************************************************************************************/
-/**
- * The following styles get applied both on the front of your site
- * and in the editor.
- *
- * Replace them with your own styles or remove the file completely.
- */
-
-/*# sourceMappingURL=style-index.css.map*/
+.ev-region22-blocks-layout-card-grid{align-items:stretch;display:flex;flex-wrap:wrap;justify-content:stretch;overflow:hidden;width:100%}.ev-region22-blocks-layout-card-grid>*{flex-basis:0;flex-grow:1;flex-shrink:1;max-width:100%;min-width:calc(max((38rem - 100%)*999,0px) + 50%)}.ev-region22-block-column-bigleft{flex-basis:calc(75% + 8px)!important}.ev-region22-block-column-smallright{flex-basis:calc(25% - 8px)!important}
