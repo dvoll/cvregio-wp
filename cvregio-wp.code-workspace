@@ -4,14 +4,23 @@
 			"path": "themes/cvregio-theme"
 		},
 		{
+			"path": "themes/cvregio-block-2022child"
+		},
+		{
+			"path": "themes/ev-region22-theme"
+		},
+		{
 			"path": "plugins/cvregio-plugin"
+		},
+		{
+			"path": "plugins/regio-blocks"
 		},
 		{
 			"path": "cvregio-frontend"
 		},
 		{
 			"path": ".",
-			"name": ".workspace",
+			"name": "root",
 		}
 	],
 	"settings": {
@@ -88,6 +97,40 @@
 			"zip",
 			"zlib",
 			"wordpress"
-		]
+		],
+		"files.exclude": {
+			"themes/ev-region22-theme": true,
+			"themes/cvregio-theme": true,
+			"themes/cvregio-block-2022child": true,
+			"plugins/cvregio-plugin": true,
+			"plugins/regio-blocks": true,
+			"cvregio-frontend/": true
+		},
+		"files.watcherExclude": {
+			"**/.git/objects/**": true,
+			"**/.git/subtree-cache/**": true,
+			"**/node_modules/*/**": true,
+			"**/.hg/store/**": true
+		},
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+		"[html]": {
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[javascript]": {
+			"editor.formatOnSave": true,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[javascriptreact]": {
+			"editor.formatOnSave": true,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[typescript]": {
+			"editor.formatOnSave": true,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[typescriptreact]": {
+			"editor.formatOnSave": true,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		}
 	}
 }

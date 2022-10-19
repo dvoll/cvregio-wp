@@ -1,0 +1,31 @@
+{
+	"name": "ev-region22-blocks",
+	"version": "0.1.0",
+	"description": "Blocks.",
+	"author": "Dario Voll",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"packages-update": "wp-scripts packages-update",
+		"plugin-zip": "wp-scripts plugin-zip",
+		"start": "wp-scripts start"
+	},
+	"devDependencies": {
+		"@types/wordpress__api-fetch": "^3.23.1",
+		"@types/wordpress__block-editor": "^7.0.0",
+		"@types/wordpress__blocks": "^11.0.7",
+		"@types/wordpress__data": "^6.0.1",
+		"@wordpress/scripts": "^24.1.0"
+	},
+	"dependencies": {
+		"@wordpress/api-fetch": "^6.14.0",
+		"@wordpress/blocks": "^11.16.0",
+		"@wordpress/components": "^21.0.0",
+		"@wordpress/data": "^7.1.0",
+		"@wordpress/icons": "^9.9.0"
+	}
+}
