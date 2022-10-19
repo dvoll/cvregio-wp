@@ -24,6 +24,7 @@ plugins/*
 themes/*
 !themes/cvregio-theme/
 !themes/cvregio-block-2022child/
+!themes/ev-region22-theme/
 
 /.htaccess
 /license.txt
