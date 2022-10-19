@@ -64,5 +64,13 @@ endif;
 
 add_action('wp_enqueue_scripts', 'evregion22theme_styles');
 
+
+
+function evregion22theme_metatagtheme() {
+	echo '<meta name="theme-color" content="#F7F3F1">';
+}
+
+add_action('wp_head', 'evregion22theme_metatagtheme');
+
 // Add block patterns
 require get_template_directory() . '/inc/block-patterns.php';
