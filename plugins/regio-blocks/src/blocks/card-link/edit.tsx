@@ -155,9 +155,12 @@ const edit = ({ attributes, setAttributes, isSelected, style }: any) => {
                     )}
                     <MediaUpload
                         onSelect={(img) => {
+                            const url =
+                                img.sizes.thumbnail?.url ?? img.sizes.medium?.url ?? img.sizes.large?.url ?? img.url;
+
                             setAttributes({
                                 imageId: img.id,
-                                imageUrl: img.url,
+                                imageUrl: url,
                             });
                         }}
                         allowedTypes={['image']}
