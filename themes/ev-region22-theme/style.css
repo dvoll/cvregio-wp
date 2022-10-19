@@ -44,21 +44,21 @@ a {
 
 a:hover,
 a:focus {
-	text-decoration: underline;
+	text-decoration-line: underline;
 	/* text-decoration-style: dashed; */
 }
 
 a:active {
-	text-decoration: none;
+	text-decoration-line: none;
 }
 
 .wp-block-site-title > a {
-	text-decoration: none;
+	text-decoration-line: none;
 }
 
 .wp-block-navigation .wp-block-navigation-item a:hover,
 .wp-block-navigation .wp-block-navigation-item a:focus {
-	text-decoration: underline;
+	text-decoration-line: underline;
 	text-decoration-style: solid;
 }
 
