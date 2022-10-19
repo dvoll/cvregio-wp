@@ -37,6 +37,7 @@ body {
  */
 
 a {
+	text-decoration-style: none;
 	text-decoration-thickness: 1px;
 	text-underline-offset: 0.25ch;
 }
