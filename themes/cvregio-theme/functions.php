@@ -224,6 +224,15 @@ function twentynineteen_scripts()
 	$asset_file = include(plugin_dir_path(__FILE__) . 'cvregio-frontend-dist/theme.bundle.asset.php');
 
 	wp_register_style(
+		'cv-regio-theme-font-css',
+		content_url() . '/themes/cvregio-theme/font.css',
+		[],
+		// ['cv-regio-css-common'],
+		$asset_file['version']
+	);
+	wp_enqueue_style('cv-regio-theme-font-css');
+
+	wp_register_style(
 		'cv-regio-css-common',
 		content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/714.css',
 		[],
