@@ -234,7 +234,7 @@ function twentynineteen_scripts()
 
 	wp_register_style(
 		'cv-regio-css-common',
-		content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/714.css',
+		content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/871.css',
 		[],
 		$asset_file['version']
 	);
@@ -253,7 +253,7 @@ function twentynineteen_scripts()
 
 	wp_register_script(
 		'cv-regio-js-common',
-		content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/714.bundle.js',
+		content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/871.bundle.js',
 		['wp-api-fetch', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-element', 'wp-polyfill', 'wp-url'],
 		$asset_file['version'],
 		true

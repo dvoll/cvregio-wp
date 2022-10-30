@@ -48,7 +48,7 @@ function cv_blocks_editor_assets()
 
 	wp_register_script(
 		'cv-regio-js-common',
-		content_url() . '/plugins/cvregio-plugin/cvregio-frontend-dist/714.bundle.js',
+		content_url() . '/plugins/cvregio-plugin/cvregio-frontend-dist/871.bundle.js',
 		['wp-api-fetch', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-element', 'wp-polyfill', 'wp-url'],
 		$frontend_asset_file['version'],
 		true
@@ -75,7 +75,7 @@ function cv_blocks_init_styles()
 
 	wp_register_style(
 		'cv-regio-css-common',
-		content_url() . '/plugins/cvregio-plugin/cvregio-frontend-dist/714.css',
+		content_url() . '/plugins/cvregio-plugin/cvregio-frontend-dist/871.css',
 		[],
 		$frontend_asset_file['version'],
 	);

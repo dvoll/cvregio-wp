@@ -20,9 +20,9 @@ const mapping = [
         targetPath: '/plugins/cvregio-plugin/',
         distFolder: 'cvregio-frontend-dist',
         files: [
-            { type: 'js', name: '714' },
+            { type: 'js', name: '871' },
             { type: 'js', name: 'plugin' },
-            { type: 'css', name: '714' },
+            { type: 'css', name: '871' },
             { type: 'css', name: 'plugin' },
             { type: 'php', name: 'plugin' },
         ],
@@ -32,9 +32,9 @@ const mapping = [
         targetPath: '/themes/cvregio-theme/',
         distFolder: 'cvregio-frontend-dist',
         files: [
-            { type: 'js', name: '714' },
+            { type: 'js', name: '871' },
             { type: 'js', name: 'theme' },
-            { type: 'css', name: '714' },
+            { type: 'css', name: '871' },
             { type: 'css', name: 'theme' },
             { type: 'php', name: 'theme' },
         ],
@@ -58,13 +58,13 @@ async function getFiles(dirs) {
         return [];
     }
     const filePromises = [];
-    dirs.map(async dir => {
+    dirs.map(async (dir) => {
         filePromises.push(readDir(dir));
     });
     const filesArray = await Promise.all(filePromises);
     let files = filesArray.reduce((acc, val) => acc.concat(val), []);
 
-    files = files.map(file => {
+    files = files.map((file) => {
         // const [name, second, third = false, fourth = false] = file.split('.');
         const content = file.split('.');
         return {
@@ -79,8 +79,7 @@ async function getFiles(dirs) {
 function getWpDeclaration(file, dist) {
     if (file.type === 'js') {
         return `
-wp_enqueue_script('cv-frontend-${file.chunkName}', content_url() . '${dist +
-            file.fileName}', array(), '1.0', true );
+wp_enqueue_script('cv-frontend-${file.chunkName}', content_url() . '${dist + file.fileName}', array(), '1.0', true );
 `;
     }
     return `
@@ -111,7 +110,7 @@ async function clearFolder(dir) {
     }
     try {
         const files = await fsp.readdir(dir);
-        files.forEach(async file => {
+        files.forEach(async (file) => {
             try {
                 await fsp.unlink(dir + file);
             } catch (err) {
@@ -134,15 +133,10 @@ async function main(srcDirection) {
         await clearFolder(path);
         let wpdeclaration = '';
         for (const mapFile of mapItem.files) {
-            const resultFile = files.find(
-                file => file.chunkName === mapFile.name && file.type === mapFile.type
-            );
+            const resultFile = files.find((file) => file.chunkName === mapFile.name && file.type === mapFile.type);
             if (resultFile) {
                 copyFile(`${srcDir}/${resultFile.fileName}`, path + resultFile.fileName);
-                wpdeclaration += getWpDeclaration(
-                    resultFile,
-                    `${mapItem.targetPath + mapItem.distFolder}/`
-                );
+                wpdeclaration += getWpDeclaration(resultFile, `${mapItem.targetPath + mapItem.distFolder}/`);
             }
         }
         const wpFileContent = fileContent + wpdeclaration;
