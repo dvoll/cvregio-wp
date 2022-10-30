@@ -6,16 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 } 
 
 
-wp_enqueue_script('cv-frontend-714', content_url() . '/plugins/cvregio-plugin/cvregio-frontend-dist/714.bundle.js', array(), '1.0', true );
-
 wp_enqueue_script('cv-frontend-plugin', content_url() . '/plugins/cvregio-plugin/cvregio-frontend-dist/plugin.bundle.js', array(), '1.0', true );
-
-wp_register_style(
-    'cv-frontend-714',
-    content_url() . '/plugins/cvregio-plugin/cvregio-frontend-dist/714.css',
-    array( 'wp-editor' )
-);
-wp_enqueue_style('cv-frontend-714');
 
 wp_register_style(
     'cv-frontend-plugin',
