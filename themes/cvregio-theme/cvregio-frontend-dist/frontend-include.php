@@ -6,7 +6,16 @@ if ( ! defined( 'ABSPATH' ) ) {
 } 
 
 
+wp_enqueue_script('cv-frontend-871', content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/871.bundle.js', array(), '1.0', true );
+
 wp_enqueue_script('cv-frontend-theme', content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/theme.bundle.js', array(), '1.0', true );
+
+wp_register_style(
+    'cv-frontend-871',
+    content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/871.css',
+    array( 'wp-editor' )
+);
+wp_enqueue_style('cv-frontend-871');
 
 wp_register_style(
     'cv-frontend-theme',
