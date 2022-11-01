@@ -13,11 +13,7 @@
 
 .ev-region22-blocks-layout-card-grid {
     width: 100%;
-    // display: flex;
-    // flex-wrap: wrap;
-    // justify-content: stretch;
-    // align-items: stretch;
-    // overflow: hidden;
+    padding-left: 0;
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--wp--style--block-gap, 1.125rem);
@@ -28,6 +24,7 @@
 
     }
 }
+
 
 .ev-region22-blocks-layout-card-grid > * {
   align-self: start;

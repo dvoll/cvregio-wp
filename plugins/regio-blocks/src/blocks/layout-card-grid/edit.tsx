@@ -152,7 +152,7 @@ export default function LayoutCardGridEdit({
                     />
                 </PanelBody>
             </InspectorControls>
-            <div {...blockProps}>
+            <ul {...blockProps}>
                 {posts &&
                     posts.map((post: any) => {
                         let excerpt = post.excerpt.rendered;
@@ -174,6 +174,7 @@ export default function LayoutCardGridEdit({
 
                         return (
                             <Card
+                                as={'li'}
                                 key={post.id}
                                 title={post.title.rendered}
                                 linkUrl={post.link}
@@ -183,7 +184,7 @@ export default function LayoutCardGridEdit({
                             />
                         );
                     })}
-            </div>
+            </ul>
         </>
     );
 }

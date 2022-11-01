@@ -8,12 +8,13 @@ import ArrowIcon from './arrow-icon';
  *  linkUrl?: string,
  *  image?: {url: string, alt: string}
  *  onClick?: (event: any) => void,
+ *  as?: React.ElementType,
  * }}
  * @returns
  */
-const Card = ({ title, content, linkUrl = undefined, image = undefined, onClick }) => {
+const Card = ({ title, content, linkUrl = undefined, image = undefined, onClick, as: Tag = 'div' }) => {
     return (
-        <div
+        <Tag
             className="wp-block-ev-region22-blocks-card-link ev-region22-card has-background-background-color has-background"
             style={{ borderRadius: '0.25rem', paddingTop: 0, paddingBottom: '1rem', pointerEvents: 'none' }}
             onClick={onClick}
@@ -48,7 +49,7 @@ const Card = ({ title, content, linkUrl = undefined, image = undefined, onClick 
                 )}
             </div>
             {linkUrl && <a className="ev-region22-card__linkclickarea" aria-hidden="true" href={linkUrl}></a>}
-        </div>
+        </Tag>
     );
 };
 
