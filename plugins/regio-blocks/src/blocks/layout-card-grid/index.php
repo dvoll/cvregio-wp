@@ -161,16 +161,18 @@ function render_evregio22_blocks_layout_card_grid($attributes)
             $post_link
         );
 
+        $icon = 'arrow-right';
+
         $list_items_markup .= sprintf(
             '<div class="ev-region22-card__arrow-icon">
             <svg
                 viewBox="0 0 144 144"
-                style="width: 100%; height: auto; fill: currentcolor"
+                style="width: 100%%; height: auto; fill: currentcolor"
             >
                 <use href="#%1$s" />
             </svg>
-        </div>',
-            'arrow-right'
+            </div>',
+            $icon
         );
 
         $list_items_markup .= "</a>\n";
