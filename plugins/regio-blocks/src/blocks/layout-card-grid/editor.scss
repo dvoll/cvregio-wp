@@ -5,5 +5,17 @@
  */
 
 .wp-block-ev-region22-blocks-layout-card-grid {
-	border: 1px dotted #f00;
+    // border: 1px dotted #f00;
+}
+
+.wp-block-ev-region22-blocks-layout-card-grid > * {
+}
+
+.wp-block-ev-region22-blocks-card-link__linkclickarea:focus {
+    outline: none;
+	box-shadow: none;
+}
+
+.block-editor__container img.ev-region22-card__image {
+    height: 100%;
 }

@@ -3,9 +3,9 @@
 	"apiVersion": 2,
 	"name": "ev-region22-blocks/card-link",
 	"version": "0.1.0",
-	"title": "Linked Card",
-	"category": "widgets",
-	"icon": "smiley",
+	"title": "Box mit Link",
+	"category": "text",
+	"icon": "embed-generic",
 	"description": "TODO",
 	"supports": {
 		"html": false,

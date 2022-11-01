@@ -20,7 +20,21 @@
  *
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
+
+require_once(__DIR__ . '/src/blocks/layout-card-grid/index.php');
+
+
+function evregio22_blocks_svg_inline() {
+	readfile(__DIR__ . '/svg-sprite.html');
+}
+add_action( 'admin_footer', 'evregio22_blocks_svg_inline' );
+add_action( 'wp_body_open', 'evregio22_blocks_svg_inline' );
+	
 function evregio22_blocks_block_init() {
 	register_block_type( __DIR__ . '/build/blocks/card-link' );
+	register_block_type( __DIR__ . '/build/blocks/layout-card-grid', array(
+		'render_callback' => 'render_evregio22_blocks_layout_card_grid'
+	) );
 }
 add_action( 'init', 'evregio22_blocks_block_init' );
+
