@@ -11,7 +11,7 @@ import ArrowIcon from '../../card/arrow-icon';
  * @return {import("@wordpress/element").WPElement} Element to render.
  */
 export default function save({ attributes, className }) {
-    const { linkUrl, linkTarget, imageUrl, focalPointValueX, focalPointValueY } = attributes;
+    const { linkUrl, linkTarget, linkRel, imageUrl, focalPointValueX, focalPointValueY } = attributes;
 
     const opensInNewTab = linkTarget === '_blank';
 
@@ -45,12 +45,19 @@ export default function save({ attributes, className }) {
                         aria-label="Artikel aufrufen"
                         href={linkUrl}
                         target={linkTarget}
+                        rel={linkRel}
                     >
                         <ArrowIcon icon={opensInNewTab ? 'external' : 'arrow-right'} />
                     </a>
                 )}
             </div>
-            <a className="ev-region22-card__linkclickarea" aria-hidden="true" href={linkUrl} target={linkTarget}></a>
+            <a
+                className="ev-region22-card__linkclickarea"
+                aria-hidden="true"
+                href={linkUrl}
+                target={linkTarget}
+                rel={linkRel}
+            ></a>
         </div>
     );
 }
