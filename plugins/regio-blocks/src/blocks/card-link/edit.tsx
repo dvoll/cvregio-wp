@@ -3,23 +3,17 @@ import {
     BlockIcon,
     InnerBlocks,
     InspectorControls,
-    MediaPlaceholder,
     MediaUpload,
     useBlockProps,
-    MediaReplaceFlow,
-    URLInput,
-    URLInputButton,
     __experimentalLinkControl as LinkControl,
     AlignmentToolbar,
-    withColors,
 } from '@wordpress/block-editor';
-import { BlockEditProps, Template } from '@wordpress/blocks';
+import { Template } from '@wordpress/blocks';
 import { Button, FocalPointPicker, PanelBody, Popover, ToolbarButton } from '@wordpress/components';
-import { cover, link, linkOff } from '@wordpress/icons';
+import { link, linkOff } from '@wordpress/icons';
 import { useCallback } from 'react';
 import { useState, useEffect, useRef } from 'react';
 import { __ } from '@wordpress/i18n';
-import { compose } from '@wordpress/compose';
 import ArrowIcon from '../../card/arrow-icon';
 
 /**
