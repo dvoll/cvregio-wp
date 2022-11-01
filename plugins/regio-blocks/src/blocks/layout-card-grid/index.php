@@ -47,7 +47,7 @@ function render_evregio22_blocks_layout_card_grid($attributes)
     add_filter('excerpt_more', 'evregio22_blocks_layout_card_grid_excerpt_more');
 
 
-    if (isset($attributes['categoryId'])) {
+    if (isset($attributes['categoryId']) && $attributes['categoryId'] >= 0) {
         $args['category__in'] = [$attributes['categoryId']];
     }
 

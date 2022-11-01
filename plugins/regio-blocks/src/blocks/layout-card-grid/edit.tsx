@@ -65,11 +65,17 @@ export default function LayoutCardGridEdit({
     } = attributes;
 
     const onCategoryChange = (token: string) => {
+        if (token === '') {
+            setAttributes({ categoryId: -1 });
+        }
+
         const newCategoryId = parseInt(token, 10);
+
         if (isNaN(newCategoryId)) {
             setAttributes({ categoryId: -1 });
             return;
         }
+
         setAttributes({ categoryId: newCategoryId });
     };
 
@@ -84,7 +90,7 @@ export default function LayoutCardGridEdit({
                 // orderby: orderBy,
                 _embed: 'wp:featuredmedia',
             };
-            if (categoryId !== undefined) latestPostsQuery.categories = [categoryId];
+            if (categoryId !== undefined && categoryId >= 0) latestPostsQuery.categories = [categoryId];
             if (postsToShow !== undefined) latestPostsQuery.per_page = postsToShow;
 
             const settings = select(blockEditorStore).getSettings();
