@@ -21,6 +21,10 @@ function evregio22_blocks_layout_card_grid_get_excerpt_length_without_image() {
     return 48;
 }
 
+function evregio22_blocks_layout_card_grid_excerpt_more() {
+    return ' ...';
+}
+
 /**
  * Renders the `core/layout-card-grid` block on server.
  *
@@ -39,6 +43,8 @@ function render_evregio22_blocks_layout_card_grid($attributes)
         // 'orderby'          => $attributes['orderBy'],
         'suppress_filters' => false,
     );
+
+    add_filter('excerpt_more', 'evregio22_blocks_layout_card_grid_excerpt_more');
 
 
     if (isset($attributes['categoryId'])) {
@@ -190,6 +196,9 @@ function render_evregio22_blocks_layout_card_grid($attributes)
         'class' => $class,
         'style' => sprintf('--ev-region22-blocks-layout-card-grid-item-count: %1$s;', count($recent_posts))
     ));
+
+    remove_filter('excerpt_more', 'evregio22_blocks_layout_card_grid_excerpt_more');
+
 
     return sprintf(
         '<ul %1$s>%2$s</ul>',
