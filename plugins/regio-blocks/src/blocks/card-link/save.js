@@ -13,6 +13,8 @@ import ArrowIcon from '../../card/arrow-icon';
 export default function save({ attributes, className }) {
     const { linkUrl, linkTarget, imageUrl, focalPointValueX, focalPointValueY } = attributes;
 
+    const opensInNewTab = linkTarget === '_blank';
+
     const blockProps = useBlockProps.save({
         className: 'ev-region22-blocks-card-link ev-region22-card',
     });
@@ -38,12 +40,17 @@ export default function save({ attributes, className }) {
                     <InnerBlocks.Content />
                 </div>
                 {linkUrl && (
-                    <a className="ev-region22-card__link" aria-label="Artikel aufrufen" href={linkUrl}>
-                        <ArrowIcon />
+                    <a
+                        className="ev-region22-card__link"
+                        aria-label="Artikel aufrufen"
+                        href={linkUrl}
+                        target={linkTarget}
+                    >
+                        <ArrowIcon icon={opensInNewTab ? 'external' : 'arrow-right'} />
                     </a>
                 )}
             </div>
-            <a className="ev-region22-card__linkclickarea" aria-hidden="true" href={linkUrl}></a>
+            <a className="ev-region22-card__linkclickarea" aria-hidden="true" href={linkUrl} target={linkTarget}></a>
         </div>
     );
 }

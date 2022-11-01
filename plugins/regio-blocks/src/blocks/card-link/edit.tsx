@@ -244,7 +244,7 @@ const edit = ({ attributes, setAttributes, isSelected, style }: any) => {
                     </div>
                     {linkUrl && (
                         <a className="ev-region22-card__link" aria-label="Artikel aufrufen" href={linkUrl}>
-                            <ArrowIcon />
+                            <ArrowIcon icon={opensInNewTab ? 'external' : 'arrow-right'} />
                         </a>
                     )}
                 </div>

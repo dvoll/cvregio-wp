@@ -1,4 +1,11 @@
-const ArrowIcon = () => {
+/**
+ *
+ * @param {{
+ *  icon?: 'arrow-right' | 'external'
+ * }} param0
+ * @returns
+ */
+const ArrowIcon = ({ icon = 'arrow-right' }) => {
     return (
         <div className="ev-region22-card__arrow-icon">
             <svg
@@ -9,7 +16,7 @@ const ArrowIcon = () => {
                     fill: 'currentcolor',
                 }}
             >
-                <use xlinkHref="#arrow-right" />
+                <use xlinkHref={`#${icon}`} />
             </svg>
         </div>
     );
