@@ -3,9 +3,9 @@
 	"apiVersion": 2,
 	"name": "ev-region22-blocks/layout-card-grid",
 	"version": "0.1.0",
-	"title": "Card Grid Layout",
+	"title": "Letzte Beiträge (Box mit Link)",
 	"category": "widgets",
-	"icon": "smiley",
+	"icon": "columns",
 	"description": "Example block scaffolded with Create Block tool.",
 	"supports": {
 		"align": true,
