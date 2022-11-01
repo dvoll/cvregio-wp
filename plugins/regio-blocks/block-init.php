@@ -27,6 +27,7 @@ require_once(__DIR__ . '/src/blocks/layout-card-grid/index.php');
 function evregio22_blocks_svg_inline() {
 	readfile(__DIR__ . '/svg-sprite.html');
 }
+add_action( 'admin_footer', 'evregio22_blocks_svg_inline' );
 add_action( 'wp_body_open', 'evregio22_blocks_svg_inline' );
 	
 function evregio22_blocks_block_init() {
