@@ -17,6 +17,10 @@ function evregio22_blocks_layout_card_grid_get_excerpt_length() {
     return 16;
 }
 
+function evregio22_blocks_layout_card_grid_get_excerpt_length_without_image() {
+    return 48;
+}
+
 /**
  * Renders the `core/layout-card-grid` block on server.
  *
@@ -36,7 +40,6 @@ function render_evregio22_blocks_layout_card_grid($attributes)
         'suppress_filters' => false,
     );
 
-    add_filter('excerpt_length', 'evregio22_blocks_layout_card_grid_get_excerpt_length', 20);
 
     if (isset($attributes['categoryId'])) {
         $args['category__in'] = [$attributes['categoryId']];
@@ -85,6 +88,7 @@ function render_evregio22_blocks_layout_card_grid($attributes)
                 $featured_image
             );
         }
+
         $list_items_markup .= '<div class="ev-region22-card__content">
         <div class="ev-region22-card__inner-blocks-wrapper">';
 
@@ -109,7 +113,20 @@ function render_evregio22_blocks_layout_card_grid($attributes)
         );
         // $post_link,
 
+        
+        if (has_post_thumbnail($post)) {
+            add_filter('excerpt_length', 'evregio22_blocks_layout_card_grid_get_excerpt_length', 20);
+        } else {
+            add_filter('excerpt_length', 'evregio22_blocks_layout_card_grid_get_excerpt_length_without_image', 20);
+        }
+
         $trimmed_excerpt = get_the_excerpt($post);
+
+        if (has_post_thumbnail($post)) {
+            remove_filter('excerpt_length', 'evregio22_blocks_layout_card_grid_get_excerpt_length', 20);
+        } else {
+            remove_filter('excerpt_length', 'evregio22_blocks_layout_card_grid_get_excerpt_length_without_image', 20);
+        }
 
         if (post_password_required($post)) {
             $trimmed_excerpt = __('This content is password protected.');
@@ -166,8 +183,6 @@ function render_evregio22_blocks_layout_card_grid($attributes)
         $list_items_markup .= "</li>\n";
 
     }
-
-    remove_filter('excerpt_length', 'evregio22_blocks_layout_card_grid_get_excerpt_length', 20);
 
     $class = 'ev-region22-blocks-layout-card-grid';
 

@@ -30,6 +30,7 @@ interface Category {
 }
 
 const EXCERPT_LENGTH = 16;
+const EXCERPT_LENGTH_WITHOUT_IMAGE = 48;
 
 function getFeaturedImageDetails(post: any, sizeSlug: string): { url: string; alt: string } | undefined {
     const image = post._embedded?.['wp:featuredmedia']?.[0];
@@ -156,11 +157,19 @@ export default function LayoutCardGridEdit({
                     posts.map((post: any) => {
                         let excerpt = post.excerpt.rendered;
 
+                        const hasImage = post._embedded?.['wp:featuredmedia']?.[0] !== undefined;
+
+                        let excerptMaxLength = EXCERPT_LENGTH_WITHOUT_IMAGE;
+
+                        if (hasImage) {
+                            excerptMaxLength = EXCERPT_LENGTH;
+                        }
+
                         const needsReadMore =
-                            EXCERPT_LENGTH < excerpt.trim().split(' ').length && post.excerpt.raw === '';
+                            excerptMaxLength < excerpt.trim().split(' ').length && post.excerpt.raw === '';
 
                         const postExcerpt = needsReadMore
-                            ? excerpt.trim().split(' ', EXCERPT_LENGTH).join(' ') + __(' … ')
+                            ? excerpt.trim().split(' ', excerptMaxLength).join(' ') + __(' … ')
                             : excerpt;
 
                         return (
