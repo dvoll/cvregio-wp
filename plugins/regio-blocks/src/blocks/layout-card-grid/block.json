@@ -8,10 +8,25 @@
 	"icon": "smiley",
 	"description": "Example block scaffolded with Create Block tool.",
 	"supports": {
+		"align": true,
 		"html": false
 	},
 	"textdomain": "layout-card-grid",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css"
+	"style": "file:./style-index.css",
+	"attributes": {
+		"postsToShow": {
+			"type": "number",
+			"default": 3
+		},
+		"categoryId": {
+			"type": "number",
+			"default": -1
+		},
+		"thumbnailSizeSlug": {
+			"type": "string",
+			"default": "thumbnail"
+		}
+	}
 }

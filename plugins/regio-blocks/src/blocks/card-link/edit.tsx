@@ -20,7 +20,7 @@ import { useCallback } from 'react';
 import { useState, useEffect, useRef } from 'react';
 import { __ } from '@wordpress/i18n';
 import { compose } from '@wordpress/compose';
-import ArrowIcon from './arrow-icon';
+import ArrowIcon from '../../card/arrow-icon';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -49,7 +49,7 @@ const edit = ({ attributes, setAttributes, isSelected, style }: any) => {
     // const bgStyle = { backgroundColor: backgroundColor.color };
 
     const blockProps = useBlockProps({
-        className: 'todo',
+        className: 'ev-region22-blocks-card-link ev-region22-card',
         ref: moduleRef,
         style: style,
     });
@@ -229,25 +229,21 @@ const edit = ({ attributes, setAttributes, isSelected, style }: any) => {
             )}
             <div {...blockProps}>
                 {imageUrl && (
-                    <div className="wp-block-ev-region22-blocks-card-link__image-container">
+                    <div className="ev-region22-card__image-container">
                         <img
-                            className="wp-block-ev-region22-blocks-card-link__image"
+                            className="ev-region22-card__image"
                             // alt={ alt }
                             src={imageUrl}
                             style={{ objectPosition: mediaPosition({ x: focalPointValueX, y: focalPointValueY }) }}
                         />
                     </div>
                 )}
-                <div className="wp-block-ev-region22-blocks-card-link__content">
-                    <div className="wp-block-ev-region22-blocks-card-link__inner-blocks-wrapper">
+                <div className="ev-region22-card__content">
+                    <div className="ev-region22-card__inner-blocks-wrapper">
                         <InnerBlocks template={BLOCKS_TEMPLATE} />
                     </div>
                     {linkUrl && (
-                        <a
-                            className="wp-block-ev-region22-blocks-card-link__link"
-                            aria-label="Artikel aufrufen"
-                            href={linkUrl}
-                        >
+                        <a className="ev-region22-card__link" aria-label="Artikel aufrufen" href={linkUrl}>
                             <ArrowIcon />
                         </a>
                     )}

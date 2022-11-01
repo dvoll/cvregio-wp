@@ -5,26 +5,38 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.ev-region22-blocks-layout-card-grid {
-    display: flex;
-}
+// .ev-region22-blocks-layout-card-grid {
+//     display: flex;
+// }
+
+@import '../../card/card';
 
 .ev-region22-blocks-layout-card-grid {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: stretch;
-    align-items: stretch;
-    overflow: hidden;
+    // display: flex;
+    // flex-wrap: wrap;
+    // justify-content: stretch;
+    // align-items: stretch;
+    // overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--wp--style--block-gap, 1.125rem);
+    list-style: none;
+    
+    @media screen and (min-width: 782px) {
+      grid-template-columns: repeat(min(var(--ev-region22-blocks-layout-card-grid-item-count, 1), 3), 1fr);
+
+    }
 }
 
 .ev-region22-blocks-layout-card-grid > * {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0;
-    // --media-sm-inverse: calc(19rem - 100%);
-    min-width: calc(max((calc(38rem - 100%)) * 999, 0px) + 50%);
-    max-width: 100%;
+  align-self: start;
+    // flex-grow: 1;
+    // flex-shrink: 1;
+    // flex-basis: 0;
+    // // --media-sm-inverse: calc(19rem - 100%);
+    // min-width: calc(max((calc(38rem - 100%)) * 999, 0px) + 50%);
+    // max-width: 100%;
 }
 
 // .ev-region22-block-columns {
@@ -42,8 +54,8 @@
 // }
 
 .ev-region22-block-column-bigleft {
-  flex-basis: calc(75% + 8px) !important;
+    flex-basis: calc(75% + 8px) !important;
 }
 .ev-region22-block-column-smallright {
-  flex-basis: calc(25% - 8px) !important;
+    flex-basis: calc(25% - 8px) !important;
 }
