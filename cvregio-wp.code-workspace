@@ -1,7 +1,7 @@
 {
 	"folders": [
 		{
-			"path": "themes/cvregio-theme"
+			"path": "themes/cvregio23-theme"
 		},
 		{
 			"path": "themes/cvregio-block-2022child"
@@ -99,9 +99,9 @@
 			"wordpress"
 		],
 		"files.exclude": {
+			"themes/cvregio23-theme": true,
 			"themes/ev-region22-theme": true,
 			"themes/cvregio-theme": true,
-			"themes/cvregio-block-2022child": true,
 			"plugins/cvregio-plugin": true,
 			"plugins/ev-region22-blocks": true,
 			"cvregio-frontend/": true
