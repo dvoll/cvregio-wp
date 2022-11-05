@@ -11,7 +11,7 @@
 	<?php 
 		$custom_logo_id = get_theme_mod( 'custom_logo' );
 		$image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-		$custom_logo_url =  $image[0];
+		$custom_logo_url =  isset($image[0]) ? $image[0] : null;
 	?>
 		<page-header 
 			title="<?php bloginfo( 'name' ); ?>" 
