@@ -13,7 +13,7 @@
 			"path": "plugins/cvregio-plugin"
 		},
 		{
-			"path": "plugins/regio-blocks"
+			"path": "plugins/ev-region22-blocks"
 		},
 		{
 			"path": "cvregio-frontend"
@@ -103,7 +103,7 @@
 			"themes/cvregio-theme": true,
 			"themes/cvregio-block-2022child": true,
 			"plugins/cvregio-plugin": true,
-			"plugins/regio-blocks": true,
+			"plugins/ev-region22-blocks": true,
 			"cvregio-frontend/": true
 		},
 		"files.watcherExclude": {
