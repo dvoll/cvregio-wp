@@ -131,6 +131,10 @@
 		"[typescriptreact]": {
 			"editor.formatOnSave": true,
 			"editor.defaultFormatter": "esbenp.prettier-vscode"
+		},
+		"[php]": {
+			"editor.formatOnSave": true,
+			"editor.defaultFormatter": "esbenp.prettier-vscode"
 		}
 	}
 }
