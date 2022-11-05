@@ -71,6 +71,3 @@ function evregion22theme_metatagtheme() {
 }
 
 add_action('wp_head', 'evregion22theme_metatagtheme');
-
-// Add block patterns
-require get_template_directory() . '/inc/block-patterns.php';
