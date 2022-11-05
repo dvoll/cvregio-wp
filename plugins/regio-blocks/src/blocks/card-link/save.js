@@ -16,7 +16,7 @@ export default function save({ attributes, className }) {
     const opensInNewTab = linkTarget === '_blank';
 
     const blockProps = useBlockProps.save({
-        className: 'ev-region22-blocks-card-link ev-region22-card',
+        className: 'wp-block-ev-region22-blocks-card-link ev-region22-card',
     });
 
     const mediaPosition = ({ x, y } = { x: 0.5, y: 0.5 }) => {

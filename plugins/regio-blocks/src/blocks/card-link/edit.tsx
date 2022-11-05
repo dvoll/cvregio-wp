@@ -43,7 +43,7 @@ const edit = ({ attributes, setAttributes, isSelected, style }: any) => {
     // const bgStyle = { backgroundColor: backgroundColor.color };
 
     const blockProps = useBlockProps({
-        className: 'ev-region22-blocks-card-link ev-region22-card',
+        className: 'wp-block-ev-region22-blocks-card-link ev-region22-card',
         ref: moduleRef,
         style: style,
     });
