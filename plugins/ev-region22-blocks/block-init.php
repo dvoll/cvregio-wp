@@ -13,6 +13,18 @@
  * @package           ev-region22-blocks
  */
 
+
+/** Add dynamic blocks functions */
+require_once(__DIR__ . '/src/blocks/layout-card-grid/index.php');
+
+
+/** Add svg sprite to body and editor */
+function evregio22_blocks_svg_inline() {
+	readfile(__DIR__ . '/svg-sprite.html');
+}
+add_action( 'admin_footer', 'evregio22_blocks_svg_inline' );
+add_action( 'wp_body_open', 'evregio22_blocks_svg_inline' );
+
 /**
  * Registers the block using the metadata loaded from the `block.json` file.
  * Behind the scenes, it registers also all assets so they can be enqueued
@@ -21,15 +33,6 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 
-require_once(__DIR__ . '/src/blocks/layout-card-grid/index.php');
-
-
-function evregio22_blocks_svg_inline() {
-	readfile(__DIR__ . '/svg-sprite.html');
-}
-add_action( 'admin_footer', 'evregio22_blocks_svg_inline' );
-add_action( 'wp_body_open', 'evregio22_blocks_svg_inline' );
-	
 function evregio22_blocks_block_init() {
 	register_block_type( __DIR__ . '/build/blocks/card-link' );
 	register_block_type( __DIR__ . '/build/blocks/layout-card-grid', array(

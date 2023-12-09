@@ -17,7 +17,7 @@ function cvregio_regio_render_related_associates($attributes) {
             'firstname' => $associate->firstname,
             'lastname' => $associate->lastname,
             'roles' => $associate->roles,
-            'imgId' => $associate->imageId,
+            'imgId' => isset($associate->imgId) ? $associate->imgId : false,
         ]);
         if (isset($associate->isContact) && $associate->isContact) {
             $associateContactElements .= $associateElement;

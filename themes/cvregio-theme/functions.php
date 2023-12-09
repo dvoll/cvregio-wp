@@ -254,7 +254,7 @@ function twentynineteen_scripts()
 	wp_register_script(
 		'cv-regio-js-common',
 		content_url() . '/themes/cvregio-theme/cvregio-frontend-dist/871.bundle.js',
-		['wp-api-fetch', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-element', 'wp-polyfill', 'wp-url'],
+		['wp-api-fetch', 'wp-blocks', 'wp-components', 'wp-block-editor', 'wp-element', 'wp-polyfill', 'wp-url'],
 		$asset_file['version'],
 		true
 	);

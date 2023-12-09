@@ -19,7 +19,7 @@ wp-cache-config.php
 
 plugins/*
 !plugins/cvregio-plugin/
-!plugins/regio-blocks/
+!plugins/ev-region22-block2/
 
 themes/*
 !themes/cvregio-theme/
