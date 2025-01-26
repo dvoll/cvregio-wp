@@ -21,7 +21,7 @@
     "eslint.lintTask.options": "./src/**/*(.js|.jsx)",
 
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": "explicit"
     },
 
     "intelephense.stubs": [
